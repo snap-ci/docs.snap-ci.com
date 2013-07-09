@@ -29,25 +29,39 @@ module Jekyll
       end
     end
 
-    def generate_child_listing(topic_folder, sidebar, site)
-      topic_folder.each_child do |f|
-        if f.file?
-          emit_topic_in_current_listing(f, sidebar, site)
-        elsif f.directory?
-          emit_new_listing(f, sidebar, site)
-        else
-          puts "Skipping entry: #{f}"
-        end
+    def emit_section_element(section_name, sidebar, &block)
+      sidebar.li(:class => 'section-name') do
+        sidebar << section_name.to_s.capitalize
+        sidebar.ul { yield }
       end
+    end
+
+    def generate_child_listing(topic_folder, sidebar, site)
+      section_name = (topic_folder == topic_root) ? 'Home' : topic_folder.basename
+      emit_section_element(section_name, sidebar) do
+        files, directories = partition_children_into_files_and_directories(topic_folder)
+        files.each {|f| emit_topic_in_current_listing(f, sidebar, site)}
+        directories.each {|f| emit_new_listing(f, sidebar, site)}
+      end
+    end
+    
+    def partition_children_into_files_and_directories(folder)
+      files, directories = [], []
+      folder.each_child { |f| f.directory? ? directories << f : files << f }
+      return files, directories
     end
     
     def generate(site)
       with_new_sidebar_block do |sidebar|
-        emit_new_listing(Pathname.new("topics"), sidebar, site)
+        emit_new_listing(topic_root, sidebar, site)
       end  
     end
     
     private
+    def topic_root
+      Pathname.new("topics")
+    end
+    
     def page_at_location(site, path)
       site.pages.detect { |page| page.path == path }
     end

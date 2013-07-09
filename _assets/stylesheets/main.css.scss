@@ -2,34 +2,24 @@
 @import 'compass/reset';
 @import 'fonts.css.scss';
 
-$light_red  : rgb(220, 200, 200);
-$light_green: rgb(200, 220, 200);
-
 html, body {
   height: 100%;
 }
 
 body {
   font-family: 'OpenSansLight' Helvetica Arial 'sans serif';
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 12px;
+  line-height: 2;
   color: #676767;
-  background-color: rgba(190, 195, 190, 0.3);
+  background-color: #EEE;
 
   a {
-    color: rgb(30, 80, 200);
     text-decoration: none;
-
-    &:visited {
-      color: rgb(100, 80, 200);
-    }
-    ;
   }
 
   .site {
     .header {
       padding: 10px 30px 5px 30px;
-      margin-bottom: 8px;
       border-bottom: 1px solid #DDD;
       background-color: #FFF;
       @include clearfix;
@@ -65,6 +55,7 @@ body {
     }
 
     .content {
+      font-family: 'RobotoRegular';
       margin: 0 auto;
       @include clearfix;
 
@@ -75,11 +66,9 @@ body {
       }
       
       .sidebar-container {
-        background-color: $light_red;
       }
 
       .topic-container {
-        background-color: $light_green;
         left: 20%;
       }
 
@@ -94,17 +83,39 @@ body {
       }
 
       .sidebar {
+        min-width: 180px;
         width: 20%;
-        
+ 
         .topic-listing {
           list-style: none;
+          background-color: #555;
           
-          li {
-            padding: 10px 0;
-            text-align: center;
+          .section-name, .title {
+            padding: 0 0 0 18px;
+          }
+          
+          .section-name {
+            color: #AAA;
+            font-family: RobotoMedium;
+            font-size: 13px;
+          }
+          
+          .title {
+            font-family: RobotoLight;
+            font-size: 12px;
+            
+            a {
+              color: #EEE;
+            }
             
             &.current {
-              background-color: darken($light_red, 15%);
+              background-color: rgba(238, 238, 238, 0.7);
+              color: #000;
+              
+              a {
+                font-family: RobotoMediumItalic;
+                color: inherit;
+              }
             }
           }
         }
@@ -114,9 +125,11 @@ body {
         width: 74%;
         padding: 20px 0;
         
-        h1 {
-          font-weight: bold;
+        .doc-title {
+          font-size: 36px;
+          font-family: 'RobotoThin';
           margin-bottom: 15px;
+          color: #333;
         }
       }
     }
@@ -124,7 +137,5 @@ body {
     .footer {
       margin-top: 20px;
     }
-
   }
-
 }

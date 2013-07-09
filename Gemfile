@@ -5,4 +5,5 @@ gem 'jekyll-asset-pipeline'
 gem 'saas'
 gem 'compass'
 
+gem 'activesupport'
 gem 'builder'
