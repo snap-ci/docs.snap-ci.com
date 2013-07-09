@@ -1,0 +1,4 @@
+name: snappy blog title
+pygments: true
+safe: false
+exclude: ['Gemfile', 'Gemfile.lock', 'vendor', 'README']

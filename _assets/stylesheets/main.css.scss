@@ -1,0 +1,130 @@
+@import 'compass';
+@import 'compass/reset';
+@import 'fonts.css.scss';
+
+$light_red  : rgb(220, 200, 200);
+$light_green: rgb(200, 220, 200);
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'OpenSansLight' Helvetica Arial 'sans serif';
+  font-size: 18px;
+  line-height: 1.8;
+  color: #676767;
+  background-color: rgba(190, 195, 190, 0.3);
+
+  a {
+    color: rgb(30, 80, 200);
+    text-decoration: none;
+
+    &:visited {
+      color: rgb(100, 80, 200);
+    }
+    ;
+  }
+
+  .site {
+    .header {
+      padding: 10px 30px 5px 30px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #DDD;
+      background-color: #FFF;
+      @include clearfix;
+
+      .logo {
+        float: left;
+        width: 200px;
+        height: 40px;
+        background: url('images/snap-logo-black.png') no-repeat 0 0;
+        padding: 12px 0 0 165px;
+        font-family: MarydaleRegular;
+        font-size: 22px;
+        color: #ff5e3b;
+      }
+
+      .header-actions {
+        float: right;
+        font-size: 13px;
+        letter-spacing: 1px;
+        @include clearfix;
+
+        .docs, .blogs, .login {
+          color: #676767;
+          float: right;
+          font-size: 18px;
+          margin-left: 20px;
+          padding: 8px;
+          text-align: center;
+        }
+
+      }
+
+    }
+
+    .content {
+      margin: 0 auto;
+      @include clearfix;
+
+      .topic-container, .sidebar-container {
+        float: left;
+        width: 100%;
+        position: relative;
+      }
+      
+      .sidebar-container {
+        background-color: $light_red;
+      }
+
+      .topic-container {
+        background-color: $light_green;
+        left: 20%;
+      }
+
+      .topic, .sidebar {
+        float: left;
+        position: relative;
+        right: 20%;
+      }
+
+      .topic {
+        right: 16%;
+      }
+
+      .sidebar {
+        width: 20%;
+        
+        .topic-listing {
+          list-style: none;
+          
+          li {
+            padding: 10px 0;
+            text-align: center;
+            
+            &.current {
+              background-color: darken($light_red, 15%);
+            }
+          }
+        }
+      }
+
+      .topic {
+        width: 74%;
+        padding: 20px 0;
+        
+        h1 {
+          font-weight: bold;
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .footer {
+      margin-top: 20px;
+    }
+
+  }
+
+}

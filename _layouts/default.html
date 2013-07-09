@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>{{ page.title }}</title>
+      <meta name="viewport" content="width=device-width">
+
+      {% css_asset_tag application %}
+      - /_assets/stylesheets/main.css.scss
+      - /_assets/stylesheets/syntax.css.scss
+      {% endcss_asset_tag %}
+    </head>
+    <body>
+      <div class="container">
+        <div class="site">
+          <div class="header">
+            <a href="https://snap-ci.com" class="logo">Continuous Integration</a>
+            <div class="header-actions">
+              <a href="https://github.com/login/oauth/authorize?scope=repo,user&amp;client_id=1cf87aecc4db30dd23a4" class="login">Login</a>
+              <a href="http://blogs.snap-ci.com" class="blogs">Blog</a>
+              <a href="http://docs.snap-ci.com" class="docs">Documentation</a>
+            </div>
+          </div>
+          
+          <div class="content">
+            <div class="sidebar-container">
+              <div class="topic-container">
+                {% include sidebar.md %}
+                {{ content }}
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer">
+            <div class="contact">
+            </div>
+          </div>
+        </div>
+      </div> <!-- /container -->
+    </body>
+</html>
