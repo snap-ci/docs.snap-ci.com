@@ -45,7 +45,7 @@ module Jekyll
     
     def emit_children_listing(topic_folder, sidebar, site)
       emit_section_element(section_name(topic_folder), sidebar) do
-        topic_folder.each_child do |f|
+        topic_folder.children.sort.each do |f|
           if f.directory?
             emit_new_listing(f, sidebar, site)
           else
@@ -57,7 +57,7 @@ module Jekyll
     
     def section_name(topic_folder)
       return '' if topic_folder == topic_root
-      topic_folder.basename.to_s.gsub(/^\d+\./, '')
+      topic_folder.basename.to_s.gsub(/^\d+\./, '').gsub('_', ' ')
     end
     
     def topic_root
