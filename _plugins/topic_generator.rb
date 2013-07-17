@@ -10,7 +10,7 @@ module Jekyll
     end
     
     def url
-      super.split('/').map{ |s| strip_leading_sort_ordering_fragment(s) }.join('/').gsub('//', '/')
+      super.split('/').map{ |s| strip_leading_sort_ordering_fragment(s) }.join('/').gsub('//', '/').gsub(/\.html$/, '/')
     end
     
     private
