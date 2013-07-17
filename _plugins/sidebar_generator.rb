@@ -45,6 +45,11 @@ module Jekyll
     
     def emit_children_listing(topic_folder, sidebar, site)
       emit_section_element(section_name(topic_folder), sidebar) do
+        if topic_folder == topic_root
+          sidebar.li(:class => "title") do
+            sidebar.a('Home', :href => "/")
+          end
+        end
         topic_folder.children.sort.each do |f|
           if f.directory?
             emit_new_listing(f, sidebar, site)
