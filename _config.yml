@@ -1,4 +1,5 @@
 name: snappy blog title
+url: http://docs.snap-ci.com
 pygments: true
 safe: false
 exclude: ['Gemfile', 'Gemfile.lock', 'vendor', 'README']
