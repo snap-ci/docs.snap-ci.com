@@ -3,4 +3,55 @@ layout: topic
 title:  "Supported Platforms"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Snap currently supports the following build tools and libraries. There would often be times when your local configuration is different from the one we describe here. Please [contact us]({{ site.link.contact_us }}) if you'd like for us to provide something not listed here.
+
+# Operating System
+
+* CentOS {{ site.versions.centos }}, 64-bit
+* kernel - {{ site.versions.kernel }}
+
+# Development tools
+
+* git - {{ site.versions.git }}
+* gcc - {{ site.versions.gcc }}
+* g++ - {{ site.versions.g++ }}
+* make - {{ site.versions.make }}
+
+# Development libraries
+
+* openssl - {{ site.versions.openssl }}
+* libxml2 - {{ site.versions.libxml2 }}
+* libxslt - {{ site.versions.libxslt }}
+* ImageMagick - {{ site.versions.image_magick }}
+* QT - {{ site.versions.qt }}
+
+# Databases
+
+* mysql - {{ site.versions.mysql }}
+* postgresql - {{ site.versions.postgresql }}
+* sqlite3    - {{ site.versions.sqlite3 }}
+
+# 3rd party Tools
+
+* heroku-toolbelt - {{ site.versions.heroku_toolbelt }}
+
+# Languages
+
+* OpenJDK - {{ site.versions.openjdk }}
+* Sun JDK - {{ site.versions.sunjdk }}
+* Ruby - {{ site.versions.ruby }}
+  * bundler - {{ site.versions.bundler }}
+  * rake - {{ site.versions.rake }}
+* nodejs - {{ site.versions.nodejs }}
+
+# Build Tools
+
+* Apache Ant - {{ site.versions.ant }}
+* Apache Maven - {{ site.versions.maven }}
+* Gradle - {{ site.versions.Gradle }}
+
+# Browser Tools
+
+* phantomjs - {{ site.versions.phantomjs }}
+* google-chrome - {{ site.versions.chrome }}
+* firefox - {{ site.versions.firefox }}

@@ -4,3 +4,36 @@ pygments: true
 safe: false
 exclude: ['Gemfile', 'Gemfile.lock', 'vendor', 'README']
 markdown: rdiscount
+
+link:
+  contact_us: https://snap-ci.com/contact-us
+
+
+versions:
+  centos: 6.4
+  arch: 64-bit
+  git:
+  gcc:
+  g++:
+  make:
+  openssl:
+  libxml2:
+  libxslt:
+  image_magick:
+  qt:
+  mysql:
+  postgresql:
+  sqlite3:
+  heroku_toolbelt:
+  open_jdk:
+  sun_jdk:
+  ruby:
+  bundler:
+  rake:
+  nodejs:
+  ant:
+  maven:
+  gradle:
+  phantomjs:
+  google_chrome:
+  firefox:
