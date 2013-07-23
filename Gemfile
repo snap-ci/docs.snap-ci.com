@@ -7,3 +7,4 @@ gem 'compass'
 
 gem 'activesupport'
 gem 'builder'
+gem 'rdiscount'
