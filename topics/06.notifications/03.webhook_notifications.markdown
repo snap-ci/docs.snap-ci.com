@@ -4,10 +4,11 @@ title:  "Webhook notifications"
 ---
 
 Snap can send out build notifications as a JSON payload and post it to a supplied webhook endpoint. This is most useful if you need
-programmatic control on build events. The webhook endpoint can be configured for a project by navigating to its notification configuration
-section.
+programmatic control on build events. Snap's webhook notifications are more granular than others. While most notification channels
+send alerts on pipeline completion, the webhook will be triggered once for every stage.
 
-Here's the schema for the build notification payload:
+The webhook endpoint can be configured for a project by navigating to its notification configuration section. Here's the schema for the build notification payload:
+
 ```
 {
  "project_name": "example/awesome-project",
