@@ -113,12 +113,19 @@ body {
           color: red;
         }
 
-        h1 {
-          font-size: 28px;
+        h1, h2, h3, h4 {
           font-family: 'RobotoThin';
           margin-top: 20px;
           margin-bottom: 5px;
           color: #333;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+
+        h2 {
+          font-size: 24px;
         }
       }
 
