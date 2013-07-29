@@ -3,4 +3,18 @@ layout: topic
 title:  "Unit tests"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Snap runs detection to determine whether a project is using **RSpec** or **test-unit** framwork. This it does by examining the project structure. If **'test'** directory is present at PROJECT_ROOT it will configure a **test-unit** stage. If **'spec'** directory is present it would use **RSpec**.
+
+test-unit
+===========
+
+If **test-unit** is detected, then it would add `["test:units"]` , `["test:functionals"]` to the list of rake task to be run for the build. If integration directory is present then it would add `["test:integration"]` to the list. If PROJECT is a ruby gem its would only configure `["test"]`
+
+
+RSpec
+==========
+
+If **RSpec** is detected then it would configure tasks based on the standard directories present spec folder. E.g. If it detects a models directory within spec then it will add `["spec::models"]` to the list of rake task to run for the build. It detects presence of following directories **features, requests, models, controllers, views, helpers, mailers, lib, routing.**
+
+
+
