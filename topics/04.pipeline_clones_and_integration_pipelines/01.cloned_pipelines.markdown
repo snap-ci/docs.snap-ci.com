@@ -3,4 +3,23 @@ layout: topic
 title:  "Cloning a pipeline"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Cloning a pipeline creates a new project which has all the stages you selected at the time of creation of the clone and it will build against the cloned branch. The new project created has stages which are exactly similar to the stages of the parent pipeline from which you cloned the new project but it doesn't clone any heroku deployments configured for the parent pipeline.
+
+##Steps to create a clone
+
+  * Goto the **build_history** page of the pipeline you wish to clone.
+
+  * Click on the **Clones** link which will bring up the clone dialog.
+
+  ![CloneDialog]({{ site.url }}/assets/images/screenshots/build-history-clone-link-with-steps.png)
+
+  * Select the **branch** to clone.
+
+  * Select the **stage** till which you wish to clone.
+
+  ![CloneDialog]({{ site.url }}/assets/images/screenshots/clone-dialog-with-steps.png)
+
+  * Review the stages cloned for the new pipeline.
+
+  * Click **Save**.
+
