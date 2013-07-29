@@ -3,7 +3,7 @@ layout: topic
 title:  "Cloning a pipeline"
 ---
 
-Cloning a pipeline creates a new project which has all the stages you selected at the time of creation of the clone and it will build against the cloned branch. The new project created has stages which are exactly similar to the stages of the parent pipeline from which you cloned the new project but it doesn't clone any heroku deployments configured for the parent pipeline.
+Cloning a pipeline creates a new project. This new project builds against the branch you selected at the time of creation of the clone. When you create a clone you also specify the stage up to which you wish to clone. This creates a new project which has a pipeline whose stages are clones of the main pipeline from which you cloned up till the selected stage. Any stages belonging to the main project's pipeline after the selected stage are not included in the newly cloned project. Also, any heroku deployments setup for the main pipeline are not cloned into the new project giving you the freedom to deploy to a different environment if needed.
 
 ##Steps to create a clone
 
@@ -22,4 +22,3 @@ Cloning a pipeline creates a new project which has all the stages you selected a
   * Review the stages cloned for the new pipeline.
 
   * Click **Save**.
-
