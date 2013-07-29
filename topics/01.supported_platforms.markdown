@@ -42,7 +42,7 @@ Snap currently supports the following build tools and libraries. There would oft
 * Ruby - {{ site.versions.ruby }}
   * bundler - {{ site.versions.bundler }}
   * rake - {{ site.versions.rake }}
-* nodejs - {{ site.versions.nodejs }}
+* NodeJS - {{ site.versions.nodejs }}
 
 # Build Tools
 
