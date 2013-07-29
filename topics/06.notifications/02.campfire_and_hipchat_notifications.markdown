@@ -15,6 +15,9 @@ Setting up Campfire notifications is easy. Here's how you can get started:
 
    ![campfire credentials](/assets/images/screenshots/campfire-credentials.png)
 
+   - If your Campfire site is hosted at `example.campfirenow.com`, fill in `example` in the subdomain field.
+   - The room you mention must exist. Snap will not create a Campfire room.
+
  - Navigate back to the notification configuration.
 
  - Click on Start Campfire Notifications.
