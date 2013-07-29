@@ -3,4 +3,31 @@ layout: topic
 title:  "Integrating a pipeline with another branch"
 ---
 
+##What does it mean to integrate with a branch?
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+##Steps to create a clone with integration branch pipeline
+
+  * Goto the **build_history** page of the pipeline you wish to clone.
+
+  * Click on the **Clones** link which will bring up the clone dialog.
+
+  ![IntegratedClone](/assets/images/screenshots/build-history-clone-link-with-steps.png)
+
+  * Select the **branch** to clone.
+
+  * Select the **stage** till which you wish to clone.
+
+  ![IntegratedClone](/assets/images/screenshots/clone-integration-start.png)
+
+  * Click on **Also, setup an integrated build**.
+
+  ![IntegratedClone](/assets/images/screenshots/clone-integration-start-with-steps.png)
+
+  * Select the **branch** to **integrate with**.
+
+  * Review the stages cloned for the new pipeline.
+
+  ![IntegratedClone](/assets/images/screenshots/clone-integration-done-with-steps.png)
+
+  * Click **Save**.
