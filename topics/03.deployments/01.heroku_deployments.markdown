@@ -3,4 +3,19 @@ layout: topic
 title:  "Deploying to Heroku"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Snap has first-class support for deploying Ruby and Rails applications directly to Heroku. Upon a successful build, we'll deploy the application to Heroku if your deployment is configured to do automatic deploys, or you may deploy any particular build at a later time.
+
+To setup a heroku deployment:
+
+* Visit the configuration page for your project and click the **Edit** link
+* Click **Add New** to add a new stage to your build.
+* Select **Heroku Deployment Stage** to select a heroku deployment stage.
+* Enter the correct heroku API key and other parameters to ensure that we push to the correct heroku application
+![Heroku deployment]({{ site.url }}/assets/images/screenshots/heroku-deployment.png)
+* You can optionally setup any heroku configuration variables
+![Heroku configuration variables]({{ site.url }}/assets/images/screenshots/heroku-deployment-config-vars.png)
+* Click **save** to save this heroku deployment configuration.
+
+# Database migrations
+
+After pushing new code, you may want to run the rails `db:migrate` task. This can be done by checking the **Perform db migration** checkbox.
