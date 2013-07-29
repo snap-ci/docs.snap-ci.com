@@ -2,7 +2,8 @@
 layout: home
 ---
 
-Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are
+
+<p>Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are</p>
 
 <ul>
   <li>Sign in & grant access to Snap to build your project</li>
@@ -10,17 +11,6 @@ Getting started with Snap is straightforward for most applications. At its simpl
   <li>Configure one or more Heroku deployments</li>
 </ul>  
 
-Once you select a project, Snap automatically runs a set of heuristics on your project to determine an appropriate build pipeline for you. While you can tweak and customize this significantly, the default should be sufficient to get you started.
+<p>Once you select a project, Snap automatically runs a set of heuristics on your project to determine an appropriate build pipeline for you. While you can tweak and customize this significantly, the default should be sufficient to get you started.</p>
 
-If for some reason, we were unable to determine an appropriate build plan for you, you can always set up custom test stages as described here.
-
-<h2>Sign in</h2>
-
-We use your GitHub credentials and OAuth to authenticate you. You can learn more about OAuth <a href="http://oauth.net/">here</a>. You can learn about OAuth tokens and the permissions we request from GitHub <a href="http://developer.github.com/v3/oauth/#scopes">here</a>.
-
-{% img http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/spider-monkey_719_600x450.jpg caption:'Some monkeys love ice-cream' caption_placement:'caption-right' %}
-
-While we request write access to the repositories, this is only so that we can upload SSH keys to your account and set up post commit notification hooks from GitHub. We do not use the permissions to ever make any changes to the content of any repository.
-
-Snap differs from many of the other tools you may be familiar with in that it doesn't just automate the creation of a build loop but allows you to set up a sequence of stages which together form a build pipeline. To get started with Snap, it would be simplest if we go
-
+<p>If for some reason, we were unable to determine an appropriate build plan for you, you can always set up custom test stages {% topic_link "unit tests" "as described here" %}.</p>
