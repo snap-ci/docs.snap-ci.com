@@ -3,4 +3,22 @@ layout: topic
 title:  "Email notifications"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Snap will automatically send out build notifications via email. Email is delivered to all GitHub collaborators of the project.
+Notifications are only raised for events that require attention, such as a failing build, a manual trigger of a stage and so on.
+
+
+Here's an example of a notification email:
+
+```
+Pipeline result: PASSED
+  Counter: 188
+  Stages:
+    FastFeedBack: passed
+  Commits:
+    master: 89abaca J. Random Hacker <jrandomhacker@example.org> Fix this build.
+
+Prior pipeline result: FAILED
+  Counter: 187
+  Stages:
+    FastFeedBack: failed
+```
