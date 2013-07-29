@@ -3,4 +3,16 @@ layout: topic
 title:  "Managing membership"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+For any project building running on Snap, a user who is a collaborator on the repository on GitHub may get to see the project build on Snap. You may optionally force a sync with GitHub to ensure that project membership in Snap are in line with collaborations on GitHub.
+
+
+To perform a sync:
+
+* Click on **Configuration > Collaborators** link on the build history page to configure your project.
+* We'll list the existing collaborators. To force a sync, click **Sync with GitHub**
+
+![Invite Collaborators Dialog]({{ site.url }}/assets/images/screenshots/invite-collaborators-dialog.png)
+
+* Once the collaboratores have been synched, we'll list the changes we've made.
+
+![Invite Collaborators Dialog]({{ site.url }}/assets/images/screenshots/invite-collaborators-changes-dialog.png)
