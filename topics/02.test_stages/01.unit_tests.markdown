@@ -7,7 +7,7 @@ Snap runs detection to determine whether a project is using **RSpec** or **test-
 
 # test-unit
 
-If **test-unit** is detected, then it would add `test:units` , `test:functionals` to the list of rake task to be run for the build. If integration directory is present then it would add `test:integration` to the list. If PROJECT is a ruby gem its would only configure `test`
+If **test-unit** is detected, then it would add `test:units` , `test:functionals` to the list of rake task to be run for the build. If integration directory is present then it would add `test:integration` to the list. If PROJECT is a ruby gem, it would only configure `test`.
 
 
 # RSpec
