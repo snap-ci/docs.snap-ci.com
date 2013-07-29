@@ -11,13 +11,13 @@ Cloning a pipeline creates a new project which has all the stages you selected a
 
   * Click on the **Clones** link which will bring up the clone dialog.
 
-  ![CloneDialog]({{ site.url }}/assets/images/screenshots/build-history-clone-link-with-steps.png)
+  ![CloneDialog](/assets/images/screenshots/build-history-clone-link-with-steps.png)
 
   * Select the **branch** to clone.
 
   * Select the **stage** till which you wish to clone.
 
-  ![CloneDialog]({{ site.url }}/assets/images/screenshots/clone-dialog-with-steps.png)
+  ![CloneDialog](/assets/images/screenshots/clone-dialog-with-steps.png)
 
   * Review the stages cloned for the new pipeline.
 
