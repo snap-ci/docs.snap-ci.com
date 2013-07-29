@@ -13,6 +13,6 @@ To perform a sync:
 
 ![Invite Collaborators Dialog]({{ site.url }}/assets/images/screenshots/invite-collaborators-dialog.png)
 
-* Once the collaboratores have been synched, we'll list the changes we've made.
+* Once the collaborators have been synced, we'll list the changes we've made.
 
 ![Invite Collaborators Dialog]({{ site.url }}/assets/images/screenshots/invite-collaborators-changes-dialog.png)
