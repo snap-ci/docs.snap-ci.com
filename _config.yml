@@ -8,7 +8,6 @@ markdown: rdiscount
 link:
   contact_us: https://snap-ci.com/contact-us
 
-
 versions:
   centos: 6.4
   arch: 64-bit

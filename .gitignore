@@ -5,3 +5,5 @@ _includes/sidebar.md
 sitemap.xml
 .bundle
 bin
+_config_with_version.yaml
+tmp/
