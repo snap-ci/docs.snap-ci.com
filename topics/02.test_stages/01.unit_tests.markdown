@@ -3,11 +3,11 @@ layout: topic
 title:  "Unit tests"
 ---
 
-Snap runs detection to determine whether a project is using **RSpec** or **test-unit** framwork. This it does by examining the project structure. If **'test'** directory is present at PROJECT_ROOT it will configure a **test-unit** stage. If **'spec'** directory is present it would use **RSpec**.
+Snap runs heuristics on your codebase to determine whether a project is using **RSpec** or **test-unit** framwork. It does this by examining the project structure. If a **'test'** directory is present at the PROJECT_ROOT it configures a stage to run these tests. Similarly, if a **'spec'** directory is present, the tests are configured to run using **RSpec**.
 
 # test-unit
 
-If **test-unit** is detected, then it would add `test:units` , `test:functionals` to the list of rake task to be run for the build. If integration directory is present then it would add `test:integration` to the list. If PROJECT is a ruby gem, it would only configure `test`.
+When **test-unit** is detected, the `test:units`  and `test:functionals` tasks are configured to run in a stage named <span class="stage-name">fastfeedback</span>. This stage is configured to be the very first stage of the build pipeline. If an **integration** directory is present, the `test:integration` task also gets added to the list. If the PROJECT is a ruby gem, it would only configure `test`.
 
 
 # RSpec

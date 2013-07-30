@@ -5,19 +5,19 @@ title:  "Supported Platforms"
 
 Snap currently supports the following build tools and libraries. There would often be times when your local configuration is different from the one we describe here. Please [contact us]({{ site.link.contact_us }}) if you'd like for us to provide something not listed here.
 
-# Operating System
+### Operating System
 
 * CentOS {{ site.versions.centos }}, 64-bit
 * kernel - {{ site.versions.kernel }}
 
-# Development tools
+### Development tools
 
 * git - {{ site.versions.git }}
 * gcc - {{ site.versions.gcc }}
 * g++ - {{ site.versions.g++ }}
 * make - {{ site.versions.make }}
 
-# Development libraries
+### Development libraries
 
 * openssl - {{ site.versions.openssl }}
 * libxml2 - {{ site.versions.libxml2 }}
@@ -25,17 +25,17 @@ Snap currently supports the following build tools and libraries. There would oft
 * ImageMagick - {{ site.versions.image_magick }}
 * QT - {{ site.versions.qt }}
 
-# Databases
+### Databases
 
 * mysql - {{ site.versions.mysql }}
 * postgresql - {{ site.versions.postgresql }}
 * sqlite3    - {{ site.versions.sqlite3 }}
 
-# 3rd party Tools
+### 3rd party Tools
 
 * heroku-toolbelt - {{ site.versions.heroku_toolbelt }}
 
-# Languages
+### Languages
 
 * OpenJDK - {{ site.versions.openjdk }}
 * Sun JDK - {{ site.versions.sunjdk }}
@@ -44,13 +44,13 @@ Snap currently supports the following build tools and libraries. There would oft
   * rake - {{ site.versions.rake }}
 * NodeJS - {{ site.versions.nodejs }}
 
-# Build Tools
+### Build Tools
 
 * Apache Ant - {{ site.versions.ant }}
 * Apache Maven - {{ site.versions.maven }}
 * Gradle - {{ site.versions.Gradle }}
 
-# Browser Tools
+### Browser Tools
 
 * phantomjs - {{ site.versions.phantomjs }}
 * google-chrome - {{ site.versions.chrome }}
