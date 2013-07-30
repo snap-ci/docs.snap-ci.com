@@ -48,7 +48,7 @@ Snap currently supports the following build tools and libraries. There would oft
 
 * Apache Ant - {{ site.versions.ant }}
 * Apache Maven - {{ site.versions.maven }}
-* Gradle - {{ site.versions.Gradle }}
+* Gradle - {{ site.versions.gradle }}
 
 ### Browser Tools
 
