@@ -3,4 +3,5 @@ layout: topic
 title:  "Javascript testing"
 ---
 
-{% coming_soon %}
+Running javascript test for most part is similar to {% topic_link "running ui tests" "running ui tests" %} which requires either browser or
+webkit. In both cases we need X-Window system.

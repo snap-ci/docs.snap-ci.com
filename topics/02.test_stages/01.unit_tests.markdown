@@ -3,7 +3,7 @@ layout: topic
 title:  "Unit tests"
 ---
 
-Snap runs heuristics on your codebase to determine whether a project is using **RSpec** or **test-unit** framwork. It does this by examining the project structure. If a **'test'** directory is present at the PROJECT_ROOT it configures a stage to run these tests. Similarly, if a **'spec'** directory is present, the tests are configured to run using **RSpec**.
+Snap runs heuristics on your code base to determine whether a project is using **RSpec** or **test-unit** framework. It does this by examining the project structure. If a **'test'** directory is present at the PROJECT_ROOT it configures a stage to run these tests. Similarly, if a **'spec'** directory is present, the tests are configured to run using **RSpec**.
 
 # test-unit
 
