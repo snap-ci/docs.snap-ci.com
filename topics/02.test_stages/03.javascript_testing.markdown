@@ -3,5 +3,7 @@ layout: topic
 title:  "Javascript testing"
 ---
 
-Running javascript test for most part is similar to {% topic_link "running ui tests" "running ui tests" %} which requires either browser or
-webkit. In both cases we need X-Window system.
+Running javascript test is similar to {% topic_link "running ui tests" "running ui tests" %} which requires either browser or
+webkit. Prefix javascript test rake task with `xvfb-run`.
+
+E.g  If you running jasmine test, your build task will look like `xvfb-run bundle exec rake jasmine:ci`
