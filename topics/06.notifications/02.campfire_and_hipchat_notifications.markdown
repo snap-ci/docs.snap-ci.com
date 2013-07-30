@@ -5,7 +5,7 @@ title:  "Campfire & HipChat notifications"
 
 Snap can deliver build notifications to [Campfire](http://campfirenow.com/) and [HipChat](https://www.hipchat.com/) amongst other notification channels.
 
-Setting up Campfire notifications is easy. Here's how you can get started:
+# Setting up Campfire notifications:
 
 * Navigate to the notifications configuration section from your project's build history page.
   <p>![notification icon](/assets/images/screenshots/notification-icon.png)</p>
@@ -16,4 +16,5 @@ Setting up Campfire notifications is easy. Here's how you can get started:
 * Navigate back to the notification configuration.
 * Click on Start Campfire Notifications.
 * You're done! Snap will notify you when important events, such as build failure, occur.
+
 HipChat notifications can be configured in a similar manner.

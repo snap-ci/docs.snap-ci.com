@@ -11,6 +11,6 @@ To poll for updates to a single project -- visit the build history page for the 
 To poll for updates to all projects on your dashboard -- visit the dashboard page and copy the CCTray URL.
 
 
-# Access Control
+# Access Control:
 
 Anyone with the CCTray URL can view the updates to a project. It is recommended that you only share these URLs in a trusted environment.

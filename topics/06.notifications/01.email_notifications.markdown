@@ -7,7 +7,7 @@ Snap will automatically send out build notifications via email. Email is deliver
 Notifications are only raised for events that require attention, such as a failing build, a manual trigger of a stage and so on.
 
 
-Here's an example of a notification email sent out after a build is fixed:
+# Example of a notification email:
 
 ```
 Pipeline result: PASSED
