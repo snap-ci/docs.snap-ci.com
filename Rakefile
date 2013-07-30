@@ -2,6 +2,11 @@
 
 require 'yaml'
 
+
+def approx_version_string(str)
+  Gem::Version.parse(str).segments.first(3).join('.')
+end
+
 desc "detect versions"
 task :detect_versions do
 
@@ -21,11 +26,11 @@ task :detect_versions do
   gems = %w(rake bundler)
 
   rpms.each do |pkg|
-    versions[pkg] = %x[rpm -q --queryformat '%{VERSION}' #{pkg}]
+    versions[pkg] = approx_version_string(%x[rpm -q --queryformat '%{VERSION}' #{pkg}])
     # raise "Could not detect version of package #{pkg}" unless $?.success?
   end
 
-  versions['ruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep 'ruby-[0-9]+' | sort)].strip.gsub('ruby-', '')
+  versions['ruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep 'ruby-[0-9]+' | sort)].strip.gsub('ruby-', '').split
 
   versions['openjdk'] = Dir['/usr/lib/jvm/java-*-openjdk.x86_64/bin/java'].collect do |java|
     version = %x[#{java} -version 2>&1].match(/java version "(.*)"/)[1]
