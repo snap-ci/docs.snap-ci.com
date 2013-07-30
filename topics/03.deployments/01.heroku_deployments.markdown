@@ -19,3 +19,13 @@ To setup a Heroku deployment:
 # Database migrations
 
 After pushing new code, you may want to run the rails `db:migrate` task. This can be done by checking the **Perform db migration** checkbox.
+
+# Backup and maintenance mode
+
+Before pushing new code and performing any migrations, it is recommended that you put your Heroku app in maintenance mode. This can be done by additional stages before and after the Heroku Deployment Stage.
+
+## See also:
+
+
+* [Heroku maintenance mode documentationn](https://devcenter.heroku.com/articles/maintenance-mode)
+* [Heroku PostgreSQL backup](https://devcenter.heroku.com/articles/pgbackups)
