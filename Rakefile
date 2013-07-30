@@ -4,7 +4,7 @@ require 'yaml'
 
 
 def approx_version_string(str)
-  Gem::Version.parse(str).segments.first(3).join('.')
+  Gem::Version.new(str).segments.first(3).join('.')
 end
 
 desc "detect versions"
