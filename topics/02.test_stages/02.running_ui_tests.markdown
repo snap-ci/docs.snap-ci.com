@@ -8,4 +8,4 @@ for Xvfb command which simplifies the task for running commands. For more inform
 
 E.g. if `spec:features` requires X-Window system to run, the build task will be `xvfb-run bundle exec spec:features`.
 
-Note: Webkit also requires X-Window system.
+**Note:** WebKit also requires X-Window system.

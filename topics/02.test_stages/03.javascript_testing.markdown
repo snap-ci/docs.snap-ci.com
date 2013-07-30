@@ -3,7 +3,7 @@ layout: topic
 title:  "Javascript testing"
 ---
 
-Running javascript test is similar to {% topic_link "running ui tests" "running ui tests" %} which requires either browser or
-webkit. Prefix javascript test rake task with `xvfb-run`.
+Running Javascript tests are similar to {% topic_link "running ui tests" "running ui tests" %} which require either a browser or
+WebKit. Prefix Javascript test rake tasks with `xvfb-run`.
 
-E.g  If you running jasmine test, your build task will look like `xvfb-run bundle exec rake jasmine:ci`
+**For example:** For Jasmine tests, a build task such as `xvfb-run bundle exec rake jasmine:ci` should suffice.
