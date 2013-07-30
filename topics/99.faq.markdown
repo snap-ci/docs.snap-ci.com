@@ -21,3 +21,6 @@ We currently only support out of the box deployments to Heroku. However, most pl
 
 # How are my builds isolated from other user's builds?
 
+# Does X-Window system run by default?
+
+
