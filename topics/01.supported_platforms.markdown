@@ -14,7 +14,7 @@ Snap currently supports the following build tools and libraries. There would oft
 
 * git - {{ site.versions.git }}
 * gcc - {{ site.versions.gcc }}
-* g++ - {{ site.versions.g++ }}
+* g++ - {{ site.versions['gcc-c++'] }}
 * make - {{ site.versions.make }}
 
 ### Development libraries
@@ -22,24 +22,24 @@ Snap currently supports the following build tools and libraries. There would oft
 * openssl - {{ site.versions.openssl }}
 * libxml2 - {{ site.versions.libxml2 }}
 * libxslt - {{ site.versions.libxslt }}
-* ImageMagick - {{ site.versions.image_magick }}
-* QT - {{ site.versions.qt }}
+* ImageMagick - {{ site.versions.ImageMagick }}
+* QT - {{ site.versions['qt48-qt'] }}
 
 ### Databases
 
 * mysql - {{ site.versions.mysql }}
-* postgresql - {{ site.versions.postgresql }}
-* sqlite3    - {{ site.versions.sqlite3 }}
+* postgresql - {{ site.versions.postgresql91 }}
+* sqlite3    - {{ site.versions.sqlite }}
 
 ### 3rd party Tools
 
-* heroku-toolbelt - {{ site.versions.heroku_toolbelt }}
+* heroku-toolbelt - {{ site.versions['heroku-toolbelt'] }}
 
 ### Languages
 
-* OpenJDK - {{ site.versions.openjdk }}
-* Sun JDK - {{ site.versions.sunjdk }}
-* Ruby - {{ site.versions.ruby }}
+* OpenJDK - {{ site.versions.openjdk | array_to_sentence_string }}
+* Sun JDK - {{ site.versions.sunjdk | array_to_sentence_string}}
+* Ruby - {{ site.versions.ruby | array_to_sentence_string}}
   * bundler - {{ site.versions.bundler }}
   * rake - {{ site.versions.rake }}
 * NodeJS - {{ site.versions.nodejs }}
@@ -53,5 +53,5 @@ Snap currently supports the following build tools and libraries. There would oft
 ### Browser Tools
 
 * phantomjs - {{ site.versions.phantomjs }}
-* google-chrome - {{ site.versions.chrome }}
+* google-chrome - {{ site.versions['google-chrome-stable'] }}
 * firefox - {{ site.versions.firefox }}

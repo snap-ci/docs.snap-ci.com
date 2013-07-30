@@ -18,8 +18,12 @@ task :detect_versions do
   config = YAML.load_file('_config.yml')
 
   versions = {
-    'arch' => %x[uname -m].strip,
-    'centos' => File.read('/etc/centos-release').match(/release ([\d\.]+)/)[1]
+    'arch'   => %x[uname -m].strip,
+    'centos' => File.read('/etc/centos-release').match(/release ([\d\.]+)/)[1],
+    'kernel' => %x[uname -r].strip,
+    'ant'    => %x[ant -version].match(/version (.*) compiled/)[1],
+    'maven'  => %x[mvn --version].match(/Apache Maven (.*) \(r/)[1],
+    'gradle' => %x[gradle --version].match(/^Gradle (.*)$/)[1]
   }
 
   rpms = %w(git gcc gcc-c++ make openssl libxml2 libxslt ImageMagick qt48-qt mysql postgresql91 sqlite heroku-toolbelt nodejs phantomjs google-chrome-stable firefox)
