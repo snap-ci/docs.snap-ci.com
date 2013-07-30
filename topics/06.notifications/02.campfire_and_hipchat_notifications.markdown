@@ -7,21 +7,13 @@ Snap can deliver build notifications to [Campfire](http://campfirenow.com/) and 
 
 Setting up Campfire notifications is easy. Here's how you can get started:
 
- - Navigate to the notifications configuration section from your project's build history page.
-
-   ![notification icon](/assets/images/screenshots/notification-icon.png)
-
- - Snap will tell you that you haven't configured any Campfire credentials. Click on the appropriate link to add them.
-
-   ![campfire credentials](/assets/images/screenshots/campfire-credentials.png)
-
-   - If your Campfire site is hosted at `example.campfirenow.com`, fill in `example` in the subdomain field.
-   - The room you mention must exist. Snap will not create a Campfire room.
-
- - Navigate back to the notification configuration.
-
- - Click on Start Campfire Notifications.
-
- - You're done! Snap will notify you when important events, such as build failure, occur.
-
+* Navigate to the notifications configuration section from your project's build history page.
+  <p>![notification icon](/assets/images/screenshots/notification-icon.png)</p>
+* Snap will tell you that you haven't configured any Campfire credentials. Click on the appropriate link to add them.
+  <p>![campfire credentials](/assets/images/screenshots/campfire-credentials.png)</p>
+  * If your Campfire site is hosted at `example.campfirenow.com`, fill in `example` in the subdomain field.
+  * The room you mention must exist. Snap will not create a Campfire room.
+* Navigate back to the notification configuration.
+* Click on Start Campfire Notifications.
+* You're done! Snap will notify you when important events, such as build failure, occur.
 HipChat notifications can be configured in a similar manner.

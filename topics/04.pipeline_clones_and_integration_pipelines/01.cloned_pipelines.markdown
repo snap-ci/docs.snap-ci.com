@@ -5,20 +5,13 @@ title:  "Cloning a pipeline"
 
 Cloning a pipeline creates a new project. This new project builds against the branch you selected at the time of creation of the clone. When you create a clone you also specify the stage up to which you wish to clone. This creates a new project which has a pipeline whose stages are clones of the main pipeline from which you cloned up till the selected stage. Any stages belonging to the main project's pipeline after the selected stage are not included in the newly cloned project. Also, any heroku deployments setup for the main pipeline are not cloned into the new project giving you the freedom to deploy to a different environment if needed.
 
-##Steps to create a clone
+### Steps to create a clone
 
-  * Goto the **build_history** page of the pipeline you wish to clone.
-
-  * Click on the **Clones** link which will bring up the clone dialog.
-
-  ![CloneDialog](/assets/images/screenshots/build-history-clone-link.png)
-
-  * Select the **branch** to clone from the first dropdown.
-
-  * Select the **stage** till which you wish to clone from the second dropdown.
-
-  ![CloneDialog](/assets/images/screenshots/clone-dialog.png)
-
-  * Review the stages cloned for the new pipeline.
-
-  * Click **Save**.
+* Goto the **build_history** page of the pipeline you wish to clone.
+* Click on the **Clones** link which will bring up the clone dialog.
+  <p>![CloneDialog](/assets/images/screenshots/build-history-clone-link.png)</p>
+* Select the **branch** to clone from the first dropdown.
+* Select the **stage** till which you wish to clone from the second dropdown.
+  <p>![CloneDialog](/assets/images/screenshots/clone-dialog.png)</p>
+* Review the stages cloned for the new pipeline.
+* Click **Save**.
