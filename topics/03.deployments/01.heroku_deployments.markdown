@@ -11,9 +11,9 @@ To setup a Heroku deployment:
 * Click **Add New** to add a new stage to your build.
 * Select **Heroku Deployment Stage** to select a Heroku deployment stage.
 * Enter the correct Heroku API key and other parameters to ensure that we push to the correct Heroku application
-![Heroku deployment]({{ site.url }}/assets/images/screenshots/heroku-deployment.png)
+![Heroku deployment](/assets/images/screenshots/heroku-deployment.png)
 * You can optionally setup any Heroku configuration variables
-![Heroku configuration variables]({{ site.url }}/assets/images/screenshots/heroku-deployment-config-vars.png)
+![Heroku configuration variables](/assets/images/screenshots/heroku-deployment-config-vars.png)
 * Click **save** to save this Heroku deployment configuration.
 
 # Database migrations
