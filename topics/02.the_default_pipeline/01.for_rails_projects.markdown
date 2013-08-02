@@ -1,0 +1,63 @@
+---
+layout: topic
+title:  "For Rails Projects"
+---
+
+If we find a Gemfile that lists the *Rails* gem, Snap will attempt to setup up to a three stage pipeline automatically. The first stage would be a fast-feedback stage, which runs your unit tests for the model & controller. The next stage we attempt to guess is a test to run Javascript tests. Finally, we attempt to configure an integration test stage- which will attempt to run tests that exercise the application as a whole, either through or without the UI.
+
+##Detecting the Ruby version used
+
+Snap attempts to guess the correct Ruby version to run your project from multiple places such the *.rvmrc* file and the *Gemfile*. If we are unable to find a supported version of Ruby in either of these locations, we default to using Ruby-1.9.3. Supported Ruby versions can be found in the {% topic_link "supported platforms" "Supported Platforms" %} section.
+
+##Detecting the database used
+
+Snap will attempt to detect the database your application runs against by checking to see the connection adapters that your Gemfile attempts to pull in. The detected database and gem combinamtion is as follows:
+
+###Postgresql
+
+* pg 
+* jdbc-postgres 
+* activerecord-jdbcpostgresql-adapter 
+* postgres-pr 
+* postgres
+
+###MySQL
+
+* mysql2 
+* jdbc-mysql 
+* activerecord-jdbcmysql-adapter
+
+###sqlite3
+
+* sqlite3 
+* sqlite3-ruby 
+* jdbc-sqlite3 
+* activerecord-jdbcsqlite3-adapter
+
+##FastFeedback
+
+This stage will be configured if either the *test-unit* gem or *RSpec* gems are detected in your Gemfile. If *Rspec* is detected, the following tasks will be provisionally configured. i.e. configured if the directory containing these tests is present under the *spec* folder.
+
+* spec:models
+* spec:controllers
+* spec:views
+* spec:helpers
+* spec:mailers
+* spec:lib
+* spec:routing
+
+If, we detect *test-unit* on the other hand, the stage is configured to run the following tasks
+
+* test:units
+* test:functionals
+
+##Javascript tests
+
+If we find a *jasmine.yml* under the *spec/javascripts/support* folder and the *jasmine-headless-webkit* gem in your Gemfile, Snap will configure a Javascript testing stage which will be configured to run `xvfb-run bundle exec rake jasmine:headless`.
+
+##Integration tests
+
+If we detect the *test-unit* gem and find a *test/integration* directory under your project this stage will be configured to run `xvfb-run bundle exec rake test:integration`.
+
+If we detect the *RSpec* gem and find either the *spec/requests* or *spec/features* directory under your project this stage will be configured to run something along the lines of `xvfb-run bundle exec rake spec:requests spec:features`.
+

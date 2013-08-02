@@ -12,11 +12,15 @@ body {
   font-family: 'OpenSansLight' Helvetica Arial 'sans serif';
   font-size: 13px;
   line-height: 1.9;
-  color: #676767;
-  background-color: #EEE;
+  color: #4A4A4A;
+  background-color: #F9F9F9;
 
   a {
     text-decoration: none;
+  }
+
+  em {
+    font-style: italic;
   }
 
   .site {

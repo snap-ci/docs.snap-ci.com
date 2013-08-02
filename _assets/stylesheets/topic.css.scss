@@ -10,7 +10,6 @@
   }
 
   .topic-container {
-    background: url('images/bg-rainbow.png') repeat-x;
     left: 20%;
   }
 
@@ -23,13 +22,13 @@
   .topic {
     right: 16%;
     width: 74%;
-    padding: 20px 0;
+    padding: 10px 0;
     
     p {
       line-height: 2;
       
       & ~ p {
-        margin-top: 12px;
+        margin-top: 8px;
       }
     }
 
@@ -56,10 +55,11 @@
       line-height: 2.2;
       
       &:before {
+        content: "\0BB \020";
         display: inline-block;
         font-family: 'RobotoBold';
-        content: '>';
-        color: black;
+        font-size: 15px;
+        color: #333;
         margin-right: 4px;
       };
     }
@@ -81,23 +81,28 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: 'RobotoThin';
-      margin-top: 20px;
-      margin-bottom: 5px;
+      margin: 15px 0 0;
       color: #333;
     }
 
     h1 {
+      font-family: 'RobotoThin';
       font-size: 28px;
     }
 
     h2 {
+      font-family: 'RobotoLight';
       font-size: 18px;
     }
     
     h3 {
-      font-family: 'RobotoBold';
+      font-family: 'RobotoRegular';
       font-size: 14px;
+    }
+    
+    h4 {
+      font-family: 'RobotoBold';
+      font-size: 12px;
     }
   }
 
