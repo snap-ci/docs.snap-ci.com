@@ -5,7 +5,7 @@ title:  "Deploying to Heroku"
 
 Snap has first-class support for deploying Ruby and Rails applications directly to Heroku. Upon a successful build, we'll deploy the application to Heroku if your deployment is configured to do automatic deploys, or you may deploy any particular build at a later time.
 
-# To setup a Heroku deployment:
+## To setup a Heroku deployment:
 
 * Visit the configuration page for your project and click the **Edit** link
 * Click **Add New** to add a new stage to your build.
@@ -16,16 +16,15 @@ Snap has first-class support for deploying Ruby and Rails applications directly 
 ![Heroku configuration variables](/assets/images/screenshots/heroku-deployment-config-vars.png)
 * Click **save** to save this Heroku deployment configuration.
 
-# Database migrations:
+## Database migrations:
 
 After pushing new code, you may want to run the rails `db:migrate` task. This can be done by checking the **Perform db migration** checkbox.
 
-# Backup and maintenance mode:
+## Backup and maintenance mode:
 
 Before pushing new code and performing any migrations, it is recommended that you put your Heroku app in maintenance mode. This can be done by additional stages before and after the Heroku Deployment Stage.
 
-## See also:
-
+### See also:
 
 * [Heroku maintenance mode documentationn](https://devcenter.heroku.com/articles/maintenance-mode)
 * [Heroku PostgreSQL backup](https://devcenter.heroku.com/articles/pgbackups)

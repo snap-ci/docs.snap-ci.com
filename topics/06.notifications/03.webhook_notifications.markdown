@@ -9,7 +9,7 @@ send alerts on pipeline completion, the webhook will be triggered once for every
 
 The webhook endpoint can be configured for a project by navigating to its notification configuration section.
 
-# Example build notification payload:
+## Example build notification payload:
 
 ```
 {

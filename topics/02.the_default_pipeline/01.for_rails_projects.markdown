@@ -13,26 +13,32 @@ Snap attempts to guess the correct Ruby version to run your project from multipl
 
 Snap will attempt to detect the database your application runs against by checking to see the connection adapters that your Gemfile attempts to pull in. The detected database and gem combinamtion is as follows:
 
-###Postgresql
+<section>
+  <h2>Postgresql</h2>
 
-* pg 
-* jdbc-postgres 
-* activerecord-jdbcpostgresql-adapter 
-* postgres-pr 
-* postgres
+  * pg 
+  * jdbc-postgres 
+  * activerecord-jdbcpostgresql-adapter 
+  * postgres-pr 
+  * postgres
+  
+</section>  
+<section>
+  <h2>MySQL</h2>
 
-###MySQL
-
-* mysql2 
-* jdbc-mysql 
-* activerecord-jdbcmysql-adapter
-
-###sqlite3
-
-* sqlite3 
-* sqlite3-ruby 
-* jdbc-sqlite3 
-* activerecord-jdbcsqlite3-adapter
+  * mysql2 
+  * jdbc-mysql 
+  * activerecord-jdbcmysql-adapter
+  
+</section>  
+<section>
+  <h2>sqlite3</h2>
+    
+  * sqlite3 
+  * sqlite3-ruby 
+  * jdbc-sqlite3 
+  * activerecord-jdbcsqlite3-adapter
+</section>
 
 ##FastFeedback
 

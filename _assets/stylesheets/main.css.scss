@@ -2,6 +2,7 @@
 @import 'compass/reset';
 @import 'fonts.css.scss';
 @import 'images.css.scss';
+@import 'sidebar.css.scss';
 @import 'topic.css.scss';
 
 html, body {
@@ -14,6 +15,10 @@ body {
   line-height: 1.9;
   color: #4A4A4A;
   background-color: #F9F9F9;
+
+  * {
+    line-height: 2;
+  }
 
   a {
     text-decoration: none;

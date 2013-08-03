@@ -22,11 +22,12 @@
   .topic {
     right: 16%;
     width: 74%;
-    padding: 10px 0;
+    
+    .doc-content {
+      padding: 0 20px;
+    }
     
     p {
-      line-height: 2;
-      
       & ~ p {
         margin-top: 8px;
       }
@@ -35,8 +36,13 @@
     .doc-title {
       font-size: 36px;
       font-family: 'RobotoThin';
+      padding: 5px 20px;
       margin-bottom: 15px;
-      color: #333;
+      background-image: url('images/bg-rainbow.png');
+      
+      a {
+        color: #333;
+      }
     }
 
 
@@ -80,8 +86,9 @@
       @include border-radius(3px);
     }
 
-    h1, h2, h3, h4 {
-      margin: 15px 0 0;
+    h2, h3, h4 {
+      border-bottom: 1px solid #AAA;
+      margin: 40px 0 20px;
       color: #333;
     }
 
@@ -104,48 +111,19 @@
       font-family: 'RobotoBold';
       font-size: 12px;
     }
-  }
-
-  .sidebar {
-    padding: 30px 0;
-    min-width: 270px;
-    width: 20%;
-    right: 20%;
-    background-color: #575757;
-
-    .topic-listing {
-      list-style: none;
-
-      .section-name, .title {
-        padding: 0 0 0 18px;
-      }
-
-      .section-name {
-        color: #AAA;
-        font-family: RobotoMedium;
-        font-size: 13px;
-      }
-
-      .title {
-        font-family: RobotoLight;
-        font-size: 12px;
-        padding-right: 20px;
-
-        a {
-          color: #EEE;
-        }
-
-        &.current {
-          background-color: rgba(238, 238, 238, 0.7);
-          color: #000;
-
-          a {
-            font-family: RobotoMediumItalic;
-            color: inherit;
-          }
-        }
+    
+    section {
+      padding: 0 8px;
+      border: 1px solid #EEE;
+      background-color: #FEFEFE;
+      
+      h1, h2, h3, h4 {
+        font-family: 'RobotoRegular';
+        font-size: 14px;
+        border: none;
+        margin: 4px 0 0;
+        color: #333;
       }
     }
   }
-
 }

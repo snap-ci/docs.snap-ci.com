@@ -5,9 +5,9 @@ title:  "Running Javascript & UI tests"
 
 ### xvfb
 
-UI tests usually need the X-Window system unless you are running your tests using something like PhantonJS. To run UI tests on Snap, prefix the build tasks with `xvfb-run`. `xvfb-run` is a wrapper for `xvfb` command which simplifies the task for running commands. <a href="http://manpages.ubuntu.com/manpages/lucid/man1/xvfb-run.1.html" target="_blank">Click here</a> for more information on xvfb-run.
+UI tests usually need the X-Window system unless you are running your tests using something like PhantonJS. To run UI tests on Snap, prefix the build tasks with `xvfb-run`. xvfb-run is a wrapper for the xvfb command which simplifies the task for running commands. <a href="http://manpages.ubuntu.com/manpages/lucid/man1/xvfb-run.1.html" target="_blank">Click here</a> for more information on xvfb-run.
 
-E.g. if `spec:features` requires X-Window system to run, the build task will be `xvfb-run bundle exec spec:features`.
+For example, if *spec:features* requires the X-Window system, the build task will be `xvfb-run bundle exec spec:features`.
 
 **Note:** captybara-webkit based tests also require the X-Window system.
 
