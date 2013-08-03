@@ -10,7 +10,7 @@ To ensure that Snap no longer gets to connect to GitHub on your behalf:
 
 You should also make sure that you visit the settings page for your project and remove any relevant **service hooks** and **deploy keys** that belong to Snap.
 
-# Why does Snap need all these permissions?
+## Why does Snap need all these permissions?
 
 Snap does not allow you to add any project builds because it requires admin permissions on a GitHub repository.
 

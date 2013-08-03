@@ -3,24 +3,24 @@ layout: topic
 title:  "FAQ"
 ---
 
-# Do you support language X?
+## Do you support language X?
 
 We currently only support Ruby, NodeJS and Java. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "supported platforms" "supported platforms" %} for what is supported.
 
-# Can I get a specific version of a language or build tool?
+## Can I get a specific version of a language or build tool?
 
 See {% topic_link "supported platforms" "supported platforms" %} for the list of versions we support. If your version is not listed,  please [contact us]({{ site.link.contact_us }})
 
-# Do you support database X?
+## Do you support database X?
 
 We currently only support MySQL, PostgreSQL and SQLite3. If you'd like to see your favorite database being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "supported platforms" "supported platforms" %} for what is supported.
 
-# Do you support deployments to platform X?
+## Do you support deployments to platform X?
 
 We currently only support out of the box deployments to Heroku. However, most platforms support deployment using some CLI tools. You can configure a stage in Snap to invoke these tools or scripts to perform deployments.
 
-# How are my builds isolated from other user's builds?
+## How are my builds isolated from other user's builds?
 
-# Does X-Window system run by default?
+## Does X-Window system run by default?
 
 
