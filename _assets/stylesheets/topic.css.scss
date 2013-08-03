@@ -9,14 +9,18 @@
     position: relative;
   }
 
+  .sidebar-container {
+    background-color: #575757;
+  }
+
   .topic-container {
     left: 20%;
+    background-color: #F9F9F9;
   }
 
   .topic, .sidebar {
     float: left;
     position: relative;
-    min-height: 650px;
   }
 
   .topic {
