@@ -7,8 +7,8 @@ If you maintain a release branch or practice branch based development the pipeli
 
 ## Steps to create a clone:
 
-* Goto the **build_history** page of the pipeline you wish to clone.
-* Click on the **Clones** link which will bring up the clone dialog.
+* Visit the build history of the pipeline you wish to clone.
+* Click on the **clones** link which will bring up the clone dialog.
   <p>![CloneDialog](/assets/images/screenshots/build-history-clone-link.png)</p>
 * Select the appropriate **branch** from the first drop down.
 * Select the desired final **stage** from the second drop down.
