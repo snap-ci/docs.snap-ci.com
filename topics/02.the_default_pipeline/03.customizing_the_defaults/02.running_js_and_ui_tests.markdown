@@ -15,4 +15,4 @@ For example, if *spec:features* requires the X-Window system, the build task wil
 
 Running Javascript tests is similar to any other UI test which requires either a browser or WebKit. Similarly, you will need to prefix Javascript test rake tasks with `xvfb-run`.
 
-**For example:** For Jasmine tests, a build task such as `xvfb-run bundle exec rake jasmine:ci` should suffice.
+**For example:** You could configure Jasmine tests to run with a task such as `xvfb-run bundle exec rake jasmine:ci`.

@@ -16,7 +16,6 @@ class ImageTube < Liquid::Tag
   end
 
   def render(context)
-    puts @opts.inspect
 <<-IMAGE_TAG
 <div class="captioned-image #{@opts['caption_placement']}">
   <img src="#{@src}" alt="#{@opts['alt']}" title="#{@opts['title']}">
@@ -33,7 +32,7 @@ IMAGE_TAG
   private
   def parse_src_and_opts(markup)
     markup =~ IMG_SRC_SCAN_PATTERN
-    [$1, parse_options($2)]
+    [unquote($1), parse_options($2)]
   end
   
   def parse_options(opts_string)
