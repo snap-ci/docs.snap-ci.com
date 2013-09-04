@@ -25,11 +25,17 @@ Snap currently supports the following build tools and libraries. There would oft
 * ImageMagick - {{ site.versions.ImageMagick }}
 * QT - {{ site.versions['qt48-qt'] }}
 
-### Databases
+### Relational Databases
 
 * mysql - {{ site.versions.mysql }}
 * postgresql - {{ site.versions.postgresql91 }}
 * sqlite3    - {{ site.versions.sqlite }}
+
+### NoSQL Databases
+
+* CouchDB - {{ site.versions.couchdb }}
+* Redis - {{ site.versions.redis }}
+* MongoDB - {{ site.versions['mongo-10gen'] }}
 
 ### 3rd party Tools
 

@@ -26,7 +26,16 @@ task :detect_versions do
     'gradle' => %x[gradle --version].match(/^Gradle (.*)$/)[1]
   }
 
-  rpms = %w(git gcc gcc-c++ make openssl libxml2 libxslt ImageMagick qt48-qt mysql postgresql91 sqlite heroku-toolbelt nodejs phantomjs google-chrome-stable firefox)
+  development_tools = %w(git gcc gcc-c++ make)
+  development_libs  = %w(openssl libxml2 libxslt ImageMagick qt48-qt)
+  sql_sdatabases    = %w(mysql postgresql91 sqlite)
+  third_party_tools = %w(heroku-toolbelt)
+  no_sql_databases  = %w(couchdb redis mongo-10gen)
+  languages         = %w(nodejs)
+  browser_tools     = %w(phantomjs google-chrome-stable firefox)
+
+  rpms = development_tools + development_libs + sql_sdatabases + no_sql_databases + languages + third_party_tools + browser_tools
+
   gems = %w(rake bundler)
 
   rpms.each do |pkg|
