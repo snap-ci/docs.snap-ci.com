@@ -21,20 +21,19 @@ Snap has first-class support for deploying Ruby and Rails and Java applications 
   <p>![Heroku OAuth authorize](/assets/images/screenshots/heroku-oauth-authorize.png)</p>
 * Once you've authorized Snap with heroku:
   * You can select an app to deploy to from the drop-down.
-    ![Heroku list apps](/assets/images/screenshots/heroku-list-apps.png)
+    <p>![Heroku list apps](/assets/images/screenshots/heroku-list-apps.png)</p>
   * Or you can choose to create an new a new app.
-    ![Heroku create app](/assets/images/screenshots/heroku-create-app.png)
+    <p>![Heroku create app](/assets/images/screenshots/heroku-create-app.png)</p>
 * Click **save** to save this Heroku deployment configuration.
 
 ## Setting up subsequent deployments
 
 Once you've authorized Snap with Heroku, setting up subsequent deployments becomes straight-forward as Snap reuses the credentials you used to setup your first deployment.
-![Heroku subsequent deployments](/assets/images/screenshots/heroku-subsequent-deployments.png)
+<p>![Heroku subsequent deployments](/assets/images/screenshots/heroku-subsequent-deployments.png)</p>
 
 ## Heroku configuration variables
 
 You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
-
 ![Heroku configuration variables](/assets/images/screenshots/heroku-deployment-config-vars.png)
 
 ## Database migrations
