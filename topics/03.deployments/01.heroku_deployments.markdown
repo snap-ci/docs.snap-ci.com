@@ -3,18 +3,34 @@ layout: topic
 title:  "Deploying to Heroku"
 ---
 
-Snap has first-class support for deploying Ruby and Rails applications directly to Heroku. Upon a successful build, we'll deploy the application to Heroku if your deployment is configured to do automatic deploys, or you may deploy any particular build at a later time.
+Snap has first-class support for deploying Ruby and Rails and Java applications directly to Heroku. Upon a successful build, we'll deploy the application to Heroku if your deployment is configured to do automatic deploys, or you may deploy any particular build at a later time.
 
-## To setup a Heroku deployment:
+## Setting up your first Heroku deployment:
 
-* Visit the configuration page for your project and click the **Edit** link
+* Visit the configuration page for your project and click the **Edit** link.
 * Click **Add New** to add a new stage to your build.
-* Select **Heroku Deployment Stage** to select a Heroku deployment stage.
-* Enter the correct Heroku API key and other parameters to ensure that we push to the correct Heroku application
-![Heroku deployment](/assets/images/screenshots/heroku-deployment.png)
-* You can optionally setup any Heroku configuration variables
-![Heroku configuration variables](/assets/images/screenshots/heroku-deployment-config-vars.png)
+* The **Heroku Deployment Stage** is disabled as you don't have a heroku account authorized with Snap.
+  <p>![Heroku OAuth](/assets/images/screenshots/heroku-oauth-start.png)</p>
+* Click **Please sign in using Heroku to continue** to authorize Snap to access your Heroku information.
+* Click **Allow Access** to complete the authorization of Snap with Heroku.
+  <p>![Heroku OAuth authorize](/assets/images/screenshots/heroku-oauth-authorize.png)</p>
+* Once you've authorized Snap with heroku:
+  * You can select an app to deploy to from the drop-down.
+    ![Heroku list apps](/assets/images/screenshots/heroku-list-apps.png)
+  * Or you can choose to create an new a new app.
+    ![Heroku create app](/assets/images/screenshots/heroku-create-app.png)
 * Click **save** to save this Heroku deployment configuration.
+
+## Setting up subsequent deployments:
+
+Once you've authorized Snap with Heroku, setting up subsequent deployments becomes straight-forward as Snap reuses the credentials you used to setup your first deployment.
+![Heroku subsequent deployments](/assets/images/screenshots/heroku-subsequent-deployments.png)
+
+## Heroku configuration variables:
+
+You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
+
+![Heroku configuration variables](/assets/images/screenshots/heroku-deployment-config-vars.png)
 
 ## Database migrations:
 
