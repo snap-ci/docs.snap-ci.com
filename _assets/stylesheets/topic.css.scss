@@ -26,11 +26,21 @@
   .topic {
     right: 25%;
     width: 75%;
-    
+
     .doc-content {
       padding: 0 60px;
     }
-    
+
+    h1, h2, h3, h4, h5, h6 {
+      .icon {
+        display: none;
+        color: #000;
+      }
+      &:hover .icon {
+        display: inline-block;
+      }
+    }
+
     p {
       & ~ p {
         margin-top: 8px;
@@ -43,7 +53,7 @@
       padding: 5px 60px;
       margin-bottom: 40px;
       background-image: url('images/bg-rainbow.png');
-      
+
       a {
         color: #333;
       }
@@ -63,7 +73,7 @@
 
     li {
       line-height: 2.2;
-      
+
       &:before {
         content: "\0BB \020";
         display: inline-block;
@@ -105,22 +115,22 @@
       font-family: 'RobotoLight';
       font-size: 18px;
     }
-    
+
     h3 {
       font-family: 'RobotoRegular';
       font-size: 14px;
     }
-    
+
     h4 {
       font-family: 'RobotoBold';
       font-size: 12px;
     }
-    
+
     section {
       padding: 0 8px;
       border: 1px solid #EEE;
       background-color: #FEFEFE;
-      
+
       h1, h2, h3, h4 {
         font-family: 'RobotoRegular';
         font-size: 14px;
