@@ -1,0 +1,49 @@
+---
+layout: topic
+title:  "Databases & datastores"
+---
+
+Snap supports multiple relational and NoSQL databases. All databases are exclusive to your build for the duration of your build. All data & configuration on all databases is reset on every build. This means that you can rely on someone else's build not interfering with yours. This also means that you cannot rely on any database setup you do in one build run to persist across to others.
+
+##Relational database
+
+Snap supports the following relational databases:
+
+* sqlite (version: 3)
+* mysql (version: 5.5)
+* postgresql (version: 9.1)
+
+These databases all run on localhost and default ports. However, for the most part you are isolated from needing to know where the database as Snap does not use anything you specify to connect to the database. For Rails builds, we supply an alternate database.yml file which is configured to connect to the database you selected to run your build against. For Java builds, we supply an environment variable called DATABASE_URL whose value is a jdbc URL to connect to the database you select to run against your database.
+
+##NoSQL datastores
+
+Snap supports the following NoSQL datastores:
+
+* CouchDB
+* MongoDB
+* Redis
+
+These services all run on localhost and default ports which are as follows:
+
+* CouchDB: localhost:5984
+* MongoDB: localhost:27017
+* Redis:   localhost:6379
+
+Common clients/libraries which use these, such as CouchRest, Mongoid or Resque should all "just work"(tm). For example, the default mongoid.yml set up by the gem would look something like this and would work out of the box.
+
+```
+test:
+  sessions:
+    default:
+      database: myapp_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0
+```
+
+If you have any trouble with any of these, [let us know]({{ site.link.contact_us }}).
