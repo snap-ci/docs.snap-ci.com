@@ -30,7 +30,7 @@ task :detect_versions do
   development_tools = %w(git gcc gcc-c++ make)
   development_libs  = %w(openssl libxml2 libxslt ImageMagick qt48-qt)
   sql_sdatabases    = %w(mysql postgresql91 sqlite)
-  third_party_tools = %w(heroku-toolbelt)
+  third_party_tools = %w(heroku-toolbelt s3cmd)
   no_sql_databases  = %w(couchdb redis mongo-10gen)
   languages         = %w(nodejs)
   browser_tools     = %w(phantomjs google-chrome-stable firefox)

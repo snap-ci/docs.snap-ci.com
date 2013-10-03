@@ -41,6 +41,7 @@ Snap currently supports the following build tools and libraries. There would oft
 
 * heroku-toolbelt - {{ site.versions['heroku-toolbelt'] }}
 * awscli - {{ site.versions.awscli }}
+* s3cmd - {{ site.versions.s3cmd }}
 
 ### Languages
 
