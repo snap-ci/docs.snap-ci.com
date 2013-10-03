@@ -37,13 +37,15 @@ task :detect_versions do
   rpms = development_tools + development_libs + sql_sdatabases + no_sql_databases + languages + third_party_tools + browser_tools
 
   gems = %w(rake bundler)
+  python_pips = %w(pip virtualenv)
 
   rpms.each do |pkg|
     versions[pkg] = approx_version_string(%x[rpm -q --queryformat '%{VERSION}' #{pkg}])
     # raise "Could not detect version of package #{pkg}" unless $?.success?
   end
 
-  versions['ruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep 'ruby-[0-9]+' | sort)].strip.gsub('ruby-', '').split
+  versions['ruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^ruby-[0-9]+' | sort)].strip.gsub('ruby-', '').split
+  versions['python'] = %x[rpm -q --queryformat '%{VERSION} ' $(rpm -qa | egrep '^python-[0-9]+' | sort)].strip.split
 
   versions['openjdk'] = Dir['/usr/lib/jvm/java-*-openjdk.x86_64/bin/java'].collect do |java|
     version = %x[#{java} -version 2>&1].match(/java version "(.*)"/)[1]
@@ -51,6 +53,13 @@ task :detect_versions do
 
   versions['sunjdk'] = Dir['/usr/lib/jvm/java-*-openjdk.x86_64/bin/java'].collect do |java|
     version = %x[#{java} -version 2>&1].match(/java version "(.*)"/)[1]
+  end
+
+  python_pips.each do |pip|
+    pip_path = Dir['/opt/local/python/*/bin/pip'].first
+    version =  %x[#{pip_path} list].lines.grep(%r{^#{pip}\s}).first.chomp
+    version =~ /[^\s]+ \((.*)\)/
+    versions[pip] = $1
   end
 
   gems.each do |gem|
