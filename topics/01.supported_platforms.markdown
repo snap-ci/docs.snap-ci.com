@@ -50,6 +50,7 @@ Snap currently supports the following build tools and libraries. There would oft
 * Ruby - {{ site.versions.ruby | array_to_sentence_string}}
   * bundler - {{ site.versions.bundler }}
   * rake - {{ site.versions.rake }}
+  * foreman - {{ site.versions.foreman }}
 * Python - {{ site.versions.python | array_to_sentence_string}}
   * pip - {{ site.versions.pip }}
   * virtualenv - {{ site.versions.virtualenv }}
