@@ -23,7 +23,8 @@ task :detect_versions do
     'kernel' => %x[uname -r].strip,
     'ant'    => %x[ant -version].match(/version (.*) compiled/)[1],
     'maven'  => %x[mvn --version].match(/Apache Maven (.*) \(r/)[1],
-    'gradle' => %x[gradle --version].match(/^Gradle (.*)$/)[1]
+    'gradle' => %x[gradle --version].match(/^Gradle (.*)$/)[1],
+    'awscli' => %x[/opt/local/awscli/bin/aws --version 2>&1].match(/^aws-cli\/(\S+)/)[1]
   }
 
   development_tools = %w(git gcc gcc-c++ make)
@@ -58,7 +59,7 @@ task :detect_versions do
   python_pips.each do |pip|
     pip_path = Dir['/opt/local/python/*/bin/pip'].first
     version =  %x[#{pip_path} list].lines.grep(%r{^#{pip}\s}).first.chomp
-    version =~ /[^\s]+ \((.*)\)/
+    version =~ /[\S]+ \((.*)\)/
     versions[pip] = $1
   end
 
