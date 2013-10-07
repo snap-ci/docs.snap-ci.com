@@ -28,7 +28,7 @@ Snap currently supports the following build tools and libraries. There would oft
 ### Relational Databases
 
 * mysql - {{ site.versions.mysql }}
-* postgresql - {{ site.versions.postgresql91 }}
+* postgresql - {{ site.versions.postgresql92 }}
 * sqlite3    - {{ site.versions.sqlite }}
 
 ### NoSQL Databases
