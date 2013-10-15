@@ -24,7 +24,8 @@ task :detect_versions do
     'ant'    => %x[ant -version].match(/version (.*) compiled/)[1],
     'maven'  => %x[mvn --version].match(/Apache Maven (.*) \(r/)[1],
     'gradle' => %x[gradle --version].match(/^Gradle (.*)$/)[1],
-    'awscli' => %x[/opt/local/awscli/bin/aws --version 2>&1].match(/^aws-cli\/(\S+)/)[1]
+    'awscli' => %x[/opt/local/awscli/bin/aws --version 2>&1].match(/^aws-cli\/(\S+)/)[1],
+    'git'    => %x[git --version 2>&1].match(/^git version (.*)/)[1]
   }
 
   development_tools = %w(git gcc gcc-c++ make)
