@@ -28,7 +28,7 @@ task :detect_versions do
     'git'    => %x[git --version 2>&1].match(/^git version (.*)/)[1]
   }
 
-  development_tools = %w(git gcc gcc-c++ make)
+  development_tools = %w(gcc gcc-c++ make)
   development_libs  = %w(openssl libxml2 libxslt ImageMagick qt48-qt)
   sql_sdatabases    = %w(mysql postgresql92 sqlite)
   third_party_tools = %w(heroku-toolbelt s3cmd)
