@@ -64,10 +64,10 @@ task :detect_versions do
     versions[pip] = $1
   end
 
-  gems.each do |gem|
+  gems.each do |gemname|
     mkdir_p 'tmp'
-    gem_spec = %x[unset GEM_HOME GEM_PATH BUNDLE_GEMFILE BUNDLE_BIN_PATH RUBYOPT; gem specification --ruby #{gem} > tmp/#{gem}.gemspec]
-    spec = Gem::Specification.load("tmp/#{gem}.gemspec")
+    gem_spec = %x[unset GEM_HOME GEM_PATH BUNDLE_GEMFILE BUNDLE_BIN_PATH RUBYOPT; gem specification --ruby #{gemname} > tmp/#{gemname}.gemspec]
+    spec = Gem::Specification.load("tmp/#{gemname}.gemspec")
     versions[gem] = spec.version.to_s
   end
 
