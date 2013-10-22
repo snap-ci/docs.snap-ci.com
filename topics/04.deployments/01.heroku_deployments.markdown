@@ -29,11 +29,13 @@ Snap can deploy Ruby and Rails and Java applications directly to Heroku. Upon su
 ## Setting up subsequent deployments
 
 Once you've authorized Snap with Heroku, setting up subsequent deployments becomes straight-forward as Snap reuses the credentials you used to setup your first deployment.
-<p>![Heroku subsequent deployments](/assets/images/screenshots/heroku-subsequent-deployments.png)</p>
+
+![Heroku subsequent deployments](/assets/images/screenshots/heroku-subsequent-deployments.png)
 
 ## Heroku configuration variables
 
 You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
+
 ![Heroku configuration variables](/assets/images/screenshots/heroku-deployment-config-vars.png)
 
 ## Database migrations
