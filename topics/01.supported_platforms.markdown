@@ -45,13 +45,13 @@ Snap currently supports the following build tools and libraries. There would oft
 
 ### Languages
 
-* OpenJDK - {{ site.versions.openjdk | array_to_sentence_string }}
-* Sun JDK - {{ site.versions.sunjdk | array_to_sentence_string}}
-* Ruby - {{ site.versions.ruby | array_to_sentence_string}}
+* OpenJDK - {{ site.versions.openjdk | as_array | array_to_sentence_string }}
+* Sun JDK - {{ site.versions.sunjdk | as_array| array_to_sentence_string}}
+* Ruby - {{ site.versions.ruby | as_array | array_to_sentence_string}}
   * bundler - {{ site.versions.bundler }}
   * rake - {{ site.versions.rake }}
   * foreman - {{ site.versions.foreman }}
-* Python - {{ site.versions.python | array_to_sentence_string}}
+* Python - {{ site.versions.python | as_array | array_to_sentence_string}}
   * pip - {{ site.versions.pip }}
   * virtualenv - {{ site.versions.virtualenv }}
 * NodeJS - {{ site.versions.nodejs }}
