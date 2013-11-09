@@ -69,7 +69,7 @@ task :detect_versions do
     mkdir_p 'tmp'
     gem_spec = %x[unset GEM_HOME GEM_PATH BUNDLE_GEMFILE BUNDLE_BIN_PATH RUBYOPT; gem specification --ruby #{gemname} > tmp/#{gemname}.gemspec]
     spec = Gem::Specification.load("tmp/#{gemname}.gemspec")
-    versions[gem] = spec.version.to_s
+    versions[gemname] = spec.version.to_s
   end
 
   config['versions'] = versions
