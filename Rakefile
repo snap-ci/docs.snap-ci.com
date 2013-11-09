@@ -33,7 +33,7 @@ task :detect_versions do
   sql_sdatabases    = %w(mysql postgresql92 sqlite)
   third_party_tools = %w(heroku-toolbelt s3cmd)
   no_sql_databases  = %w(couchdb redis mongo-10gen)
-  languages         = %w(nodejs)
+  languages         = %w()
   browser_tools     = %w(phantomjs google-chrome-stable firefox)
 
   rpms = development_tools + development_libs + sql_sdatabases + no_sql_databases + languages + third_party_tools + browser_tools
@@ -47,6 +47,7 @@ task :detect_versions do
   end
 
   versions['ruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^ruby-[0-9]+' | sort)].strip.gsub('ruby-', '').split
+  versions['nodejs'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^nodejs-[0-9]+' | sort)].strip.gsub('nodejs-', '').split
   versions['python'] = %x[rpm -q --queryformat '%{VERSION} ' $(rpm -qa | egrep '^python-[0-9]+' | sort)].strip.split
 
   versions['openjdk'] = Dir['/usr/lib/jvm/java-*-openjdk.x86_64/bin/java'].collect do |java|

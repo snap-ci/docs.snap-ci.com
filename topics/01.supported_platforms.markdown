@@ -54,7 +54,7 @@ Snap currently supports the following build tools and libraries. There would oft
 * Python - {{ site.versions.python | as_array | array_to_sentence_string}}
   * pip - {{ site.versions.pip }}
   * virtualenv - {{ site.versions.virtualenv }}
-* NodeJS - {{ site.versions.nodejs }}
+* NodeJS - {{ site.versions.nodejs | as_array | array_to_sentence_string}}
 
 ### Build Tools
 
