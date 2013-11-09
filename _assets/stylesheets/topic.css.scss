@@ -67,7 +67,7 @@
       list-style: none;
       list-style-position: inside;
       padding: 0;
-      margin: 0 0 10px 25px;
+      margin: 0 0 10px 45px;
 
       & ul {
         margin-bottom: 0;
@@ -76,14 +76,16 @@
 
     li {
       line-height: 2.2;
-
+      @include clearfix;
+      
       &:before {
         content: "\0BB \020";
-        display: inline-block;
-        font-family: 'RobotoBold';
+        float: left;
+        clear: right;
         font-size: 15px;
+        font-family: 'RobotoBlack';
         color: #333;
-        margin-right: 4px;
+        margin-right: 10px;
       };
     }
 
