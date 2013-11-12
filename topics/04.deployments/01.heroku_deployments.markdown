@@ -24,6 +24,7 @@ Snap can deploy Ruby and Rails and Java applications directly to Heroku. Upon su
     <p>![Heroku list apps](/assets/images/screenshots/heroku-list-apps.png)</p>
   * Or you can choose to create an new a new app.
     <p>![Heroku create app](/assets/images/screenshots/heroku-create-app.png)</p>
+* You can opt to specify a build pack if you wish to customize your deployment. [Read more about build packs on Heroku's site](https://devcenter.heroku.com/articles/buildpacks).
 * Click **save** to save this Heroku deployment configuration.
 
 ## Setting up subsequent deployments
