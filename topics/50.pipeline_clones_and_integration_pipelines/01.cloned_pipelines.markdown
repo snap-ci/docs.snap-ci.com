@@ -9,9 +9,9 @@ Note: When setting up builds for feature branches or others, consider using an {
 
 ## Steps to create a clone:
 
-* Visit the build history of the pipeline you wish to clone.
+* Visit the configuration page of the pipeline you wish to clone.
 * Click on the **clones** link which will bring up the clone dialog.
-  <p>![CloneDialog](/assets/images/screenshots/build-history-clone-link.png)</p>
+  <p>![CloneDialog](/assets/images/screenshots/configure-header-clone-link.png)</p>
 * Select the appropriate **branch** from the first drop down.
 * Select the desired final **stage** from the second drop down.
   <p>![CloneDialog](/assets/images/screenshots/clone-dialog.png)</p>
