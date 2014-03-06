@@ -11,9 +11,9 @@ Snap supports the following relational databases:
 
 * sqlite (version: 3)
 * mysql (version: 5.5)
-* postgresql (version: 9.2)
+* postgresql (version: 9.2) - We have common postgresql extensions such as hstore and postgis installed. They must be activated by calling `CREATE EXTENSION` in your database migration scripts. Most rails gems will do this automatically when you run your migrations or load the database schema.
 
-These databases all run on localhost and default ports. However, for the most part you are isolated from needing to know where the database as Snap does not use anything you specify to connect to the database. For Rails builds, we supply an alternate database.yml file which is configured to connect to the database you selected to run your build against. For Java builds, we supply an environment variable called DATABASE_URL whose value is a jdbc URL to connect to the database you select to run against your database.
+These databases all run on localhost and default ports. However, for the most part you are isolated from needing to know where the database is as Snap does not use anything you specify to connect to the database. For Rails builds, we supply an alternate database.yml file which is configured to connect to the database you selected to run your build against. For Java builds, we supply an environment variable called DATABASE_URL whose value is a jdbc URL to connect to the database you select to run against your database.
 
 ##NoSQL datastores
 
