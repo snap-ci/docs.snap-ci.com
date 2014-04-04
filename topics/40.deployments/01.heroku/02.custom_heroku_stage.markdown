@@ -19,12 +19,24 @@ In addition to the basic deployment, Snap also gives you the option to write you
   <p>![Heroku Tab](/assets/images/screenshots/heroku/heroku-tab.png)</p>
 * Once you click **Custom Stage**, you will be redirected to Heroku. **Allow Access** to complete the authorization of Snap with Heroku.
   <p style="width:60%">![Heroku OAuth authorize](/assets/images/screenshots/heroku/heroku-oauth-authorize.png)</p>
-* Click on **Add Task** and type in your heroku commands. You can find more about Heroku commands [here](https://devcenter.heroku.com/categories/command-line).
-  <p style="width:90%">![Heroku Custom Stage](/assets/images/screenshots/heroku/custom-stage.png)</p>
+* Click on **Add Task** and type in your heroku commands. You can also setup **Environment Variables** and **Artifacts** for this stage by navigating to those respective tabs.
 
 <br/>
 > **Note:**
-> You don't need to run heroku login before running any heroku commands as you are automatically authenticated.
+> You don't need to run `heroku login` before running any heroku commands as you have already authorised Snap.
+
+## Setting up subsequent deployments
+
+Once you've authorized Snap with Heroku, setting up subsequent deployments becomes straight-forward as Snap reuses the credentials you used to setup your first deployment.
+
+## Backup and maintenance mode
+
+Before pushing new code and performing any migrations, it is recommended that you put your Heroku app in maintenance mode. This can be done by additional stages before and after the Heroku Deployment Stage.
+
+### See also
+
+* [Heroku maintenance mode documentationn](https://devcenter.heroku.com/articles/maintenance-mode)
+* [Heroku PostgreSQL backup](https://devcenter.heroku.com/articles/pgbackups)
 
 <h2>
   Some Gotchas with heroku run
@@ -39,3 +51,5 @@ The workaround to capture the exit status is the following:
 <code>buffer_file=/tmp/last_heroku_run; heroku run --app 'APP_NAME' 'YOUR_COMMAND; echo $?' | tee $buffer_file; exit &#x60;tail -1 $buffer_file&#96;</code>
 
 You can read more about this issue [here](https://github.com/heroku/heroku/issues/186).
+
+<br/>
