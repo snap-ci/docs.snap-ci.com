@@ -22,6 +22,10 @@ In addition to the basic deployment, Snap also gives you the option to write you
 * Click on **Add Task** and type in your heroku commands. You can find more about Heroku commands [here](https://devcenter.heroku.com/categories/command-line).
   <p style="width:90%">![Heroku Custom Stage](/assets/images/screenshots/heroku/custom-stage.png)</p>
 
+<br/>
+> **Note:**
+> You don't need to run heroku login before running any heroku commands as you are automatically authenticated.
+
 <h2>
   Some Gotchas with heroku run
   <a class="anchor" href="#heroku-run-warning">
