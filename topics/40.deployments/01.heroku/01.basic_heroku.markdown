@@ -14,11 +14,11 @@ Snap can deploy Ruby and Rails and Java applications directly to Heroku. Upon su
 
 * Visit the configuration page for your project and click the **Edit** link.
 * Click **Add New** to add a new stage to your build.
-* The **Heroku Deployment Stage** is disabled as you don't have a heroku account authorized with Snap.
-  <p>![Heroku OAuth](/assets/images/screenshots/heroku-oauth-start.png)</p>
-* Click **Please sign in using Heroku to continue** to authorize Snap to access your Heroku information.
-* Click **Allow Access** to complete the authorization of Snap with Heroku.
-  <p>![Heroku OAuth authorize](/assets/images/screenshots/heroku-oauth-authorize.png)</p>
+  <p>![Add New](/assets/images/screenshots/heroku/add-new-stage.png)</p>
+* Select the **Heroku** tab.
+  <p>![Heroku Tab](/assets/images/screenshots/heroku/heroku-tab.png)</p>
+* Once you click **Basic**, you will be redirected to Heroku. **Allow Access** to complete the authorization of Snap with Heroku.
+  <p style="width:60%">![Heroku OAuth authorize](/assets/images/screenshots/heroku/heroku-oauth-authorize.png)</p>
 * Once you've authorized Snap with heroku:
   * You can select an app to deploy to from the drop-down.
     <p>![Heroku list apps](/assets/images/screenshots/heroku-list-apps.png)</p>
@@ -31,8 +31,6 @@ Snap can deploy Ruby and Rails and Java applications directly to Heroku. Upon su
 
 Once you've authorized Snap with Heroku, setting up subsequent deployments becomes straight-forward as Snap reuses the credentials you used to setup your first deployment.
 
-![Heroku subsequent deployments](/assets/images/screenshots/heroku-subsequent-deployments.png)
-
 ## Heroku configuration variables
 
 You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
@@ -43,11 +41,4 @@ You can optionally setup heroku configuration variables from Snap by navigating 
 
 After pushing new code, you may want to run the rails `db:migrate` task. This can be done by checking the **Perform db migration** checkbox.
 
-## Backup and maintenance mode
-
-Before pushing new code and performing any migrations, it is recommended that you put your Heroku app in maintenance mode. This can be done by additional stages before and after the Heroku Deployment Stage.
-
-### See also
-
-* [Heroku maintenance mode documentationn](https://devcenter.heroku.com/articles/maintenance-mode)
-* [Heroku PostgreSQL backup](https://devcenter.heroku.com/articles/pgbackups)
+<br/>
