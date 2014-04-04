@@ -1,6 +1,6 @@
 ---
 layout: topic
-title:  "Deploying to Heroku"
+title:  "Basic Deployment"
 ---
 
 Snap can deploy Ruby and Rails and Java applications directly to Heroku. Upon successful completion of your build, you can configure Snap to deploy your application to Heroku. This can be done either automatically or, if you wish to deploy more infrequently, on demand at a later time. Yes- you can go back in history and deploy a build that ran a while ago. Snap maintains the state of the pipeline and can deploy from the exact same revision that triggered the build run.

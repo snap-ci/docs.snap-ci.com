@@ -1,0 +1,37 @@
+---
+layout: topic
+title:  "Custom Stage"
+---
+
+In addition to the basic deployment, Snap also gives you the option to write your own custom Heroku stage making full use of the [Heroku CLI](https://devcenter.heroku.com/categories/command-line).
+
+<h2>
+  Setting up a Custom Heroku Stage
+  <a class="anchor" href="#setting-up-a-custom-heroku-stage">
+     <i class="icon icon-link"></i>
+   </a>
+</h2>
+
+* Visit the configuration page for your project and click the **Edit** link.
+* Click **Add New** to add a new stage to your build.
+  <p>![Add New](/assets/images/screenshots/heroku/add-new-stage.png)</p>
+* Select the **Heroku** tab.
+  <p>![Heroku Tab](/assets/images/screenshots/heroku/heroku-tab.png)</p>
+* Once you click **Custom Stage**, you will be redirected to Heroku. **Allow Access** to complete the authorization of Snap with Heroku.
+  <p style="width:60%">![Heroku OAuth authorize](/assets/images/screenshots/heroku/heroku-oauth-authorize.png)</p>
+* Click on **Add Task** and type in your heroku commands. You can find more about Heroku commands [here](https://devcenter.heroku.com/categories/command-line).
+  <p style="width:90%">![Heroku Custom Stage](/assets/images/screenshots/heroku/custom-stage.png)</p>
+
+<h2>
+  Some Gotchas with heroku run
+  <a class="anchor" href="#heroku-run-warning">
+     <i class="icon icon-link"></i>
+   </a>
+</h2>
+
+When using the `heroku run` subcommand, the exit status of the remote command is not returned. Which means that if your command fails in Heroku, the stage will not fail.
+The workaround to capture the exit status is the following:
+
+<code>buffer_file=/tmp/last_heroku_run; heroku run --app 'APP_NAME' 'YOUR_COMMAND; echo $?' | tee $buffer_file; exit &#x60;tail -1 $buffer_file&#96;</code>
+
+You can read more about this issue [here](https://github.com/heroku/heroku/issues/186).
