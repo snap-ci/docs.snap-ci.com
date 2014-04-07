@@ -9,11 +9,21 @@ Snap supports multiple relational and NoSQL databases. All databases are exclusi
 
 Snap supports the following relational databases:
 
-* sqlite (version: 3)
-* mysql (version: 5.5)
-* postgresql (version: 9.2) - We have common postgresql extensions such as hstore and postgis installed. They must be activated by calling `CREATE EXTENSION` in your database migration scripts. Most rails gems will do this automatically when you run your migrations or load the database schema.
+* SQLite
+* MySQL
+* PostgreSQL
 
-These databases all run on localhost and default ports. However, for the most part you are isolated from needing to know where the database is as Snap does not use anything you specify to connect to the database. For Rails builds, we supply an alternate database.yml file which is configured to connect to the database you selected to run your build against. For Java builds, we supply an environment variable called `DATABASE_URL` whose value is a jdbc URL to connect to the database you select to run against your database.
+### Connecting to the databases:
+
+* **sqlite** - SQLite does not need any credentials to create or connect to the database
+* **mysql** - To connect to the database, we provide the environment variables `SNAP_DB_MYSQL_USER`, `SNAP_DB_MYSQL_PASSWORD`, `SNAP_DB_MYSQL_HOST`, `SNAP_DB_MYSQL_PORT`, `SNAP_DB_MYSQL_URL` and `SNAP_DB_MYSQL_JDBC_URL`
+* **postgresql** - To connect to the database, we provide the environment variables `SNAP_DB_PG_USER`, `SNAP_DB_PG_PASSWORD`, `SNAP_DB_PG_HOST`, `SNAP_DB_PG_PORT`, `SNAP_DB_PG_URL` and `SNAP_DB_PG_JDBC_URL`. We have common postgresql extensions such as `hstore` and `postgis` installed. They must be activated by calling [`CREATE EXTENSION`](http://www.postgresql.org/docs/9.2/static/sql-createextension.html) in your database migration scripts.
+
+In addition to the connection options specified above, Snap provides some more conveniences:
+
+* For Ruby projects that use a known database gem (pg, mysql, sqlite3), Snap will automatically supply an alternate `config/database.yml` file which is configured to connect to the database you selected to run your build against.
+
+* For Java builds, we supply an environment variable called `DATABASE_URL` whose value is a jdbc URL to connect to the database you select to run against your database.
 
 ##NoSQL datastores
 
