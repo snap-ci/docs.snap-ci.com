@@ -17,7 +17,7 @@ module Jekyll
 
     private
     def with_new_sitemap(site)
-      File.open("#{site.dest}sitemap.xml", 'w') do |sitemap_file|
+      File.open("#{site.dest}/sitemap.xml", 'w') do |sitemap_file|
         yield Builder::XmlMarkup.new(:target => sitemap_file, :indent => 2)
       end
     end
