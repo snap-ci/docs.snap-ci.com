@@ -2,6 +2,18 @@ require 'builder'
 
 module Jekyll
   class SitemapGenerator < Generator
+    # Recover from strange exception when starting server without --auto
+    class SitemapFile < StaticFile
+      def write(dest)
+        begin
+          super(dest)
+        rescue
+        end
+
+        true
+      end
+    end
+
     safe true
     priority :normal
     DAILY_CHANGE_FREQUENCY = 'daily'
@@ -21,6 +33,8 @@ module Jekyll
       File.open("#{site.dest}/sitemap.xml", 'w') do |sitemap_file|
         yield Builder::XmlMarkup.new(:target => sitemap_file, :indent => 2)
       end
+
+      site.static_files << SitemapFile.new(site, site.dest, "/", 'sitemap.xml')
     end
 
     def emit_urlset(sitemap, site)
