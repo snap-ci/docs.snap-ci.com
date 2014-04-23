@@ -50,11 +50,7 @@ task :detect_versions do
   versions['nodejs'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^nodejs-[0-9]+' | sort)].strip.gsub('nodejs-', '').split
   versions['python'] = %x[rpm -q --queryformat '%{VERSION} ' $(rpm -qa | egrep '^python-[0-9]+' | sort)].strip.split
 
-  versions['openjdk'] = Dir['/usr/lib/jvm/java-*-openjdk.x86_64/bin/java'].collect do |java|
-    version = %x[#{java} -version 2>&1].match(/java version "(.*)"/)[1]
-  end
-
-  versions['sunjdk'] = Dir['/usr/lib/jvm/java-*-openjdk.x86_64/bin/java'].collect do |java|
+  versions['sunjdk'] = Dir['/opt/local/java/*/bin/java'].collect do |java|
     version = %x[#{java} -version 2>&1].match(/java version "(.*)"/)[1]
   end
 

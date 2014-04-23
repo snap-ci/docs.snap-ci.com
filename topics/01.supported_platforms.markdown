@@ -45,7 +45,6 @@ Snap currently supports the following build tools and libraries. There would oft
 
 ### Languages
 
-* OpenJDK - {{ site.versions.openjdk | as_array | array_to_sentence_string }}
 * Sun JDK - {{ site.versions.sunjdk | as_array| array_to_sentence_string}}
 * Ruby - {{ site.versions.ruby | as_array | array_to_sentence_string}}
   * bundler - {{ site.versions.bundler }}
