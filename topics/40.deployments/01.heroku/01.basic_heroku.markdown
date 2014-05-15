@@ -41,5 +41,3 @@ You can optionally setup heroku configuration variables from Snap by navigating 
 ## Database migrations
 
 After pushing new code, you may want to run the rails `db:migrate` task. This can be done by checking the **Perform db migration** checkbox.
-
-<br/>
