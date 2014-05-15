@@ -90,3 +90,8 @@ task :deploy do
 
   sh("s3cmd sync --config s3.cfg --verbose --acl-public --delete-removed --no-preserve --add-header='Cache-Control: max-age=7200, must-revalidate' _site/* s3://#{ENV['S3_BUCKET']}")
 end
+
+desc "preview/change the documentation locally"
+task :preview do
+  sh "bundle exec jekyll server --watch"
+end
