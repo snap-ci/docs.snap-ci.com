@@ -66,3 +66,6 @@ Snap currently supports the following build tools and libraries. There would oft
 * phantomjs - {{ site.versions.phantomjs }}
 * google-chrome - {{ site.versions['google-chrome-stable'] }}
 * firefox - {{ site.versions.firefox }}
+
+### All Available Packages
+{% include packages_list.html %}

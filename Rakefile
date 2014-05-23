@@ -41,6 +41,24 @@ task :detect_versions do
   gems = %w(rake bundler foreman)
   python_pips = %w(pip virtualenv)
 
+  exclude_packages = [
+    'gpg-pubkey'
+  ]
+
+  packages_term_output = %x[rpm -qa --queryformat '%{NAME} %{VERSION}|'].split("|").sort_by {|w| w.downcase}
+
+  filtered_packages = packages_term_output.reject do |package|
+    exclude_packages.any? { |p| package.start_with? p }
+  end
+
+  packages = filtered_packages.each_slice(3).to_a.inject([]) do |r, packs|
+    if packs.size < 3
+      r << packs + Array.new(3 - packs.size)
+    else
+      r << packs
+    end
+  end
+
   rpms.each do |pkg|
     versions[pkg] = approx_version_string(%x[rpm -q --queryformat '%{VERSION}' #{pkg}])
     # raise "Could not detect version of package #{pkg}" unless $?.success?
@@ -69,6 +87,7 @@ task :detect_versions do
   end
 
   config['versions'] = versions
+  config['packages'] = packages
 
   File.open("_config_with_version.yaml", 'w') {|f| f.puts config.to_yaml}
 
