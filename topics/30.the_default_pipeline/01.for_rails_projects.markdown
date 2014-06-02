@@ -11,7 +11,7 @@ Snap attempts to guess the correct Ruby version to run your project from multipl
 
 ##Detecting the database used
 
-Snap will attempt to detect the database your application runs against by checking to see the connection adapters that your Gemfile attempts to pull in. The detected database and gem combinamtion is as follows:
+Snap will attempt to detect the database your application runs against by checking to see the connection adapters that your Gemfile attempts to pull in. The detected database and gem combination is as follows:
 
 <section>
   <h2>Postgresql</h2>

@@ -1,0 +1,32 @@
+---
+layout: topic
+title:  "Setup Tasks"
+---
+
+When you set up your build on Snap, you will usually have some tasks that are common to most stages.
+These tasks are usually the one's that setup the right environment required for your build to run.
+Common examples could be installing your build dependencies, setting up the database, etc.
+Instead of re-writing these tasks before every stage, Snap allows you to extract such tasks out in something 
+we call Setup Tasks. A Setup Task is a command that is runs before every stage.
+
+
+You can create Setup Tasks when you create a project or by editing the project configuration. To add a Setup Task, 
+edit an existing stage or click on ADD NEW stage.
+
+![Add New Stage](/assets/images/screenshots/setup-tasks/add-new-stage.png)
+
+Then click on Add Setup Task.
+
+![Add Setup Task](/assets/images/screenshots/setup-tasks/edit-stage.png)
+
+Add your Setup Task and hit Ok.
+
+![Save your Setup Task](/assets/images/screenshots/setup-tasks/add-setup-task.png)
+
+## Speeding up your setup tasks
+
+One of the most common use-case for setup tasks is to install your build dependencies.
+You can speed the process of installation by installing them in the home directory. As you can see in the 
+above example we added a setup task that does a `bundle install --path $HOME/.bundle`.
+Snap makes a best attempt to keep the home directory around across your stage and build runs. So if you configure 
+your setup task to install your build tools in the home directory, your subsequent stages can then re-use it.
