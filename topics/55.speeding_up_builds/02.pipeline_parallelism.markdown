@@ -7,6 +7,12 @@ Pipelines are capable of running in parallel. Snap-CI applies an algorithm
 which we call "Diagonal Parallelism" when builds in parallel happen on the same
 project.
 
+
+> **When running in parallel, builds will run on multiple machines which may or
+not have all data and configuration needed. Use {% topic_link "Setup Tasks" "Setup Tasks" %}
+to ensure that all stages are setup properly to run your pipeline.**
+
+
 ## Diagonal Parallelism
 
 When building the same project in parallel Snap-CI will enforce two rules:

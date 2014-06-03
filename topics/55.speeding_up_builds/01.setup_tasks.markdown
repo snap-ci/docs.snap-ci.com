@@ -10,7 +10,6 @@ When you set up your build on Snap, you will usually have some tasks that are co
 
 <br/>
 
-
 A rails project may typically include 2 setup tasks:
 
     $ bundle install --path $HOME/.bundle
@@ -31,8 +30,11 @@ Add your Setup Task and hit Ok.
 
 ## Speeding up your setup tasks
 
-One of the most common use-case for setup tasks is to install your build dependencies. Every project has its own 
-home directory. You can speed the process of installation by installing them in the home directory. As you can see in the
-above example we added a setup task that does a `bundle install --path $HOME/.bundle`.
-Snap makes a best attempt to keep the home directory around across your stage and build runs. So if you configure
-your setup task to install your build tools in the home directory, your subsequent stages and pipelines can re-use it.
+One of the most common use-case for setup tasks is to install your build
+dependencies. Every project has its own home directory. You can speed the
+process of installation by installing them in the home directory. As you can
+see in the above example we added a setup task that does a `bundle install
+--path $HOME/.bundle`.  Snap makes a best attempt to keep the home directory
+around across your stage and build runs. So if you configure your setup task to
+install your build tools in the home directory, your subsequent stages and
+pipelines can re-use it.
