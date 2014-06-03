@@ -3,7 +3,13 @@ layout: topic
 title:  "Setup Tasks"
 ---
 
-When you set up your build on Snap, you will usually have some tasks that are common to most stages. Typically these tasks will setup the right environment required for your any stage to run. Common examples include installing your build dependencies, setting up the database, etc. Instead of re-writing these tasks before every stage, Snap allows you to extract such tasks out in something we call *Setup Tasks*. A Setup Task is a command that is runs before every stage.
+When you set up your build on Snap, you will usually have some tasks that are common to most stages. Typically these tasks will setup the right environment required for your any stage to run. Common examples include installing your build dependencies, setting up the database, etc. Instead of re-writing these tasks before every stage, Snap allows you to extract such tasks out in something we call *Setup Tasks*.
+
+<br/>
+> **A Setup Task is a command that is runs before every stage.**
+
+<br/>
+
 
 A rails project may typically include 2 setup tasks:
 
@@ -25,8 +31,8 @@ Add your Setup Task and hit Ok.
 
 ## Speeding up your setup tasks
 
-One of the most common use-case for setup tasks is to install your build dependencies.
-You can speed the process of installation by installing them in the home directory. As you can see in the
+One of the most common use-case for setup tasks is to install your build dependencies. Every project has its own 
+home directory. You can speed the process of installation by installing them in the home directory. As you can see in the
 above example we added a setup task that does a `bundle install --path $HOME/.bundle`.
 Snap makes a best attempt to keep the home directory around across your stage and build runs. So if you configure
-your setup task to install your build tools in the home directory, your subsequent stages can then re-use it.
+your setup task to install your build tools in the home directory, your subsequent stages and pipelines can re-use it.
