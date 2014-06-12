@@ -65,6 +65,8 @@ task :detect_versions do
   end
 
   versions['ruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^ruby-[0-9]+' | sort)].strip.gsub('ruby-', '').split
+  versions['jruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^jruby-[0-9]+' | sort)].strip.gsub('jruby-', '').split
+  versions['default_java'] = %x[java -version].strip.first
   versions['nodejs'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^nodejs-[0-9]+' | sort)].strip.gsub('nodejs-', '').split
   versions['python'] = %x[rpm -q --queryformat '%{VERSION} ' $(rpm -qa | egrep '^python-[0-9]+' | sort)].strip.split
 
