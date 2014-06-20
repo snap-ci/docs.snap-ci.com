@@ -23,7 +23,7 @@ Snap currently supports the following build tools and libraries. There would oft
 * libxml2 - {{ site.versions.libxml2 }}
 * libxslt - {{ site.versions.libxslt }}
 * ImageMagick - {{ site.versions.ImageMagick }}
-* QT - {{ site.versions['qt48-qt'] }}
+* QT - {{ site.versions['qt5-qtbase'] }}
 
 ### Relational Databases
 
