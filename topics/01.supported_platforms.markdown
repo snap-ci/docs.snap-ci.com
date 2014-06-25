@@ -3,7 +3,7 @@ layout: topic
 title:  "Supported Platforms"
 ---
 
-Snap currently supports the following build tools and libraries. There would often be times when your local configuration is different from the one we describe here. Please [contact us]({{ site.link.contact_us }}) if you'd like for us to provide something not listed here.
+Snap currently supports the following build tools and libraries. There would often be times when your local configuration is different from the one we describe here. Snap provides limited `sudo` access, so you may install your favourite package using `sudo yum install --assumeyes your-package-name`.
 
 ### Operating System
 

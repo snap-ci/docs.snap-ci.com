@@ -3,6 +3,12 @@ layout: topic
 title:  "FAQ"
 ---
 
+## I need a package to be installed on Snap. Can I do that?
+
+Absolutely! Snap supports limited `sudo` access. You may install your favorite package by configuring a setup task to install the package you need `sudo yum install --assumeyes package-name`
+
+Base CentOS and EPEL repositories are already on the systems, but if you'd like other repositories to be enabled, you can do so. For e.g. to enable the popular *Les RPM de Remi* repository `sudo yum install --assumeyes http://rpms.famillecollet.com/enterprise/remi-release-6.rpm`
+
 ## Do you support language X?
 
 We currently support Ruby, NodeJS and Java. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "supported platforms" "supported platforms" %} for more on the specifics for each platform.
