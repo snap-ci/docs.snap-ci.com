@@ -7,15 +7,3 @@ markdown: rdiscount
 
 link:
   contact_us: https://snap-ci.com/contact-us
-
-versions:
- openjdk:
- - 6
- - 7
- sunjdk:
- - 6
- - 7
- ruby:
- - 2
- - 8
- - 9
