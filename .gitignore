@@ -10,3 +10,4 @@ tmp/
 s3.cfg
 s3cmd-1.0.1/
 vendor/bundle
+.idea
