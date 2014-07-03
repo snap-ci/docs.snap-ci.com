@@ -1,13 +1,13 @@
 ---
 layout: topic
-title:  "Automatically tracking branches on Github"
+title:  "Automatic branch tracking"
 ---
 
 Snap can automatically create a pipeline for you when you create a branch in Github. This feature is available through the project configuration screen's header action to track branches.
 
 ![automatic tracking setup](/assets/images/screenshots/integration-pipelines/header-action.png)
 
-When configuring automatic branch tracking, you can specify a couple of different things. Specifically, 
+When configuring automatic branch tracking, you can specify a couple of different things. Specifically,
 
 * Any branch name prefixes, if you want only branches with specific naming patterns to trigger a new pipeline creation. If not specified, any new branch will create a pipeline.
 * Create pipelines for all existing branches (with the optional name prefix). If this is left unchecked, Snap will only trigger new pipeline creation for all branches created in the future

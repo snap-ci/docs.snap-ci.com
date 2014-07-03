@@ -3,7 +3,7 @@ layout: topic
 title:  "Integration pipelines"
 ---
 
-Integration pipelines provide additional information for builds which track pipelines that are intended to be merged into a target branch (master) at some point in their lifecycle. Typically these are short lived feature branches or bug fix branches which are meant to merge quickly into a master branch. While this feature is best used in conjunction with the {% topic_link "Automatically tracking branches on Github" 'automatic branch tracking' %} feature, it is available when setting up any branch build using the {% topic_link "Cloning a pipeline" 'clone functionality' %}.
+Integration pipelines provide additional information for builds which track pipelines that are intended to be merged into a target branch (master) at some point in their lifecycle. Typically these are short lived feature branches or bug fix branches which are meant to merge quickly into a master branch. While this feature is best used in conjunction with the {% topic_link "automatic branch tracking" 'automatic branch tracking' %} feature, it is available when setting up any branch build using the {% topic_link "Cloning a pipeline" 'clone functionality' %}.
 
 ## Setting up an integration pipeline when creating a clone
 
