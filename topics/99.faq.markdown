@@ -24,12 +24,3 @@ We currently support MySQL, PostgreSQL and SQLite3. You can also use external se
 ## Do you support deployments to platform X?
 
 We currently support out-of-the-box deployments to Heroku. However, most platforms support deployment using some CLI tools. You can configure a stage in Snap to invoke these tools or scripts to perform deployments. We have teams deploying to HP Cloud, Amazon AWS and other platforms using Snap.
-
-## How are my builds isolated from other user's builds?
-
-{% coming_soon %}
-
-## Does the X-Window system run by default?
-
-{% coming_soon %}
-
