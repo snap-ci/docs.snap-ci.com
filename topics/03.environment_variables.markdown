@@ -1,6 +1,6 @@
 ---
 layout: topic
-title:  "Environment Variables"
+title:  "Environment Variables set by Snap"
 ---
 
 Snap exports a number of environment variables during each build, which you may find useful during your build:
