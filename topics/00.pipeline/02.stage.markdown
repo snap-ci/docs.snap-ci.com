@@ -1,0 +1,20 @@
+---
+layout: topic
+title: "Stage"
+---
+
+A {% topic_link "Introduction" "Deployment Pipeline" %} is composed of a number of stages. 
+
+<br/>
+> **Each stage consists of set of tasks/commands which are run to accomplish a specific purpose.**
+
+<br/>
+
+The stages can either be test stages each evaluating the build from a different perspective or deployment
+stages which deploy your application to specific environments.
+
+## Stages in Snap
+
+In Snap every stage runs in a **clean and isolated environment**. So, if you set any state in the previous stage it may not
+be available in the subsequent stages. If you want to set such states you should either use {% topic_link "Build Artifacts" "Build Artifacts" %}
+or {% topic_link "Setup Tasks" "Setup Tasks" %}.
