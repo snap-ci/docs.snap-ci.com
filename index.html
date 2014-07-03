@@ -6,25 +6,11 @@ layout: home
 <p>Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are</p>
 
 <ul>
-  <li>Sign in and grant access to Snap to build your project</li>
-  <li>Select a project</li>
-  <li>Configure one or more Heroku deployments</li>
+  <li>Sign in and grant access to Snap</li>
+  <li>Select a repository</li>
+  <li>Configure a build pipeline for it</li>
 </ul>
 
-<p>Once you select a project, Snap automatically runs a set of heuristics on your project to determine an appropriate build pipeline for you. While you can tweak and customize this significantly, the default should be sufficient to get you started.</p>
-
-<h2>
-  Build and deployment pipelines
-  <a class="anchor" href="#build-and-deployment-pipelines">
-    <i class="icon icon-link"></i>
-  </a>
-</h2>
-
-Snap differs from many of the other tools you may be familiar with in that it sets up a deployment pipeline. As defined by <a href="http://jezhumble.net/">Jez Humble</a>, author of <a href="http://www.amazon.com/dp/0321601912?tag=contindelive-20">Continuous Delivery</a>, a Deployment Pipeline is defined as follows:
-
-<p><em>"At an abstract level, a deployment pipeline is an automated manifestation of your process for getting software from version control into the hands of your users."</em></p>
-
-<p>A deployment pipeline can be as simple or complex as the process you are trying to model. The simplest ones are a linear sequence of stages which proceed from left to right triggered by changes from a single version control system. Each change propagates through the stages of the pipeline; each stage taking slightly more time to provide successively higher levels of feedback in environments that are progressively more production like. Each stage may publish artifacts and the these artifacts can propagate through the pipeline for use by future stages.</p>
-
-{% img '/assets/images/screenshots/pipelines-with-deployment.png' %}
-
+<p>Once you select a repository, Snap automatically runs a set of heuristics on your repository to determine an appropriate {% topic_link "Introduction" "Deployment Pipeline" %} for you.
+ While you can tweak and customize this significantly, the default should be sufficient to get you started.
+ Have a look at the {% topic_link "Supported Platforms" "Supported Platforms" %} to see what the languages Snap supports.</p>

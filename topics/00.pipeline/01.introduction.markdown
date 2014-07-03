@@ -1,0 +1,14 @@
+---
+layout: topic
+title:  "Introduction"
+---
+
+Snap differs from many of the other tools you may be familiar with in that it sets up a deployment pipeline. As defined by <a href="http://jezhumble.net/">Jez Humble</a>, author of <a href="http://www.amazon.com/dp/0321601912?tag=contindelive-20">Continuous Delivery</a>, a Deployment Pipeline is defined as follows:
+
+<p><em>"At an abstract level, a deployment pipeline is an automated manifestation of your process for getting software from version control into the hands of your users."</em></p>
+
+## Why do you need Deployment Pipeline?
+
+<p>A deployment pipeline can be as simple or complex as the process you are trying to model. The simplest ones are a linear sequence of stages which proceed from left to right triggered by changes from a single version control system. Each change propagates through the stages of the pipeline; each stage taking slightly more time to provide successively higher levels of feedback in environments that are progressively more production like. Each stage may publish artifacts and the these artifacts can propagate through the pipeline for use by future stages.</p>
+
+{% img '/assets/images/screenshots/pipelines-with-deployment.png' %}
