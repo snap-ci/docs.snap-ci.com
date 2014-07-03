@@ -1,6 +1,0 @@
----
-layout: topic
-title:  "For Ruby Gems"
----
-
-If we find a *gemspec* file under the project root, Snap will configure a pipeline with up to 2 stages- comprising of the *FastFeedback* stage and the *Javascript tests* based on the same conditions as {% topic_link "For Rails Projects" "for Rails projects" %}.
