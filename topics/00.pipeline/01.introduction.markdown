@@ -9,6 +9,6 @@ Snap differs from many of the other tools you may be familiar with in that it se
 
 ## Why do you need Deployment Pipeline?
 
-<p>A deployment pipeline can be as simple or complex as the process you are trying to model. The simplest ones are a linear sequence of stages which proceed from left to right triggered by changes from a single version control system. Each change propagates through the stages of the pipeline; each stage taking slightly more time to provide successively higher levels of feedback in environments that are progressively more production like. Each stage may publish artifacts and the these artifacts can propagate through the pipeline for use by future stages.</p>
+<p>A deployment pipeline is usually a linear sequence of stages which proceed from left to right triggered by changes from a single version control system. Each change propagates through the stages of the pipeline; each stage taking slightly more time to provide successively higher levels of feedback in environments that are progressively more production like. Each stage may publish artifacts and the these artifacts can propagate through the pipeline for use by future stages.</p>
 
 {% img '/assets/images/screenshots/pipelines-with-deployment.png' %}
