@@ -34,7 +34,7 @@ task :detect_versions do
   third_party_tools = %w(heroku-toolbelt s3cmd)
   no_sql_databases  = %w(couchdb redis mongo-10gen)
   languages         = %w()
-  browser_tools     = %w(phantomjs google-chrome-stable firefox)
+  browser_tools     = %w(phantomjs google-chrome-stable google-chrome-driver firefox)
 
   rpms = development_tools + development_libs + sql_sdatabases + no_sql_databases + languages + third_party_tools + browser_tools
 

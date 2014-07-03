@@ -12,7 +12,7 @@ Snap exports a number of environment variables during each build, which you may 
 
 ## X-Server
 
-* ``DISPLAY`` - the display variable in case your build performs any GUI testing (web browsers, for e.g.). Snap ensures that `xvfb` is already running with a resolution of `1280x1024x16`
+* ``DISPLAY`` - the display variable in case your build performs any GUI testing (web browsers, for e.g.). Snap ensures that `xvfb` is already running with a resolution of `1280x1024x16`. If you're running GUI testing tools, you may want to checkout our guide on {% topic_link "Testing with browsers" "browser testing" %}.
 
 ## Language and Locale settings:
 
