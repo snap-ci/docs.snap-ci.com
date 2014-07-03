@@ -1,6 +1,0 @@
----
-layout: topic
-title:  "Glossary"
----
-
-{% coming_soon %}
