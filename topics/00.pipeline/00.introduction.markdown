@@ -1,6 +1,6 @@
 ---
 layout: topic
-title:  "Deployment Pipeline"
+title:  "Introduction"
 ---
 
 Snap differs from many of the other tools you may be familiar with in that it sets up a deployment pipeline. As defined by <a href="http://jezhumble.net/">Jez Humble</a>, author of <a href="http://www.amazon.com/dp/0321601912?tag=contindelive-20">Continuous Delivery</a>, a Deployment Pipeline is defined as follows:
@@ -41,8 +41,6 @@ or {% topic_link "Setup Tasks" "Setup Tasks" %}.
 > **A task is a command run on the build machine.**
 
 <br/>
-
-## Tasks in Snap
 
 Every task in Snap runs in its own shell. Due to this, if you export an environment variable in a previous task, it may not be available in the subsequent tasks.
 We recommend using <a href="/pipeline/#Environment-Variable">Environment Variables</a> for exporting environment variables to your builds.
