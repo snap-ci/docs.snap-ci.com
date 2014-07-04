@@ -12,6 +12,18 @@ $(function(){
 
     var id = cname(current);
     current.attr("id", id);
-    current.append(' <a class=\"toc-anchor\" href=\"#' + encodeURIComponent(id) + '\">#</a>');
+    current.attr('has-anchor', true);
+    var anchorLink = $('<a class=\"toc-anchor\" href=\"#' + encodeURIComponent(id) + '\">#</a>');
+    anchorLink.hide();
+    current.append(anchorLink);
+
+    current.on('mouseenter', function(){
+      anchorLink.show();
+    });
+
+    current.on('mouseleave', function(){
+      anchorLink.hide();
+    })
+
   });
 });

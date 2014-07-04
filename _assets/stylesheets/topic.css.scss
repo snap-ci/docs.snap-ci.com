@@ -16,6 +16,11 @@
   .topic-container {
     left: 25%;
     background-color: #F9F9F9;
+    .toc-anchor {
+      padding-left: 10px;
+      color: #575757;
+      font-weight: bold;
+    }
   }
 
   .topic, .sidebar {
