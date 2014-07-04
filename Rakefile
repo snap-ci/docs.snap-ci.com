@@ -89,6 +89,9 @@ task :detect_versions do
 
   config['versions'] = versions
   config['packages'] = packages
+  config['assets'] ||= {}
+  config['assets']['js_compressor'] = 'uglifier'
+  config['assets']['css_compressor'] = 'sass'
 
   File.open("_config_with_version.yaml", 'w') {|f| f.puts config.to_yaml}
 

@@ -5,6 +5,7 @@ gem "jekyll"
 gem 'jekyll-assets'
 gem 'saas'
 gem 'compass'
+gem 'uglifier'
 
 gem 'jekyll-sitemap'
 gem 'rdiscount'
