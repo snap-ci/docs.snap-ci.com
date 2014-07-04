@@ -1,7 +1,7 @@
 $(function(){
   var cname = function(current) {
     var name = current.text();
-    return name.replace(/[ \/<>]/g, '-').replace(/:$/, '');
+    return name.replace(/[ \/<>]/g, '-').replace(/:$/, '').replace(/\?/, '');
   }
 
   // do not setup h1, h2 here because nested links are not handled properly.
