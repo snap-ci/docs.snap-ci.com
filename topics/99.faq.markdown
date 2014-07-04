@@ -11,15 +11,15 @@ Base CentOS and EPEL repositories are already on the systems, but if you'd like 
 
 ## Do you support language X?
 
-We currently support Ruby, NodeJS and Java. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "supported platforms" "supported platforms" %} for more on the specifics for each platform.
+We currently support Ruby, NodeJS and Java. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "The CI Environment" "the CI environment" %} for more on the specifics for each platform.
 
 ## Can I get a specific version of a language or build tool?
 
-See {% topic_link "supported platforms" "supported platforms" %} for the list of versions we support. If your version is not listed,  please [contact us]({{ site.link.contact_us }})
+See {% topic_link "The CI Environment" "the CI environment" %} for the list of versions we support. If your version is not listed,  please [contact us]({{ site.link.contact_us }})
 
 ## Do you support database X?
 
-We currently support MySQL, PostgreSQL and SQLite3. You can also use external services such as MongoHQ easily. We plan to add support for a few other data-stores very soon. If you'd like to see your favorite database on that list, then [contact us]({{ site.link.contact_us }}). See {% topic_link "supported platforms" "supported platforms" %} for what is supported.
+We currently support MySQL, PostgreSQL and SQLite3. You can also use external services such as MongoHQ easily. We plan to add support for a few other data-stores very soon. If you'd like to see your favorite database on that list, then [contact us]({{ site.link.contact_us }}). See {% topic_link "The CI Environment" "the CI environment" %}} for what is supported.
 
 ## Do you support deployments to platform X?
 

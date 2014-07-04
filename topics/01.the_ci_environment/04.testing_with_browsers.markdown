@@ -5,7 +5,15 @@ title:  "Testing with browsers"
 
 This guide documents functional testing using headless and browser testing tools provided by Snap.
 
-Snap runs `xvfb` with a resolution of `1280x1024x16` and makes a `DISPLAY` variable available to your builds. If you're running GUI testing tools, you may want to checkout our guide on {% topic_link "Testing with browsers" "browser testing" %}.
+Snap runs `xvfb` with a resolution of `1280x1024x16` and makes a `DISPLAY` variable available to your builds.
+
+The following testing tools and browsers are available on the CI environment:
+
+* phantomjs - {{ site.versions.phantomjs }}
+* google-chrome - {{ site.versions['google-chrome-stable'] }}
+* google-chrome-driver - {{ site.versions['google-chrome-driver'] }}
+* firefox - {{ site.versions.firefox }}
+
 
 # Using PhantomJS
 
