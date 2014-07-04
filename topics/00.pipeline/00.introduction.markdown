@@ -25,7 +25,7 @@ stages which deploy your application to specific environments.
 ## Stages in Snap
 
 Every stage in Snap runs in a **clean and isolated environment**. Any state that a stage sets up may not be available in subsequent stage. You must therefore consider using <a href="#artifact">artifacts</a>
-or {% topic_link "Setup Tasks" "Setup Tasks" %} to keep state across stages.
+or {% topic_link "Pinning Commands" "Setup Commands" %} to keep state across stages.
 
 # Task
 
