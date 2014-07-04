@@ -1,0 +1,52 @@
+---
+layout: topic
+title:  "Deployment Pipeline"
+---
+
+Snap differs from many of the other tools you may be familiar with in that it sets up a deployment pipeline. As defined by <a href="http://jezhumble.net/">Jez Humble</a>, author of <a href="http://www.amazon.com/dp/0321601912?tag=contindelive-20">Continuous Delivery</a>, a Deployment Pipeline is defined as follows:
+
+<br/>
+> **At an abstract level, a deployment pipeline is an automated manifestation of your process for getting software from version control into the hands of your users.**
+
+<br/>
+
+# Why do you need Deployment Pipeline?
+
+A deployment pipeline is usually a linear sequence of <a href="/pipeline/#Stage">stages</a> which proceed from left to right triggered by changes from a single version control system. Each change propagates through the stages of the pipeline; each stage taking slightly more time to provide successively higher levels of feedback in environments that are progressively more production like. Each stage may publish artifacts and the these artifacts can propagate through the pipeline for use by future stages.
+
+{% image screenshots/pipelines-with-deployment.png %}
+
+# Stage
+
+<br/>
+> **Each stage consists of set of <a href="/pipeline/#Task">tasks</a> which are run to accomplish a specific purpose.**
+
+<br/>
+
+Stages may also contain <a href="/pipeline/#Environment-Variable">Environment Variables</a> that can be
+used by the tasks and may also generate {% topic_link "Build Artifacts" "Artifacts" %} which can be used by subsequent stages.
+
+The stages can either be test stages each evaluating the build from a different perspective or deployment
+stages which deploy your application to specific environments.
+
+## Stages in Snap
+
+In Snap every stage runs in a **clean and isolated environment**. So, if you set any state in the previous stage it may not
+be available in the subsequent stages. If you want to set such states you should either use {% topic_link "Build Artifacts" "Build Artifacts" %}
+or {% topic_link "Setup Tasks" "Setup Tasks" %}.
+
+# Task
+
+<br/>
+> **A task is a command run on the build machine.**
+
+<br/>
+
+## Tasks in Snap
+
+Every task in Snap runs in its own shell. Due to this, if you export an environment variable in a previous task, it may not be available in the subsequent tasks.
+We recommend using <a href="/pipeline/#Environment-Variable">Environment Variables</a> for exporting environment variables to your builds.
+
+# Environment Variable
+
+You can define the environment variables required by your tasks in the environment variable section of the stage.
