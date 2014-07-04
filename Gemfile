@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem "jekyll", ">=1.0.3"
-gem 'jekyll-asset-pipeline'
+gem "jekyll"
+gem 'jekyll-assets'
 gem 'saas'
 gem 'compass'
 
-gem 'activesupport'
-gem 'builder'
+gem 'jekyll-sitemap'
 gem 'rdiscount'
+gem 'builder'

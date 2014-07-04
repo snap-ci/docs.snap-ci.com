@@ -9,9 +9,9 @@ module Jekyll
     def generate(site)
       with_new_sidebar_block do |sidebar|
         emit_new_listing(topic_root, sidebar, site)
-      end  
+      end
     end
-    
+
     private
     def with_new_sidebar_block(&block)
       File.open(OUTPUT_FILENAME, 'w') do |sidebar_include|
@@ -21,7 +21,7 @@ module Jekyll
         end
       end
     end
-    
+
     def emit_new_listing(topic_folder, sidebar, site)
       sidebar.ul(:class => 'topic-listing') do
         emit_children_listing(topic_folder, sidebar, site)
@@ -42,7 +42,7 @@ module Jekyll
         sidebar.a(topic_page.data['title'], :href => topic_page.url)
       end
     end
-    
+
     def emit_children_listing(topic_folder, sidebar, site)
       emit_section_element(section_name(topic_folder), sidebar) do
         if topic_folder == topic_root
@@ -59,16 +59,16 @@ module Jekyll
         end
       end
     end
-    
+
     def section_name(topic_folder)
       return '' if topic_folder == topic_root
       topic_folder.basename.to_s.gsub(/^\d+\./, '').gsub('_', ' ')
     end
-    
+
     def topic_root
       Pathname.new("topics")
     end
-    
+
     def page_at_location(site, path)
       site.pages.detect do |page|
         page_path = page.respond_to?(:topic_path) ? page.topic_path : page.path

@@ -1,9 +1,9 @@
 name: snappy blog title
 url: http://docs.snap-ci.com
-pygments: true
+highlighter: pygments
 safe: false
 exclude: ['Gemfile', 'Gemfile.lock', 'vendor', 'README', 'Rakefile']
-markdown: rdiscount
+markdown: kramdown
 
 link:
   contact_us: https://snap-ci.com/contact-us

@@ -13,11 +13,11 @@ Artifacts are the outputs produced by a stage. These may the output of tests (su
    </a>
 </h2>
 
-{% img '/assets/images/screenshots/configuring-artifacts.png' %}
+{% image screenshots/configuring-artifacts.png %}
 
 When configuring a stage, you can configure multiple directories as artifacts. The contents of each of these directories can then be downloaded from the build history page.
 
-{% img '/assets/images/screenshots/artifact-download.png' %}
+{% image screenshots/artifact-download.png %}
 
 <h2>
   Propagating artifacts

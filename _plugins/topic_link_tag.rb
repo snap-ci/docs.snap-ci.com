@@ -4,7 +4,7 @@ class TopicLink < Liquid::Tag
 
   def initialize(tagName, markup, tokens)
     super
-    
+
     raise "Invalid syntax: #{markup}" unless markup.strip =~ SYNTAX
     @topic_name, @link_text = unquote($1.strip), unquote(($5 || '').strip)
   end
