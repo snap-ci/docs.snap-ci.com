@@ -153,10 +153,13 @@
     }
 
     blockquote {
-      padding: 12px 12px;
+      padding: 6px 12px;
+      margin: 12px 12px;
       border-left: 4px solid #575757;
       font-family: 'RobotoRegular';
       font-size: 14px;
+      background-color: darken(#F9F9F9, 5%);
+      width: 60%;
     }
   }
 }
