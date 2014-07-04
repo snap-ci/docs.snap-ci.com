@@ -5,43 +5,33 @@ title:  "Introduction"
 
 Snap differs from many of the other tools you may be familiar with in that it sets up a deployment pipeline. As defined by <a href="http://jezhumble.net/">Jez Humble</a>, author of <a href="http://www.amazon.com/dp/0321601912?tag=contindelive-20">Continuous Delivery</a>, a Deployment Pipeline is defined as follows:
 
-<br/>
 > **At an abstract level, a deployment pipeline is an automated manifestation of your process for getting software from version control into the hands of your users.**
 
-# Why do you need Deployment Pipeline?
+# Why do you need a Deployment Pipeline?
 
-A deployment pipeline is usually a linear sequence of <a href="/pipeline/introduction/introduction/#Stage">stages</a> which proceed from left to right triggered by changes from a single version control system. Each change propagates through the stages of the pipeline; each stage taking slightly more time to provide successively higher levels of feedback in environments that are progressively more production like. Each stage may publish artifacts and the these artifacts can propagate through the pipeline for use by future stages.
+A deployment pipeline is a sequence of <a href="#stage">stages</a> which proceed from left to right. It is triggered by changes from a version control system. Each change propagates through the stages of the pipeline. Each stage provides higher level of confidence as code is deployed and tested in environments that are progressively more production like. Each stage may publish <a href="#artifact">artifacts</a> and the these artifacts can propagate through the pipeline for use by future stages.
 
 {% image screenshots/pipelines-with-deployment.png %}
 
 # Stage
 
-<br/>
-> **Each stage consists of set of <a href="/pipeline/introduction/#Task">tasks</a> which are run to accomplish a specific purpose.**
+> **Each stage consists of set of <a href="task">tasks</a> which are run to accomplish a specific purpose.**
 
-<br/>
-
-Stages may also contain <a href="/pipeline/introduction/#Environment-Variable">Environment Variables</a> that can be
-used by the tasks and may also generate <a href="/pipeline/introduction/#Artifact">Artifacts</a> which can be used by subsequent stages.
+Stages may also contain <a href="#environment-variable">environment variables</a> that may be required by the tasks. Stages may also generate <a href="#artifact">artifacts</a> which may be used by subsequent stages.
 
 The stages can either be test stages each evaluating the build from a different perspective or deployment
 stages which deploy your application to specific environments.
 
 ## Stages in Snap
 
-In Snap every stage runs in a **clean and isolated environment**. So, if you set any state in the previous stage it may not
-be available in the subsequent stages. If you want to set such states you should either use <a href="/pipeline/introduction/#Artifact">Artifacts</a>
-or {% topic_link "Setup Tasks" "Setup Tasks" %}.
+Every stage in Snap runs in a **clean and isolated environment**. Any state that a stage sets up may not be available in subsequent stage. You must therefore consider using <a href="#artifact">artifacts</a>
+or {% topic_link "Setup Tasks" "Setup Tasks" %} to keep state across stages.
 
 # Task
 
-<br/>
 > **A task is a command run on the build machine.**
 
-<br/>
-
-Every task in Snap runs in its own shell. Due to this, if you export an environment variable in a previous task, it may not be available in the subsequent tasks.
-We recommend using <a href="/pipeline/introduction/#Environment-Variable">Environment Variables</a> for exporting environment variables to your builds.
+Every task in Snap runs in its own shell. Due to this, if you export an environment variable in a previous task, it may not be available in the subsequent tasks. We recommend using <a href="environment-variable">environment variables</a> for exporting environment variables to your builds.
 
 # Environment Variable
 
@@ -49,10 +39,9 @@ You can define the environment variables required by your tasks in the environme
 
 # Artifact
 
-Artifacts are the outputs produced by a stage. These may the output of tests (such as console logs, screenshots of failures etc.),
-the output of tools (coverage reports, dependency charts etc.) or build artifacts such as gems, wars, jars, rpms etc.
-With Snap, you can configure the output of any project directory as an artifact and the content of that directory will be packaged up as an archive and be made available as a download.
+Artifacts are the outputs produced by a stage. These may include binary artifacts (jar, gem), console logs, test coverage reports etc.
+Snap allows you to configure any directory as an artifact of a stage. This artifact will be made available to the next stage if there is one and will also be made available as a download to collaborators.
 
 ## Propagating artifacts
 
-One of the key advantages of a pipeline is the fact that generated artifacts are not just available for download, but are also available for subsequent stages. For example, a gem generated by a rake task in the first stage of a pipeline can be installed and tested in subsequent stages and finally uploaded to http://rubygems.org/ in the final stage. The key here is that the gem is not rebuilt every time. It is the exact same binary. The same binary that was generated when the unit tests passed is propagated to subsequent stages for installation, verification and finally for upload.
+One of the advantages of a pipeline is that generated artifacts are not just available for download, but are also made available to subsequent stages. This allows you to build binaries only once, and increase confidence in the binary with each subsequent stage. This also gurantees that you are deploying the exact same binary to an environment that you tested with.
