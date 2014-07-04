@@ -7,19 +7,18 @@ Snap provides two ways of doing deployments to Heroku, 'Basic' and 'Custom'.
 
 If you choose to use the 'Basic' deploy Snap will do all the work for you. We only need you to select which app is being deployed or give us a name if it is a new one. On the 'Custom' deployment, you can write you own deploy tasks making full use of the [Heroku CLI](https://devcenter.heroku.com/categories/command-line).
 
-## Credentials
+# Credentials
 
 We need you to provide us access to your apps in order to do the deploy. To do this, simply click on 'Heroku Credentials'.
 
-<p>{% image screenshots/heroku/missing-credentials.png %}</p>
+{% image screenshots/heroku/missing-credentials.png %}
 
 You will be redirected to Heroku and after a sucessfull authentication your credentials will be available on Snap. Please notice that the same credentials can be used in any repository that you collaborate on.
 
-<br/>
 > **Note:**
 > For custom deployment you don't need to run `heroku login` before running any heroku commands as you have already authorised Snap.
 
-## Configuration variables
+# Configuration variables
 
 You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
 
@@ -39,5 +38,3 @@ The workaround to capture the exit status is the following:
 <code>buffer_file=/tmp/last_heroku_run; heroku run --app 'APP_NAME' 'YOUR_COMMAND; echo $?' | tee $buffer_file; exit &#x60;tail -1 $buffer_file&#96;</code>
 
 You can read more about this issue [here](https://github.com/heroku/heroku/issues/186).
-
-<br/>
