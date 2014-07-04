@@ -10,6 +10,6 @@ For any project building running on Snap, a user who is a collaborator on the re
 
 * Click on **Configuration > Collaborators** link on the build history page to configure your project.
 * We'll list the existing collaborators. To force a sync, click **Sync with GitHub**
-  <p>![Invite Collaborators Dialog](/assets/images/screenshots/invite-collaborators-dialog.png)</p>
+  <p>{% image screenshots/invite-collaborators-dialog.png %}</p>
 * Once the collaborators have been synced, we'll list the changes we've made.
-  <p>![Invite Collaborators Dialog](/assets/images/screenshots/invite-collaborators-changes-dialog.png)</p>
+  <p>{% image screenshots/invite-collaborators-changes-dialog.png %}</p>

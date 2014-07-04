@@ -18,15 +18,15 @@ A rails project may typically include 2 setup tasks:
 You can create Setup Tasks when you create a project or by editing the project configuration. To add a Setup Task,
 edit an existing stage or click on ADD NEW stage.
 
-![Add New Stage](/assets/images/screenshots/setup-tasks/add-new-stage.png)
+{% image screenshots/setup-tasks/add-new-stage.png %}
 
 Then click on Add Setup Task.
 
-![Add Setup Task](/assets/images/screenshots/setup-tasks/edit-stage.png)
+{% image screenshots/setup-tasks/edit-stage.png %}
 
 Add your Setup Task and hit Ok.
 
-![Save your Setup Task](/assets/images/screenshots/setup-tasks/add-setup-task.png)
+{% image screenshots/setup-tasks/add-setup-task.png %}
 
 ## Speeding up your setup tasks
 

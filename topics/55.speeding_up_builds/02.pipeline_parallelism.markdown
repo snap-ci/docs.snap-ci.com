@@ -22,7 +22,7 @@ When building the same project in parallel Snap-CI will enforce two rules:
 
 Bellow an example of diagonal parallelism being enforced:
 
-![Diagonal Parallelism](/assets/images/screenshots/diagonal-parallelism.png)
+{% image screenshots/diagonal-parallelism.png %}
 
 These rules are enforced so that in a continuous deployment scenario the order
 which pipelines will finish is predictable. Also two same stages will not run
@@ -36,5 +36,5 @@ bellow pipeline **#172** is still running its Acceptance stage, pipelines
 proceed. However pipelines of your other projects are still capable to run,
 your wait time doesn't account as parallel execution.
 
-![Diagonal Parallelism Wait](/assets/images/screenshots/diagonal-parallel-wait.png)
+{% image screenshots/diagonal-parallel-wait.png %}
 

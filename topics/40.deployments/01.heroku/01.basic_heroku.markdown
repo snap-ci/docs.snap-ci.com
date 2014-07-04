@@ -15,16 +15,16 @@ Snap can deploy Ruby and Rails and Java applications directly to Heroku. Upon su
 
 * Visit the configuration page for your project and click the **Edit** link.
 * Click **Add New** to add a new stage to your build.
-  <p>![Add New](/assets/images/screenshots/heroku/add-new-stage.png)</p>
+  <p>{% image screenshots/heroku/add-new-stage.png %}</p>
 * Select the **Heroku** tab.
-  <p>![Heroku Tab](/assets/images/screenshots/heroku/heroku-tab.png)</p>
+  <p>{% image screenshots/heroku/heroku-tab.png %}</p>
 * Once you click **Basic**, you will be redirected to Heroku. **Allow Access** to complete the authorization of Snap with Heroku.
-  <p style="width:60%">![Heroku OAuth authorize](/assets/images/screenshots/heroku/heroku-oauth-authorize.png)</p>
+  <p style="width:60%">{% image screenshots/heroku/heroku-oauth-authorize.png %}</p>
 * Once you've authorized Snap with heroku:
   * You can select an app to deploy to from the drop-down.
-    <p>![Heroku list apps](/assets/images/screenshots/heroku-list-apps.png)</p>
+    <p>{% image screenshots/heroku-list-apps.png %}</p>
   * Or you can choose to create an new a new app.
-    <p>![Heroku create app](/assets/images/screenshots/heroku-create-app.png)</p>
+    <p>{% image screenshots/heroku-create-app.png %}</p>
 * You can opt to specify a build pack if you wish to customize your deployment. [Read more about build packs on Heroku's site](https://devcenter.heroku.com/articles/buildpacks).
 * Click **save** to save this Heroku deployment configuration.
 
@@ -36,7 +36,7 @@ Once you've authorized Snap with Heroku, setting up subsequent deployments becom
 
 You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
 
-![Heroku configuration variables](/assets/images/screenshots/heroku-deployment-config-vars.png)
+{% image screenshots/heroku-deployment-config-vars.png %}
 
 ## Database migrations
 

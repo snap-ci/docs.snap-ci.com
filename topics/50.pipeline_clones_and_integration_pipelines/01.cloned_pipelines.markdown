@@ -11,9 +11,9 @@ Note: When setting up builds for feature branches or others, consider using an {
 
 * Visit the configuration page of the pipeline you wish to clone.
 * Click on the **clones** link which will bring up the clone dialog.
-  <p>![CloneDialog](/assets/images/screenshots/configure-header-clone-link.png)</p>
+  <p>{% image screenshots/configure-header-clone-link.png %}</p>
 * Select the appropriate **branch** from the first drop down.
 * Select the desired final **stage** from the second drop down.
-  <p>![CloneDialog](/assets/images/screenshots/clone-dialog.png)</p>
+  <p>{% image screenshots/clone-dialog.png %}</p>
 * Review the stages cloned for the new pipeline.
 * Click **Save**.

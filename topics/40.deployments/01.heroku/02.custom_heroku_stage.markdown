@@ -14,11 +14,11 @@ In addition to the basic deployment, Snap also gives you the option to write you
 
 * Visit the configuration page for your project and click the **Edit** link.
 * Click **Add New** to add a new stage to your build.
-  <p>![Add New](/assets/images/screenshots/heroku/add-new-stage.png)</p>
+  <p>{% image screenshots/heroku/add-new-stage.png %}</p>
 * Select the **Heroku** tab.
-  <p>![Heroku Tab](/assets/images/screenshots/heroku/heroku-tab.png)</p>
+  <p>{% image screenshots/heroku/heroku-tab.png %}</p>
 * Once you click **Custom Stage**, you will be redirected to Heroku. **Allow Access** to complete the authorization of Snap with Heroku.
-  <p style="width:60%">![Heroku OAuth authorize](/assets/images/screenshots/heroku/heroku-oauth-authorize.png)</p>
+  <p style="width:60%">{% image screenshots/heroku/heroku-oauth-authorize.png %}</p>
 * Click on **Add Task** and type in your heroku commands. You can also setup **Environment Variables** and **Artifacts** for this stage by navigating to those respective tabs.
 
 <br/>
