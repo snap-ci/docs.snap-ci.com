@@ -5,5 +5,12 @@ safe: false
 exclude: ['Gemfile', 'Gemfile.lock', 'vendor', 'README', 'Rakefile']
 markdown: rdiscount
 
+assets:
+  sources:
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/images
+    - _assets/fonts
+
 link:
   contact_us: https://snap-ci.com/contact-us
