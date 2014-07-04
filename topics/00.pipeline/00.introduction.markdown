@@ -17,7 +17,7 @@ A deployment pipeline is a sequence of <a href="#stage">stages</a> which proceed
 
 > **Each stage consists of set of <a href="task">tasks</a> which are run to accomplish a specific purpose.**
 
-Stages may also contain <a href="#environment-variable">environment variables</a> that may be required by the tasks. Stages may also generate <a href="#artifact">artifacts</a> which may be used by subsequent stages.
+Stages may also contain environment variables that may be required by the tasks in that stage. Stages may also generate <a href="#artifact">artifacts</a> which may be used by subsequent stages.
 
 The stages can either be test stages each evaluating the build from a different perspective or deployment
 stages which deploy your application to specific environments.
@@ -31,11 +31,8 @@ or {% topic_link "Pinning Commands" "Setup Commands" %} to keep state across sta
 
 > **A task is a command run on the build machine.**
 
-Every task in Snap runs in its own shell. Due to this, if you export an environment variable in a previous task, it may not be available in the subsequent tasks. We recommend using <a href="environment-variable">environment variables</a> for exporting environment variables to your builds.
-
-# Environment Variable
-
-You can define the environment variables required by your tasks in the environment variable section of the stage.
+Every task in Snap runs in its own shell. Due to this, if you export an environment variable in a previous task,
+it may not be available in the subsequent tasks. We recommend defining environment variables in the Environment Variable section of the stage.
 
 # Artifact
 
