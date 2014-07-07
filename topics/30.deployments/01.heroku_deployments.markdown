@@ -3,13 +3,13 @@ layout: topic
 title:  "Heroku Deployments"
 ---
 
-Snap provides two ways of doing deployments to Heroku, 'Basic' and 'Custom'.
+Snap provides two ways of doing deployments to Heroku, **Basic** and **Custom**.
 
-If you choose to use the 'Basic' deploy Snap will do all the work for you. We only need you to select which app is being deployed or give us a name if it is a new one. On the 'Custom' deployment, you can write you own deploy tasks making full use of the [Heroku CLI](https://devcenter.heroku.com/categories/command-line).
+If you choose to use the **Basic** deploy Snap will do all the work for you. We only need you to select which app is being deployed or give us a name if it is a new one. On the **Custom** deployment, you can write you own deploy tasks making full use of the [Heroku CLI](https://devcenter.heroku.com/categories/command-line).
 
 # Credentials
 
-We need you to provide us access to your apps in order to do the deploy. To do this, simply click on 'Heroku Credentials'.
+We need you to provide us access to your apps in order to do the deploy. To do this, simply click on **Heroku Credentials**.
 
 {% image screenshots/heroku/missing-credentials.png %}
 
