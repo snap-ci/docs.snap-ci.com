@@ -1,0 +1,18 @@
+---
+layout: topic
+title:  "Rubygems"
+---
+
+You can easily deploy your gem to [RubyGems](https://rubygems.org/) using Snap. If you have a .gemspec file in your repository Snap will automatically add a **Release** stage in your pipeline.
+
+{% image screenshots/rubygems-stage.png %}
+
+Like Heroku Deployments, you can personalize your deployment by chosing the **Custom** RubyGems stage.
+
+## How we do it?
+
+In order to publish your gem we run the commands `gem build *.gemspec` followed by `gem push *.gem`
+
+## Where to find your API KEY on RubyGems
+
+On your profile page in RubyGems click on ['Edit Profile'](https://rubygems.org/profile/edit) and look for **API Access**.
