@@ -26,3 +26,7 @@ Snap exports a number of environment variables during each build, which you may 
 * ``SNAP_COMMIT_SHORT`` - the short git commit SHA
 * ``SNAP_PIPELINE_COUNTER`` - the counter of the currently running pipeline
 * ``SNAP_STAGE_NAME`` - the name of the currently running stage
+
+# Other variables
+
+* ``SNAP_CACHE_DIR`` - directory used for {% topic_link "Caching" "caching" %}
