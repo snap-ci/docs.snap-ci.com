@@ -13,7 +13,7 @@ We need you to provide us access to your apps in order to do the deploy. To do t
 
 {% image screenshots/heroku/missing-credentials.png %}
 
-You will be redirected to Heroku and after a sucessfull authentication your credentials will be available on Snap. Please notice that the same credentials can be used in any repository that you collaborate on.
+You will be redirected to Heroku and after a successfully authentication your credentials will be available on Snap. Please notice that the same credentials can be used in any repository that you collaborate on.
 
 > **Note:**
 > For custom deployment you don't need to run `heroku login` before running any heroku commands as you have already authorised Snap.
