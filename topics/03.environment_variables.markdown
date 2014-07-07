@@ -27,6 +27,29 @@ Snap exports a number of environment variables during each build, which you may 
 * ``SNAP_PIPELINE_COUNTER`` - the counter of the currently running pipeline
 * ``SNAP_STAGE_NAME`` - the name of the currently running stage
 
+# Databases
+
+Depending on you project {% topic_link "Relational Databases" "database settings" %}
+Snap will export additional environment variables.
+
+## For MySQL
+
+* ``SNAP_DB_MYSQL_USER`` - user for MySQL connection
+* ``SNAP_DB_MYSQL_PASSWORD`` - password for MySQL connection
+* ``SNAP_DB_MYSQL_HOST`` - host for MySQL connection
+* ``SNAP_DB_MYSQL_PORT`` - port for MySQL connection
+* ``SNAP_DB_MYSQL_URL`` - a MySQL URL formated for connection
+* ``SNAP_DB_MYSQL_JDBC_URL`` - a JDBC URL formated for connection
+
+## For PostgreSQL
+
+* ``SNAP_DB_PG_USER`` - user for PostgreSQL connection
+* ``SNAP_DB_PG_PASSWORD`` - password for PostgreSQL connection
+* ``SNAP_DB_PG_HOST`` - host for PostgreSQL connection
+* ``SNAP_DB_PG_PORT`` - port for PostgreSQL connection
+* ``SNAP_DB_PG_URL`` - a PostgreSQL URL formated for connection
+* ``SNAP_DB_PG_JDBC_URL`` - a JDBC URL formated for connection
+
 # Other variables
 
 * ``SNAP_CACHE_DIR`` - directory used for {% topic_link "Caching" "caching" %}
