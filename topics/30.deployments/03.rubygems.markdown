@@ -7,7 +7,7 @@ You can easily deploy your gem to [RubyGems](https://rubygems.org/) using Snap. 
 
 {% image screenshots/rubygems-stage.png %}
 
-Like Heroku Deployments, you can personalize your deployment by chosing the **Custom** RubyGems stage.
+You can personalize your deployment by choosing the **Custom** RubyGems stage, similar to Heroku deployments.
 
 ## How we do it?
 
