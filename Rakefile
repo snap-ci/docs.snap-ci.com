@@ -64,9 +64,10 @@ task :detect_versions do
     # raise "Could not detect version of package #{pkg}" unless $?.success?
   end
 
-  versions['ruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^ruby-[0-9]+' | sort)].strip.gsub('ruby-', '').split
-  versions['jruby'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^jruby-[0-9]+' | sort)].strip.gsub('jruby-', '').split
-  versions['nodejs'] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep '^nodejs-[0-9]+' | sort)].strip.gsub('nodejs-', '').split
+  %w(ruby jruby nodejs php).each do |lang|
+    versions[lang] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep "^#{lang}-[0-9]+" | sort)].strip.gsub("#{lang}-", '').split
+  end
+
   versions['python'] = %x[rpm -q --queryformat '%{VERSION} ' $(rpm -qa | egrep '^python-[0-9]+' | sort)].strip.split
 
   versions['sunjdk'] = Dir['/opt/local/java/*/bin/java'].collect do |java|
