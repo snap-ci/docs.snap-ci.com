@@ -112,7 +112,7 @@ task :deploy do
     f.puts "secret_key = #{ENV['S3_SECRET_KEY']}"
   end
 
-  sh("s3cmd sync --config s3.cfg --verbose --acl-public --delete-removed --no-preserve --add-header='Cache-Control: max-age=7200, must-revalidate' _site/* s3://#{ENV['S3_BUCKET']}")
+  sh("s3cmd sync --config s3.cfg --verbose --acl-public --delete-removed --no-preserve --add-header='Cache-Control: max-age=600, must-revalidate' _site/* s3://#{ENV['S3_BUCKET']}")
 end
 
 desc "preview/change the documentation locally"
