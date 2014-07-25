@@ -11,7 +11,7 @@ Base CentOS and EPEL repositories are already on the systems, but if you'd like 
 
 # Do you support language X?
 
-We currently support Ruby, NodeJS and Java. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "The CI Environment" "the CI environment" %} for more on the specifics for each platform.
+You can check it out in our {% topic_link "Languages" "languages page" %}. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "The CI Environment" "the CI environment" %} for more on the specifics for each platform.
 
 # Can I get a specific version of a language or build tool?
 
@@ -28,3 +28,5 @@ We currently support out-of-the-box deployments to Heroku. However, most platfor
 # Does the X-Window system run by default?
 
 Yes! Snap runs `xvfb` with a resolution of `1280x1024x16` and makes a `DISPLAY` variable available to your builds. If you're running GUI testing tools, you may want to checkout our guide on {% topic_link "Testing with browsers" "browser testing" %}.
+
+
