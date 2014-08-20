@@ -99,15 +99,22 @@
       color: #555;
     }
 
-    code {
+    code, pre {
       font-family: Monaco, Consolas, Inconsolata, "Liberation Mono", "Courier New", monospace;
       font-size: 11px;
-      display: inline-block;
       background-color: #444;
-      padding: 0 6px;
       color: white;
       line-height: 1.7;
       @include border-radius(3px);
+    }
+
+    code {
+      padding: 0 6px;
+      display: inline-block;
+    }
+
+    pre {
+      padding: 10px;
     }
 
     .doc-content {
