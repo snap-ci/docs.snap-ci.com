@@ -7,7 +7,7 @@ body {
   font-size: 13px;
   line-height: 1.9;
   color: #4A4A4A;
-  background-color: #F9F9F9;
+  background-color: #FEFEFE;
 
   * {
     line-height: 2;
@@ -23,31 +23,30 @@ body {
 
   .site {
     .header {
-      padding: 10px 30px 5px 30px;
-      background-color: #FFF;
+      padding: 4px 40px 0;
+      background-color: #565656;
       @include clearfix;
 
       .logo {
         float: left;
-        width: 200px;
-        height: 40px;
-        background: image-url('snap-logo-black.png') no-repeat 0 0;
-        padding: 12px 0 0 165px;
-        font-family: MarydaleRegular;
-        font-size: 22px;
-        color: #ff5e3b;
+        height: 38px;
+        width: 36px;
+        background: image-url('snap-logo-white.png') no-repeat;
+        background-size: 126px;
+        margin-top: 12px;
       }
 
       .header-actions {
         float: right;
         font-size: 13px;
         letter-spacing: 1px;
+        margin-top: 8px;
         @include clearfix;
 
         .docs, .blogs, .login {
-          color: #676767;
+          color: #EEE;
           float: right;
-          font-size: 18px;
+          font-size: 16px;
           margin-left: 20px;
           padding: 8px;
           text-align: center;

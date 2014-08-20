@@ -11,3 +11,56 @@
     }
   }
 }
+
+@media only screen and (max-width : 680px) {
+  body .site {
+    .sidebar {
+      width: 33%;
+      right: 33%;
+      padding: 30px 0;
+    }
+
+    .content {
+      .topic-container {
+        left: 33%;
+      }
+
+      .topic {
+        width: 67%;
+        right: 33%;
+
+        .doc-title {
+          padding: 5px 20px;
+        }
+
+        .doc-content {
+          padding: 0 20px 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  body .site {
+    .header {
+      .logo {
+        height: 30px;
+        width: 28px;
+        margin-top: 8px;
+        background-size: 90px;
+      }
+
+      .header-actions {
+        .login {
+          display: none;
+        }
+
+        .docs, .login, .blogs {
+          padding: 1px 0;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
