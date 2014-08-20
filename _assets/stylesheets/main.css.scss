@@ -33,14 +33,13 @@ body {
         width: 36px;
         background: image-url('snap-logo-white.png') no-repeat;
         background-size: 126px;
-        margin-top: 12px;
+        margin-top: 4px;
       }
 
       .header-actions {
         float: right;
         font-size: 13px;
         letter-spacing: 1px;
-        margin-top: 8px;
         @include clearfix;
 
         .docs, .blogs, .login {
