@@ -15,7 +15,7 @@ Absolutely! If you need to perform extensive configuration by installing lots of
 
 # Do you support language X?
 
-You can check it out in our {% topic_link "Languages" "languages page" %}. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "The CI Environment" "the CI environment" %} for more on the specifics for each platform.
+You can check it out in our {% topic_link "Overview" "languages page" %}. If you'd like to see your favorite language being supported by Snap, then [contact us]({{ site.link.contact_us }}). See {% topic_link "The CI Environment" "the CI environment" %} for more on the specifics for each platform.
 
 # Can I get a specific version of a language or build tool?
 
