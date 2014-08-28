@@ -71,7 +71,15 @@ module Jekyll
         html.ul(:class => 'topic-listing') do
           html.li(:class => 'section-name') do
             html.ul do
-              section_name(html, site)
+
+              if @path == topic_root
+                topic_page = page_at_location(site, 'index.html')
+                html.li(:class => "title {% if page.url == '#{topic_page.url}' %}current{% endif %}") do
+                  html.a('Home', :href => "/")
+                end
+              else
+                section_name(html, site)
+              end
 
               @path.children.each do |child|
                 if child.directory?
@@ -89,14 +97,9 @@ module Jekyll
       end
 
       def section_name(html, site)
-        if @path == topic_root
-          topic_page = page_at_location(site, 'index.html')
-          html.li(:class => "title {% if page.url == '#{topic_page.url}' %}current{% endif %}") do
-            html.a('Home', :href => "/")
-          end
-        elsif child = index_page(site)
+        if child = index_page(site)
           index_page = page_at_location(site, child.to_s)
-          html.li(:class => "title {% if page.url == '#{index_page.url}' %}current{% endif %}") do
+          html.span(:class => "{% if page.url == '#{index_page.url}' %}current{% endif %}") do
             html.a(index_page.data['title'], :href => index_page.url)
           end
         else
