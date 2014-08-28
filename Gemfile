@@ -1,12 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem "jekyll"
-gem 'jekyll-assets'
-gem 'saas'
-gem 'compass'
-gem 'uglifier'
-
-gem 'jekyll-sitemap'
-gem 'rdiscount'
+gem 'middleman'
+gem 'middleman-livereload'
+gem 'middleman-syntax'
 gem 'builder'
+gem 'erubis'
+gem 'middleman-s3_redirect'
+gem 'middleman-s3_sync'

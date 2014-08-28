@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title><%= current_page.data.title %> | Snap | Hosted Continuous Integration</title>
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <div class="container">
+      <div class="site">
+      <%= partial "partials/header" %>
+        <div class="content">
+          <div class="sidebar-container">
+            <div class="topic-container">
+              <%= partial "partials/sidebar" %>
+
+              <div class="topic">
+                <h1 class="doc-title"><a href="<%= current_page.url %>"><%= current_page.data.title %></a></h1>
+                <div class="doc-content">
+                  <%= yield %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <%= partial "partials/footer" %>
+      </div>
+    </div> <!-- /container -->
+  </body>
+</html>

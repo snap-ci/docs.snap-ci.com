@@ -1,0 +1,39 @@
+---
+title:  "Pipeline Parallelism"
+---
+
+Pipelines are capable of running in parallel. Snap applies an algorithm
+which we call "Diagonal Parallelism" when builds in parallel happen on the same
+project.
+
+
+> **When running in parallel, builds will run on multiple machines which may or
+not have all data and configuration needed. Use <a href="/pipeline/#pinning-common-setup-commands">pinned tasks</a>
+to ensure that all stages are setup properly to run your pipeline.**
+
+
+# Diagonal Parallelism
+
+When building the same project in parallel Snap will enforce two rules:
+
+* No two same stages on different pipelines will run concurrently.
+* The oldest pipeline (the first to be enqueued) finish first.
+
+Bellow an example of diagonal parallelism being enforced:
+
+<%= image_tag 'screenshots/diagonal-parallelism.png' %>
+
+These rules are enforced so that in a continuous deployment scenario the order
+which pipelines will finish is predictable. Also two same stages will not run
+concurrently to avoid conflicts with tasks that manage or configure a shared
+resource outside of Snap, such as database migrations, infrastructure
+configurations and etc.
+
+Pipelines will wait until the completion of the oldest pipeline, in the example
+bellow pipeline **#73** is still running its Acceptance stage, pipelines
+**#74** and **#75** will now wait until this stage is finished in order to
+proceed. However pipelines of your other projects are still capable to run,
+your wait time doesn't account as parallel execution.
+
+<%= image_tag 'screenshots/diagonal-parallel-wait.png' %>
+

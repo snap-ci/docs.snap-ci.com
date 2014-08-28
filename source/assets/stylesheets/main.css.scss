@@ -1,0 +1,64 @@
+@import "compass/utilities/general/clearfix";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'OpenSansLight';
+  font-size: 13px;
+  line-height: 1.9;
+  color: #4A4A4A;
+  background-color: #FEFEFE;
+
+  * {
+    line-height: 2;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  .site {
+    .header {
+      padding: 4px 40px 0;
+      background-color: #565656;
+      @include clearfix;
+
+      .logo {
+        float: left;
+        height: 38px;
+        width: 36px;
+        background: image-url('snap-logo-white.png') no-repeat;
+        background-size: 126px;
+        margin-top: 4px;
+      }
+
+      .header-actions {
+        float: right;
+        font-size: 13px;
+        letter-spacing: 1px;
+        @include clearfix;
+
+        .docs, .blogs, .login {
+          color: #EEE;
+          float: right;
+          font-size: 16px;
+          margin-left: 20px;
+          padding: 8px;
+          text-align: center;
+        }
+
+      }
+
+    }
+
+    .footer {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+---
+title:  "Android"
+---
+
+To get started with building and testing Android applications, Snap provides a shell script to initialize the Android SDK. To initialize the SDK, first execute the task `download-android`. The `$ANDROID_HOME` environment variable is already setup for you.
+
+To save space, Snap does not download every Android version, so you'll need to specify the versions and components you want to install:
+
+```
+$ download-android
+$ echo y | android update sdk --no-ui --filter platform-tool
+$ echo y | android update sdk --no-ui --filter android-18
+```
+
+This may be a bit cumbersome, so it is recommended that you create a shell script (e.g. `initialize-android.sh`) to initialize your environment, and call it as the first task in your stage.
+
+~~~ shell
+#!/bin/bash
+
+# raise an error if any command fails!
+set -e
+
+INITIALIZATION_FILE="$ANDROID_HOME/.initialized-dependencies"
+
+if [ ! -e ${INITIALIZATION_FILE} ]; then
+  # fetch and initialize $ANDROID_HOME
+  download-android
+  # Use the latest android sdk tools
+  echo y | android update sdk --no-ui --filter platform-tools > /dev/null
+  echo y | android update sdk --no-ui --filter tools > /dev/null
+
+  # The BuildTools version used by your project
+  echo y | android update sdk --no-ui --filter build-tools-20.0.0 --all > /dev/null
+
+  # The SDK version used to compile your project
+  echo y | android update sdk --no-ui --filter android-18 > /dev/null
+
+  # Specify at least one system image if you want to run emulator tests
+  echo y | android update sdk --no-ui --filter sys-img-armeabi-v7a-android-19 --all > /dev/null
+  ...
+  touch ${INITIALIZATION_FILE}
+fi
+~~~
+
+## Starting an emulator to run your tests:
+
+We recommend using the following script, we also recommend that you check this into your repository.
+This script will create an AVD, start the emulator and wait for the the emulator to come alive and background it.
+
+~~~ shell
+$ echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
+$ emulator -avd test -no-skin -no-audio -no-window &
+$ ./android-wait-for-emulator # see https://github.com/gildegoma/chef-android-sdk/blob/master/files/default/android-wait-for-emulator
+$ adb shell input keyevent 82 &
+$ <upload your apk>
+$ <run your tests>
+~~~
+
+If you have any trouble with any of these, [contact us](<%= data.links.contact_us %>).

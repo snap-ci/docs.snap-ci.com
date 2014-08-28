@@ -1,0 +1,20 @@
+---
+title:  "Ruby/JRuby"
+---
+
+Snap provides the following versions of Ruby and JRuby. You may install additional gems using `sudo gem install GEM_NAME --no-ri --no-rdoc`.
+
+**Ruby**
+
+<%= monospaced_array_to_bullet_list(data.versions.ruby) %>
+
+**JRuby**
+
+<%= monospaced_array_to_bullet_list(data.versions.jruby) %>
+
+We also pre-install the following gems that users may find useful:
+
+* bundler - `<%= data.versions.bundler %>`
+* rake - `<%= data.versions.rake %>`
+* foreman - `<%= data.versions.foreman %>`
+

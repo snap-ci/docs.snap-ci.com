@@ -9,7 +9,6 @@ end
 
 desc "detect versions"
 task :detect_versions do
-
   unless File.exist?('/etc/centos-release')
     $stderr.puts("Not performing any version detection because we are not running on centos.")
     next
@@ -88,34 +87,17 @@ task :detect_versions do
     versions[gemname] = spec.version.to_s
   end
 
-  config['versions'] = versions
-  config['packages'] = packages
-  config['assets'] ||= {}
-  config['assets']['js_compressor'] = 'uglifier'
-  config['assets']['css_compressor'] = 'sass'
-
-  File.open("_config_with_version.yaml", 'w') {|f| f.puts config.to_yaml}
-
-  # ant maven gradle
+  File.open('data/versions.yml', 'w') {|f| f.puts versions.to_yaml }
+  File.open('data/packages.yml', 'w') {|f| f.puts packages.to_yaml }
 end
 
 desc "build all documentation"
 task :build => :detect_versions do
-  sh("bundle exec jekyll build --config _config_with_version.yaml")
+  sh("bundle exec middleman build --verbose --clean")
 end
 
 desc "deploy the documentation"
 task :deploy do
-  File.open('s3.cfg', 'w') do |f|
-    f.puts "[default]"
-    f.puts "access_key = #{ENV['S3_ACCESS_KEY']}"
-    f.puts "secret_key = #{ENV['S3_SECRET_KEY']}"
-  end
-
-  sh("s3cmd sync --config s3.cfg --verbose --acl-public --delete-removed --no-preserve --add-header='Cache-Control: max-age=600, must-revalidate' _site/* s3://#{ENV['S3_BUCKET']}")
-end
-
-desc "preview/change the documentation locally"
-task :preview do
-  sh "bundle exec jekyll server --watch"
+  sh("bundle exec middleman s3_sync --force --verbose")
+  sh("bundle exec middleman s3_redirect")
 end

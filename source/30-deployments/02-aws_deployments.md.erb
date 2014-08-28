@@ -1,0 +1,11 @@
+---
+title:  "Deploying to AWS"
+---
+
+To deploy to Amazon AWS with Snap, you configure a custom stage to run the steps required to deploy your application. Since there are a wide variety of deployment strategies to choose from on AWS, we decided to start by providing the [AWS CLI](http://aws.amazon.com/cli/) as the starting point. With this in place, you are free to create highly customized deployments.
+
+# Using Elastic Beanstalk to deploy to Amazon AWS
+
+Amazon's [Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/) is a product that allows applications built on [many popular languages and frameworks](http://aws.amazon.com/elasticbeanstalk/faqs/#what-lang) to be deployed to AWS. While it has its own command line tool, eb, which provides a slightly different API and workflow, it can also be controlled through the default AWS command line interface. To see how you can deploy a standard Ruby application using Elastic Beanstalk, check out [this blog post](http://blog.snap-ci.com/blog/2013/10/21/aws-elastic-beanstalk/).
+
+For more information see [AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/) and [Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html).

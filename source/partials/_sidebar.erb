@@ -1,0 +1,14 @@
+<div class='sidebar'>
+  <ul>
+    <%
+    html_pages = html_resources.sort_by(&:source_file)
+    html_pages.each do |page| %>
+      <% if page.data.hidden %>
+        <li><span class="<%= "nest-#{nesting_of(page)} #{current_resource == page ? 'current': ''}" %>"><%= page.data.title %></li>
+      <% else %>
+        <li><%= link_to page.data.title, page.url, class: "nest-#{nesting_of(page)} #{current_resource == page ? 'current': ''}" %></li>
+      <% end %>
+
+    <% end %>
+  </ul>
+</div>

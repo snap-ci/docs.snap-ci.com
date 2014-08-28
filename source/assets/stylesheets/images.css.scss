@@ -1,0 +1,36 @@
+@import "compass/utilities/general/clearfix";
+
+.captioned-image {
+  position: relative;
+  margin: 12px auto;
+  @include clearfix;
+
+  .caption {
+    color: #999;
+    font-style: italic;
+  }
+
+  &.caption-right {
+    img, .caption {
+      float: left;
+    }
+
+    .caption {
+      margin-left: 6px;
+    }
+  }
+
+  &.caption-left {
+    img, .caption {
+      float: right;
+    }
+
+    .caption {
+      margin-right: 6px;
+    }
+  }
+
+  &.caption-bottom {
+
+  }
+}

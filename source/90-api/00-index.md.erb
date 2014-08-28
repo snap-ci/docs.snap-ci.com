@@ -1,0 +1,18 @@
+---
+title:  Introduction
+---
+
+Snap API provides a way to query and perform operations that you would otherwise use the web interface for.
+
+All API access is over HTTPS, and accessed from `api.snap-ci.com` domain. All data is sent and received as JSON.
+
+# Authentication
+
+All APIs require you to authenticate yourself using your API key. You may find the API key in the [user settings](https://snap-ci.com/settings/api_key). If authentication fails, Snap will return status `404` or `401`.
+
+## Basic authentication
+
+Snap uses basic authentication. To authenticate you need to provide your username and API key.
+
+` $ curl -ualice:API_KEY https://api.snap-ci.com/`
+
