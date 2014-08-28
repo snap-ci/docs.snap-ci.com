@@ -8,72 +8,102 @@ module Jekyll
 
     def generate(site)
       with_new_sidebar_block do |sidebar|
-        emit_new_listing(topic_root, sidebar, site)
+        DirNode.new(Pathname.new('topics'), Pathname.new('topics')).to_html(sidebar, site)
       end
     end
 
     private
     def with_new_sidebar_block(&block)
-      File.open(OUTPUT_FILENAME, 'w') do |sidebar_include|
-        sidebar = Builder::XmlMarkup.new(:target => sidebar_include, :indent => 2)
-        sidebar.div(:class => "sidebar") do |sidebar|
-          yield sidebar
+      buffer = StringIO.new
+      sidebar = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
+      sidebar.div(:class => "sidebar") do |sidebar|
+        yield sidebar
+      end
+
+      unless File.exist?(OUTPUT_FILENAME) && File.read(OUTPUT_FILENAME) == buffer.string
+        # do not tailspin if nothing has changed
+        File.open(OUTPUT_FILENAME, 'w') do |f|
+          f.puts(buffer.string)
         end
       end
     end
 
-    def emit_new_listing(topic_folder, sidebar, site)
-      sidebar.ul(:class => 'topic-listing') do
-        emit_children_listing(topic_folder, sidebar, site)
+
+    class Node
+      def initialize(path)
+        @path = path
+      end
+
+      def page_at_location(site, path)
+        site.pages.detect do |page|
+          page_path = page.respond_to?(:topic_path) ? page.topic_path : page.path
+          page_path == path
+        end
       end
     end
 
-    def emit_section_element(section_name, sidebar, &block)
-      sidebar.li(:class => 'section-name') do
-        sidebar << section_name.capitalize
-        sidebar.ul { yield }
+    class LeafNode < Node
+      def to_html(html, site)
+        topic_page = page_at_location(site, @path.to_s)
+        html.li(:class => "title {% if page.url == '#{topic_page.url}' %}current{% endif %}") do
+          html.a(topic_page.data['title'], :href => topic_page.url)
+        end
       end
     end
 
-    def emit_topic_in_current_listing(topic, sidebar, site)
-      topic_page = page_at_location(site, topic.to_s)
-      sidebar << "{% capture current_page_class %}{% if page.title == '#{topic_page.data['title']}' %}current{% endif %}{% endcapture %}\n"
-      sidebar.li(:class => "title {{ current_page_class }}") do
-        sidebar.a(topic_page.data['title'], :href => topic_page.url)
-      end
-    end
+    class DirNode < Node
 
-    def emit_children_listing(topic_folder, sidebar, site)
-      emit_section_element(section_name(topic_folder), sidebar) do
-        if topic_folder == topic_root
-          sidebar.li(:class => "title") do
-            sidebar.a('Home', :href => "/")
+      attr_reader :topic_root
+
+      def initialize(path, topic_root)
+        super(path)
+        @topic_root = topic_root
+      end
+
+      def index_page(site)
+        index_page_path = @path.children.detect do |child|
+          page = page_at_location(site, child.to_s)
+          page && File.basename(page.url) == 'index'
+        end
+      end
+
+      def to_html(html, site)
+        html.ul(:class => 'topic-listing') do
+          html.li(:class => 'section-name') do
+            html.ul do
+              section_name(html, site)
+
+              @path.children.each do |child|
+                if child.directory?
+                  DirNode.new(child, topic_root).to_html(html, site)
+                elsif child == index_page(site)
+                  next
+                else
+                  LeafNode.new(child).to_html(html, site)
+                end
+              end
+            end
           end
+
         end
-        topic_folder.children.sort.each do |f|
-          if f.directory?
-            emit_new_listing(f, sidebar, site)
-          else
-            emit_topic_in_current_listing(f, sidebar, site)
+      end
+
+      def section_name(html, site)
+        if @path == topic_root
+          topic_page = page_at_location(site, 'index.html')
+          html.li(:class => "title {% if page.url == '#{topic_page.url}' %}current{% endif %}") do
+            html.a('Home', :href => "/")
           end
+        elsif child = index_page(site)
+          index_page = page_at_location(site, child.to_s)
+          html.li(:class => "title {% if page.url == '#{index_page.url}' %}current{% endif %}") do
+            html.a(index_page.data['title'], :href => index_page.url)
+          end
+        else
+          html.span @path.basename.to_s.gsub(/^\d+\./, '').gsub('_', ' ').capitalize
         end
       end
     end
 
-    def section_name(topic_folder)
-      return '' if topic_folder == topic_root
-      topic_folder.basename.to_s.gsub(/^\d+\./, '').gsub('_', ' ')
-    end
-
-    def topic_root
-      Pathname.new("topics")
-    end
-
-    def page_at_location(site, path)
-      site.pages.detect do |page|
-        page_path = page.respond_to?(:topic_path) ? page.topic_path : page.path
-        page_path == path
-      end
-    end
   end
 end
