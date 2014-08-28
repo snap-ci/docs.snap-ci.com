@@ -81,7 +81,7 @@ module Jekyll
                 section_name(html, site)
               end
 
-              @path.children.each do |child|
+              @path.children.sort.each do |child|
                 if child.directory?
                   DirNode.new(child, topic_root).to_html(html, site)
                 elsif child == index_page(site)
