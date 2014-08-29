@@ -11,15 +11,4 @@ You should also make sure that you visit the settings page for your project and 
 
 # Why does Snap need all these permissions?
 
-Snap does not allow you to add any project builds because it requires admin permissions on a GitHub repository.
-
-We require the following privileges from GitHub:
-
-* **Read access to your profile information** - We store your email address and name to communicate with you over email and send you email notifications on build status changes.
-* **Write access to your repositories** - We require write access to your repositories to add a GitHub WebHook so GitHub tells us each time new code is pushed to the repository. We also upload a Deploy key(SSH public key) so that we can checkout code from the repository.
-* **List all the repositories a user can access** - When setting up a build on Snap, we need to know what repositories you own or collaborate on, so we can setup your access accordingly.
-* **List all the users that collaborate on a repository** - We require this access so we can invite other collaborators and setup their membership when creating a project build on Snap.
-
-**Note:** We never, ever commit code to your repository or look at your source code.
-
-If you'd like to setup CI for a repository on GitHub that you are not an administrator on, you should have an admin or owner setup the build and you can join in as a collaborator or fork the project under your GitHub account and set it up for yourself.
+<%= partial 'github-permissions' %>
