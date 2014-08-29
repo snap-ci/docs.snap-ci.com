@@ -75,6 +75,7 @@ default_caching_policy max_age: 10.minutes, must_revalidate: true
   deployments/aws-deployments
   deployments/rubygems
   working_with_branches/cloned_pipelines
+  working_with_branches/integration_pipelines
   working_with_branches/automatic_branch_tracking
   speeding_up_builds/pipeline_parallelism
   speeding_up_builds/cachine
