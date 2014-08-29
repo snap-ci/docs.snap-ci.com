@@ -19,7 +19,12 @@
               <%= partial "partials/sidebar" %>
 
               <div class="topic">
-                <h1 class="doc-title"><a href="<%= current_page.url %>"><%= current_page.data.title %></a></h1>
+                <h1 class="doc-title">
+                  <a href="<%= current_page.url %>"><%= current_page.data.title %></a>
+                  <% if current_page.data.draft %>
+                    <span class='draft'>(This is currently a draft!)</span>
+                  <% end %>
+                </h1>
                 <div class="doc-content">
                   <%= yield %>
                 </div>
