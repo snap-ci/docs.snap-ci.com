@@ -77,12 +77,13 @@ default_caching_policy max_age: 10.minutes, must_revalidate: true
   working_with_branches/integration_pipelines
   working_with_branches/automatic_branch_tracking
   speeding_up_builds/pipeline_parallelism
-  speeding_up_builds/cachine
+  speeding_up_builds/caching
   notifications/campfire_and_hipchat_notifications
   notifications/webhook_notifications
   notifications/cctray_notifications
   managing_your_github_connection/revoking_privileges
   managing_your_github_connection/managing_membership
+  api/index
 ).each do |old_path|
   new_path = old_path.gsub('_', '-')
   new_path = new_path.gsub(/\/index$/, '') if new_path.end_with?('/index')
