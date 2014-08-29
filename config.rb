@@ -56,6 +56,7 @@ default_caching_policy max_age: 10.minutes, must_revalidate: true
 
 %w(
   the_ci_environment/index
+  the_ci_environment/languages
   the_ci_environment/languages/index
   the_ci_environment/languages/ruby-jruby
   the_ci_environment/languages/python
@@ -88,6 +89,12 @@ default_caching_policy max_age: 10.minutes, must_revalidate: true
   new_path = old_path.gsub('_', '-')
   new_path = new_path.gsub(/\/index$/, '') if new_path.end_with?('/index')
   redirect "/#{old_path}/", "/#{new_path}/"
+end
+
+{
+  '/supported_platforms/', '/the-ci-environment/'
+}.each do |old_path, new_path|
+  redirect old_path, new_path
 end
 
 configure :build do
