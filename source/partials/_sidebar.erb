@@ -2,13 +2,25 @@
   <ul>
     <%
     html_pages = html_resources.sort_by(&:source_file).find_all { |r| !r.data.draft }
-    html_pages.each do |page| %>
-      <% if page.data.hidden %>
-        <li><span class="<%= "nest-#{nesting_of(page)} #{current_resource == page ? 'current': ''}" %>"><%= page.data.title %></li>
-      <% else %>
-        <li><%= link_to page.data.title, page.url, class: "nest-#{nesting_of(page)} #{current_resource == page ? 'current': ''}" %></li>
-      <% end %>
+    html_pages.each_with_index do |page, index| %>
+      <%
+      next_resource = html_pages[index+1]
 
+      current_resource_nesting = nesting_of(page)
+      next_resource_nesting = next_resource ? nesting_of(next_resource) : -1
+
+      css_class = []
+      css_class << "nest-#{current_resource_nesting} #{current_resource == page ? 'current': ''}"
+      if next_resource_nesting > current_resource_nesting
+        css_class << 'section-name'
+      end
+      css_class = css_class.join(' ')
+      %>
+      <% if page.data.hidden %>
+        <li><span class="<%= css_class %>"><%= page.data.title %></li>
+      <% else %>
+        <li><%= link_to page.data.title, page.url, class: css_class %></li>
+      <% end %>
     <% end %>
   </ul>
 </div>
