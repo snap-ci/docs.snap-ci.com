@@ -94,7 +94,7 @@ end
 {
   '/supported_platforms/' => '/the-ci-environment/',
 }.each do |old_path, new_path|
-  redirect old_path, new_path
+  redirect old_path.dup, new_path.dup
 end
 
 configure :build do
