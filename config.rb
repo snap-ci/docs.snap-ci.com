@@ -13,7 +13,6 @@ activate :automatic_image_sizes
 activate :remove_ordering_prefix
 activate :directory_indexes
 activate :syntax
-activate :asset_hash
 
 configure :development do
   activate :livereload
@@ -100,5 +99,6 @@ end
 configure :build do
   activate :minify_css
   activate :minify_javascript
+  activate :asset_hash
   activate :relative_assets
 end
