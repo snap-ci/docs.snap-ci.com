@@ -70,9 +70,9 @@ default_caching_policy max_age: 10.minutes, must_revalidate: true
   the_ci_environment/databases/no-sql
   the_ci_environment/testing_with_browsers
   the_ci_environment/complete-package-list
-  the_ci_environment/environment_variables
-  deployments/heroku-deployments
-  deployments/aws-deployments
+  environment_variables
+  deployments/heroku_deployments
+  deployments/aws_deployments
   deployments/rubygems
   working_with_branches/cloned_pipelines
   working_with_branches/integration_pipelines
