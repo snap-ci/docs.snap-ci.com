@@ -92,7 +92,7 @@ default_caching_policy max_age: 10.minutes, must_revalidate: true
 end
 
 {
-  '/supported_platforms/', '/the-ci-environment/'
+  '/supported_platforms/' => '/the-ci-environment/',
 }.each do |old_path, new_path|
   redirect old_path, new_path
 end
