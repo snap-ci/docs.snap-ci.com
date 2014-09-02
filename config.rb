@@ -32,7 +32,7 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 set :partials_dir, 'partials'
 set :markdown_engine, :kramdown
-set :markdown
+set :markdown, :auto_ids => false
 
 if ENV['S3_BUCKET']
   activate :s3_redirect do |config|

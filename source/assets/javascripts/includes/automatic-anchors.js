@@ -4,9 +4,21 @@ $(function(){
     return name.toLowerCase().replace(/[ \/<>]/g, '-').replace(/:$/, '').replace(/\?/, '');
   }
 
+   var warn = function (message){
+    console.log(message);
+    if ($('meta[development=true]').length > 0){
+      alert(message);
+    }
+  }
+
   var createAnchorOn = function(elem, id){
+    if ($('#' + id).length > 0){
+      warn("Found more than 1 elements matching $('#" + id + "')");
+    }
+
     elem.attr("id", id);
     elem.attr('has-anchor', true);
+
     var anchorLink = $('<a class=\"toc-anchor\" href=\"#' + encodeURIComponent(id) + '\">#</a>');
     anchorLink.hide();
     elem.append(anchorLink);
@@ -30,7 +42,10 @@ $(function(){
   $('.doc-content').children('h2').each(function(){
     var current = $(this);
     var parentHeading = current.prevAll('h1[has-anchor]:first');
-    if (parentHeading.length > 0){
+    if (parentHeading.length === 0) {
+      var subHeadingId = cname(current);
+      createAnchorOn(current, subHeadingId);
+    } else {
       var subHeadingId = parentHeading.attr('id') + '#' + cname(current);
       createAnchorOn(current, subHeadingId);
     }
