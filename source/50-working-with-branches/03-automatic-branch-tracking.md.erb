@@ -4,7 +4,7 @@ title:  "Automatic branch tracking"
 
 Snap can automatically create a pipeline for you when you create a branch in Github. This feature is available through the project configuration screen's header action to track branches.
 
-<%= retina_screenshot 'screenshots/integration-pipelines/header-action' %>
+<%= retina_image 'screenshots/integration-pipelines/header-action' %>
 
 When configuring automatic branch tracking, you can specify a couple of different things. Specifically,
 
@@ -12,14 +12,14 @@ When configuring automatic branch tracking, you can specify a couple of differen
 * Create pipelines for all existing branches (with the optional name prefix). If this is left unchecked, Snap will only trigger new pipeline creation for all branches created in the future
 * An integration branch target, which will be used to set up an  <%= topic_link "Integration pipelines", 'integration pipeline' %>.
 
-  <%= retina_screenshot 'screenshots/integration-pipelines/auto-track-modal' %>
+  <%= retina_image 'screenshots/integration-pipelines/auto-track-modal' %>
 
 Once configured, Snap will automatically create a new pipeline that mirrors the pipeline structure of the current project, including all automatically triggered non-deployment stages, up to the first manual stage. You can of course, customize the individual pipelines past this original configuration.
 
 Changes to these branches propagate through the configured stages to give you a sense of the health of an individual branch.
 
-<%= retina_screenshot 'screenshots/integration-pipelines/simple-tracking-structure' %>
+<%= retina_image 'screenshots/integration-pipelines/simple-tracking-structure' %>
 
 If an integration branch target is configured, Snap will also attempt to merge the changes to the feature branch with HEAD of the integration target. If the merge succeeds, the merged change is propagated through the integration pipeline to see if it passes tests. A green integration pipeline build indicates that the change on the branch has neither syntactic not semantic merge conflicts with the integration target and is a candidate for being merged into the integration target.
 
-<%= retina_screenshot 'screenshots/integration-pipelines/auto-track-integration-structure' %>
+<%= retina_image 'screenshots/integration-pipelines/auto-track-integration-structure' %>

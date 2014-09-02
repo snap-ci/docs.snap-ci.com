@@ -14,9 +14,9 @@ class RetinaImageExt < ::Middleman::Extension
   end
 
   helpers do
-    def retina_screenshot(image_name)
-      retina_image = "#{image_name}@2x.png"
-      normal_image = "#{image_name}.png"
+    def retina_image(image_name)
+      retina_image = "retina/#{image_name}@2x.png"
+      normal_image = "non-retina/#{image_name}.png"
       image_tag(normal_image, 'data-at2x' => image_path(retina_image))
     end
   end
@@ -33,7 +33,7 @@ class RetinaImageExt < ::Middleman::Extension
 
   class NonRetinaImageResource < ::Middleman::Sitemap::Resource
     def initialize(store, retina_img_resource)
-      super(store, retina_img_resource.path.gsub('@2x', ''), retina_img_resource.source_file.gsub('@2x', ''))
+      super(store, retina_img_resource.path.gsub('/retina/', '/non-retina/').gsub('@2x', ''), retina_img_resource.source_file.gsub('/retina/', '/non-retina/').gsub('@2x', ''))
       @retina_img_resource = retina_img_resource
       @app.logger.info("== Creating non-retina resource #{path}")
     end
