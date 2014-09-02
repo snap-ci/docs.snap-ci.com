@@ -7,3 +7,26 @@ bin/
 vendor/bundle
 .idea
 .tags*
+
+# ignore (generated) non-retina images
+source/assets/images/screenshots/campfire-credentials.png
+source/assets/images/screenshots/notification-icon.png
+source/assets/images/screenshots/pipelines-with-deployment.png
+source/assets/images/screenshots/campfire-credentials-chat-room.png
+source/assets/images/screenshots/heroku/heroku-deployment-config-vars.png
+source/assets/images/screenshots/heroku/missing-credentials.png
+source/assets/images/screenshots/clones/configure-header-clone-link.png
+source/assets/images/screenshots/clones/simple-clone-dialog.png
+source/assets/images/screenshots/clones/integration-running.png
+source/assets/images/screenshots/clones/integration-successful.png
+source/assets/images/screenshots/clones/integration-branch-clone-dialog.png
+source/assets/images/screenshots/integration-pipelines/auto-track-integration-structure.png
+source/assets/images/screenshots/integration-pipelines/auto-track-modal.png
+source/assets/images/screenshots/integration-pipelines/header-action.png
+source/assets/images/screenshots/integration-pipelines/simple-tracking-structure.png
+source/assets/images/screenshots/github-collaboration/collaborators-configuration.png
+source/assets/images/screenshots/github-collaboration/invite-collaborators-dialog-add-team.png
+source/assets/images/screenshots/github-collaboration/invite-collaborators-dialog.png
+source/assets/images/screenshots/diagonal-parallel-wait.png
+source/assets/images/screenshots/diagonal-parallelism.png
+source/assets/images/screenshots/rubygems-stage.png

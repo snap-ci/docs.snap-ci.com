@@ -2,17 +2,26 @@
 title:  "Heroku Deployments"
 ---
 
-Snap provides two ways of doing deployments to Heroku, **Basic** and **Custom**.
+Snap provides two ways to deploy to deployments to Heroku, **Basic** and **Custom**.
 
-If you choose to use the **Basic** deploy Snap will do all the work for you. We only need you to select which app is being deployed or give us a name if it is a new one. On the **Custom** deployment, you can write you own deploy tasks making full use of the [Heroku CLI](https://devcenter.heroku.com/categories/command-line).
+# Basic deployment
 
-# Credentials
+This is the simplest form of deployment to Heroku, if your heroku deployment is just a simple `git push heroku master`, then this is the deployment you want to use. If you are running a rails project, Snap will optionally offer to run a `heroku run rake db:migrate` for you.
 
-We need you to provide us access to your apps in order to do the deploy. To do this, simply click on **Heroku Credentials**.
+# Custom deployment
 
-<%= image_tag 'screenshots/heroku/missing-credentials.png' %>
+If your heroku deployment involves something more than `git push heroku master`, then this is what you want to use.
 
-You will be redirected to Heroku and after a successfully authentication your credentials will be available on Snap. Please notice that the same credentials can be used in any repository that you collaborate on.
+# Setting up Heroku Deployments
+
+* To perform Heroku Deployments, you must first setup Heroku credentials with Snap. This will allow Snap to perform deployments to apps of your choice.
+* First edit your build configuration and click "Add Stage"
+
+We need you to provide us access to your apps in order to do the deploy. To do this, simply click on **Heroku credentials missing**.
+
+<%= retina_screenshot 'screenshots/heroku/missing-credentials' %>
+
+You will be redirected to Heroku and after a successfully authentication your credentials will be available on Snap. If you have already setup some credentials, you may reuse those credentials for other deployments.
 
 > **Note:**
 > For custom deployment you don't need to run `heroku login` before running any heroku commands as you have already authorised Snap.
@@ -21,15 +30,10 @@ You will be redirected to Heroku and after a successfully authentication your cr
 
 You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
 
-<%= image_tag 'screenshots/heroku/heroku-deployment-config-vars.png' %>
+<%= retina_screenshot 'screenshots/heroku/heroku-deployment-config-vars' %>
 
 
-<h2>
-  Some Gotchas with heroku run
-  <a class="anchor" href="#heroku-run-warning">
-     <i class="icon icon-link"></i>
-   </a>
-</h2>
+## Some Gotchas with heroku run
 
 When using the `heroku run` subcommand, the exit status of the remote command is not returned. Which means that if your command fails in Heroku, the stage will not fail.
 The workaround to capture the exit status is the following:

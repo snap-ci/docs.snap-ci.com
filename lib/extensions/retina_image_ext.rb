@@ -40,9 +40,18 @@ class RetinaImageExt < ::Middleman::Extension
 
     def process
       FileUtils.mkdir_p(File.dirname(source_file))
-      retina_img = Magick::Image::read(@retina_img_resource.source_file).first
-      non_retina_img = retina_img.scale(0.5)
-      non_retina_img.write(source_file)
+      if changed?
+        retina_img = Magick::Image::read(@retina_img_resource.source_file).first
+        non_retina_img = retina_img.scale(0.5)
+        non_retina_img['Original-SHA'] = Digest::SHA1.hexdigest(File.read(@retina_img_resource.source_file))
+        non_retina_img.write(source_file)
+      end
+    end
+
+    def changed?
+      return true unless File.exist?(source_file)
+      non_retina_img = Magick::Image::read(source_file).first
+      non_retina_img['Original-SHA'] != Digest::SHA1.hexdigest(File.read(@retina_img_resource.source_file))
     end
 
     delegate :binary?, :template?, :metadata, to: :@retina_img_resource

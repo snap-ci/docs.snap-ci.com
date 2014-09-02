@@ -21,7 +21,7 @@ When building the same project in parallel Snap will enforce two rules:
 
 Bellow an example of diagonal parallelism being enforced:
 
-<%= image_tag 'screenshots/diagonal-parallelism.png' %>
+<%= retina_screenshot 'screenshots/diagonal-parallelism' %>
 
 These rules are enforced so that in a continuous deployment scenario the order
 which pipelines will finish is predictable. Also two same stages will not run
@@ -35,5 +35,5 @@ bellow pipeline **#73** is still running its Acceptance stage, pipelines
 proceed. However pipelines of your other projects are still capable to run,
 your wait time doesn't account as parallel execution.
 
-<%= image_tag 'screenshots/diagonal-parallel-wait.png' %>
+<%= retina_screenshot 'screenshots/diagonal-parallel-wait' %>
 

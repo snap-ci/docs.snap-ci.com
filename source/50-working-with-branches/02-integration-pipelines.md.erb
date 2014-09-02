@@ -4,20 +4,28 @@ title:  "Integration pipelines"
 
 Integration pipelines provide additional information for builds which track pipelines that are intended to be merged into a target branch (master) at some point in their lifecycle. Typically these are short lived feature branches or bug fix branches which are meant to merge quickly into a master branch. While this feature is best used in conjunction with the <%= topic_link "automatic branch tracking", 'automatic branch tracking' %> feature, it is available when setting up any branch build using the <%= topic_link "Cloning a pipeline", 'clone functionality' %>.
 
+
 # Setting up an integration pipeline when creating a clone
 
-When setting up a clone, in addition to the branch you wish the clone to build against, you can also select a branch that the work is intended to be merged into. This will set up an integration pipeline which will be triggered on successful completion of the primary pipeline. The integration pipeline is triggered with the branch changes merged with the HEAD of the integration target branch.
+* Visit the configuration page of the pipeline you wish to clone.
+* Click on the **clones** link which will bring up the clone dialog.
+  <%= retina_screenshot 'screenshots/clones/configure-header-clone-link' %>
+* Select the appropriate **branch** from the first drop down.
+* From the second drop down, select the branch that the work is intended to be merged into.
 
-<%= image_tag 'screenshots/clones/clone-dialog.png' %>
+  > This will set up an integration pipeline which will be triggered on successful completion of the primary pipeline. The integration pipeline is triggered with the branch changes merged with the HEAD of the integration target branch.
 
-Note: Keep in mind that the integration pipeline will be triggered after the last stage of the branch pipeline as it was originally configured. You can always add stages after that stage on the branch pipeline, but the integration pipeline will still trigger at the end of the stage that originally terminated the branch pipeline.
+  <%= retina_screenshot 'screenshots/clones/integration-branch-clone-dialog' %>
+* Review the stages cloned for the new pipeline.
+
+  > Note: Keep in mind that the integration pipeline will be triggered after the last stage of the branch pipeline as it was originally configured. You can always add stages after that stage on the branch pipeline, but the integration pipeline will still trigger at the end of the stage that originally terminated the branch pipeline.
 
 # Integrated clones, running
 
 While the integration pipeline runs, or if either pipeline fails, the build history page shows both pipelines expanded.
 
-<%= image_tag 'screenshots/clones/integration-running.png' %>
+<%= retina_screenshot 'screenshots/clones/integration-running' %>
 
-When a pipeline run on passes, the two pipelines collapse to conserve space. You can see the information about either pipeline by switching between the tracking-pipeline & integration-pipeline tabs.
+When a pipeline run or passes, the two pipelines collapse to conserve space. You can see the information about either pipeline by switching between the tracking-pipeline & integration-pipeline tabs.
 
-<%= image_tag 'screenshots/clones/integration-successful.png' %>
+<%= retina_screenshot 'screenshots/clones/integration-successful' %>

@@ -8,7 +8,8 @@ For any project building running on Snap, a user who is a collaborator on the re
 # To perform a sync
 
 * Click on **Configuration > Collaborators** link on the build history page to configure your project.
-* We'll list the existing collaborators. To force a sync, click **Sync with GitHub**
-  <p><%= image_tag 'screenshots/invite-collaborators-dialog.png' %></p>
-* Once the collaborators have been synced, we'll list the changes we've made.
-  <p><%= image_tag 'screenshots/invite-collaborators-changes-dialog.png' %></p>
+  <%= retina_screenshot 'screenshots/github-collaboration/collaborators-configuration' %>
+* We'll list the existing collaborators. To add members of a team, click on **Add Team**
+  <%= retina_screenshot 'screenshots/github-collaboration/invite-collaborators-dialog' %>
+* Then select each of the teams you want to make collaborators in Snap
+ <%= retina_screenshot 'screenshots/github-collaboration/invite-collaborators-dialog-add-team' %>
