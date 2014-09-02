@@ -8,7 +8,9 @@ helpers SidebarHelper
 helpers ResourcesHelper
 
 Middleman::Extensions.register(:remove_ordering_prefix, RemoveOrderingPrefixExt)
+Middleman::Extensions.register(:retina_image_ext, RetinaImageExt)
 
+activate :retina_image_ext
 activate :automatic_image_sizes
 activate :remove_ordering_prefix
 activate :directory_indexes

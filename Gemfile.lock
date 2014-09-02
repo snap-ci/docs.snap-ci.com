@@ -149,6 +149,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rmagick (2.13.3)
     rouge (1.6.2)
     ruby-progressbar (1.5.1)
     sass (3.4.2)
@@ -188,3 +189,4 @@ DEPENDENCIES
   middleman-s3_sync
   middleman-syntax
   rake
+  rmagick
