@@ -1,5 +1,5 @@
 module TopicLinkTagHelper
-  def topic_link(name, text)
+  def topic_link(name, text, opts={})
     topic_name, fragment = name.split('#')
 
     topics = all_html_resources.find_all do |r|
@@ -13,9 +13,9 @@ module TopicLinkTagHelper
     topic = topics.first
 
     if topic.data.draft && !current_page.data.draft
-      link_to text, topic, :class => 'wip', :fragment => fragment
+      link_to text, topic, :class => opts[:class] || 'wip', :fragment => fragment
     else
-      link_to text, topic, :fragment => fragment
+      link_to text, topic, :class => opts[:class], :fragment => fragment
     end
   end
 end

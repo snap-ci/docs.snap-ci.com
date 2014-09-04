@@ -1,8 +1,4 @@
----
-title:  "Relational Databases"
----
-
-# Connecting to the databases
+# Connecting to relational databases
 
 * **SQLite** - SQLite does not need any credentials to create or connect to the database
 * **MySQL** - To connect to the database, we provide the environment variables `SNAP_DB_MYSQL_USER`, `SNAP_DB_MYSQL_PASSWORD`, `SNAP_DB_MYSQL_HOST`, `SNAP_DB_MYSQL_PORT`, `SNAP_DB_MYSQL_URL` and `SNAP_DB_MYSQL_JDBC_URL`
@@ -11,3 +7,16 @@ title:  "Relational Databases"
 In addition to the connection options specified above, Snap provides some more conveniences:
 
 * For Ruby projects that use a database, Snap will automatically supply an alternate `config/database.yml` file which is configured to connect to the database you selected to run your build against.
+
+# Connecting to non relational datastores
+
+These services all run on localhost and default ports which are as follows:
+
+* **CouchDB**: localhost:5984
+* **MongoDB**: localhost:27017
+* **Redis**:   localhost:6379
+
+Common clients/libraries which use these, such as CouchRest, Mongoid or Resque should all "just work". For example, the default mongoid.yml set up by the gem would look something like this and would work out of the box.
+
+If you have any trouble with any of these, [let us know](<%= data.links.contact_us %>).
+

@@ -134,6 +134,30 @@
         margin: 40px 0 20px;
         color: #333;
       }
+
+
+      .setup-first-build {
+        font-family: 'RobotoThin';
+        display: block;
+        padding: 4px 10px 4px;
+        font-size: 18px;
+        line-height: 2;
+        text-align: center;
+        vertical-align: baseline;
+        cursor: pointer;
+        border: 1px solid;
+        @include border-radius(3px);
+        width: 275px;
+        height: 50px;
+        margin: 55px auto;
+        color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background-image: -o-linear-gradient(-89deg, #E65B98 0%, #E3478B 100%);
+        background-image: -moz-linear-gradient(-89deg, #E65B98 0%, #E3478B 100%);
+        background-image: -ms-linear-gradient(-89deg, #E65B98 0%, #E3478B 100%);
+        background-image: linear-gradient(-179deg, #E65B98 0%, #E3478B 100%);
+      }
+
     }
 
     h1 {

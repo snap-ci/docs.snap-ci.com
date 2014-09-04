@@ -13,30 +13,20 @@ the popular languages:
 
 Snap comes pre-installed with a lot of databases and datastores.
 
-Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are
+<%= topic_link 'how to setup your first build', 'Setup your first build', :class => 'setup-first-build' %>
+
+#Other guides
+
+<%= topic_link 'how do i add ssh keys to my build?', 'How do I add SSH keys to my build?' %>
+
+<%= topic_link 'debugging your build', 'My build is failing for unknown reasons, is there someway I can debug the build?' %>
+
+<%= topic_link 'how snap integrates with github', 'Why does Snap need read/write access to my repos?' %>
+
+<%= topic_link 'deployments', 'Where can I deploy using Snap?' %>
+
+<%= topic_link 'databases', 'How do I connect to a database?' %>
 
 
-## Step 1: Sign in
 
-To sign up with Snap, visit [Snap CI](https://snap-ci.com) and click on the Sign in link at the top.
-
-When you sign in, GitHub will ask if you want to give a set of
-permissions to Snap. You may <%= topic_link 'How Snap integrates with GitHub', 'learn more' %> about them.
-
-## Step 2: Add your project
-
-Once you are signed in, Snap will present a list of all the
-repositories you have access to. You may only build repositories. If
-you are an administrator on any of those repositories, you may build
-that repository on Snap.
-
-## Step 3: Configure your project
-
-When you select a repository to build on Snap, we will attempt to
-automatically configure your project. You can always customize this
-configuration by visiting the configuration page for that project.
-
-> Setting up your build involves breaking it down into logical <%= topic_link 'deployment pipeline#stage', 'stages' %>. Each stage provides higher confidence in the code as it is deployed and tested in environments that are progressively more production like.
-
-TBD: Screenshot of configuration
 

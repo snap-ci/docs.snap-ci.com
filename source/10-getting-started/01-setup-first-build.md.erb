@@ -1,0 +1,34 @@
+---
+title: How to setup your first build
+draft: true
+---
+
+Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are:
+
+
+## Step 1: Sign in
+
+To sign up with Snap, visit [Snap CI](https://snap-ci.com) and click on the Sign in link at the top.
+
+When you sign in, GitHub will ask if you want to give a set of
+permissions to Snap. You may <%= topic_link 'How Snap integrates with GitHub', 'learn more' %> about them.
+
+## Step 2: Add your project
+
+Once you are signed in, Snap will present a list of all the
+repositories you have access to. You may only build repositories. If
+you are an administrator on any of those repositories, you may build
+that repository on Snap.
+
+## Step 3: Configure your project
+
+When you select a repository to build on Snap, we will attempt to
+automatically configure your project. We look for languages versions, build tools files, dependecy managers and other conventions that may indicate how your project is set up.
+
+> Setting up your build involves breaking it down into logical <%= topic_link 'deployment pipeline#stage', 'stages' %>. Each stage provides higher confidence in the code as it is deployed and tested in environments that are progressively more production like.
+
+SCREENSHOT OF PIPELINE CONFIGURATION
+
+You can always customize the configuration by visiting the configuration page for that project. There you can also select languages versions, databases and add/remove stages.
+
+
