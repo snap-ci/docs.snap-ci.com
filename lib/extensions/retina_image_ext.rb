@@ -35,12 +35,12 @@ class RetinaImageExt < ::Middleman::Extension
     def initialize(store, retina_img_resource)
       super(store, retina_img_resource.path.gsub('/retina/', '/non-retina/').gsub('@2x', ''), retina_img_resource.source_file.gsub('/retina/', '/non-retina/').gsub('@2x', ''))
       @retina_img_resource = retina_img_resource
-      @app.logger.info("== Creating non-retina resource #{path}")
     end
 
     def process
       FileUtils.mkdir_p(File.dirname(source_file))
       if changed?
+        @app.logger.info("== Creating non-retina resource #{path}")
         retina_img = Magick::Image::read(@retina_img_resource.source_file).first
         non_retina_img = retina_img.scale(0.5)
         non_retina_img['Original-SHA'] = Digest::SHA1.hexdigest(File.read(@retina_img_resource.source_file))
