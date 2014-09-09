@@ -39,24 +39,5 @@ Some tips to configure run your Protractor tests:
 
 # I need my ssh keys on Snap.
 
-The easiest way to configure your ssh keys on Snap is to add them to the file `~/.ssh/config` using environment variables.
-You will need to add an variable `$SSH_CONFIG` which would contain the host configuration. For example, if your need it for Github:
-
-```
-Host github.com
-  User git
-  Hostname github.com
-  IdentityFile <path_to_key>
-```
-And another one that would contain your key. Let assume that we named it `$SSH_KEY`.
-
-Now we can run some tasks in our stage to set it up.
-
-```
-$ echo "$SSH_CONFIG" >> ~/.ssh/config
-$ echo "$SSH_KEY" > <path_to_key>
-$ chmod 600 <path_to_key>
-```
-
-And it's done. You can now use the key for anything that you want.
+In need of storing sensitive files in your build? Follow <%= topic_link 'how do i add ssh keys to my build?', 'our guide' %> for more details.
 
