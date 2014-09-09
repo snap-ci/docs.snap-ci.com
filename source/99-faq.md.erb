@@ -22,9 +22,11 @@ You can check it out in our <%= topic_link "Languages", "languages page" %>. If 
 
 See <%= topic_link "The CI Environment", "the CI environment" %> for the list of versions we support. If your version is not listed,  please [contact us](<%= data.links.contact_us %>)
 
-# Do you support database X?
+# Do you support database X? How do I connect on it?
 
 We currently support MySQL, PostgreSQL and SQLite3. You can also use external services such as MongoHQ easily. We plan to add support for a few other data-stores very soon. If you'd like to see your favorite database on that list, then [contact us](<%= data.links.contact_us %>). See <%= topic_link "The CI Environment", "the CI environment" %> for what is supported.
+
+Learn more details about the available <%= topic_link 'databases', 'databases and datastores' %>.
 
 # Do you support deployments to platform X?
 
@@ -33,6 +35,11 @@ We currently support out-of-the-box deployments to Heroku. However, most platfor
 # Does the X-Window system run by default?
 
 Yes! Snap runs `xvfb` with a resolution of `1280x1024x16` and makes a `DISPLAY` variable available to your builds. If you're running GUI testing tools, you may want to checkout our guide on <%= topic_link "Testing with browsers", "browser testing" %>.
+
+# Why does Snap need read/write access to my repos?
+
+We know that it seems a lot, but we can <%= topic_link 'Revoking privileges granted to Snap CI', 'explain' %> the need of each one.
+
 
 
 
