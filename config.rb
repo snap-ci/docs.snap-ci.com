@@ -101,7 +101,7 @@ if ENV['S3_BUCKET']
     '/pipeline_clones_and_integration_pipelines/integration_pipelines/' => '/working-with-branches/integration-pipelines/',
     '/supported_platforms/'                   => '/the-ci-environment/',
     '/the_ci_environment/the_ci_environment/' => '/the-ci-environment/',
-    'the_ci_environment/languages/overview/'  => '/the-ci-environment/languages/'
+    '/the_ci_environment/languages/overview/' => '/the-ci-environment/languages/'
   }.each do |old_path, new_path|
     redirect old_path.dup, new_path.dup
   end
