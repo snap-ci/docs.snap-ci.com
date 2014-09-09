@@ -1,6 +1,7 @@
 module TopicLinkTagHelper
   def topic_link(name, text, opts={})
-    topic_name, fragment = name.split('#')
+    topic_name, fragment = name.split('#', 2)
+    fragment = URI.encode(fragment) if fragment
 
     topics = all_html_resources.find_all do |r|
       r.data.title.downcase == topic_name.downcase

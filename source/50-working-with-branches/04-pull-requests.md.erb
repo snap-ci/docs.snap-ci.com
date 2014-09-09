@@ -1,0 +1,50 @@
+---
+title:  "Pull Requests"
+doc_title:  "Working with Pull Requests on Snap CI"
+draft: true
+---
+
+For any repository that is building on Snap CI, creating a new pull request on GitHub will create a project in Snap that will actively track that pull request, and update the status on the pull request on GitHub.
+
+# How Pull Requests are tested
+
+When a new pull request is opened or when additional commits are
+published on a pull request on GitHub, Snap CI is notified about it.
+Snap then performs a build for each of these notifications.
+
+After each commit on the pull request is recieved, Snap will update the status on GitHub for each of the commits.
+
+Rather than test the commits from the head on the pull request, Snap
+performs a merge between the pull request HEAD and the upstream branch
+against which the pull request is issued.
+
+<%= retina_image('screenshots/pull-request') %>
+
+# Security considerations when testing Pull Requests
+
+In order to ensure that credentials and other sensitive information is
+not accidentally leaked out, Snap will ensure that no
+<%= topic_link 'deployment pipeline#environment-variables#secure-environment-variables', 'secure environment variables' %>,
+<%= topic_link 'deployment pipeline#secure-files', 'secure files' %> or other
+<%= topic_link 'security', 'secure' %> credentials are provided to the
+build.
+
+This is done in order to ensure that a malacious user submitting a
+pull request does not end up exposing this secure data.
+
+If your build would like to know if it is running a pull request, so
+that it can enable or disable certain tests, you may use the
+environment variable `SNAP_PULL_REQUEST_NUMBER` which will contain the
+pull request number if one is available.
+
+# My Pull Request is not being built
+
+This may happen because the pull request cannot be merged, if this is
+the case, rebasing to ensure that the pull request merges cleanly
+works well.
+
+# Rerunning a pull request build
+
+Rerunning a pull request build will ensure that the pull request HEAD
+is again merged with the latest upstream branch to ensure that the
+pull request is good.
