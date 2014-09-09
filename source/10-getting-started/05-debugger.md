@@ -1,6 +1,5 @@
 ---
-title: Debugging your build
-draft: true
+title: Debugging
 ---
 
 Using the `snap-shell` command you can easily debug your build. You only need to add it as one of your stage task.
