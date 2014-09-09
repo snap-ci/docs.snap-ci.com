@@ -100,6 +100,7 @@ if ENV['S3_BUCKET']
     '/pipeline_clones_and_integration_pipelines/cloned_pipelines/' => '/working-with-branches/cloned-pipelines/',
     '/pipeline_clones_and_integration_pipelines/integration_pipelines/' => '/working-with-branches/integration-pipelines/',
     '/pipeline_clones_and_integration_pipelines/automatically_tracking_branches/' => '/working-with-branches/automatic-branch-tracking/',
+    '/pipeline_clones_and_integration_pipelines/automatic_branch_tracking/' => '/working-with-branches/automatic-branch-tracking/',
     '/supported_platforms/'                   => '/the-ci-environment/',
     '/the_ci_environment/the_ci_environment/' => '/the-ci-environment/',
     '/the_ci_environment/languages/overview/' => '/the-ci-environment/languages/'
