@@ -1,0 +1,54 @@
+---
+title: How to setup your first build
+draft: true
+---
+
+Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are:
+
+
+## Step 1: Sign in
+
+To sign up with Snap, visit [Snap CI](https://snap-ci.com) and click on the Sign in link at the top.
+
+When you sign in, GitHub will ask if you want to give a set of
+permissions to Snap. You may <%= topic_link 'How Snap integrates with GitHub', 'learn more' %> about them.
+
+## Step 2: Add your project
+
+Once you are signed in, Snap will present a list of all the
+repositories you have access to. You may only build repositories. If
+you are an administrator on any of those repositories, you may build
+that repository on Snap.
+
+## Step 3: Configure your project
+
+When you select a repository to build on Snap, we will attempt to
+automatically detect some popular configurations for your project. We look for languages versions, build tools files, dependency managers and other conventions that may indicate how your project could be set up.
+
+<%= retina_image 'screenshots/getting-started/pacto-default' %>
+
+Snap automatically detected the dependency manager **bundler** and added a default command `bundle install --path ${SNAP_CACHE_DIR}/.bundle`. It also found the testing framework **rspec** and added the default task to run it: `rake spec`.
+
+Most of the times that would be everything needed to run all test. In this specific project though, we also need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
+
+<%= retina_image 'screenshots/getting-started/pacto-foreman' %>
+
+All that's left to do is click **Build now** and let Snap run our build.
+
+<%= retina_image 'screenshots/getting-started/pacto-build-running' %>
+
+## Congratulations!
+
+You have just set up your first project on Snap! Now you're ready to start doing continuous integration.
+
+Follow the what's next link to get to know more about what you can do with Snap.
+
+##Still having problems?
+
+Don't hesitate to [contact us](<%= data.links.contact_us %>) if you need more assistance.
+
+#What's next
+
+<%= topic_link 'using pipelines', 'Using pipelines' %>
+
+<%= topic_link 'deploying my application using snap', 'Where can I deploy using Snap?' %>
