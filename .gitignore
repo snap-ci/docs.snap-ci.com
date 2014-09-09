@@ -5,6 +5,7 @@
 .DS_Store
 bin/
 vendor/bundle
+_site
 .idea
 .tags*
 
