@@ -1,5 +1,6 @@
 ---
-title: How to setup your first build
+title: Steps to setup your first build
+doc_title: Steps to setup your first build on Snap CI
 ---
 
 Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are:
@@ -12,23 +13,27 @@ To sign up with Snap, visit [Snap CI](https://snap-ci.com) and click on the Sign
 When you sign in, GitHub will ask if you want to give a set of
 permissions to Snap. You may <%= topic_link 'How Snap integrates with GitHub', 'learn more' %> about them.
 
-## Step 2: Add your project
+## Step 2: Add your repository
 
 Once you are signed in, Snap will present a list of all the
 repositories you have access to. You may only build repositories. If
 you are an administrator on any of those repositories, you may build
 that repository on Snap.
 
-## Step 3: Configure your project
+## Step 3: Configure your build
 
 When you select a repository to build on Snap, we will attempt to
-automatically detect some popular configurations for your project. We look for languages versions, build tools files, dependency managers and other conventions that may indicate how your project could be set up.
+automatically detect some popular configurations for your build. We look for languages versions, build tools files, dependency managers and other conventions that may indicate how your build could be set up.
+
+In this guide we'll use a ruby repository, but we do support <a href="/the-ci-environment/languages/">lots of other languages</a>.
 
 <%= retina_image 'screenshots/getting-started/pacto-default' %>
 
-Snap automatically detected the dependency manager **bundler** and added a default command `bundle install --path ${SNAP_CACHE_DIR}/.bundle`. It also found the testing framework **rspec** and added the default task to run it: `rake spec`.
+As most of the ruby repositories, this one uses a dependency manager tool call [**bundler**](http://bundler.io/) and the [**rspec**](http://rspec.info/) testing framework.
 
-Most of the times that would be everything needed to run all test. In this specific project though, we also need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
+Because of that, Snap automatically added the default command for each of them: `bundle install --path ${SNAP_CACHE_DIR}/.bundle` and `rake spec` respectively.
+
+Most of the times that would be everything needed to run your tests. However, there may be some tasks that are pre-requisites to it. In this specific build, we need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
 
 <%= retina_image 'screenshots/getting-started/pacto-foreman' %>
 
