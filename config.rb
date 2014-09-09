@@ -94,7 +94,11 @@ if ENV['S3_BUCKET']
   end
 
   {
-    '/supported_platforms/' => '/the-ci-environment/',
+    '/api/introduction/'                      => '/api/',
+    '/databases/'                             => '/the-ci-environment/databases/',
+    '/pipeline/introduction/'                 => '/pipeline/',
+    '/supported_platforms/'                   => '/the-ci-environment/',
+    '/the_ci_environment/the_ci_environment/' => '/the-ci-environment/',
   }.each do |old_path, new_path|
     redirect old_path.dup, new_path.dup
   end
