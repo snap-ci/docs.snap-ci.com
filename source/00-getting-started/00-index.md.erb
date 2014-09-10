@@ -26,7 +26,7 @@ automatically detect some popular configurations for your build. We look for lan
 
 In this guide we'll use a ruby repository, but we do support <a href="/the-ci-environment/languages/">lots of other languages</a>.
 
-<%= retina_image 'screenshots/getting-started/pacto-default' %>
+<%= retina_image 'screenshots/getting-started/build-default' %>
 
 As most of the ruby repositories, this one uses a dependency manager tool call [**bundler**](http://bundler.io/) and the [**rspec**](http://rspec.info/) testing framework.
 
@@ -34,11 +34,11 @@ Because of that, Snap automatically added the default command for each of them: 
 
 Most of the times that would be everything needed to run your tests. However, there may be some tasks that are pre-requisites to it. In this specific build, we need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
 
-<%= retina_image 'screenshots/getting-started/pacto-foreman' %>
+<%= retina_image 'screenshots/getting-started/build-foreman' %>
 
 All that's left to do is click **Build now** and let Snap run our build.
 
-<%= retina_image 'screenshots/getting-started/pacto-build-running' %>
+<%= retina_image 'screenshots/getting-started/build-running' %>
 
 ## Congratulations!
 

@@ -21,7 +21,7 @@ Knowing that there is a problem earlier in your pipeline will enable your team t
 
 Say that you have one single stage running all your tests as the one bellow.
 
-<%= retina_image 'screenshots/getting-started/pacto-basic-pipeline' %>
+<%= retina_image 'screenshots/getting-started/build-pipeline-completed' %>
 
 ## Step 1: Separated commands
 
@@ -31,7 +31,7 @@ While the command `rake spec` runs all tests in the stage, other are also availa
 
 As a first step, we'll replace `rake spec` with them:
 
-<%= retina_image 'screenshots/getting-started/pacto-multiple-commands' %>
+<%= retina_image 'screenshots/getting-started/build-multiple-commands' %>
 
 The build should still run with no problems.
 
@@ -43,19 +43,19 @@ Always starting from a clean state implies that any command that setup the envir
 
 We provide mechanisms like <%= topic_link 'caching', 'caching' %> and <%= topic_link 'Deployment Pipeline#setup-commands', 'pinned commands' %> that will come in hand to speed up downloads and easily share commands among stages.
 
-<%= retina_image 'screenshots/getting-started/pacto-multiple-stages' %>
+<%= retina_image 'screenshots/getting-started/build-multiple-stages' %>
 
 ## Step 3: Optimizing your pipeline
 
 Having a pipeline is about having meaningful feedback on your code as fast as possible.
 
-<%= retina_image 'screenshots/getting-started/pacto-first-pipeline' %>
+<%= retina_image 'screenshots/getting-started/build-multi-pipeline-completed' %>
 
 In our pipeline, even though **code style analysis** stage is fast, it is not critical for the team. It would not need immediate action from the team to fix. On the other hand, **integration** and **samples** are likely to find and rise bugs that would need attention, they provide a better feedback than **code style analysis**.
 
 In order to provide a better feedback, we'll make **code style analysis** the last stage, making **integration** and **samples** run earlier.
 
-<%= retina_image 'screenshots/getting-started/pacto-multiple-stages-final' %>
+<%= retina_image 'screenshots/getting-started/build-multi-pipeline-conf' %>
 
 ## That's it!
 
