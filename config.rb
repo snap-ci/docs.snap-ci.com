@@ -109,6 +109,8 @@ if ENV['S3_BUCKET']
   }.each do |old_path, new_path|
     redirect old_path.dup, new_path.dup
   end
+
+  redirect '/', '/getting-started/'
 end
 
 configure :build do
