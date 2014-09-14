@@ -13,7 +13,7 @@ Triggers a new pipeline from the latest revision on the specified branch.
 
 Example:
 
-```
+~~~shell
 $ curl -XPOST -ualice:API_KEY https://api.snap-ci.com/project/angular/protractor/branch/master/trigger
 
 {
@@ -21,7 +21,7 @@ $ curl -XPOST -ualice:API_KEY https://api.snap-ci.com/project/angular/protractor
   "sha": "1daa8934956181b4299073973d3e1755df32e0ee",
   "counter": 74
 }
-```
+~~~
 
 
 # Trigger a manual stage
@@ -32,10 +32,10 @@ Triggers a manual stage on a specific pipeline.
 
 Example:
 
-```
+~~~shell
 $ curl -XPOST -ualice:API_KEY https://api.snap-ci.com/project/angular/protractor/branch/master/pipeline/15/stage/Deploy/trigger
 
 {
   "message": "The manual stage Deploy was successfully triggered."
 }
-```
+~~~

@@ -7,11 +7,11 @@ To get started with building and testing Android applications, Snap provides a s
 
 To save space, Snap does not download every Android version, so you'll need to specify the versions and components you want to install:
 
-```
+~~~shell
 $ download-android
 $ echo y | android update sdk --no-ui --filter platform-tool
 $ echo y | android update sdk --no-ui --filter android-18
-```
+~~~
 
 This may be a bit cumbersome, so it is recommended that you create a shell script (e.g. `initialize-android.sh`) to initialize your environment, and call it as the first task in your stage.
 
