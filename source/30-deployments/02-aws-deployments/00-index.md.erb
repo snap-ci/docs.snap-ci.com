@@ -1,0 +1,78 @@
+---
+title:  "Deploying to AWS"
+doc_title:  "Deploying to AWS with Snap CI"
+---
+
+To deploy to Amazon AWS with Snap, you configure a custom stage to run the steps required to deploy your application. Since there are a wide variety of deployment strategies to choose from on AWS, Snap provides the [AWS CLI](http://aws.amazon.com/cli/) on the command line. This allows you to use customized deployments for yourself.
+
+This document describes some of common ways in which you may go about deploying to AWS.
+
+* [Using OpsWorks](#using-opsworks-to-deploy-to-aws)
+* [Using S3](#using-s3-to-deploy-to-aws)
+* [Using Elastic Beanstalk](#using-elastic-beanstalk-to-deploy-to-aws)
+
+# Using OpsWorks to deploy to AWS
+
+Snap provides a quick and easy way to deploy simple apps using OpsWorks.
+
+To get started
+
+* Edit your project configuration
+* Select the "Deploy" recipes
+* Then select the "Basic OpsWorks" recipe
+* Define some secure environment variables to hold your AWS credentials `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+* Tweak the command to change the APP ID argument to match your applicaiton. You can find the APP ID from your [AWS console](https://console.aws.amazon.com/opsworks/home).
+
+  <%= retina_image 'screenshots/aws/opsworks-setup' %>
+
+## Command line usage of "snap-deploy" for opsworks deployments
+
+<% if development? %>
+<%= output_of_command 'cd ../snap-deploy; unset BUNDLE_BIN_PATH BUNDLE_GEMFILE GEM_HOME GEM_PATH RUBYLIB RUBYOPT; bundle exec snap-deploy aws opsworks -h' %>
+<% else %>
+<%= output_of_command 'snap-deploy aws opsworks -h' %>
+<% end %>
+
+# Using S3 to deploy to AWS
+
+To get started
+
+* Edit your project configuration
+* Select the "Deploy recipes"
+* Then select the "S3 Upload" recipe
+* Define some secure environment variables to hold your AWS credentials `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+* Tweak the command to change the arguments for `aws s3 cp`
+
+  <%= retina_image 'screenshots/aws/s3-setup' %>
+
+## Command line usage of "aws s3 cp" for opsworks deployments
+
+See [this document](http://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) for the complete reference.
+
+~~~ nginx
+    aws s3 cp <LocalPath> <S3Path> or <S3Path> <LocalPath> or <S3Path> <S3Path>
+    [--website-redirect <value>]
+    [--no-guess-mime-type]
+    [--dryrun]
+    [--recursive]
+    [--content-disposition <value>]
+    [--content-encoding <value>]
+    [--content-language <value>]
+    [--cache-control <value>]
+    [--quiet]
+    [--expires <value>]
+    [--acl <value>]
+    [--grants <value> [<value>...]]
+    [--storage-class <value>]
+    [--sse]
+    [--exclude <value>]
+    [--include <value>]
+    [--content-type <value>]
+~~~
+
+# Using Elastic Beanstalk to deploy to AWS
+
+Amazon's [Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/) is a product that allows applications built on [many popular languages and frameworks](http://aws.amazon.com/elasticbeanstalk/faqs/#what-lang) to be deployed to AWS. While it has its own command line tool, eb, which provides a slightly different API and workflow, it can also be controlled through the default AWS command line interface. To see how you can deploy a standard Ruby application using Elastic Beanstalk, check out [this blog post](http://blog.snap-ci.com/blog/2013/10/21/aws-elastic-beanstalk/).
+
+For more information see [AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/) and [Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html).
+

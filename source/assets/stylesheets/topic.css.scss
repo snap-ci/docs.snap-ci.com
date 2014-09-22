@@ -106,17 +106,25 @@
       color: #555;
     }
 
-    code, pre {
+    pre, code {
       font-family: Monaco, Consolas, Inconsolata, "Liberation Mono", "Courier New", monospace;
       font-size: 11px;
-      background-color: #444;
-      color: white;
       line-height: 1.7;
       @include border-radius(3px);
     }
 
+    pre {
+      background-color: #444;
+      color: white;
+
+      code {
+        background-color: inherit;
+      }
+    }
+
     code {
-      padding: 0 6px;
+      background-color: #f0f0f0;
+      padding: 0 2px;
       display: inline-block;
       &.highlight {
         font-size: 13px;
