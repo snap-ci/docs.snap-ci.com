@@ -118,7 +118,9 @@
       color: white;
 
       code {
+        width: 100%;
         background-color: inherit;
+        overflow-x: scroll;
       }
     }
 
