@@ -1,7 +1,7 @@
 $(function(){
   var cname = function(current) {
     var name = current.text();
-    return name.toLowerCase().replace(/[ \/<>]/g, '-').replace(/:$/, '').replace(/\?/, '').replace(/\./, '').replace(/'/, '').replace(/"/, '').replace(/\!/, '');
+    return name.toLowerCase().replace(/[ \/<>]/g, '-').replace(/:$/, '').replace(/\?/g, '').replace(/\./g, '').replace(/'/g, '').replace(/"/g, '').replace(/\!/, '');
   }
 
    var warn = function (message){
