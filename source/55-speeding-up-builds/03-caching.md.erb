@@ -17,7 +17,9 @@ machines and you do not want to download this SDK on every build as it will
 take some time, all you need to do is to define a command to retrieve the SDK
 and store it on the cache directory, like so:
 
-    $ [[ ! -d ${SNAP_CACHE_DIR}/some_sdk ]] && ./download_sdk.sh ${SNAP_CACHE_DIR}/some_sdk
+~~~ shell
+$ [[ ! -d ${SNAP_CACHE_DIR}/some_sdk ]] && ./download_sdk.sh ${SNAP_CACHE_DIR}/some_sdk
+~~~
 
 In the command above we test if `${SNAP_CACHE_DIR}/some_sdk` directory exists, if
 not then we proceed to download our SDK using a simple script
