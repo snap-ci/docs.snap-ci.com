@@ -14,8 +14,6 @@ task :detect_versions do
     next
   end
 
-  config = YAML.load_file('_config.yml')
-
   versions = {
     'arch'   => %x[uname -m].strip,
     'centos' => File.read('/etc/centos-release').match(/release ([\d\.]+)/)[1],
