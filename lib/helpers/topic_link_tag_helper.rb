@@ -6,13 +6,18 @@ module TopicLinkTagHelper
   def topic_link(name, text, opts={})
     topic = topic_with_name(name)
     if topic.data.draft && !current_page.data.draft
-      link_to text, topic, :class => opts[:class] || 'wip', :fragment => fragment(name)
+      link_to text, topic, :class => opts[:class] || 'wip', :fragment => encoded_fragment(name)
     else
-      link_to text, topic, :class => opts[:class], :fragment => fragment(name)
+      link_to text, topic, :class => opts[:class], :fragment => encoded_fragment(name)
     end
   end
 
   private
+
+
+  def encoded_fragment(name)
+    URI.encode(fragment(name)) if fragment(name)
+  end
 
   def fragment(name)
     name.split('#', 2)[1]
@@ -23,8 +28,6 @@ module TopicLinkTagHelper
   end
 
   def topic_with_name(name)
-    fragment = URI.encode(fragment(name)) if fragment(name)
-
     topics = all_html_resources.find_all do |r|
       r.data.title.downcase == topic_name(name).downcase
     end
