@@ -5,11 +5,15 @@ doc_title: Adding SSH keys to my build on Snap CI
 
 We recommend you to add files such as ssh keys and certificates as <%= topic_link 'Deployment Pipeline#secure-files', 'secure files' %>. It can be done in your project configuration screen. There, you'll be able to specify the file name, location, permissions and it's content.
 
+Say for example that you need access to a private repository on Github to fetch some dependency on your build. You can add a access key by creating a secure file and placing it on the `${HOME}/.ssh` folder.
+
 <%= retina_image 'screenshots/getting-started/ssh-keys' %>
 
-You can then use the files as ssh credentials to run your commands.
+You can also use it to run your custom commands.
 
 <%= retina_image 'screenshots/getting-started/ssh-keys-command' %>
+
+
 
 #What's next
 
