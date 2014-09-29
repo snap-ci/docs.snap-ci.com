@@ -107,6 +107,7 @@ if ENV['S3_BUCKET']
     '/the_ci_environment/languages/overview/'                                     => '/the-ci-environment/languages/',
     '/deployments/heroku/basic_heroku/'                                           => '/deployments/heroku-deployments/',
     '/deployments/heroku/custom_heroku_stage/'                                    => '/deployments/heroku-deployments/',
+    '/notifications/campfire-and-hipchat-notifications'                           => '/notifications/campfire/',
   }.each do |old_path, new_path|
     redirect old_path.dup, new_path.dup
   end

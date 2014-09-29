@@ -1,0 +1,21 @@
+Snap can deliver build notifications to <%= link_to tool_name, tool_url %> amongst other notification channels.
+
+# Setting up <%= tool_name %> notifications
+
+* Navigate to the notifications configuration section from your project's build history page.
+
+  <%= retina_image "screenshots/chat/notification-icon" %>
+
+* Snap will tell you that you haven't configured any <%= tool_name %> credentials. Click on the appropriate link to add them.
+
+* You will then be taken to a page to enter the relevant credentials and other information
+
+  <%= retina_image "screenshots/chat/#{tool_name.downcase}-credentials" %>
+
+* Save the configuration, and then enter the <%= channel_terminology %> name that Snap should post to. Note that Snap will not create the <%= channel_terminology %> and so the <%= channel_terminology %> must exist to begin with.
+
+  <%= retina_image "screenshots/chat/#{tool_name.downcase}-credentials-chat-room" %>
+
+* Click on Save to start <% tool_name %> notifications
+
+* You're done! Snap will notify you when important events, such as build failure, occur.
