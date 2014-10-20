@@ -1,0 +1,21 @@
+---
+title:  "Clojure/Leiningen"
+doc_title: "Using Clojure/Leiningen on Snap CI"
+---
+
+<%= partial 'jvm_languages_and_versions_intro' %>
+
+Snap provides leiningen version `<%= data.versions.leiningen %>` on the `PATH`.
+
+By default if Snap detects the presence of a `project.clj` at your project root, it will execute
+`lein do clean, test` in order to run your tests.
+
+## Custom Leiningen arguments
+
+For the most part the defaults for leiningen and JVM options should work fine.
+
+If required, you may tweak the arguments to suit your needs.
+
+The complete list of arguments supported by leiningen are listed here -
+
+<%= output_of_command 'lein --help' %>
