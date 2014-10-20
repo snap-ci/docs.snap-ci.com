@@ -1,0 +1,21 @@
+---
+title:  "Scala/SBT"
+doc_title: "Using Scala/SBT on Snap CI"
+---
+
+<%= partial 'jvm_languages_and_versions_intro' %>
+
+Snap provides sbt version `<%= data.versions.sbt %>` on the `PATH`.
+
+By default if Snap detects the presence of a `build.sbt` at your project root, it will execute
+`sbt test assembly` in order to run your tests.
+
+## Custom SBT arguments
+
+For the most part the defaults for SBT and JVM options should work fine.
+
+If required, you may tweak the arguments to suit your needs.
+
+The complete list of arguments supported by sbt are listed here -
+
+<%= output_of_command 'sbt -h', :expected_exit_code => 1 %>
