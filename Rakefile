@@ -24,6 +24,7 @@ task :detect_versions do
     'awscli' => %x[/opt/local/awscli/bin/aws --version 2>&1].match(/^aws-cli\/(\S+)/)[1],
     'git'    => %x[git --version 2>&1].match(/^git version (.*)/)[1],
     'sbt'    => %x[sbt --version 2>&1].match(/^sbt launcher version (.*)/)[1],
+    'terraform version'    => %x[terraform version].match(/^Terraform (.*)/)[1],
   }
 
   development_tools = %w(gcc gcc-c++ make)
