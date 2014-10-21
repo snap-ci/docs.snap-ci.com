@@ -1,0 +1,24 @@
+---
+title:  "Deploying to AWS OpsWorks"
+doc_title:  "Deploying to AWS OpsWorks with Snap CI"
+---
+
+Snap provides a quick and easy way to deploy simple apps using OpsWorks.
+
+To get started
+
+* Edit your project configuration
+* Select the "Deploy" recipes
+* Then select the "Basic OpsWorks" recipe
+* Define some secure environment variables to hold your AWS credentials `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+* Tweak the command to change the APP ID argument to match your applicaiton. You can find the APP ID from your [AWS console](https://console.aws.amazon.com/opsworks/home).
+
+  <%= retina_image 'screenshots/aws/opsworks-setup' %>
+
+## Command line usage of "snap-deploy" for opsworks deployments
+
+<% if development? %>
+<%= output_of_command 'cd ../snap-deploy; unset BUNDLE_BIN_PATH BUNDLE_GEMFILE GEM_HOME GEM_PATH RUBYLIB RUBYOPT; bundle exec snap-deploy aws opsworks -h' %>
+<% else %>
+<%= output_of_command 'snap-deploy aws opsworks -h' %>
+<% end %>

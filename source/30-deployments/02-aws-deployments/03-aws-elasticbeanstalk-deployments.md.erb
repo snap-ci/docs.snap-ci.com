@@ -1,0 +1,24 @@
+---
+title:  "Deploying to AWS ElasticBeanstalk"
+doc_title:  "Deploying to AWS ElasticBeanstalk with Snap CI"
+---
+
+Snap provides a quick and easy way to deploy simple apps using OpsWorks.
+
+To get started
+
+* Edit your project configuration
+* Select the "Deploy" recipes
+* Then select the "Elastic Beanstalk Deploy" recipe
+* Define some secure environment variables to hold your AWS credentials `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+* Tweak the command to change the `APP_NAME`, `ENV_NAME`, `S3_BUCKET` and `region` argument to match your deployment.
+
+  <%= retina_image 'screenshots/aws/eb-deploy' %>
+
+## Command line usage of "snap-deploy" for opsworks deployments
+
+<% if development? %>
+<%= output_of_command 'cd ../snap-deploy; unset BUNDLE_BIN_PATH BUNDLE_GEMFILE GEM_HOME GEM_PATH RUBYLIB RUBYOPT; bundle exec snap-deploy aws eb -h' %>
+<% else %>
+<%= output_of_command 'snap-deploy aws eb -h' %>
+<% end %>

@@ -1,0 +1,39 @@
+---
+title:  "Deploying to AWS S3"
+doc_title:  "Deploying to AWS S3 with Snap CI"
+---
+
+To get started
+
+* Edit your project configuration
+* Select the "Deploy recipes"
+* Then select the "S3 Upload" recipe
+* Define some secure environment variables to hold your AWS credentials `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+* Tweak the command to change the arguments for `aws s3 cp`
+
+  <%= retina_image 'screenshots/aws/s3-setup' %>
+
+## Command line usage of "aws s3 cp" for opsworks deployments
+
+See [this document](http://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) for the complete reference.
+
+~~~ nginx
+    aws s3 cp <LocalPath> <S3Path> or <S3Path> <LocalPath> or <S3Path> <S3Path>
+    [--website-redirect <value>]
+    [--no-guess-mime-type]
+    [--dryrun]
+    [--recursive]
+    [--content-disposition <value>]
+    [--content-encoding <value>]
+    [--content-language <value>]
+    [--cache-control <value>]
+    [--quiet]
+    [--expires <value>]
+    [--acl <value>]
+    [--grants <value> [<value>...]]
+    [--storage-class <value>]
+    [--sse]
+    [--exclude <value>]
+    [--include <value>]
+    [--content-type <value>]
+~~~
