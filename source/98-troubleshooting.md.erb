@@ -5,7 +5,7 @@ doc_title: "Troubleshooting on Snap CI"
 
 # The variables I exported in the commands is not taking into effect.
 
-Every command runs in its own shell. Due to this, if you export an environment variable as a previous command,
+Every command in Snap runs in its own shell. Due to this, if you export an environment variable as a previous command,
 it may not be available to the subsequent commands. We recommend defining environment variables in the **Environment Variable** section of the stage.
 
 As an example, if you setup a stage with the following commands, they wont work:
@@ -22,6 +22,15 @@ the file before every command that requires those variables as shown in the foll
 $ echo export MY_ENV="env" > env_variables
 $ source ./env_variables; some_command_that_needs_the_variables
 $ source ./env_variables; some_other_command_that_needs_the_variables
+~~~
+
+# I'm not able to change directory using "cd"
+
+Each command that you run in Snap is isolated from others. So changes to working directories do not persist across different commands. What you can do is something along the lines of -
+
+~~~shell
+$ cd my/directory && execute something
+$ cd my/directory && execute something else
 ~~~
 
 # My build can't find the dependencies from the previous stages.
