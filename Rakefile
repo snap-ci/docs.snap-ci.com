@@ -15,17 +15,17 @@ task :detect_versions do
   end
 
   versions = {
-    'arch'   => %x[uname -m].strip,
-    'centos' => File.read('/etc/centos-release').match(/release ([\d\.]+)/)[1],
-    'kernel' => %x[uname -r].strip,
-    'ant'    => %x[ant -version].match(/version (.*) compiled/)[1],
-    'maven'  => %x[mvn --version].match(/Apache Maven (.*) \(/)[1],
-    'gradle' => %x[gradle --version].match(/^Gradle (.*)$/)[1],
-    'awscli' => %x[/opt/local/awscli/bin/aws --version 2>&1].match(/^aws-cli\/(\S+)/)[1],
-    'git'    => %x[git --version 2>&1].match(/^git version (.*)/)[1],
-    'sbt'    => %x[sbt --version 2>&1].match(/^sbt launcher version (.*)/)[1],
-    'terraform'    => %x[terraform version].match(/^Terraform (.*)/)[1],
-    'lein'    => %x[lein --version].match(/^Leiningen (.*) on Java/)[1],
+    'arch'      => %x[uname -m].strip,
+    'centos'    => File.read('/etc/centos-release').match(/release ([\d\.]+)/)[1],
+    'kernel'    => %x[uname -r].strip,
+    'ant'       => %x[ant -version].match(/version (.*) compiled/)[1],
+    'maven'     => %x[mvn --version].match(/Apache Maven (.*) \(/)[1],
+    'gradle'    => %x[gradle --version].match(/^Gradle (.*)$/)[1],
+    'awscli'    => %x[/opt/local/awscli/bin/aws --version 2>&1].match(/^aws-cli\/(\S+)/)[1],
+    'git'       => %x[git --version 2>&1].match(/^git version (.*)/)[1],
+    'sbt'       => %x[sbt --version 2>&1].match(/^sbt launcher version (.*)/)[1],
+    'terraform' => %x[terraform version].match(/^Terraform (.*)/)[1],
+    'leiningen' => %x[lein --version].match(/^Leiningen (.*) on Java/)[1],
   }
 
   development_tools = %w(gcc gcc-c++ make)
