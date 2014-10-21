@@ -25,6 +25,10 @@
                   <% if current_page.data.draft %>
                     <span class='draft'>(This is currently a draft!)</span>
                   <% end %>
+
+                  <% if current_page.data.wip %>
+                    <span class='draft'>(WIP - This functionality is currently in preview)</span>
+                  <% end %>
                 </h1>
                 <div class="doc-content">
                   <%= yield %>

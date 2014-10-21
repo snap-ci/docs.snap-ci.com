@@ -5,7 +5,7 @@ module TopicLinkTagHelper
 
   def topic_link(name, text, opts={})
     topic = topic_with_name(name)
-    if topic.data.draft && !current_page.data.draft
+    if topic.data.draft || topic.data.wip && !current_page.data.draft
       link_to text, topic, :class => opts[:class] || 'wip', :fragment => encoded_fragment(name)
     else
       link_to text, topic, :class => opts[:class], :fragment => encoded_fragment(name)

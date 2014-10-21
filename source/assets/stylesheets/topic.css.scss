@@ -55,6 +55,26 @@
       }
     }
 
+    li {
+      .wip {
+        border: none;
+        padding-left: inherit;
+      }
+    }
+    .wip {
+      border: 1px solid #eee;
+      @include border-radius(5px);
+      padding-left: 10px;
+      padding-right: 10px;
+      &:after {
+        content: '[wip]';
+        padding-left: 4px;
+        font-size: 60%;
+        vertical-align: middle;
+        color: red;
+      }
+    }
+
     .doc-title {
       font-size: 36px;
       font-family: 'RobotoThin';

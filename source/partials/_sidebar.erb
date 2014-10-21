@@ -10,7 +10,9 @@
       next_resource_nesting = next_resource ? nesting_of(next_resource) : -1
 
       css_class = []
-      css_class << "nest-#{current_resource_nesting} #{current_resource == page ? 'current': ''}"
+      css_class << "nest-#{current_resource_nesting}"
+      css_class << current_resource == page ? 'current': ''
+      css_class << 'wip' if page.data.draft || page.data.wip
       if next_resource_nesting > current_resource_nesting
         css_class << 'section-name'
       end
