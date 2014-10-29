@@ -15,13 +15,14 @@ $ echo y | android update sdk --no-ui --filter android-18
 
 This may be a bit cumbersome, so it is recommended that you create a shell script (e.g. `initialize-android.sh`) to initialize your environment, and call it as the first task in your stage.
 
-~~~ shell
+~~~shell
 #!/bin/bash
 
 # raise an error if any command fails!
 set -e
 
-INITIALIZATION_FILE="$ANDROID_HOME/.initialized-dependencies"
+# existance of this file indicates that all dependencies were previously installed, and any changes to this file will use a different filename.
+INITIALIZATION_FILE="$ANDROID_HOME/.initialized-dependencies-$(git log -n 1 --format=%h -- $0)"
 
 if [ ! -e ${INITIALIZATION_FILE} ]; then
   # fetch and initialize $ANDROID_HOME
@@ -35,6 +36,13 @@ if [ ! -e ${INITIALIZATION_FILE} ]; then
 
   # The SDK version used to compile your project
   echo y | android update sdk --no-ui --filter android-18 > /dev/null
+
+  # uncomment to install the Extra/Android Support Library
+  # echo y | android update sdk --no-ui --filter extra-android-support --all > /dev/null
+
+  # uncomment these if you are using maven/gradle to build your android project
+  # echo y | android update sdk --no-ui --filter extra-google-m2repository --all > /dev/null
+  # echo y | android update sdk --no-ui --filter extra-android-m2repository --all > /dev/null
 
   # Specify at least one system image if you want to run emulator tests
   echo y | android update sdk --no-ui --filter sys-img-armeabi-v7a-android-19 --all > /dev/null
