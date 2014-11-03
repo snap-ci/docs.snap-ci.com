@@ -3,36 +3,6 @@ title: "Troubleshooting"
 doc_title: "Troubleshooting on Snap CI"
 ---
 
-# The variables I exported in the commands is not taking into effect.
-
-Every command in Snap runs in its own shell. Due to this, if you export an environment variable as a previous command,
-it may not be available to the subsequent commands. We recommend defining environment variables in the **Environment Variable** section of the stage.
-
-As an example, if you setup a stage with the following commands, they wont work:
-
-~~~ shell
-$ export MY_ENV="env"
-$ echo ${MY_ENV} # won't work.
-~~~
-
-If there is a case where the environment variables are dynamically generated, you can write them to a file and then source
-the file before every command that requires those variables as shown in the following example:
-
-~~~ shell
-$ echo export MY_ENV="env" > env_variables
-$ source ./env_variables; some_command_that_needs_the_variables
-$ source ./env_variables; some_other_command_that_needs_the_variables
-~~~
-
-# I'm not able to change directory using "cd"
-
-Each command that you run in Snap is isolated from others. So changes to working directories do not persist across different commands. What you can do is something along the lines of -
-
-~~~shell
-$ cd my/directory && execute something
-$ cd my/directory && execute something else
-~~~
-
 # My build can't find the dependencies from the previous stages.
 
 Every stage in Snap starts with a clean and isolated environment. Hence, if you made any changes to the build machine
@@ -57,3 +27,9 @@ In need of storing sensitive files in your build? Follow <%= topic_link 'how do 
 # Bundle install fails for a private repository
 
 A gem dependency for a private repository requires you to setup a ssh key with access to that repository. Follow <%= topic_link 'how do i add ssh keys to my build?', 'our guide' %> for more details.
+
+# My build is timing out
+
+A build times out if it has been running the same stage for more than 2 hours or has not produced any console output for more than 15 minutes.
+ 
+One of the most common reason a build times out is because the command being run is waiting for input from the keyboard. One of the ways to make sure this doesn't happen is to close the stdin of the command in doubt by appending `0<&-` to it. If you need any help in debugging this please get in [touch with us](<%= data.links.contact_us %>).
