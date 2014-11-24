@@ -31,5 +31,9 @@ A gem dependency for a private repository requires you to setup a ssh key with a
 # My build is timing out
 
 A build times out if it has been running the same stage for more than 2 hours or has not produced any console output for more than 15 minutes.
- 
-One of the most common reason a build times out is because the command being run is waiting for input from the keyboard. One of the ways to make sure this doesn't happen is to close the stdin of the command in doubt by appending `0<&-` to it. If you need any help in debugging this please get in [touch with us](<%= data.links.contact_us %>).
+
+One of the most common reason a build times out is because the command being run is waiting for input from the keyboard. One of the ways to make sure this doesn't happen is to close the stdin of the command in doubt by appending `0<&-` to it. For e.g. `ssh user@ip.add.re.ss some-shell-script` could be written as `ssh user@ip.add.re.ss some-shell-script 0<&-`.
+
+If any build step is known to take more than 15 minutes, and if your build is timing out, we suggest prefixing that build step with `snap-wait TIMEOUT_IN_MINUTES`. For e.g. `./some-long-running-command --with some arguments` could be written as `snap-wait 30 ./some-long-running-command --with some arguments`. This will ensure that your build is not terminated for atleast 30 minutes for not generating any console output.
+
+If you need any help in debugging this please get in [touch with us](<%= data.links.contact_us %>).
