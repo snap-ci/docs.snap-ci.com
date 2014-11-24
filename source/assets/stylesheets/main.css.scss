@@ -58,7 +58,18 @@ body {
     }
 
     .footer {
-      margin-top: 20px;
+      background-color: #EEE;
+      padding: 20px 60px 50px 50px;
+
+      .copyright {
+        float: left;
+      }
+
+      .fork-and-edit {
+        display: inline-block;
+        float: right;
+        padding-right: 60px;
+      }
     }
   }
 }
