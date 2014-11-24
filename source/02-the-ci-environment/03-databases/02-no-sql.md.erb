@@ -7,9 +7,9 @@ doc_title: "Using NoSQL Datastores on Snap CI"
 
 These services all run on localhost and default ports which are as follows:
 
-* **CouchDB**: localhost:5984
-* **MongoDB**: localhost:27017
-* **Redis**:   localhost:6379
+* **CouchDB(<%= versions_of('couchdb') %>)**: localhost:5984
+* **MongoDB(<%= versions_of('mongo-10gen') %>)**: localhost:27017
+* **Redis(<%= versions_of('redis') %>)**:   localhost:6379
 
 Common clients/libraries which use these, such as CouchRest, Mongoid or Resque should all "just work". For example, the default mongoid.yml set up by the gem would look something like this and would work out of the box.
 
