@@ -7,6 +7,7 @@ helpers TopicLinkTagHelper
 helpers SidebarHelper
 helpers ResourcesHelper
 helpers CommandLineOutputHelper
+helpers VersionsHelper
 
 Middleman::Extensions.register(:remove_ordering_prefix, RemoveOrderingPrefixExt)
 Middleman::Extensions.register(:retina_image_ext, RetinaImageExt)
