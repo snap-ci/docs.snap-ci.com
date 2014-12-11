@@ -31,6 +31,12 @@ Snap exports a number of environment variables during each build, which you may 
 * ``SNAP_STAGE_TRIGGERED_BY`` - if the current stage is triggered manually, this contains the login name of the user that triggered the stage
 * ``SNAP_PULL_REQUEST_NUMBER`` - if the current build is running a pull request, this contains the github pull request number
 
+## Additional variables when running with <%= topic_link "Setting up parallelism", "multiple workers" %>
+
+
+* ``SNAP_WORKER_TOTAL`` - The total number of workers that the stage is running with
+* ``SNAP_WORKER_INDEX`` - The index of the current worker, indexed from 1
+
 # Databases
 
 Depending on you project <%= topic_link "databases", "database settings" %>

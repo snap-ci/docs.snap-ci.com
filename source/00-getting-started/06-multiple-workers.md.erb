@@ -1,0 +1,59 @@
+---
+title: Setting up parallelism
+doc_title: Setting up parallelism on Snap CI
+---
+
+# Automatically splitting your tests (Ruby only)
+
+In order to assist with making your tests go faster, we have provided a command line application that will automatically partition your tests based on the number of tests you have and the number of workers you are running your builds with. Find out more about this CLI on its [github page](https://github.com/snap-ci/parallel-tests).
+
+# Manually splitting your tests
+
+Snap provides two <%= topic_link 'environment variables#current-build-details#additional-variables-when-running-with-multiple-workers', 'environment variables' %> `SNAP_WORKER_TOTAL` and `SNAP_WORKER_INDEX` to assist you with splitting your tests.
+
+You can put together a simple script to setup parallelism automatically -
+
+## To run same task, with different tests on each worker
+
+~~~ shell
+./test-runner $(snap-ci-parallel-partition list/of/files/directories)
+~~~
+
+## To run different tasks on each worker
+
+~~~ shell
+#!/usr/bin/env bash
+# looks at $SNAP_WORKER_INDEX and runs the same tests using different browsers
+
+if (( ${SNAP_WORKER_TOTAL:-0} < 3 )); then
+  echo "Not enough workers to run tests."
+  exit -1
+fi
+
+case "$SNAP_WORKER_INDEX" in
+  1) ./smoke-test --driver firefox ;;
+  2) ./integration-test ;;
+  3) ./performance-test ;;
+esac
+~~~
+
+
+# Writing your own test splitter
+
+The general pesudo-code to split your test suite is to first aggregate your test suite, then sort it so that all nodes can then partition the tests correctly. For a more detailed example, checkout Snap's [partition method](https://github.com/snap-ci/parallel-tests/blob/master/lib/snap_ci/parallel_tests.rb) and the [slicing method](https://github.com/snap-ci/parallel-tests/blob/master/lib/snap_ci/parallel_tests/grouper.rb).
+
+~~~ ruby
+def partition(tests, total_workers, current_worker_index)
+  # you may sort by size, name etc., but not on timestamps, because they may vary across your workers
+  sorted_tests = tests.sort {|test1, test2| File.size(test1) <=> File.size(test2) }
+
+  test_count = sorted_tests.count.to_f
+  tests_per_worker = (test_count/total_workers).ceil
+
+  # slice the tests for all workers
+  slices = sorted_tests.each_slice(tests_per_worker).to_a
+
+  # pick the slice for the current worker, adjusted for 1 based index
+  slices[current_worker_index-1] || []
+end
+~~~
