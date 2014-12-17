@@ -38,7 +38,7 @@ task :detect_versions do
 
   rpms = development_tools + development_libs + sql_sdatabases + no_sql_databases + languages + third_party_tools + browser_tools
 
-  gems = %w(rake bundler foreman)
+  gems = %w(rake bundler)
   python_pips = %w(pip virtualenv)
 
   exclude_packages = [
