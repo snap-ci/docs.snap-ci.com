@@ -27,7 +27,7 @@ page "/sitemap.xml", :layout => false
 ignore 'assets/**/*.txt'
 ignore 'assets/**/*.html'
 
-set :url_root, 'http://docs.snap-ci.com'
+set :url_root, 'https://docs.snap-ci.com'
 set :fonts_dir, 'assets/fonts'
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
