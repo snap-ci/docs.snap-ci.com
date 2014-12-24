@@ -56,6 +56,15 @@ if ENV['S3_BUCKET']
     config.after_build           = false
   end
 
+  if ENV['CLOUDFRONT_DISTRIBUTION']
+    activate :cloudfront do |cf|
+      cf.access_key_id = ENV['S3_ACCESS_KEY']
+      cf.secret_access_key = ENV['S3_SECRET_KEY']
+      cf.distribution_id = ENV['CLOUDFRONT_DISTRIBUTION']
+      cf.after_build = false  # default is false
+    end
+  end
+
   default_caching_policy max_age: 10.minutes, must_revalidate: true
 
   %w(
