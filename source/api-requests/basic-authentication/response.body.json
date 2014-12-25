@@ -1,0 +1,6 @@
+{
+  "trigger_new_pipeline_url": "https://api.snap-ci.com/project/:owner/:repository/branch/:branch_name/trigger",
+  "trigger_manual_stage_url": "https://api.snap-ci.com/project/:owner/:repository/branch/:branch_name/trigger/:pipeline_counter/:stage_name",
+  "pipelines_url": "https://api.snap-ci.com/project/:owner/:repository/branch/:branch_name/pipelines",
+  "artifacts_url": "https://api.snap-ci.com/project/:owner/:repository/branch/:branch_name/artifacts/:pipeline_name/:pipeline_counter/:stage_name/:artifact_name"
+}

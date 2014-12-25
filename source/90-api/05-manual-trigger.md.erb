@@ -1,0 +1,43 @@
+---
+title:  Triggering Pipelines and Stages
+doc_title:  Triggering Pipelines and Stages on Snap CI
+---
+
+Snap allows you to trigger new pipelines and existing manual stages via the API.
+
+# Trigger new pipeline
+
+Triggers a new pipeline from the latest revision on the specified branch.
+
+`POST /project/:owner/:repository/branch/:branch_name/trigger`{:.api-method-url}
+
+**Parameters**
+
+{:.api-params}
+**Name**|**Type**|**Description**
+--------|--------|---------------
+ payload| object | A list of environment variables to be submitted along with the build. These variables will override any existing variables with the same name. |
+
+
+<%= render_api_example 'manual-trigger/new-pipeline',
+      method: :post,
+      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/trigger'
+%>
+
+# Trigger a manual stage
+
+Triggers a manual stage on a specific pipeline.
+
+`POST /project/:owner/:repository/branch/:branch_name/trigger/:pipeline_counter/:stage_name`{:.api-method-url}
+
+**Parameters**
+
+{:.api-params}
+**Name**|**Type**|**Description**
+--------|--------|---------------
+ payload| object | A list of environment variables to be submitted along with the build. These variables will override any existing variables with the same name. |
+
+<%= render_api_example 'manual-trigger/manual-stage',
+      method: :post,
+      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/trigger/25/Deploy'
+%>

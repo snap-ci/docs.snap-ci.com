@@ -1,0 +1,7 @@
+{
+  "_links": {
+    "redirect": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/25"
+    }
+  }
+}

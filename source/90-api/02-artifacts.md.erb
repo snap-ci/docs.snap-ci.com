@@ -1,0 +1,15 @@
+---
+title:  Artifacts
+doc_title:  Snap CI Artifacts API
+---
+
+# Download an artifact
+
+Redirects to a location containing an artifact. The redirect may not be cached and must be consumed within a few seconds.
+
+`GET /project/:owner/:repository/branch/:branch_name/artifacts/{tracking-pipeline,integration-pipeline}/:pipeline_counter/:stage_name/:artifact_name`{:.api-method-url}
+
+<%= render_api_example 'artifacts/get-an-artifact',
+      method: :get,
+      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/artifacts/tracking-pipeline/25/Build/foo', capture_mode: true
+%>

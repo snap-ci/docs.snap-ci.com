@@ -8,6 +8,7 @@ helpers SidebarHelper
 helpers ResourcesHelper
 helpers CommandLineOutputHelper
 helpers VersionsHelper
+helpers ApiExampleRenderingHelper
 
 Middleman::Extensions.register(:remove_ordering_prefix, RemoveOrderingPrefixExt)
 Middleman::Extensions.register(:retina_image_ext, RetinaImageExt)
@@ -26,6 +27,14 @@ page "/sitemap.xml", :layout => false
 
 ignore 'assets/**/*.txt'
 ignore 'assets/**/*.html'
+ignore 'api-requests/*'
+ignore '.idea/*'
+
+set :file_watcher_ignore, [
+  %r{api-requests/.*/response.headers.txt},
+  %r{api-requests/.*/response.body.json},
+  %r{\.idea/.*}
+]
 
 set :url_root, 'https://docs.snap-ci.com'
 set :fonts_dir, 'assets/fonts'

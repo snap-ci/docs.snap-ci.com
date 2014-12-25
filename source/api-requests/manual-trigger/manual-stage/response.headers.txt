@@ -1,0 +1,16 @@
+HTTP/1.1 201 Created
+Cache-Control: max-age=0, private, must-revalidate
+Cache-control: no-cache="set-cookie"
+Content-Type: application/hal+json; charset=utf-8
+Date: Wed, 24 Dec 2014 15:49:47 GMT
+ETag: W/"39c4dda9c86e12948c5663c9cc3325fb"
+Location: https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/25
+Server: nginx/1.7.8
+Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766BF3A4681870AC91DD880067873F43E9CBF2340C03F3A498553BB146AF7D91A2C1D2951DB8A82ADD9AF536C71ADF744D1;PATH=/;MAX-AGE=300
+X-Rack-Cache: invalidate, pass
+X-Request-Id: a2da11bf6620c7eb659a725bf1b098fa
+X-Runtime: 0.093224
+X-UA-Compatible: IE=Edge,chrome=1
+Content-Length: 2696
+Connection: keep-alive
+

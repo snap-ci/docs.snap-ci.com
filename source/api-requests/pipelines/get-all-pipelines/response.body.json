@@ -1,0 +1,102 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
+    },
+    "latest": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
+    },
+    "oldest": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=26"
+    }
+  },
+  "_embedded": {
+    "pipelines": [
+      {
+        "_links": {
+          "self": {
+            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/25"
+          },
+          "latest": {
+            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{latest,newest}"
+          },
+          "oldest": {
+            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{oldest,earliest}"
+          },
+          "previous": {
+            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/24"
+          },
+          "docs": {
+            "href": "http://docs.snap-ci.com/api/pipelines"
+          }
+        },
+        "counter": 25,
+        "result": "passed",
+        "commits": [
+          {
+            "_links": {
+              "github": [
+                {
+                  "rel": "api",
+                  "href": "https://api.github.com/repos/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+                },
+                {
+                  "rel": "http",
+                  "href": "https://github.com/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+                }
+              ]
+            },
+            "sha": "53fb6cfe8a14cbcac0f4f291f1118b1de11118d9",
+            "short_sha": "53fb6cf",
+            "author": "Ketan Padegaonkar <ketanpadegaonkar@gmail.com>",
+            "message": "Update config.ru",
+            "time": "2014-09-23T10:02:59Z"
+          }
+        ],
+        "stages": [
+          {
+            "name": "Build",
+            "full_name": "ketan/sinatra-sample (master) :: Build",
+            "result": "passed",
+            "duration": 19,
+            "artifacts": [
+              {
+                "_links": {
+                  "self": {
+                    "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/artifacts/tracking-pipeline/25/Build/foo"
+                  }
+                },
+                "name": "foo",
+                "download_url": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/artifacts/tracking-pipeline/25/Build/foo"
+              }
+            ],
+            "started_at": "2014-12-24T15:49:21Z",
+            "completed_at": "2014-12-24T15:49:21Z"
+          },
+          {
+            "name": "Deploy",
+            "full_name": "ketan/sinatra-sample (master) :: Deploy",
+            "result": "passed",
+            "duration": 21,
+            "artifacts": [
+
+            ],
+            "started_at": "2014-12-24T15:49:48Z",
+            "completed_at": "2014-12-24T15:49:48Z"
+          },
+          {
+            "name": "Smoke",
+            "full_name": "ketan/sinatra-sample (master) :: Smoke",
+            "result": "passed",
+            "duration": 2,
+            "artifacts": [
+
+            ],
+            "started_at": "2014-12-24T15:50:10Z",
+            "completed_at": "2014-12-24T15:50:10Z"
+          }
+        ]
+      }
+    ]
+  }
+}

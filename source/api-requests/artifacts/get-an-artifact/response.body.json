@@ -1,0 +1,7 @@
+{
+  "_links": {
+    "redirect": {
+      "href": "https://production-persistence-artifactsbucket-frvy32ihebxo.s3-us-west-2.amazonaws.com/15048/defaultPipeline/25/Build/1/foo.tar.gz.snap?response-content-disposition=attachment%3B%20filename%3Dfoo.tar.gz&response-content-encoding=binary&response-content-type=application%2Foctet-stream&AWSAccessKeyId=AKIAJCX77GDUQQXIEU3Q&Expires=1419439653&Signature=GIi8dKE7U%2Ft%2BdJszA5uQQcW8xpg%3D"
+    }
+  }
+}

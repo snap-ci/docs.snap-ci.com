@@ -1,0 +1,6 @@
+{
+  "env": {
+    "DB_SERVER_NAME": "db.example.com",
+    "WEB_SERVER_NAME": "web.example.com"
+  }
+}

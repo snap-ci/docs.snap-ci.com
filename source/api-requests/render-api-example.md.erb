@@ -1,0 +1,33 @@
+{:.example-request}
+**Example:**
+
+{::options parse_block_html="true" /}
+
+<div class='request-curl'>
+~~~shell
+<%= curl_cmd.join(' ') %>
+~~~
+</div>
+
+{:.example-response}
+**Response:**
+
+
+<div class='response'>
+
+<div class='response-headers'>
+~~~
+<% response_headers.each do |line| -%>
+<%= line -%>
+<% end -%>
+~~~
+</div>
+
+<div class='response-body'>
+~~~
+<%= response_body %>
+~~~
+</div>
+</div>
+
+{::options parse_block_html="false" /}

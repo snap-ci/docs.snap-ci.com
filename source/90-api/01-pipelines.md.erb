@@ -1,0 +1,45 @@
+---
+title:  Pipelines
+doc_title:  Snap CI Pipelines API
+---
+
+# Get the build history (all pipelines)
+
+`GET /project/:owner/:repository/branch/:branch_name/pipelines`{:.api-method-url}
+
+<%= render_api_example 'pipelines/get-all-pipelines',
+      method: :get,
+      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines'
+%>
+
+
+# Get a pipeline
+
+`GET /project/:owner/:repository/branch/:branch_name/pipelines/:pipeline_counter`{:.api-method-url}
+
+<%= render_api_example 'pipelines/get-a-pipeline',
+      method: :get,
+      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/25'
+%>
+
+# Get latest pipeline
+
+Redirects to the latest pipeline.
+
+`GET /project/:owner/:repository/branch/:branch_name/pipelines/{latest,newest}`{:.api-method-url}
+
+<%= render_api_example 'pipelines/get-latest-pipeline',
+      method: :get,
+      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/latest'
+%>
+
+# Get oldest pipeline
+
+Redirects to the oldest pipeline.
+
+`GET /project/:owner/:repository/branch/:branch_name/pipelines/{oldest,earliest}`{:.api-method-url}
+
+<%= render_api_example 'pipelines/get-oldest-pipeline',
+      method: :get,
+      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/oldest'
+%>

@@ -1,0 +1,82 @@
+{
+  "message": "A new pipeline was triggered",
+  "sha": "53fb6cfe8a14cbcac0f4f291f1118b1de11118d9",
+  "counter": 24,
+  "_embedded": {
+    "_links": {
+      "self": {
+        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/24"
+      },
+      "latest": {
+        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{latest,newest}"
+      },
+      "oldest": {
+        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{oldest,earliest}"
+      },
+      "previous": {
+        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/23"
+      },
+      "docs": {
+        "href": "http://docs.snap-ci.com/api/pipelines"
+      }
+    },
+    "counter": 24,
+    "result": "unknown",
+    "commits": [
+      {
+        "_links": {
+          "github": [
+            {
+              "rel": "api",
+              "href": "https://api.github.com/repos/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+            },
+            {
+              "rel": "http",
+              "href": "https://github.com/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+            }
+          ]
+        },
+        "sha": "53fb6cfe8a14cbcac0f4f291f1118b1de11118d9",
+        "short_sha": "53fb6cf",
+        "author": "Ketan Padegaonkar <ketanpadegaonkar@gmail.com>",
+        "message": "Update config.ru",
+        "time": "2014-09-23T10:02:59Z"
+      }
+    ],
+    "stages": [
+      {
+        "name": "Build",
+        "full_name": "ketan/sinatra-sample (master) :: Build",
+        "result": "unknown",
+        "duration": null,
+        "artifacts": [
+
+        ],
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Deploy",
+        "full_name": "ketan/sinatra-sample (master) :: Deploy",
+        "result": "unknown",
+        "duration": null,
+        "artifacts": [
+
+        ],
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Smoke",
+        "full_name": "ketan/sinatra-sample (master) :: Smoke",
+        "result": "unknown",
+        "duration": null,
+        "artifacts": [
+
+        ],
+        "started_at": null,
+        "completed_at": null
+      }
+    ]
+  }
+}
