@@ -66,6 +66,9 @@ $(function () {
   }
 
   var createTocElem = function (tocElem, linkToElem, id) {
+    if (!tocElem){
+      return;
+    }
     var newListItem = $('<li>').attr('data-toc-for', linkToElem.data('toc-uuid'));
     newListItem.append($('<a>').attr({href: '#' + encodeURIComponent(id)}).html(linkToElem.html()));
     tocElem.append(newListItem);
