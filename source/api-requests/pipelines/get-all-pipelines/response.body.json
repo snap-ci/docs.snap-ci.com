@@ -3,6 +3,9 @@
     "self": {
       "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
     },
+    "previous": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=20"
+    },
     "latest": {
       "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
     },
@@ -15,7 +18,7 @@
       {
         "_links": {
           "self": {
-            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/25"
+            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/45"
           },
           "latest": {
             "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{latest,newest}"
@@ -24,14 +27,14 @@
             "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{oldest,earliest}"
           },
           "previous": {
-            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/24"
+            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/44"
           },
           "docs": {
             "href": "http://docs.snap-ci.com/api/pipelines"
           }
         },
-        "counter": 25,
-        "result": "passed",
+        "counter": 45,
+        "result": "unknown",
         "commits": [
           {
             "_links": {
@@ -57,43 +60,35 @@
           {
             "name": "Build",
             "full_name": "ketan/sinatra-sample (master) :: Build",
-            "result": "passed",
-            "duration": 19,
+            "result": "unknown",
+            "duration": null,
             "artifacts": [
-              {
-                "_links": {
-                  "self": {
-                    "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/artifacts/tracking-pipeline/25/Build/foo"
-                  }
-                },
-                "name": "foo",
-                "download_url": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/artifacts/tracking-pipeline/25/Build/foo"
-              }
+
             ],
-            "started_at": "2014-12-24T15:49:21Z",
-            "completed_at": "2014-12-24T15:49:21Z"
+            "started_at": null,
+            "completed_at": null
           },
           {
             "name": "Deploy",
             "full_name": "ketan/sinatra-sample (master) :: Deploy",
-            "result": "passed",
-            "duration": 21,
+            "result": "unknown",
+            "duration": null,
             "artifacts": [
 
             ],
-            "started_at": "2014-12-24T15:49:48Z",
-            "completed_at": "2014-12-24T15:49:48Z"
+            "started_at": null,
+            "completed_at": null
           },
           {
             "name": "Smoke",
             "full_name": "ketan/sinatra-sample (master) :: Smoke",
-            "result": "passed",
-            "duration": 2,
+            "result": "unknown",
+            "duration": null,
             "artifacts": [
 
             ],
-            "started_at": "2014-12-24T15:50:10Z",
-            "completed_at": "2014-12-24T15:50:10Z"
+            "started_at": null,
+            "completed_at": null
           }
         ]
       }

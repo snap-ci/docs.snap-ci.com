@@ -1,0 +1,20 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=29"
+    },
+    "next": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?more_than_counter=28"
+    },
+    "latest": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
+    },
+    "oldest": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=26"
+    }
+  },
+  "_embedded": {
+    "pipelines": [
+    ]
+  }
+}

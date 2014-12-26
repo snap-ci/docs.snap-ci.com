@@ -5,6 +5,8 @@ doc_title:  Snap CI Pipelines API
 
 # Get the build history (all pipelines)
 
+Returns a list of most recent pipelines. This list is paginated and will contain a link to the `next` or `previous` page of pipelines as the case may be.
+
 `GET /project/:owner/:repository/branch/:branch_name/pipelines`{:.api-method-url}
 
 <%= render_api_example 'pipelines/get-all-pipelines',
@@ -14,6 +16,8 @@ doc_title:  Snap CI Pipelines API
 
 
 # Get a pipeline
+
+Returns a pipeline. Contains relevant links to fetch the `next` or `previous` if there is one.
 
 `GET /project/:owner/:repository/branch/:branch_name/pipelines/:pipeline_counter`{:.api-method-url}
 

@@ -2,14 +2,14 @@ HTTP/1.1 200 OK
 Cache-Control: must-revalidate, private, max-age=0
 Cache-control: no-cache="set-cookie"
 Content-Type: application/hal+json; charset=utf-8
-Date: Fri, 26 Dec 2014 06:54:46 GMT
-ETag: W/"587910ed0e6f927cdd3cdfc67c869e6d"
+Date: Fri, 26 Dec 2014 07:07:00 GMT
+ETag: W/"f6b415189b1e32bae550e12a239f5460"
 Server: nginx/1.7.8
 Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766BF3A4681870AC91DD880067873F43E9CBF2340C03F3A498553BB146AF7D91A2C1D2951DB8A82ADD9AF536C71ADF744D1;PATH=/;MAX-AGE=300
 X-Rack-Cache: miss
-X-Request-Id: ab4a6c84b95e677e83b95090717773c0
-X-Runtime: 0.066783
+X-Request-Id: 32253bcf9ff15a3c0837efdcee2884b1
+X-Runtime: 0.525170
 X-UA-Compatible: IE=Edge,chrome=1
-Content-Length: 2603
+transfer-encoding: chunked
 Connection: keep-alive
 

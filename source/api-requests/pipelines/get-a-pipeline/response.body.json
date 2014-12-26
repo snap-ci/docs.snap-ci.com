@@ -12,6 +12,9 @@
     "previous": {
       "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/24"
     },
+    "next": {
+      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/26"
+    },
     "docs": {
       "href": "http://docs.snap-ci.com/api/pipelines"
     }
