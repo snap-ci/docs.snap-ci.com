@@ -13,3 +13,5 @@ Redirects to a location containing an artifact. The redirect may not be cached a
       method: :get,
       url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/artifacts/tracking-pipeline/25/Build/foo'
 %>
+
+If you wish to download the artifact using curl you can use the `--location` argument that allows following of redirects and will hence download the artifact.
