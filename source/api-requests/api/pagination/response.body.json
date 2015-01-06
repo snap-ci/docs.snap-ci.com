@@ -1,16 +1,16 @@
 {
   "_links": {
     "self": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=29"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines?less_than_counter=29"
     },
     "next": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?more_than_counter=28"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines?more_than_counter=28"
     },
     "latest": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines"
     },
     "oldest": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=26"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines?less_than_counter=26"
     }
   },
   "_embedded": {

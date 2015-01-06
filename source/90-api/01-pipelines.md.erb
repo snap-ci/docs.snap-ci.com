@@ -11,7 +11,7 @@ Returns a list of most recent pipelines. This list is paginated and will contain
 
 <%= render_api_example 'pipelines/get-all-pipelines',
       method: :get,
-      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines'
+      url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines'
 %>
 
 
@@ -23,7 +23,7 @@ Returns a pipeline. Contains relevant links to fetch the `next` or `previous` if
 
 <%= render_api_example 'pipelines/get-a-pipeline',
       method: :get,
-      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/25'
+      url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/25'
 %>
 
 # Get latest pipeline
@@ -34,7 +34,7 @@ Redirects to the latest pipeline.
 
 <%= render_api_example 'pipelines/get-latest-pipeline',
       method: :get,
-      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/latest'
+      url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/latest'
 %>
 
 # Get oldest pipeline
@@ -45,5 +45,5 @@ Redirects to the oldest pipeline.
 
 <%= render_api_example 'pipelines/get-oldest-pipeline',
       method: :get,
-      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/oldest'
+      url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/oldest'
 %>

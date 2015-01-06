@@ -1,15 +1,15 @@
 HTTP/1.1 200 OK
 Cache-Control: must-revalidate, private, max-age=0
 Cache-control: no-cache="set-cookie"
-Content-Type: application/hal+json; charset=utf-8
-Date: Thu, 25 Dec 2014 04:54:19 GMT
-ETag: W/"f7a2af0dd8d2b6e116d8ae54c9a605a1"
-Server: nginx/1.7.8
-Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766BF3A4681870AC91DD880067873F43E9CBF2340C03F3A498553BB146AF7D91A2C1D2951DB8A82ADD9AF536C71ADF744D1;PATH=/;MAX-AGE=300
+Content-Type: application/vnd.snap-ci.com.v1+json; charset=utf-8
+Date: Tue, 06 Jan 2015 09:33:58 GMT
+ETag: W/"498424f1bd0ea54ed2c67cf7500c42c4"
+Server: nginx/1.7.9
+Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766DBEA6F7D0DC0242A8234482DCA5E0D34770C263A509878747501D8D966BD5B5A787735279F40B1E775BD4BC2C9B8EE79;PATH=/;MAX-AGE=300
 X-Rack-Cache: miss
-X-Request-Id: b9b49b8b4e9932290478d825c9b1fbfb
-X-Runtime: 0.014128
+X-Request-Id: f33d8a520fe011bd6b9669379aa398b4
+X-Runtime: 0.012499
 X-UA-Compatible: IE=Edge,chrome=1
-Content-Length: 523
+Content-Length: 536
 Connection: keep-alive
 

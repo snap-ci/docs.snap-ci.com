@@ -1,26 +1,26 @@
 {
   "message": "A new pipeline was triggered",
-  "sha": "53fb6cfe8a14cbcac0f4f291f1118b1de11118d9",
-  "counter": 24,
+  "sha": "a31847e0036f2c95dab513a2339a0990795fbe7e",
+  "counter": 77,
   "_embedded": {
     "_links": {
       "self": {
-        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/24"
+        "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/77"
       },
       "latest": {
-        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{latest,newest}"
+        "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/{latest,newest}"
       },
       "oldest": {
-        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{oldest,earliest}"
+        "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/{oldest,earliest}"
       },
       "previous": {
-        "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/23"
+        "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/76"
       },
       "docs": {
-        "href": "http://docs.snap-ci.com/api/pipelines"
+        "href": "https://docs.snap-ci.com/api/pipelines"
       }
     },
-    "counter": 24,
+    "counter": 77,
     "result": "unknown",
     "commits": [
       {
@@ -28,51 +28,78 @@
           "github": [
             {
               "rel": "api",
-              "href": "https://api.github.com/repos/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+              "href": "https://api.github.com/repos/snap-ci/api-docs-sample-repository/commits/a31847e0036f2c95dab513a2339a0990795fbe7e"
             },
             {
               "rel": "http",
-              "href": "https://github.com/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+              "href": "https://github.com/snap-ci/api-docs-sample-repository/commits/a31847e0036f2c95dab513a2339a0990795fbe7e"
             }
           ]
         },
-        "sha": "53fb6cfe8a14cbcac0f4f291f1118b1de11118d9",
-        "short_sha": "53fb6cf",
+        "sha": "a31847e0036f2c95dab513a2339a0990795fbe7e",
+        "short_sha": "a31847e",
         "author": "Ketan Padegaonkar <ketanpadegaonkar@gmail.com>",
-        "message": "Update config.ru",
-        "time": "2014-09-23T10:02:59Z"
+        "message": "Update README.md",
+        "time": "2014-12-30T08:48:15Z"
       }
     ],
     "stages": [
       {
         "name": "Build",
-        "full_name": "ketan/sinatra-sample (master) :: Build",
+        "full_name": "snap-ci/api-docs-sample-repository (master) :: Build",
         "result": "unknown",
         "duration": null,
-        "artifacts": [
+        "workers": [
+          {
+            "counter": 1,
+            "result": null,
+            "duration": 0,
+            "artifacts": [
 
+            ],
+            "started_at": null,
+            "completed_at": null
+          }
         ],
         "started_at": null,
         "completed_at": null
       },
       {
         "name": "Deploy",
-        "full_name": "ketan/sinatra-sample (master) :: Deploy",
+        "full_name": "snap-ci/api-docs-sample-repository (master) :: Deploy",
         "result": "unknown",
         "duration": null,
-        "artifacts": [
+        "workers": [
+          {
+            "counter": 1,
+            "result": null,
+            "duration": 0,
+            "artifacts": [
 
+            ],
+            "started_at": null,
+            "completed_at": null
+          }
         ],
         "started_at": null,
         "completed_at": null
       },
       {
         "name": "Smoke",
-        "full_name": "ketan/sinatra-sample (master) :: Smoke",
+        "full_name": "snap-ci/api-docs-sample-repository (master) :: Smoke",
         "result": "unknown",
         "duration": null,
-        "artifacts": [
+        "workers": [
+          {
+            "counter": 1,
+            "result": null,
+            "duration": 0,
+            "artifacts": [
 
+            ],
+            "started_at": null,
+            "completed_at": null
+          }
         ],
         "started_at": null,
         "completed_at": null

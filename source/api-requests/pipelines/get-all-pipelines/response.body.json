@@ -1,16 +1,16 @@
 {
   "_links": {
     "self": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines"
     },
     "previous": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=20"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines?less_than_counter=52"
     },
     "latest": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines"
     },
     "oldest": {
-      "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines?less_than_counter=26"
+      "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines?less_than_counter=26"
     }
   },
   "_embedded": {
@@ -18,34 +18,34 @@
       {
         "_links": {
           "self": {
-            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/45"
+            "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/76"
           },
           "latest": {
-            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{latest,newest}"
+            "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/{latest,newest}"
           },
           "oldest": {
-            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/{oldest,earliest}"
+            "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/{oldest,earliest}"
           },
           "previous": {
-            "href": "https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/44"
+            "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/75"
           },
           "docs": {
-            "href": "http://docs.snap-ci.com/api/pipelines"
+            "href": "https://docs.snap-ci.com/api/pipelines"
           }
         },
-        "counter": 45,
-        "result": "unknown",
+        "counter": 76,
+        "result": "passed",
         "commits": [
           {
             "_links": {
               "github": [
                 {
                   "rel": "api",
-                  "href": "https://api.github.com/repos/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+                  "href": "https://api.github.com/repos/snap-ci/api-docs-sample-repository/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
                 },
                 {
                   "rel": "http",
-                  "href": "https://github.com/ketan/sinatra-sample/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
+                  "href": "https://github.com/snap-ci/api-docs-sample-repository/commits/53fb6cfe8a14cbcac0f4f291f1118b1de11118d9"
                 }
               ]
             },
@@ -59,33 +59,68 @@
         "stages": [
           {
             "name": "Build",
-            "full_name": "ketan/sinatra-sample (master) :: Build",
-            "result": "unknown",
-            "duration": null,
-            "artifacts": [
-
+            "full_name": "snap-ci/api-docs-sample-repository (master) :: Build",
+            "result": "passed",
+            "duration": 20,
+            "workers": [
+              {
+                "counter": 1,
+                "result": "passed",
+                "duration": 1.123326063156128,
+                "artifacts": [
+                  {
+                    "_links": {
+                      "self": {
+                        "href": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/artifacts/tracking-pipeline/76/Build/1/foo"
+                      }
+                    },
+                    "name": "foo",
+                    "download_url": "https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/artifacts/tracking-pipeline/76/Build/1/foo"
+                  }
+                ],
+                "started_at": "2014-12-26T08:11:35Z",
+                "completed_at": "2014-12-26T08:11:36Z"
+              }
             ],
-            "started_at": null,
-            "completed_at": null
+            "started_at": "2014-12-26T08:11:16Z",
+            "completed_at": "2014-12-26T08:11:36Z"
           },
           {
             "name": "Deploy",
-            "full_name": "ketan/sinatra-sample (master) :: Deploy",
+            "full_name": "snap-ci/api-docs-sample-repository (master) :: Deploy",
             "result": "unknown",
             "duration": null,
-            "artifacts": [
+            "workers": [
+              {
+                "counter": 1,
+                "result": null,
+                "duration": 0,
+                "artifacts": [
 
+                ],
+                "started_at": null,
+                "completed_at": null
+              }
             ],
             "started_at": null,
             "completed_at": null
           },
           {
             "name": "Smoke",
-            "full_name": "ketan/sinatra-sample (master) :: Smoke",
+            "full_name": "snap-ci/api-docs-sample-repository (master) :: Smoke",
             "result": "unknown",
             "duration": null,
-            "artifacts": [
+            "workers": [
+              {
+                "counter": 1,
+                "result": null,
+                "duration": 0,
+                "artifacts": [
 
+                ],
+                "started_at": null,
+                "completed_at": null
+              }
             ],
             "started_at": null,
             "completed_at": null

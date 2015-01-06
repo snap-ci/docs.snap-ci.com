@@ -1,15 +1,15 @@
 HTTP/1.1 302 Found
 Cache-Control: no-cache, private
 Cache-control: no-cache="set-cookie"
-Content-Type: application/hal+json; charset=utf-8
-Date: Wed, 24 Dec 2014 16:47:23 GMT
-Location: https://production-persistence-artifactsbucket-frvy32ihebxo.s3-us-west-2.amazonaws.com/15048/defaultPipeline/25/Build/1/foo.tar.gz.snap?response-content-disposition=attachment%3B%20filename%3Dfoo.tar.gz&response-content-encoding=binary&response-content-type=application%2Foctet-stream&AWSAccessKeyId=AKIAJCX77GDUQQXIEU3Q&Expires=1419439653&Signature=GIi8dKE7U%2Ft%2BdJszA5uQQcW8xpg%3D
-Server: nginx/1.7.8
-Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766BF3A4681870AC91DD880067873F43E9CBF2340C03F3A498553BB146AF7D91A2C1D2951DB8A82ADD9AF536C71ADF744D1;PATH=/;MAX-AGE=300
+Content-Type: application/vnd.snap-ci.com.v1+json; charset=utf-8
+Date: Tue, 06 Jan 2015 09:36:23 GMT
+Location: https://production-persistence-artifactsbucket-frvy32ihebxo.s3-us-west-2.amazonaws.com/15048/defaultPipeline/25/Build/1/foo.tar.gz.snap?response-content-disposition=attachment%3B%20filename%3Dfoo.tar.gz&response-content-encoding=binary&response-content-type=application%2Foctet-stream&AWSAccessKeyId=AKIAJCX77GDUQQXIEU3Q&Expires=1420536993&Signature=IWjXas4T8KWHI23Vp0kShcDVFnE%3D
+Server: nginx/1.7.9
+Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766DBEA6F7D0DC0242A8234482DCA5E0D34770C263A509878747501D8D966BD5B5A787735279F40B1E775BD4BC2C9B8EE79;PATH=/;MAX-AGE=300
 X-Rack-Cache: miss
-X-Request-Id: 1c4bcfd6d632bffad0a440a82b190a20
-X-Runtime: 0.235465
+X-Request-Id: d677481aac9adca017ccb08edb426ad3
+X-Runtime: 0.298728
 X-UA-Compatible: IE=Edge,chrome=1
-Content-Length: 447
+Content-Length: 443
 Connection: keep-alive
 

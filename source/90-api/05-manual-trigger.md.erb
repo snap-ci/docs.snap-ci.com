@@ -21,7 +21,7 @@ Triggers a new pipeline from the latest revision on the specified branch.
 
 <%= render_api_example 'manual-trigger/new-pipeline',
       method: :post,
-      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/trigger'
+      url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/trigger'
 %>
 
 # Trigger a manual stage
@@ -39,5 +39,5 @@ Triggers a manual stage on a specific pipeline.
 
 <%= render_api_example 'manual-trigger/manual-stage',
       method: :post,
-      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/trigger/25/Deploy'
+      url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/trigger/25/Deploy'
 %>

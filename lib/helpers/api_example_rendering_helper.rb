@@ -34,7 +34,7 @@ module ApiExampleRenderingHelper
     end
 
     curl_cmd << '-H'
-    curl_cmd << "'Accept: application/hal+json'"
+    curl_cmd << "'Accept: application/vnd.snap-ci.com.v1+json'"
 
     curl_cmd << options[:url]
 

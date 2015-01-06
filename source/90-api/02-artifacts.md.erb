@@ -7,11 +7,11 @@ doc_title:  Snap CI Artifacts API
 
 Redirects to a location containing an artifact. The redirect may not be cached and must be consumed within a few seconds.
 
-`GET /project/:owner/:repository/branch/:branch_name/artifacts/{tracking-pipeline,integration-pipeline}/:pipeline_counter/:stage_name/:artifact_name`{:.api-method-url}
+`GET /project/:owner/:repository/branch/:branch_name/artifacts/{tracking-pipeline,integration-pipeline}/:pipeline_counter/:stage_name/:job_counter/:artifact_name`{:.api-method-url}
 
 <%= render_api_example 'artifacts/get-an-artifact',
       method: :get,
-      url:    'https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/artifacts/tracking-pipeline/25/Build/foo'
+      url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/artifacts/tracking-pipeline/25/Build/1/foo'
 %>
 
 If you wish to download the artifact using curl you can use the `--location` argument that allows following of redirects and will hence download the artifact.

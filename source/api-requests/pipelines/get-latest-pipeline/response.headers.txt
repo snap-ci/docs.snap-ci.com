@@ -1,15 +1,15 @@
 HTTP/1.1 302 Found
 Cache-Control: no-cache, private
 Cache-control: no-cache="set-cookie"
-Content-Type: application/hal+json; charset=utf-8
-Date: Wed, 24 Dec 2014 16:36:21 GMT
-Location: https://api.snap-ci.com/project/ketan/sinatra-sample/branch/master/pipelines/25
-Server: nginx/1.7.8
-Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766BF3A4681870AC91DD880067873F43E9CBF2340C03F3A498553BB146AF7D91A2C1D2951DB8A82ADD9AF536C71ADF744D1;PATH=/;MAX-AGE=300
+Content-Type: application/vnd.snap-ci.com.v1+json; charset=utf-8
+Date: Tue, 06 Jan 2015 09:34:55 GMT
+Location: https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/76
+Server: nginx/1.7.9
+Set-Cookie: AWSELB=F3C1618B0AF14F8D87A4B93A317FC446B1721EB766DBEA6F7D0DC0242A8234482DCA5E0D34770C263A509878747501D8D966BD5B5A787735279F40B1E775BD4BC2C9B8EE79;PATH=/;MAX-AGE=300
 X-Rack-Cache: miss
-X-Request-Id: 667e0d7fe4032981c5d88cf4bd3d19bd
-X-Runtime: 0.030985
+X-Request-Id: 3d3903ab10da87b729641961d7697598
+X-Runtime: 0.020543
 X-UA-Compatible: IE=Edge,chrome=1
-Content-Length: 142
+transfer-encoding: chunked
 Connection: keep-alive
 
