@@ -20,6 +20,16 @@ Snap uses basic authentication. To authenticate you need to provide your usernam
       url:    'https://api.snap-ci.com/'
 %>
 
+# Current Version
+
+By default, all requests receive the **v1** version of the API. It is recommended to explicitly request this version via the `Accept` header.
+
+`Accept: <%= data.api.current_version %>`{:.api-method-url}
+
+If you specify an unsupported, `Accept` header, Snap will respond with the current default JSON representation of the resource.
+
+>**Important**: The default version of the API may change in the future. If you care about the stability of the API, make sure that you are requesting a specific version in the `Accept` header as shown in the example above.
+
 # Pagination
 
 Requests that return multiple items will be paginated to 25 items by default. The `next` and `previous` page links, if applicable are included in the response body in the `_links` section.
