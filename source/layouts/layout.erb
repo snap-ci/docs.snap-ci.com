@@ -6,6 +6,10 @@
     <title><%= current_page.data.title %> | Snap CI | Hosted Continuous Integration</title>
     <meta name="viewport" content="width=device-width">
     <%= tag(:meta, :development => current_page.app.development?) %>
+
+    <%= favicon_tag 'favicons/snap.ico', :rel => 'shortcut icon' %>
+    <%= favicon_tag 'favicons/snap.png', :rel => 'apple-touch-icon-precomposed' %>
+
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
   </head>
