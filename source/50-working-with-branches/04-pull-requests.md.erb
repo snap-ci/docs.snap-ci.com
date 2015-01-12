@@ -22,11 +22,11 @@ against which the pull request is issued.
 # Security considerations when testing Pull Requests
 
 In order to ensure that credentials and other sensitive information is
-not accidentally leaked out, Snap will ensure that no
+not accidentally leaked out, Snap will, **by default**, ensure that no
 <%= topic_link 'deployment pipeline#environment-variables#secure-environment-variables', 'secure environment variables' %>,
 <%= topic_link 'deployment pipeline#secure-files', 'secure files' %> or other
 <%= topic_link 'security', 'secure' %> credentials are provided to the
-build.
+build for pull requests submitted from a fork of your repository. If you'd like to change any pull request settings, please visit the settings page of your build.
 
 This is done in order to ensure that a malacious user submitting a
 pull request does not end up exposing this secure data.
