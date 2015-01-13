@@ -25,7 +25,6 @@ $(function () {
     attrs = attrs || {};
     var elem = $('<a>');
     var newAttrs = $.extend({}, attrs, {href: '#' + encodeURIComponent(id)});
-    console.log(elem.attr(newAttrs).html(content).get(0));
     return elem.attr(newAttrs).html(content);
   };
 
