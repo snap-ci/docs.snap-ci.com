@@ -46,6 +46,9 @@ set :markdown_engine, :kramdown
 set :markdown, :auto_ids => false
 
 if ENV['S3_BUCKET']
+  # to disable the warning about periods in s3 bucket name.
+  Fog.credentials = { :path_style => true }
+
   activate :s3_redirect do |config|
     config.bucket                = ENV['S3_BUCKET']
     config.region                = 'us-east-1'
