@@ -1,0 +1,20 @@
+---
+title:  "Workers"
+doc_title:  "Configuring your Workers"
+---
+
+Every stage in Snap runs on machines we call workers. Each worker by default is configured to run with the following resources:
+
+ * 2 CPUs
+ * 2 GB of memory
+ * 10 GB of disk space
+
+When you are on any paid tiers or a trial you get to configure the workers for every stage of your build. You can do this by changing the number of workers and the size of each worker.
+
+## Changing the number of workers
+
+Selecting multiple workers allows you to run that stage in parallel. You can do various things with this like <%= topic_link 'Setting up test parallelism', 'test parallelism' %>, deploying to multiple servers, etc.
+
+## Changing the size of each worker
+
+Increasing the size of each worker allows you to multiply the resources allocated to each worker for that stage. For eg - selecting the size of each container as 3 will cause your stage to run with 6 CPUs and 6 GB of memory. This can be useful in cases where your stage requires more memory to build.
