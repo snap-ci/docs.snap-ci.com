@@ -19,6 +19,6 @@ Selecting multiple workers allows you to run that stage in parallel. You can do 
 
 Increasing the size of each worker allows you to multiply the resources allocated to each worker for that stage. For e.g. - selecting a container of size 3 will let your stage run with 6 CPUs and 6 GB of memory. This can be useful in cases where your stage requires more memory to build.
 
-### Note on worker size and parallelism
+## Note on worker size and parallelism
 
 While changing the number of workers and their size, Snap will respect the number of workers that you have purchased. For e.g., if your plan allows you 4 workers, you can have up to 4-way parallelism with single-sized-containers, two-way parallelism with double-sized-containers or no-parallelism with a quadruple sized container. However, if you want additional workers; say 4 way parallelism with quadruple sized workers, you can purchase additional workers. Up to 16 of them in fact. [Contact us](<%= data.links.contact_us %>) if you are interested in purchasing additional workers for your build.
