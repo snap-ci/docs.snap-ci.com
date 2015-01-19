@@ -1,0 +1,17 @@
+---
+title:  "Workers"
+doc_title:  "Workers"
+---
+
+Every stage in Snap runs on machines we call workers. Each worker has the following resources by default:
+
+ * 2 CPUs
+ * 2 GB of memory
+ * 10 GB of disk space
+
+## Advantages of multiple workers
+
+
+* <%= topic_link "Pipeline parallelism", "Running multiple pipelines in parallel from the same or different repositories" %>
+* <%= topic_link "Setting up test parallelism", "Running a stage in parallel" %>
+* <%= topic_link "Configuring multiple workers#changing-the-size-of-each-worker", "Running the builds on bigger workers" %>

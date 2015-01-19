@@ -1,13 +1,7 @@
 ---
-title:  "Workers"
-doc_title:  "Configuring your Workers"
+title:  "Configuring multiple workers"
+doc_title:  "Configuring multiple workers for each stage"
 ---
-
-Every stage in Snap runs on machines we call workers. Each worker has the following resources by default:
-
- * 2 CPUs
- * 2 GB of memory
- * 10 GB of disk space
 
 You can specify the worker configuration in every stage of your pipeline. Worker configuration includes the number of workers and the size of each worker.
 
@@ -17,7 +11,7 @@ Selecting multiple workers allows you to run that stage in parallel. You can do 
 
 ## Changing the size of each worker
 
-Increasing the size of each worker allows you to multiply the resources allocated to each worker for that stage. For e.g. - selecting a container of size 3 will let your stage run with 6 CPUs and 6 GB of memory. This can be useful in cases where your stage requires more memory to build.
+Increasing the size of each <%= topic_link "Workers", "worker" %> allows you to multiply the resources allocated to each worker for that stage. For e.g. - selecting a container of size 3 will let your stage run with 6 CPUs and 6 GB of memory. This can be useful in cases where your stage requires more memory to build.
 
 ## Note on worker size and parallelism
 
