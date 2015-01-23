@@ -1,6 +1,7 @@
 xml.instruct!
 xml.urlset 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   html_resources.each do |page|
+    next if page.data.hidden
     xml.url do
       xml.loc File.join(url_root, page.url)
       xml.lastmod File.mtime(page.source_file).iso8601
