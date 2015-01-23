@@ -3,3 +3,4 @@
 //= require includes/tracking
 //= require includes/retina
 //= require includes/retina-shrink
+//= require includes/search

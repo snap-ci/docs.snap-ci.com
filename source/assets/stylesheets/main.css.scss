@@ -44,13 +44,20 @@ body {
         letter-spacing: 1px;
         @include clearfix;
 
-        .docs, .blogs, .login {
+        .docs, .blogs, .login, .search-form {
           color: #EEE;
           float: right;
           font-size: 16px;
           margin-left: 20px;
           padding: 8px;
           text-align: center;
+        }
+
+        .search-form {
+          input {
+            height: 14px;
+            background-position-y: 4px;
+          }
         }
 
       }
