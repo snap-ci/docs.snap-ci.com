@@ -28,17 +28,23 @@ module ApiExampleRenderingHelper
     curl_cmd << '-u'
     curl_cmd << 'alice:API_KEY'
 
-    if options[:method]
+    method = options[:method].to_s.upcase if options[:method]
+    if method
       curl_cmd << '-X'
-      curl_cmd << options[:method].to_s.upcase
+      curl_cmd << method
     end
 
     curl_cmd << '-H'
     curl_cmd << "'Accept: #{current_page.app.data.api.current_version}'"
 
+    if %w(POST PUT).include?(method) && File.exist?(File.join(path, 'request.body.json'))
+      curl_cmd << '-H'
+      curl_cmd << "'Content-type: application/json'"
+    end
+
     curl_cmd << options[:url]
 
-    if %w(put post).include?(options[:method].to_s.downcase) && File.exist?(File.join(path, 'request.body.json'))
+    if %w(POST PUT).include?(method) && File.exist?(File.join(path, 'request.body.json'))
       curl_cmd << '--data'
       curl_cmd << ("'" << File.read(File.join(path, 'request.body.json')).strip << "'")
     end

@@ -18,6 +18,7 @@ Triggers a new pipeline from the latest revision on the specified branch.
 --------|--------|---------------
  payload| object | A list of environment variables to be submitted along with the build. These variables will override any existing variables with the same name. |
 
+In case you provide a payload, it is required to include the `Content-type: application/json` header, otherwise Snap will return status `415`.
 
 <%= render_api_example 'manual-trigger/new-pipeline',
       method: :post,
@@ -36,6 +37,8 @@ Triggers a manual stage on a specific pipeline.
 **Name**|**Type**|**Description**
 --------|--------|---------------
  payload| object | A list of environment variables to be submitted along with the build. These variables will override any existing variables with the same name. |
+
+In case you provide a payload, it is required to include the `Content-type: application/json` header, otherwise Snap will return status `415`.
 
 <%= render_api_example 'manual-trigger/manual-stage',
       method: :post,
