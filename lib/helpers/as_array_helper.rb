@@ -1,6 +1,6 @@
 module AsArrayHelper
   def monospaced_array_to_sentence_string(input)
-    array_to_sentence_string(as_array(input).collect {|i| "`#{i}`" })
+    as_array(input).collect {|i| "`#{i}`" }.join(', ')
   end
 
   def monospaced_array_to_bullet_list(input)

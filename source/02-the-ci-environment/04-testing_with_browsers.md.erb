@@ -9,10 +9,10 @@ Snap runs `xvfb` with a resolution of `1280x1024x16` and makes a `DISPLAY` varia
 
 The following testing tools and browsers are available on the CI environment:
 
-* phantomjs - <%= data.versions.phantomjs %>
-* google-chrome - <%= data.versions['google-chrome-stable'] %>
-* google-chrome-driver - <%= data.versions['google-chrome-driver'] %>
-* firefox - <%= data.versions.firefox %>
+* phantomjs - `<%= data.versions.phantomjs %>`
+* google-chrome - `<%= data.versions['google-chrome-stable'] %>`
+* google-chrome-driver - <%= monospaced_array_to_sentence_string(data.versions['google-chrome-driver']) %>
+* firefox - `<%= data.versions.firefox %>`
 
 
 # Using PhantomJS
@@ -23,6 +23,4 @@ Snap has PhantomJS (version <%= data.versions.phantomjs %>) pre-installed. This 
 
 > **Users are required to use the chromedriver executable available on the build machines over downloading and installing their own. Downloading other versions of chromedriver are known to not work. [Contact us](<%= data.links.contact_us %>) if you'd like a different version of chromedriver.**
 
-Snap has Chromedriver (version <%= data.versions['google-chrome-driver'] %>) pre-installed. This is available on the `PATH`. Snap uses a modified chromedriver that is tested and works well with our build machines.
-
-
+Snap makes available version `2.10` of chromedriver on the `PATH`. If you'd like to use a different version of chromedriver, please specify an environment variable `CHROMEDRIVER_VERSION` and set its value to one of the supported versions before you use chromedriver. Snap uses a modified chromedriver that is tested and works well with our build machines.

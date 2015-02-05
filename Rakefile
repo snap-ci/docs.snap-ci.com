@@ -34,7 +34,7 @@ task :detect_versions do
   third_party_tools = %w(heroku-toolbelt s3cmd)
   no_sql_databases  = %w(couchdb redis mongo-10gen)
   languages         = %w()
-  browser_tools     = %w(phantomjs google-chrome-stable google-chrome-driver firefox)
+  browser_tools     = %w(phantomjs google-chrome-stable firefox)
 
   rpms = development_tools + development_libs + sql_sdatabases + no_sql_databases + languages + third_party_tools + browser_tools
 
@@ -64,8 +64,8 @@ task :detect_versions do
     # raise "Could not detect version of package #{pkg}" unless $?.success?
   end
 
-  %w(ruby jruby nodejs php).each do |lang|
-    versions[lang] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep "^#{lang}-[0-9]+" | sort)].strip.gsub("#{lang}-", '').split
+  %w(ruby jruby nodejs php google-chrome-driver).each do |package|
+    versions[package] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep "^#{package}-[0-9]+" | sort)].strip.gsub("#{package}-", '').split
   end
 
   versions['python'] = %x[rpm -q --queryformat '%{VERSION} ' $(rpm -qa | egrep '^python-[0-9]+' | sort)].strip.split
