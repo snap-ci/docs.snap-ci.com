@@ -14,13 +14,29 @@ The following testing tools and browsers are available on the CI environment:
 * google-chrome-driver - <%= monospaced_array_to_sentence_string(data.versions['google-chrome-driver']) %>
 * firefox - `<%= data.versions.firefox %>`
 
+[Contact us](<%= data.links.contact_us %>) if you'd like a different version of any of the browsers and tools.
+
+# Using Chromedriver
+
+> **Due to the combination of the container technology and OS version we provide, chromedriver needs to be setup with a few environment variables and command line flags. Users are required to use the `chromedriver` wrapper available on the `PATH` at `<%= stdout_and_stderr_of('which chromedriver') %>`.**
+
+Calling the `chromedriver` wrapper will execute version `2.10` of chromedriver. If you'd like to use a different version of chromedriver, please specify an environment variable `CHROMEDRIVER_VERSION` and set its value to one of the supported versions before you use chromedriver.
+
+## Using configuring chromedriver on Snap from various testing tools -
+
+### protractor
+
+We suggest adding the following lines to your protractor's `config.js` -
+
+~~~javascript
+exports.config = {/* your existing config */};
+
+if (process.env.SNAP_CI) {
+  exports.config.chromeDriver = '<%= stdout_and_stderr_of('which chromedriver').strip %>';
+}
+~~~
+
 
 # Using PhantomJS
 
 Snap has PhantomJS (version <%= data.versions.phantomjs %>) pre-installed. This is available on the `PATH`.
-
-# Using Chromedriver
-
-> **Users are required to use the chromedriver executable available on the build machines over downloading and installing their own. Downloading other versions of chromedriver are known to not work. [Contact us](<%= data.links.contact_us %>) if you'd like a different version of chromedriver.**
-
-Snap makes available version `2.10` of chromedriver on the `PATH`. If you'd like to use a different version of chromedriver, please specify an environment variable `CHROMEDRIVER_VERSION` and set its value to one of the supported versions before you use chromedriver. Snap uses a modified chromedriver that is tested and works well with our build machines.
