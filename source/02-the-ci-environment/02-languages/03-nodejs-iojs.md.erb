@@ -3,12 +3,12 @@ title:  "Node.js/io.js"
 doc_title: "Using Node.js and IO.js on Snap CI"
 ---
 
-Snap provides the following versions of NodeJS and IO.js. You may install additional packages using `npm install [-g] [PACKAGE_NAME]`.
+Snap uses [nvm](https://github.com/creationix/nvm) to install nodejs and io.js. The following versions are currently available. You may install additional packages using `npm install [-g] [PACKAGE_NAME]`.
 
 **Node.js**
 
-<%= monospaced_array_to_bullet_list(data.versions.nodejs) %>
+The versions supported are <%= monospaced_array_to_sentence_string(data.versions.nodejs) %>
 
 **IO.js**
 
-<%= monospaced_array_to_bullet_list(data.versions.iojs) %>
+The versions supported are <%= monospaced_array_to_sentence_string(data.versions.iojs) %>

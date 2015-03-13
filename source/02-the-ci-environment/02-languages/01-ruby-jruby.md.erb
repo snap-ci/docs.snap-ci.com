@@ -3,15 +3,15 @@ title:  "Ruby/JRuby"
 doc_title: "Using Ruby/JRuby on Snap CI"
 ---
 
-Snap provides the following versions of Ruby and JRuby. You may install additional gems using `gem install GEM_NAME --no-ri --no-rdoc`.
+Snap uses [rbenv](https://github.com/sstephenson/rbenv) to install and manage rubies. The following versions are currently available. You may install additional gems using `gem install GEM_NAME --no-ri --no-rdoc`.
 
 **Ruby**
 
-<%= monospaced_array_to_bullet_list(data.versions.ruby) %>
+<%= monospaced_array_to_sentence_string(data.versions.ruby) %>
 
 **JRuby**
 
-<%= monospaced_array_to_bullet_list(data.versions.jruby) %>
+<%= monospaced_array_to_sentence_string(data.versions.jruby) %>
 
 We also pre-install the following gems that users may find useful:
 
