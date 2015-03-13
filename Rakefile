@@ -64,9 +64,13 @@ task :detect_versions do
     # raise "Could not detect version of package #{pkg}" unless $?.success?
   end
 
-  %w(ruby jruby nodejs php google-chrome-driver).each do |package|
+  %w(ruby jruby php google-chrome-driver).each do |package|
     versions[package] = %x[rpm -q --queryformat '%{NAME} ' $(rpm -qa | egrep "^#{package}-[0-9]+" | sort)].strip.gsub("#{package}-", '').split
   end
+
+  versions['nodejs'] = %x[bash -lc "source $NVM_DIR/nvm.sh; nvm ls-remote | grep -v iojs"].lines.collect(&:strip).collect {|v| v.gsub(/^v/, '')}
+
+  versions['iojs'] = %x[bash -lc "source $NVM_DIR/nvm.sh; nvm ls-remote | grep iojs"].lines.collect(&:strip).collect {|v| v.gsub(/^iojs-v/, '')}
 
   versions['python'] = %x[rpm -q --queryformat '%{VERSION} ' $(rpm -qa | egrep '^python-[0-9]+' | sort)].strip.split
 
