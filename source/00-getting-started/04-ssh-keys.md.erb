@@ -13,7 +13,7 @@ You can also use it to run your custom commands.
 
 <%= retina_image 'screenshots/getting-started/ssh-keys-command' %>
 
-#Below are the steps to generate and configue in Snap CI:
+#Below are the steps to generate SSH key and configure in Snap CI:
 
 ##Step 1: Check for SSH keys
 
@@ -23,9 +23,27 @@ You can also use it to run your custom commands.
 
 <%= retina_image 'screenshots/getting-started/Generate_new_ssh_keys' %>
 
+##Step 3: Add your SSH key to your Snap CI account
 
+a: In the top right corner, click on configuration.
 
+<%= retina_image 'screenshots/getting-started/configuration' %>
 
+b: Click on Edit.
+
+<%= retina_image 'screenshots/getting-started/edit' %>
+
+c: In the Stage basic info section, add a new file to under secure file.
+
+<%= retina_image 'screenshots/getting-started/secure_file' %>
+
+d: Paste your key into the "File content" field.
+
+<%= retina_image 'screenshots/getting-started/ssh-keys' %>
+
+##Step 4: Test the connection
+
+<%= retina_image 'screenshots/getting-started/ssh_test' %>
 
 #What's next
 
