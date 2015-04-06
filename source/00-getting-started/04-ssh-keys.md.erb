@@ -25,15 +25,12 @@ First, we need to check for existing SSH keys on your computer. Open Terminal an
 
 Check the directory listing to see if you already have a public SSH key. By default, the filenames of the public keys are one of the following:
 
-
-> id_dsa.pub 
-
-> id_ecdsa.pub
-
-> id_ed25519.pub
-
-> id_rsa.pub
-
+```
+  id_dsa.pub 
+  id_ecdsa.pub
+  id_ed25519.pub
+  id_rsa.pub
+```
 
 ##Step 2: Generate a new SSH key
 
@@ -41,9 +38,9 @@ a. With Terminal still open, copy and paste the text below. Make sure you substi
 
 > ssh-keygen -t rsa -C "your_email@example.com"
 
-> Creates a new ssh key, using the provided email as a label
+> # Creates a new ssh key, using the provided email as a label
 
-> Generating public/private rsa key pair.
+> # Generating public/private rsa key pair.
 
 b. We strongly suggest keeping the default settings as they are, so when you're prompted to "Enter a file in which to save the key", just press Enter to continue.
 
@@ -75,8 +72,6 @@ b: Click on Edit.
 
 <%= retina_image 'screenshots/getting-started/edit' %>
 
-
-
 c: In the Stage basic info section, add a new file to under secure file.
 
 <%= retina_image 'screenshots/getting-started/secure_file' %>
@@ -87,7 +82,9 @@ d: Paste your key into the "File content" field.
 
 ##Step 4: Test the connection
 
-<%= retina_image 'screenshots/getting-started/ssh_test' %>
+ Add a command in the configuration and run the build something like:
+
+> ssh foo@machine -i my_key 'echo logged in'
 
 #What's next
 
