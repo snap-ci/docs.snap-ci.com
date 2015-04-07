@@ -3,16 +3,6 @@ title: How do I add SSH keys to my build?
 doc_title: Adding SSH keys to my build on Snap CI
 ---
 
-We recommend you to add files such as ssh keys and certificates as <%= topic_link 'Deployment Pipeline#secure-files', 'secure files' %>. It can be done in your project configuration screen. There, you'll be able to specify the file name, location, permissions and it's content.
-
-Say for example that you need access to a private repository on Github to fetch some dependency on your build. You can add a access key by creating a secure file and placing it on the `${HOME}/.ssh` folder.
-
-<%= retina_image 'screenshots/getting-started/ssh-keys' %>
-
-You can also use it to run your custom commands.
-
-<%= retina_image 'screenshots/getting-started/ssh-keys-command' %>
-
 #Below are the steps to generate SSH key and configure in Snap CI:
 
 ##Step 1: Check if you already have ssh keys
@@ -64,25 +54,37 @@ $ The key fingerprint is:
 $ 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
 ~~~
 
-##Step 3: Add your SSH key to your Snap CI account
+##Step 3: Add ssh key to snap
+
+We recommend you to add files such as ssh keys and certificates as <%= topic_link 'Deployment Pipeline#secure-files', 'secure files' %>. It can be done in your project configuration screen. There, you'll be able to specify the file name, location, permissions and it's content.
+
+Say for example that you need access to a private repository on Github to fetch some dependency on your build. You can add a access key by creating a secure file and placing it on the `${HOME}/.ssh` folder.
 
 a: In the top right corner, click on configuration.
 
+
 <%= retina_image 'screenshots/getting-started/configuration' %>
+
 
 b: Click on Edit.
 
+
 <%= retina_image 'screenshots/getting-started/edit' %>
+
 
 c: In the Stage basic info section, add a new file to under secure file.
 
+
 <%= retina_image 'screenshots/getting-started/secure_file' %>
+
 
 d: Paste your key into the "File content" field.
 
+
 <%= retina_image 'screenshots/getting-started/ssh-keys' %>
 
-##Step 4: Test the connection
+
+##Step 4: Test your ssh key from snap
 
  Add a command in the configuration and run the build something like:
 
