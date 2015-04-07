@@ -15,55 +15,54 @@ You can also use it to run your custom commands.
 
 #Below are the steps to generate SSH key and configure in Snap CI:
 
-##Step 1: Check for SSH keys
+##Step 1: Check if you already have ssh keys
 
 First, we need to check for existing SSH keys on your computer. Open Terminal and enter:
 
-> ls -al ~/.ssh
-
-> Lists the files in your .ssh directory, if they exist
+~~~ shell
+$ ls -al ~/.ssh
+$ #Lists the files in your .ssh directory, if they exist
+~~~
 
 Check the directory listing to see if you already have a public SSH key. By default, the filenames of the public keys are one of the following:
 
-
->  id_dsa.pub 
-
-> id_ecdsa.pub
-
->  id_ed25519.pub
-
->  id_rsa.pub
+* id_dsa.pub 
+* id_ecdsa.pub
+* id_ed25519.pub
+* id_rsa.pub
 
 
-##Step 2: Generate a new SSH key
+##Step 2: Generate ssh keys
 
 a. With Terminal still open, copy and paste the text below. Make sure you substitute in your GitHub email address.
 
-> ssh-keygen -t rsa -C "your_email@example.com"
+~~~ shell
+$ ssh-keygen -t rsa -C "your_email@example.com"
+$ #Creates a new ssh key, using the provided email as a label
+$ #Generating public/private rsa key pair.
+~~~
 
-> Creates a new ssh key, using the provided email as a label
+b. When you're prompted to "Enter a file in which to save the key", just press Enter to continue.
 
-> Generating public/private rsa key pair.
-
-b. We strongly suggest keeping the default settings as they are, so when you're prompted to "Enter a file in which to save the key", just press Enter to continue.
-
-> Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+~~~ shell
+$ Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+~~~
 
 c. You'll be asked to enter a passphrase.
 
-> Enter passphrase (empty for no passphrase): [Type a passphrase]
-
-> Enter same passphrase again: [Type passphrase again]
+~~~ shell
+$ Enter passphrase (empty for no passphrase): [Type a passphrase]
+$ Enter same passphrase again: [Type passphrase again]
+~~~
 
 d. After you enter a passphrase, you'll be given the fingerprint, or id, of your SSH key. It will look something like this:
 
-> Your identification has been saved in /Users/you/.ssh/id_rsa.
-
-> Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
-
-> The key fingerprint is:
-
-> 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+~~~ shell
+$ Your identification has been saved in /Users/you/.ssh/id_rsa.
+$ Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
+$ The key fingerprint is:
+$ 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+~~~
 
 ##Step 3: Add your SSH key to your Snap CI account
 
@@ -87,7 +86,9 @@ d: Paste your key into the "File content" field.
 
  Add a command in the configuration and run the build something like:
 
-> ssh foo@machine -i my_key 'echo logged in'
+~~~ shell
+$ ssh foo@machine -i my_key 'echo logged in'
+~~~
 
 #What's next
 
