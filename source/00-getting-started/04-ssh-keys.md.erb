@@ -3,9 +3,7 @@ title: How do I add SSH keys to my build?
 doc_title: Adding SSH keys to my build on Snap CI
 ---
 
-# Configuring SSH Keys for use in Snap
-
-## Step 1 - Check if you already have ssh keys
+# Step 1: Check if you already have ssh keys
 
 First, check if you already have an SSH key that you can use. In your terminal, type
 
@@ -13,9 +11,9 @@ First, check if you already have an SSH key that you can use. In your terminal, 
 ls -al ~/.ssh
 ~~~
 
-Check the directory listing to see if you already have a public SSH key. If you see a file named `id_rsa` or `id_dsa`, then skip to <%= topic_link 'How do I add SSH keys to my build?#configuring-ssh-keys-for-use-in-snap#step-4---add-ssh-key-to-snap', 'Step 4' %>.
+Check the directory listing to see if you already have a public SSH key. If you see a file named `id_rsa` or `id_dsa`, then skip to <%= topic_link 'How do I add SSH keys to my build?#step-4-add-private-ssh-key-in-snap', 'Step 4' %>.
 
-## Step 2 - Generate ssh keys
+# Step 2: Generate ssh keys
 
 Type the following into your terminal, and accept the defaults. Don't type a passphrase when asked.
 
@@ -38,7 +36,7 @@ The key fingerprint is:
 
 The public key is now located in `$HOME/.ssh/id_rsa.pub` and the private key is located in `$HOME/.ssh/id_rsa`.
 
-## Step 3 - Copy the public key onto your remote server
+# Step 3: Copy the public key onto your remote server
 
 Once you have generated the keypair, you must place the public key onto your remote server.
 
@@ -46,7 +44,7 @@ Once you have generated the keypair, you must place the public key onto your rem
 ssh user@123.45.56.78 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && echo \"$(cat $HOME/.ssh/id_rsa.pub)\" >> ~/.ssh/authorized_keys && chmod 644 ~/.ssh/authorized_keys"
 ~~~
 
-## Step 4 - Add private ssh key in Snap
+# Step 4: Add private ssh key in Snap
 
 Now edit your project configuration, and in the secure files section, click "Add new"
 
@@ -56,7 +54,7 @@ Paste your private key into the "File content" field, and ensure that the file l
 
 <%= retina_image 'screenshots/getting-started/ssh-keys' %>
 
-## Step 5: Test if your ssh key works as expected from Snap.
+# Step 5: Test if your ssh key works as expected from Snap
 
 Add a command in your build configuration, so that it looks like
 

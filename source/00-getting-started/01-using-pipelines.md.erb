@@ -41,7 +41,7 @@ Now we can add different stages for each command. It's important to keep in mind
 
 Always starting from a clean state implies that any command that setup the environment to run the tests (eg: download dependencies, run data migrations, start services) need to be repeated for each stage. In this case, we need to repeat both `bundle install --path ${SNAP_CACHE_DIR}/.bundle` and `bundle exec foreman start &`.
 
-We provide mechanisms like <%= topic_link 'caching', 'caching' %> and <%= topic_link 'Deployment Pipeline#setup-commands', 'pinned commands' %> that will come in hand to speed up downloads and easily share commands among stages.
+We provide mechanisms like <%= topic_link 'caching', 'caching' %> and <%= topic_link 'Deployment Pipeline#pinning-common-setup-commands', 'pinned commands' %> that will come in hand to speed up downloads and easily share commands among stages.
 
 <%= retina_image 'screenshots/getting-started/build-multiple-stages' %>
 
