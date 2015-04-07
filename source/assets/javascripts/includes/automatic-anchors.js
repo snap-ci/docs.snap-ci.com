@@ -11,7 +11,7 @@ $(function () {
 
   var cname = function (current) {
     var name = current.text();
-    return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g, '').replace(/[\?\.\!\'\"\(\)]/g, '');
+    return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g, '');
   };
 
   var warn = function (message) {
