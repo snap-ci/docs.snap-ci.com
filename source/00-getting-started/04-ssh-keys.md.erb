@@ -3,19 +3,68 @@ title: How do I add SSH keys to my build?
 doc_title: Adding SSH keys to my build on Snap CI
 ---
 
-We recommend you to add files such as ssh keys and certificates as <%= topic_link 'Deployment Pipeline#secure-files', 'secure files' %>. It can be done in your project configuration screen. There, you'll be able to specify the file name, location, permissions and it's content.
+# Configuring SSH Keys for use in Snap
 
-Say for example that you need access to a private repository on Github to fetch some dependency on your build. You can add a access key by creating a secure file and placing it on the `${HOME}/.ssh` folder.
+## Step 1 - Check if you already have ssh keys
+
+First, check if you already have an SSH key that you can use. In your terminal, type
+
+~~~ shell
+ls -al ~/.ssh
+~~~
+
+Check the directory listing to see if you already have a public SSH key. If you see a file named `id_rsa` or `id_dsa`, then skip to <%= topic_link 'How do I add SSH keys to my build?#configuring-ssh-keys-for-use-in-snap#step-4---add-ssh-key-to-snap', 'Step 4' %>.
+
+## Step 2 - Generate ssh keys
+
+Type the following into your terminal, and accept the defaults. Don't type a passphrase when asked.
+
+~~~ shell
+$ ssh-keygen -t rsa
+~~~
+
+
+~~~
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/jsmith/.ssh/id_rsa):
+Created directory '/home/jsmith/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/jsmith/.ssh/id_rsa.
+Your public key has been saved in /home/jsmith/.ssh/id_rsa.pub.
+The key fingerprint is:
+3a:62:95:ee:b0:c9:52:84:51:ce:03:12:55:65:fe:49 jsmith@mylaptop.local
+~~~
+
+The public key is now located in `$HOME/.ssh/id_rsa.pub` and the private key is located in `$HOME/.ssh/id_rsa`.
+
+## Step 3 - Copy the public key onto your remote server
+
+Once you have generated the keypair, you must place the public key onto your remote server.
+
+~~~ shell
+ssh user@123.45.56.78 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && echo \"$(cat $HOME/.ssh/id_rsa.pub)\" >> ~/.ssh/authorized_keys && chmod 644 ~/.ssh/authorized_keys"
+~~~
+
+## Step 4 - Add private ssh key in Snap
+
+Now edit your project configuration, and in the secure files section, click "Add new"
+
+<%= retina_image 'screenshots/getting-started/upload-secure-file' %>
+
+Paste your private key into the "File content" field, and ensure that the file location and permissions are set correctly
 
 <%= retina_image 'screenshots/getting-started/ssh-keys' %>
 
-You can also use it to run your custom commands.
+## Step 5: Test if your ssh key works as expected from Snap.
 
-<%= retina_image 'screenshots/getting-started/ssh-keys-command' %>
+Add a command in your build configuration, so that it looks like
 
+~~~ shell
+$ ssh user@123.45.56.78 'hello world'
+~~~
 
-
-#What's next
+# What's next
 
 <%= topic_link 'getting started', 'Steps to setup your first build' %>
 
