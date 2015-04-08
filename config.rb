@@ -30,10 +30,11 @@ ignore 'assets/**/*.html'
 ignore 'api-requests/*'
 ignore '.idea/*'
 
-set :file_watcher_ignore, [
+config[:file_watcher_ignore] += [
   %r{api-requests/.*/response.headers.txt},
   %r{api-requests/.*/response.body.json},
-  %r{\.idea/.*}
+  /^\.idea(\/|$)/,
+  /^lib(\/|$)/,
 ]
 
 set :url_root, 'https://docs.snap-ci.com'
