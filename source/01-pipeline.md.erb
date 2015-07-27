@@ -43,7 +43,11 @@ Defining environment variables makes it available to all the commands in that st
 Snap also supports Secure Environment Variables which are never stored in the Snap database in plain text. The values of
 these variables are never displayed anywhere in Snap once they are setup. We also make a best
 attempt to clear out any occurrences of the secure environment variables values from the console logs.
-To read more about this check out the <%= topic_link "Security", "Security" %> page.
+To read more about this check out the <%= topic_link 'Security', 'Security' %> page.
+
+## Pinned Environment Variables
+
+Environment variables can be pinned just like any <a href="#pinning-common-setup-commands">command</a>. Once pinned, the variable will be exported on every stage.
 
 # Artifact
 
