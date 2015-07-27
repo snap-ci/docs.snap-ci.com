@@ -21,7 +21,7 @@ Snap exports a number of environment variables during each build, which you may 
 
 # Current build details
 
-* ``SNAP_BRANCH`` - the name of the git branch
+* ``SNAP_BRANCH`` - the name of the git branch (not present on pull requests)
 * ``SNAP_COMMIT`` - the git commit SHA
 * ``SNAP_COMMIT_SHORT`` - the short git commit SHA
 * ``SNAP_PIPELINE_COUNTER`` - the counter of the currently running pipeline
@@ -31,8 +31,12 @@ Snap exports a number of environment variables during each build, which you may 
 * ``SNAP_STAGE_TRIGGERED_BY`` - if the current stage is triggered manually, this contains the login name of the user that triggered the stage
 * ``SNAP_PULL_REQUEST_NUMBER`` - if the current build is running a pull request, this contains the github pull request number
 
-## Additional variables when running with <%= topic_link "Setting up test parallelism", "multiple workers" %>
+## Addition variables for pull request builds
 
+* ``SNAP_PULL_REQUEST_NUMBER`` - the pull request number
+* ``SNAP_UPSTREAM_BRANCH`` - the upstream branch for which the pull request was open
+
+## Additional variables when running with <%= topic_link "Setting up test parallelism", "multiple workers" %>
 
 * ``SNAP_WORKER_TOTAL`` - The total number of workers that the stage is running with
 * ``SNAP_WORKER_INDEX`` - The index of the current worker, index starting from 1
