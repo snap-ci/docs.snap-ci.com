@@ -32,7 +32,7 @@ As most of the ruby repositories, this one uses a dependency manager tool call [
 
 Because of that, Snap automatically added the default command for each of them: `bundle install --path ${SNAP_CACHE_DIR}/.bundle` and `rake spec` respectively.
 
-Most of the times that would be everything needed to run your tests. However, there may be some tasks that are pre-requisites to it. In this specific build, we need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
+Most of the times that would be everything needed to run your tests. However, there may be some commands that are pre-requisites to it. In this specific build, we need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
 
 <%= retina_image 'screenshots/getting-started/build-foreman' %>
 

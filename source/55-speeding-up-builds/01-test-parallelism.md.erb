@@ -15,13 +15,13 @@ Snap provides two <%= topic_link 'environment variables#current-build-details#ad
 
 You can put together a simple script to setup parallelism automatically -
 
-## To run same task, with different tests on each worker
+## To run same command, with different tests on each worker
 
 ~~~ shell
 ./test-runner $(snap-ci-parallel-partition list/of/files/directories)
 ~~~
 
-## To run different tasks on each worker
+## To run different commands on each worker
 
 ~~~ shell
 #!/usr/bin/env bash

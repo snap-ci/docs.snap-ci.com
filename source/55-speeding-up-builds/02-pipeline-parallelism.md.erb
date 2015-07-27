@@ -26,7 +26,7 @@ Bellow an example of diagonal parallelism being enforced:
 
 These rules are enforced so that in a continuous deployment scenario the order
 which pipelines will finish is predictable. Also two same stages will not run
-concurrently to avoid conflicts with tasks that manage or configure a shared
+concurrently to avoid conflicts with commands that manage or configure a shared
 resource outside of Snap, such as database migrations, infrastructure
 configurations and etc.
 

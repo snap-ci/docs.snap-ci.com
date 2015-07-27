@@ -3,7 +3,7 @@ title:  "Android"
 doc_title: "Using Android on Snap CI"
 ---
 
-To get started with building and testing Android applications, Snap provides a shell script to initialize the Android SDK. To initialize the SDK, first execute the task `download-android`. The `$ANDROID_HOME` environment variable is already setup for you.
+To get started with building and testing Android applications, Snap provides a shell script to initialize the Android SDK. To initialize the SDK, first execute the command `download-android`. The `$ANDROID_HOME` environment variable is already setup for you.
 
 To save space, Snap does not download every Android version, so you'll need to specify the versions and components you want to install:
 
@@ -13,7 +13,7 @@ $ echo y | android update sdk --no-ui --filter platform-tool
 $ echo y | android update sdk --no-ui --filter android-18
 ~~~
 
-This may be a bit cumbersome, so it is recommended that you create a shell script (e.g. `initialize-android.sh`) to initialize your environment, and call it as the first task in your stage.
+This may be a bit cumbersome, so it is recommended that you create a shell script (e.g. `initialize-android.sh`) to initialize your environment, and call it as the first command in your stage.
 
 ~~~shell
 #!/bin/bash
