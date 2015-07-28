@@ -49,6 +49,12 @@ To read more about this check out the <%= topic_link 'Security', 'Security' %> p
 
 Environment variables can be pinned just like any <a href="#pinning-common-setup-commands">command</a>. Once pinned, the variable will be exported on every stage.
 
+Stage specific variables are exported after the pinned ones. Therefore, the value of the stage variable will override the pinned if they have the same key.
+
+<%= retina_image 'screenshots/pinned-environment-variables/pinned-environment-variables' %>
+
+<%= retina_image 'screenshots/pinned-environment-variables/echo-variable' %>
+
 # Artifact
 
 Artifacts are the outputs produced by a stage. These may include binary artifacts (jar, gem), console logs, test coverage reports etc.
