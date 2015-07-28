@@ -7,6 +7,15 @@ def approx_version_string(str)
   Gem::Version.new(str).segments.first(3).join('.')
 end
 
+desc 'trigger recrawl on swiftype'
+task :recrawl do
+  swift_token = ENV['SWIFTYPE_TOKEN']
+  swift_domain_id = ENV['SWIFTYPE_DOMAIN_ID']
+  abort('Missing token or domain. Make sure to provide both: $SWIFTYPE_TOKEN and $SWIFTYPE_DOMAIN_ID') if swift_token.nil? || swift_domain_id.nil?
+  sh "curl -X PUT -H 'Content-Length: 0' 'https://api.swiftype.com/api/v1/engines/bookstore/domains/#{swift_domain_id}/recrawl.json?auth_token=#{swift_token}'"
+end
+
+
 desc "detect versions"
 task :detect_versions do
   unless File.exist?('/etc/centos-release')
