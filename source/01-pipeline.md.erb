@@ -45,11 +45,11 @@ these variables are never displayed anywhere in Snap once they are setup. We als
 attempt to clear out any occurrences of the secure environment variables values from the console logs.
 To read more about this check out the <%= topic_link 'Security', 'Security' %> page.
 
-## Pinned Environment Variables
+## Global Environment Variables
 
 Environment variables can be pinned just like any <a href="#pinning-common-setup-commands">command</a>. Once pinned, the variable will be exported on every stage.
 
-Stage specific variables are exported after the pinned ones. Therefore, the value of the stage variable will override the pinned if they have the same key. For example, given a stage with configuration like the following:
+Local stage variables are exported after the pinned ones. Therefore, the value of the stage variable will override the global variable if they have the same key. For example, given a stage with configuration like the following:
 
 <%= retina_image 'screenshots/pinned-environment-variables/pinned-environment-variables' %>
 
