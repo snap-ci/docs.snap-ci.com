@@ -9,9 +9,9 @@ Returns a list of most recent pipelines. This list is paginated and will contain
 
 `GET /project/:owner/:repository/branch/:branch_name/pipelines`{:.api-method-url}
 
-*For Pull request:*
+For Pull request:
 
-`GET /project/:owner/:repository/pull/:pull_request_counter/pipelines`
+`GET /project/:owner/:repository/pull/:pull_request_counter/pipelines`{:.api-method-url}
 
 <%= render_api_example 'pipelines/get-all-pipelines',
       method: :get,
@@ -25,6 +25,10 @@ Returns a pipeline. Contains relevant links to fetch the `next` or `previous` if
 
 `GET /project/:owner/:repository/branch/:branch_name/pipelines/:pipeline_counter`{:.api-method-url}
 
+For Pull request:
+
+`GET /project/:owner/:repository/pull/:pull_request_counter/pipelines/:pipeline_counter`{:.api-method-url}
+
 <%= render_api_example 'pipelines/get-a-pipeline',
       method: :get,
       url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/25'
@@ -36,6 +40,10 @@ Redirects to the latest pipeline.
 
 `GET /project/:owner/:repository/branch/:branch_name/pipelines/{latest,newest}`{:.api-method-url}
 
+For Pull request:
+
+`GET /project/:owner/:repository/pull/:pull_request_counter/pipelines/{latest,newest}`{:.api-method-url}
+
 <%= render_api_example 'pipelines/get-latest-pipeline',
       method: :get,
       url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines/latest'
@@ -46,6 +54,10 @@ Redirects to the latest pipeline.
 Redirects to the oldest pipeline.
 
 `GET /project/:owner/:repository/branch/:branch_name/pipelines/{oldest,earliest}`{:.api-method-url}
+
+For Pull request:
+
+`GET /project/:owner/:repository/pull/:pull_request_counter/pipelines/{oldest,earliest}`{:.api-method-url}
 
 <%= render_api_example 'pipelines/get-oldest-pipeline',
       method: :get,

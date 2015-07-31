@@ -11,6 +11,10 @@ Triggers a new pipeline from the latest revision on the specified branch.
 
 `POST /project/:owner/:repository/branch/:branch_name/trigger`{:.api-method-url}
 
+For Pull request:
+
+`POST /project/:owner/:repository/pull/:pull_request_counter/trigger`{:.api-method-url}
+
 **Parameters**
 
 {:.api-params}
@@ -30,6 +34,10 @@ In case you provide a payload, it is required to include the `Content-type: appl
 Triggers a manual stage on a specific pipeline.
 
 `POST /project/:owner/:repository/branch/:branch_name/trigger/:pipeline_counter/:stage_name`{:.api-method-url}
+
+For Pull request:
+
+`POST /project/:owner/:repository/pull/:pull_request_counter/trigger/:pipeline_counter/:stage_name`{:.api-method-url}
 
 **Parameters**
 
