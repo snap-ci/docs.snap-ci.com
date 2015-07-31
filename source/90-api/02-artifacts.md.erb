@@ -9,6 +9,10 @@ Redirects to a location containing an artifact. The redirect may not be cached a
 
 `GET /project/:owner/:repository/branch/:branch_name/artifacts/{tracking-pipeline,integration-pipeline}/:pipeline_counter/:stage_name/:job_counter/:artifact_name`{:.api-method-url}
 
+For Pull request:
+
+`GET /project/:owner/:repository/pull/:pull_counter/artifacts/defaultPipeline/:pipeline_counter/:stage_name/:job_counter/:artifact_name`{:.api-method-url}
+
 <%= render_api_example 'artifacts/get-an-artifact',
       method: :get,
       url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/artifacts/tracking-pipeline/25/Build/1/foo'
