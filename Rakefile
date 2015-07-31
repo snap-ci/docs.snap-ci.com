@@ -1,6 +1,7 @@
 #!/usr/bin/env rake -f
 
 require 'yaml'
+require 'json'
 
 
 def approx_version_string(str)
@@ -12,7 +13,8 @@ task :recrawl do
   swift_token = ENV['SWIFTYPE_TOKEN']
   swift_domain_id = ENV['SWIFTYPE_DOMAIN_ID']
   abort('Missing token or domain. Make sure to provide both: $SWIFTYPE_TOKEN and $SWIFTYPE_DOMAIN_ID') if swift_token.nil? || swift_domain_id.nil?
-  sh "curl -X PUT -H 'Content-Length: 0' 'https://api.swiftype.com/api/v1/engines/bookstore/domains/#{swift_domain_id}/recrawl.json?auth_token=#{swift_token}'"
+  result = JSON.parse %x[curl -X PUT -H \'Content-Length: 0\' \'https://api.swiftype.com/api/v1/engines/snap-ci/domains/#{swift_domain_id}/recrawl.json?auth_token=#{swift_token}\']
+  abort("ERROR: #{result['error']}") if result['error']
 end
 
 
