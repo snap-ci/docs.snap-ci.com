@@ -9,6 +9,10 @@ Returns a list of most recent pipelines. This list is paginated and will contain
 
 `GET /project/:owner/:repository/branch/:branch_name/pipelines`{:.api-method-url}
 
+*For Pull request:*
+
+`GET /project/:owner/:repository/pull/:pull_request_counter/pipelines`
+
 <%= render_api_example 'pipelines/get-all-pipelines',
       method: :get,
       url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines'
