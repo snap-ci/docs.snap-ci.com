@@ -270,6 +270,3 @@ DEPENDENCIES
   middleman-syntax
   rake
   rmagick
-
-BUNDLED WITH
-   1.10.5
