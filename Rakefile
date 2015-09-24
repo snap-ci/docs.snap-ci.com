@@ -34,7 +34,7 @@ task :detect_versions do
     'gradle'    => %x[gradle --version].match(/^Gradle (.*)$/)[1],
     'awscli'    => %x[/opt/local/awscli/bin/aws --version 2>&1].match(/^aws-cli\/(\S+)/)[1],
     'git'       => %x[git --version 2>&1].match(/^git version (.*)/)[1],
-    'sbt'       => %x[sbt --version 2>&1].match(/^sbt launcher version (.*)/)[1],
+    'sbt'       => %x[sbt sbtVersion 2>&1].split("\n")[1].match(/\d+\.\d+\.\d+/)[0],
     'terraform' => %x[terraform version].match(/^Terraform (.*)/)[1],
     'leiningen' => %x[lein --version].match(/^Leiningen (.*) on Java/)[1],
   }
