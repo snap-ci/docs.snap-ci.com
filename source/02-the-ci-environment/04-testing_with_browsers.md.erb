@@ -24,9 +24,9 @@ Calling the `chromedriver` wrapper will execute version `2.19` of chromedriver. 
 
 ## Using configuring chromedriver on Snap from various testing tools -
 
-### protractor
+### Protractor
 
-We suggest adding the following lines to your protractor's `config.js` -
+We suggest adding the following lines to your protractor's `conf.js` -
 
 ~~~javascript
 exports.config = {/* your existing config */};
@@ -36,8 +36,7 @@ if (process.env.SNAP_CI) {
 }
 ~~~
 
-You can also take a look at our [sample protractor repository](https://github.com/snap-ci-examples/protractor-demo) for further details.
-
+If you are running protractor with selenium, you need to inform selenium to use the chromedriver provided by Snap and not the one it downloads. So if you just run `webdriver-manager start` and have specified `seleniumAddress` pointing to the selenium server in your protractor `conf.js` you may see unexpected errors as webdriver-manager doesn't use the chromedriver provided by Snap. You can just remove `seleniumAddress` and let protractor start selenium which will then use the chromedriver specified in the `conf.js`. In order to know more, you can take a look at our [sample protractor repository](https://github.com/snap-ci-examples/protractor-demo) for sample protractor configurations with and without selenium.
 
 # Using PhantomJS
 
