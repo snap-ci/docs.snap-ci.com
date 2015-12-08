@@ -9,10 +9,6 @@ Snap allows to run the same stage across multiple <%= topic_link 'Configuring mu
 
 In order to assist with making your tests go faster, we have provided a command line application that will automatically partition your tests based on the number of tests you have and the number of workers you are running your builds with. Find out more about this CLI on its [github page](https://github.com/snap-ci/parallel-tests).
 
-## Optimal test suite split based on time execution
-
-If you want to parallel tests for RSpec, Cucumber or Minitest to get faster feedback from CI then you can try [knapsack gem](https://github.com/ArturT/knapsack). It will split tests across workers and make sure that tests will run comparable time on each worker. [Read more about knapsack setup](https://github.com/ArturT/knapsack#info-for-snap-cicom-users).
-
 # Manually splitting your tests
 
 Snap provides two <%= topic_link 'environment variables#current-build-details#additional-variables-when-running-with-multiple-workers', 'environment variables' %> `SNAP_WORKER_TOTAL` and `SNAP_WORKER_INDEX` to assist you with splitting your tests.
@@ -63,3 +59,11 @@ def partition(tests, total_workers, current_worker_index)
   slices[current_worker_index-1] || []
 end
 ~~~
+
+
+# Parallelism using third-party tools
+
+## Knapsack: optimal test suite split based on time execution
+
+If you want to parallel tests for RSpec, Cucumber or Minitest to get faster feedback from CI then you can try [knapsack gem](https://github.com/ArturT/knapsack). It will split tests across workers and make sure that tests will run comparable time on each worker. [Read more about knapsack setup](https://github.com/ArturT/knapsack#info-for-snap-cicom-users).
+
