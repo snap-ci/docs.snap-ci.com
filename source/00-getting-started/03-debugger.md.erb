@@ -14,6 +14,23 @@ When `snap-shell` is active you'll see a _terminal_ icon:
 
 You can find more details on our [blog post](http://blog.snap-ci.com/blog/2014/08/11/introducing-snap-shell).
 
+##Debugging a stage failure
+
+Sometimes you want to quickly investigate a stage failure. Changing the
+configuration and having a whole pipeline run can be cumbersome. Snap  provides
+a _stage debug rerun_ functionality which aims to help solve these issues.
+
+When a stage fails you'll see at the bottom left of the stage a bug icon:
+
+<%= retina_image 'screenshots/getting-started/build-stage-debug-icon-highlighted' %>
+
+Clicking on this icon will rerun the stage in debug mode. In this mode Snap
+will automatically invoke `snap-shell` if a task fails, giving you a chance to
+investigate the problem.
+
+> **It is not possible at this time to run `snap-shell` in stages with multiple
+workers.**
+
 #What's next
 
 <%= topic_link 'getting started', 'Steps to setup your first build' %>
