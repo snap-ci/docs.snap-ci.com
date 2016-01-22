@@ -54,7 +54,7 @@ if ENV['S3_BUCKET']
     config.bucket                = ENV['S3_BUCKET']
     config.region                = 'us-east-1'
     config.aws_access_key_id     = ENV['S3_ACCESS_KEY']
-    config.aws_secret_access_key = ENV['S3_SECRET_KEY']
+    config.aws_secret_access_key = ENV['S3_SECRET_ACCESS_KEY']
     # don't s3 redirect immediately after build
     config.after_build           = false
   end
@@ -63,7 +63,7 @@ if ENV['S3_BUCKET']
     config.bucket                = ENV['S3_BUCKET']
     config.region                = 'us-east-1'
     config.aws_access_key_id     = ENV['S3_ACCESS_KEY']
-    config.aws_secret_access_key = ENV['S3_SECRET_KEY']
+    config.aws_secret_access_key = ENV['S3_SECRET_ACCESS_KEY']
     config.delete                = true
     # don't s3 sync immediately after build
     config.after_build           = false
@@ -72,7 +72,7 @@ if ENV['S3_BUCKET']
   if ENV['CLOUDFRONT_DISTRIBUTION']
     activate :cloudfront do |cf|
       cf.access_key_id = ENV['S3_ACCESS_KEY']
-      cf.secret_access_key = ENV['S3_SECRET_KEY']
+      cf.secret_access_key = ENV['S3_SECRET_ACCESS_KEY']
       cf.distribution_id = ENV['CLOUDFRONT_DISTRIBUTION']
       cf.after_build = false  # default is false
     end

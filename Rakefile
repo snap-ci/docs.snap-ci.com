@@ -18,7 +18,7 @@ task :recrawl do
 end
 
 
-desc "detect versions"
+desc 'detect versions'
 task :detect_versions do
   unless File.exist?('/etc/centos-release')
     $stderr.puts("Not performing any version detection because we are not running on centos.")
@@ -113,12 +113,12 @@ task :detect_versions do
   File.open('data/packages.yml', 'w') {|f| f.puts packages.to_yaml }
 end
 
-desc "build all documentation"
+desc 'build all documentation'
 task :build => :detect_versions do
   sh("bundle exec middleman build --verbose --clean")
 end
 
-desc "deploy the documentation"
+desc 'deploy the documentation'
 task :deploy do
   sh("bundle exec middleman s3_sync --force --verbose")
   sh("bundle exec middleman s3_redirect")
