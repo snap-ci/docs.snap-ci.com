@@ -115,14 +115,14 @@ end
 
 desc 'build all documentation'
 task :build => :detect_versions do
-  sh("bundle exec middleman build --verbose --clean")
+  sh('bundle exec middleman build --verbose --clean')
 end
 
 desc 'deploy the documentation'
 task :deploy do
-  sh("bundle exec middleman s3_sync --force --verbose")
-  sh("bundle exec middleman s3_redirect")
-  sh("bundle exec middleman invalidate")
+  sh('bundle exec middleman s3_sync --force --verbose')
+  sh('bundle exec middleman s3_redirect')
+  sh('bundle exec middleman invalidate')
 end
 
 desc 'find ununsed images'
