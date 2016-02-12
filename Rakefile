@@ -21,7 +21,7 @@ end
 desc 'detect versions'
 task :detect_versions do
   unless File.exist?('/etc/centos-release')
-    $stderr.puts("Not performing any version detection because we are not running on centos.")
+    $stderr.puts('Not performing any version detection because we are not running on centos.')
     next
   end
 
@@ -43,7 +43,7 @@ task :detect_versions do
   development_libs  = %w(openssl libxml2 libxslt ImageMagick qt5-qtbase)
   sql_sdatabases    = %w(mysql-community-server postgresql92 postgresql93 postgresql94 sqlite)
   third_party_tools = %w(s3cmd)
-  no_sql_databases  = %w(couchdb redis mongo-10gen)
+  no_sql_databases  = %w(couchdb-1.6.1 redis mongo-10gen)
   languages         = %w()
   browser_tools     = %w(phantomjs google-chrome-stable firefox)
 
