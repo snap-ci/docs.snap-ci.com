@@ -15,14 +15,14 @@ To get started
 
   <%= retina_image 'screenshots/aws/opsworks-setup' %>
   
-=begin
+
 
 ## Command line usage of "snap-deploy" for opsworks deployments
 
 <% if development? %>
 <%= output_of_command 'cd ../snap-deploy; unset BUNDLE_BIN_PATH BUNDLE_GEMFILE GEM_HOME GEM_PATH RUBYLIB RUBYOPT; bundle exec snap-deploy aws opsworks -h' %>
 <% else %>
-<%= output_of_command 'snap-deploy aws opsworks -h' %>
+# <%= output_of_command 'snap-deploy aws opsworks -h' %>
 <% end %>
 
 =end
