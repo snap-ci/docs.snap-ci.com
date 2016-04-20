@@ -14,12 +14,11 @@ To get started
 * Tweak the command to change the APP ID argument to match your application. You can find the APP ID from your [AWS console](https://console.aws.amazon.com/opsworks/home).
 
   <%= retina_image 'screenshots/aws/opsworks-setup' %>
-  
+
 ## Command line usage of "snap-deploy" for opsworks deployments
 
 <% if development? %>
 <%= output_of_command 'cd ../snap-deploy; unset BUNDLE_BIN_PATH BUNDLE_GEMFILE GEM_HOME GEM_PATH RUBYLIB RUBYOPT; bundle exec snap-deploy aws opsworks -h' %>
 <% else %>
-<%= output_of_command 'snap-deploy aws opsworks -h' %>
+<%# output_of_command 'snap-deploy aws opsworks -h' %>
 <% end %>
-

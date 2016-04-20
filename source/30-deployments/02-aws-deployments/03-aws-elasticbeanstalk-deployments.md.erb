@@ -20,5 +20,5 @@ To get started
 <% if development? %>
 <%= output_of_command 'cd ../snap-deploy; unset BUNDLE_BIN_PATH BUNDLE_GEMFILE GEM_HOME GEM_PATH RUBYLIB RUBYOPT; bundle exec snap-deploy aws eb -h' %>
 <% else %>
-<%= output_of_command 'snap-deploy aws eb -h' %>
+<%# output_of_command 'snap-deploy aws eb -h' %>
 <% end %>
