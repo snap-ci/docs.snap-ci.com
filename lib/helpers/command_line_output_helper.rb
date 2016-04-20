@@ -16,7 +16,11 @@ module CommandLineOutputHelper
 
     cmd << " 2>&1" unless cmd =~ /2>&1/
     output = %x[#{cmd}]
-    raise "Expected exit status #{expected_exit_code} got #{$?.exitstatus} instead when executing `#{cmd}`" unless $?.exitstatus == expected_exit_code
+    if $?.exitstatus != expected_exit_code
+      puts "EXITSTATUS: #{$?.exitstatus}"
+      puts "OUTPUT: #{output}"
+      raise "Expected exit status #{expected_exit_code} got #{$?.exitstatus} instead when executing `#{cmd}`"
+    end
     output
   end
 
