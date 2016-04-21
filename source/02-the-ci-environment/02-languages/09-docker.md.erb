@@ -28,7 +28,7 @@ Sign up for:
 
 * <a href="http://www.github.com/">Github</a> and validate your email address
 
-* <a href="http://www.dockerhub.com/">Heroku</a> 
+* <a href="http://www.dockerhub.com/">Dockerhub</a> 
 
 * <a href="http://www.snap-ci.com/">Snap CI</a> and authorize Snap CI to access your Github account
 
@@ -37,6 +37,13 @@ Sign up for:
 * Login to Github and fork <a href="https://github.com/snap-ci-examples/node-js-docker">snap-ci-examples/node-js-docker</a>
 
 * You should now see the snap-ci-examples/node-js-docker as one of your Github repositories as: github-userid/node-js-docker
+
+## Create a public repository on Dockerhub
+
+* Login in to Dockerhub
+
+* Create a public repository with the name node-js-docker
+
 
 ## Add forked repository to Snap CI
 
@@ -47,7 +54,33 @@ Sign up for:
 ## Customise your build
 
 * Select “Customize it here”
+* Edit the fast feedback stage 
+* Rename stage to BUILD
+* Add the tasks:
+  sudo docker build -t snapci/node-docker-example .
+  sudo docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  sudo docker push snapci/node-docker-example
+* Add secure environment variables for DOCKER_EMAIL, DOCKER_USER and DOCKER_PASS. The value for these should be your Dockhub credentials
+* Pin the secure environment variables
+* Add a new stage 
+* Name stage TEST
+* Add the tasks:
 
+docker pull snapci/node-docker-example
+docker tag -f snapci/node-docker-example 5000:5000
+docker run -d -p 5000:5000 snapci/node-docker-example
+sleep 30
+curl --fail http://localhost:5000docker push snapci/node-docker-example
+
+
+* Add a new stage
+* Add the tasks:
+
+docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+docker push snapci/node-docker-example
+
+* Name stage DEPLOY
+* Add the tasks
 
 ## Your app is deployed to Heroku using Snap CI
 
