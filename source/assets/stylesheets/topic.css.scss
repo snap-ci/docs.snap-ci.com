@@ -19,8 +19,10 @@
   .topic-container {
     left: 25%;
     background-color: #FEFEFE;
+
     .toc-anchor {
-      padding-left: 10px;
+      font-size: 0.7em;
+      padding-left: 6px;
       color: #575757;
       font-weight: bold;
     }
@@ -44,6 +46,7 @@
         display: none;
         color: #000;
       }
+
       &:hover .icon {
         display: inline-block;
       }
@@ -61,6 +64,7 @@
         padding-left: inherit;
       }
     }
+
     .wip {
       border: 1px solid #eee;
       @include border-radius(5px);
@@ -79,7 +83,7 @@
       font-size: 36px;
       font-family: 'RobotoThin';
       padding: 5px 60px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       background-image: image-url('bg-rainbow.png');
 
       a {
@@ -155,7 +159,7 @@
       list-style: none;
       list-style-position: inside;
       padding: 0;
-      margin: 0 0 10px 45px;
+      margin: 10px 0 10px 18px;
 
       & ul {
         margin-bottom: 0;
@@ -163,7 +167,7 @@
     }
 
     li {
-      line-height: 2.2;
+      line-height: 2;
       @include clearfix;
 
       &:before {
@@ -219,6 +223,7 @@
         border-bottom: 1px solid #AAA;
         margin: 40px 0 20px;
         color: #333;
+        line-height: 1.4;
       }
 
 
