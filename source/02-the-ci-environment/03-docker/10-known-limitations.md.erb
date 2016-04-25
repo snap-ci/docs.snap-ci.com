@@ -1,0 +1,13 @@
+---
+title:  "Known Limitations"
+doc_title: "Known Docker limitations on Snap CI"
+
+---
+
+## Known limitation: Propagating Docker images between stages
+
+Currently, we use the same build worker to run successive automatic stages whenever possible but there are scenarios where this might not happen which means that Docker images built in one stage might not be available in the next stage unless published to a registry. We have plans to provide first class support for Docker image propagation on the pipeline similar to artifact propagation but for now we recommend publishing the images built in a stage to a Docker registry so that they can be used in subsequent stages.
+
+## Parallel and bigger sized workers
+
+Selecting bigger sized workers or parallel workers for your build doesn't have any effect at the moment. The build will run on the single worker size and parallel configurations will run sequentially.
