@@ -9,11 +9,41 @@ Snap CI provides support for building, testing and deploying Docker images. You 
 
 Snap CI provides the following Docker versions:
 
-<% if RbConfig::CONFIG['host_os'] =~ /darwin/ || development? %>
-  <%= output_of_command 'echo placeholder Docker version' %>
-<% else %>
-  <%= output_of_command 'apt-cache showpkg docker' %>
-<% end %>
+```
+Package: docker
+Versions:
+1.5-1 (/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_universe_binary-amd64_Packages)
+ Description Language:
+                 File: /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_universe_binary-amd64_Packages
+                  MD5: 032a37ba6228c22cbca1c0b960030eaa
+ Description Language: en
+                 File: /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_universe_i18n_Translation-en
+                  MD5: 032a37ba6228c22cbca1c0b960030eaa
+
+1.4-5ubuntu1 (/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_universe_binary-amd64_Packages)
+ Description Language:
+                 File: /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_universe_binary-amd64_Packages
+                  MD5: 032a37ba6228c22cbca1c0b960030eaa
+ Description Language: en
+                 File: /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_universe_i18n_Translation-en
+                  MD5: 032a37ba6228c22cbca1c0b960030eaa
+
+
+Reverse Depends:
+  lxc-docker-1.7.1-snap-ci,docker
+  docker.io,docker 1.5~
+  docker.io,docker 1.5~
+  pidgin,docker
+  notion,docker
+  pidgin,docker
+Dependencies:
+1.5-1 - libc6 (2 2.15) libglib2.0-0 (2 2.12.0) libx11-6 (0 (null))
+1.4-5ubuntu1 - libc6 (2 2.4) libglib2.0-0 (2 2.12.0) libx11-6 (0 (null))
+Provides:
+1.5-1 -
+1.4-5ubuntu1 -
+Reverse Provides:
+```
 
 # An example of how to build, test and deploy Docker images
 
