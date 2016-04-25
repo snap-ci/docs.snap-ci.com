@@ -3,7 +3,7 @@ title:  "Docker"
 doc_title: "Using Docker on Snap CI"
 ---
 
-Docker support on Snap CI is in beta and is only enabled for some users. If you would like to try these features please contact us at <a href="mailto:support@snap-ci.com">Snap CI support</a>. 
+Docker support on Snap CI is in beta and is only enabled for some users. If you would like to try these features please contact us at <a href="mailto:support@snap-ci.com">Snap CI support</a>.
 
 NB: Support for Docker is only available on our new stack "Cybele".
 
@@ -96,11 +96,11 @@ You will need to sign up for the following services before proceeding:
 * Rename stage to BUILD
 * Add the tasks:
 
-<pre>
+~~~shell
   sudo docker build -t snapci/node-docker-example .
   sudo docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
   sudo docker push snapci/node-docker-example
-</pre>
+~~~
 
 * Add secure environment variables for DOCKER_EMAIL, DOCKER_USER and DOCKER_PASS. The value for these should be your DockerHub credentials
 * Pin the secure environment variables. This way you won't have to endter them on other stages.
@@ -113,11 +113,13 @@ You will need to sign up for the following services before proceeding:
 * Name stage TEST
 * Add the tasks:
 
+~~~shell
 docker pull snapci/node-docker-example
 docker tag -f snapci/node-docker-example 5000:5000
 docker run -d -p 5000:5000 snapci/node-docker-example
 sleep 30
 curl --fail http://localhost:5000docker push snapci/node-docker-example
+~~~
 
 ## Customise your build - Add the deploy stage
 
@@ -127,8 +129,10 @@ curl --fail http://localhost:5000docker push snapci/node-docker-example
 * Name stage DEPLOY
 * Add the tasks:
 
+~~~shell
 docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 docker push snapci/node-docker-example
+~~~
 
 ## Save configuration and run builds
 
@@ -139,4 +143,3 @@ docker push snapci/node-docker-example
 * Congrats!
 
 You can see the deployment pipeline for the parent project running on <a href="https://snap-ci.com/snap-ci-examples/node-js-docker/branch/master">Snap CI</a>.
-
