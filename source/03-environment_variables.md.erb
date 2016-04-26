@@ -5,21 +5,21 @@ doc_title:  "Environment Variables provided by Snap CI"
 
 Snap exports a number of environment variables during each build, which you may find useful during your build:
 
-# Detect if your tests are running under CI
+## Detect if your tests are running under CI
 
 * ``SNAP_CI=true``
 * ``CI=true``
 
-# X-Server
+## X-Server
 
 * ``DISPLAY`` - the display variable in case your build performs any GUI testing (web browsers, for e.g.). Snap ensures that `xvfb` is already running with a resolution of `1280x1024x16`. If you're running GUI testing tools, you may want to checkout our guide on <%= topic_link "Testing with browsers", "browser testing" %>.
 
-# Language and Locale settings
+## Language and Locale settings
 
 * ``LANG=en_US.UTF-8``
 * ``LC_ALL=en_US.UTF-8``
 
-# Current build details
+## Current build details
 
 * ``SNAP_BRANCH`` - the name of the git branch (not present on pull requests)
 * ``SNAP_COMMIT`` - the git commit SHA
@@ -31,22 +31,22 @@ Snap exports a number of environment variables during each build, which you may 
 * ``SNAP_STAGE_TRIGGERED_BY`` - if the current stage is triggered manually, this contains the login name of the user that triggered the stage
 * ``SNAP_PULL_REQUEST_NUMBER`` - if the current build is running a pull request, this contains the github pull request number
 
-## Addition variables for pull request builds
+### Addition variables for pull request builds
 
 * ``SNAP_PULL_REQUEST_NUMBER`` - the pull request number
 * ``SNAP_UPSTREAM_BRANCH`` - the upstream branch for which the pull request was opened
 
-## Additional variables when running with <%= topic_link "Setting up test parallelism", "multiple workers" %>
+### Additional variables when running with <%= topic_link "Setting up test parallelism", "multiple workers" %>
 
 * ``SNAP_WORKER_TOTAL`` - The total number of workers that the stage is running with
 * ``SNAP_WORKER_INDEX`` - The index of the current worker, index starting from 1
 
-# Databases
+## Databases
 
 Depending on you project <%= topic_link "databases", "database settings" %>
 Snap will export additional environment variables.
 
-## For MySQL
+### For MySQL
 
 * ``SNAP_DB_MYSQL_USER`` - user for MySQL connection
 * ``SNAP_DB_MYSQL_PASSWORD`` - password for MySQL connection
@@ -55,7 +55,7 @@ Snap will export additional environment variables.
 * ``SNAP_DB_MYSQL_URL`` - a MySQL URL formatted for connection
 * ``SNAP_DB_MYSQL_JDBC_URL`` - a JDBC URL formatted for connection
 
-## For PostgreSQL
+### For PostgreSQL
 
 * ``SNAP_DB_PG_USER`` - user for PostgreSQL connection
 * ``SNAP_DB_PG_PASSWORD`` - password for PostgreSQL connection
@@ -65,7 +65,7 @@ Snap will export additional environment variables.
 * ``SNAP_DB_PG_URL_ALT`` - a PostgreSQL URL formatted for connection (uses the postgres:// URI scheme)
 * ``SNAP_DB_PG_JDBC_URL`` - a JDBC URL formatted for connection
 
-# Other variables
+## Other variables
 
 * ``SNAP_WORKING_DIR`` - Directory where your build runs
 * ``SNAP_CACHE_DIR`` - directory used for <%= topic_link "Caching", "caching" %>

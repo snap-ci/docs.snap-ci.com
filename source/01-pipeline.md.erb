@@ -7,13 +7,13 @@ Snap differs from many of the other tools you may be familiar with in that it se
 
 > **At an abstract level, a deployment pipeline is an automated manifestation of your process for getting software from version control into the hands of your users.**
 
-# Why do you need a Deployment Pipeline?
+## Why do you need a Deployment Pipeline?
 
 A deployment pipeline is a sequence of <a href="#stage">stages</a> which proceed from left to right. It is triggered by changes from a version control system. Each change propagates through the stages of the pipeline. Each stage provides higher level of confidence as code is deployed and tested in environments that are progressively more production like. Each stage may publish <a href="#artifact">artifacts</a> and the these artifacts can propagate through the pipeline for use by future stages.
 
 <%= retina_image 'screenshots/pipelines-with-deployment' %>
 
-# Stage
+## Stage
 
 > **A stage consists of set of commands which are run to accomplish a specific purpose.**
 
@@ -25,7 +25,7 @@ The stages can either be -
 
 or *deployment stages*: which deploy your application to specific environments.
 
-# Pinning common Setup Commands
+## Pinning common Setup Commands
 
 Every stage in Snap starts with a **clean and isolated environment**. Hence, if you made any changes to the build machine
 such as installing packages or build dependencies in the previous stages they may not be available in the current stage
@@ -34,18 +34,18 @@ You are therefore required to setup any build dependencies on every stage before
 Snap allows you to do so by pinning the common setup commands.
 Pinning commands runs them before every stage and they are typically used for installing your build dependencies, setting up the database, etc.
 
-# Environment variables
+## Environment variables
 
 Defining environment variables makes it available to all the commands in that stage. This is the same as using the `export` command before running the stage.
 
-## Secure Environment Variables
+### Secure Environment Variables
 
 Snap also supports Secure Environment Variables which are never stored in the Snap database in plain text. The values of
 these variables are never displayed anywhere in Snap once they are setup. We also make a best
 attempt to clear out any occurrences of the secure environment variables values from the console logs.
 To read more about this check out the <%= topic_link 'Security', 'Security' %> page.
 
-## Global Environment Variables
+### Global Environment Variables
 
 Environment variables can be pinned just like any <a href="#pinning-common-setup-commands">command</a>. Once pinned, the variable will be exported on every stage.
 
@@ -57,16 +57,16 @@ When running the stage, the value of **AWS_DEFAULT_REGION** will be **us-west-2*
 
 <%= retina_image 'screenshots/pinned-environment-variables/echo-variable' %>
 
-# Artifact
+## Artifact
 
 Artifacts are the outputs produced by a stage. These may include binary artifacts (jar, gem), console logs, test coverage reports etc.
 Snap allows you to configure any directory as an artifact of a stage. This artifact will be made available to the next stage if there is one and will also be made available as a download to collaborators.
 
-## Propagating artifacts
+### Propagating artifacts
 
 One of the advantages of a pipeline is that generated artifacts are not just available for download, but are also made available to subsequent stages. This allows you to build binaries only once, and increase confidence in the binary with each subsequent stage. This also gurantees that you are deploying the exact same binary to an environment that you tested with.
 
-# Secure Files
+## Secure Files
 
 A user can choose to add a set of secure files to a stage. Examples include ssh keys, certs or password files which are required by that stage.
 These files are created at the beginning of the stage and are cleaned up at the end of the stage. The content of these files are encrypted when stored in Snap and the file is made available only when the stage is running.

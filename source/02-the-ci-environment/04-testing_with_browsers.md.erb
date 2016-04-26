@@ -16,15 +16,15 @@ The following testing tools and browsers are available on the CI environment:
 
 [Contact us](<%= data.links.contact_us %>) if you'd like a different version of any of the browsers and tools.
 
-# Using Chromedriver
+## Using Chromedriver
 
 > **Due to the combination of the container technology and OS version we provide, chromedriver needs to be setup with a few environment variables and command line flags. Users are required to use the `chromedriver` wrapper available on the `PATH` at `<%= stdout_and_stderr_of('which chromedriver') %>`.**
 
 Calling the `chromedriver` wrapper will execute version `2.19` of chromedriver. If you'd like to use a different version of chromedriver, please specify an environment variable `CHROMEDRIVER_VERSION` and set its value to one of the supported versions before you use chromedriver.
 
-## Using configuring chromedriver on Snap from various testing tools -
+### Using configuring chromedriver on Snap from various testing tools -
 
-### Protractor
+#### Protractor
 
 We suggest adding the following lines to your protractor's `conf.js` -
 
@@ -38,6 +38,6 @@ if (process.env.SNAP_CI) {
 
 If you are running protractor with selenium, you need to inform selenium to use the chromedriver provided by Snap and not the one it downloads. So if you just run `webdriver-manager start` and have specified `seleniumAddress` pointing to the selenium server in your protractor `conf.js` you may see unexpected errors as webdriver-manager doesn't use the chromedriver provided by Snap. You can just remove `seleniumAddress` and let protractor start selenium which will then use the chromedriver specified in the `conf.js`. In order to know more, you can take a look at our [sample protractor repository](https://github.com/snap-ci-examples/protractor-demo) for sample protractor configurations with and without selenium.
 
-# Using PhantomJS
+## Using PhantomJS
 
 Snap has PhantomJS (version <%= data.versions.phantomjs %>) pre-installed. This is available on the `PATH`.

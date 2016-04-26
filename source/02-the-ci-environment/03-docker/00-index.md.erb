@@ -47,7 +47,7 @@ Snap CI provides the following Docker versions:
   Reverse Provides:
 ~~~
 
-# An example of how to build, test and deploy Docker images
+## An example of how to build, test and deploy Docker images
 
 In this example we build a simple Docker image for a NodeJS app, run and test it before publishing to a registry.
 
@@ -58,7 +58,7 @@ This example:
 * Runs a simple test against the packaged application
 * Deploys the freshly built image to DockerHub
 
-## Get setup
+### Get setup
 
 You will need to sign up for the following services before proceeding:
 
@@ -74,20 +74,20 @@ You will need to sign up for the following services before proceeding:
 
 * You should now see the snap-ci-examples/node-js-docker as one of your Github repositories as: github-userid/node-js-docker
 
-## Create a public repository on Dockerhub
+### Create a public repository on Dockerhub
 
 * Login in to Dockerhub
 
 * Create a public repository with the name node-js-docker
 
 
-## Add forked repository to Snap CI
+### Add forked repository to Snap CI
 
 * Go to <a href="http://www.snap-ci.com/">Snap CI</a>
 
 * Add the node-js-docker build. The build should start and run the two default stages - FastFeedback and Integration.
 
-## Customise your build - Add the build stage
+### Customise your build - Add the build stage
 
 <%= retina_image 'screenshots/getting-started/docker-simple-build-stage-config' %>
 
@@ -105,7 +105,7 @@ You will need to sign up for the following services before proceeding:
 * Add secure environment variables for DOCKER_EMAIL, DOCKER_USER and DOCKER_PASS. The value for these should be your DockerHub credentials
 * Pin the secure environment variables. This way you won't have to endter them on other stages.
 
-## Customise your build - Add the test stage
+### Customise your build - Add the test stage
 
 <%= retina_image 'screenshots/getting-started/docker-simple-test-stage-config' %>
 
@@ -121,7 +121,7 @@ sleep 30
 curl --fail http://localhost:5000docker push snapci/node-docker-example
 ~~~
 
-## Customise your build - Add the deploy stage
+### Customise your build - Add the deploy stage
 
 <%= retina_image 'screenshots/getting-started/docker-simple-stage-config' %>
 
@@ -134,7 +134,7 @@ docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 docker push snapci/node-docker-example
 ~~~
 
-## Save configuration and run builds
+### Save configuration and run builds
 
 <%= retina_image 'screenshots/getting-started/docker-simple-pipeline-snap' %>
 

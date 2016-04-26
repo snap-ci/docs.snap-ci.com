@@ -6,7 +6,7 @@ doc_title:  "Managing project access in Snap CI"
 When a new repository is added in Snap, it will automatically sync all the collaborators from Github.
 You may optionally force a sync with GitHub to ensure that project membership in Snap are in line with collaborations on GitHub.
 
-> **Note** : 
+> **Note** :
 Recently, GitHub introduced some changes to the Organizations which are managed with the effect that the Github organizations owners also need to be admin collaborator on the repository.
 
 To be able to add a new repository on Snap, make sure you are part of a GitHub team that can administer the repository. This is due to recent Github changes in the way they deal with permissions
@@ -20,11 +20,11 @@ To be able to add a new repository on Snap, make sure you are part of a GitHub t
 
 
 
-# Remove collaborators from Snap
+## Remove collaborators from Snap
 
 To remove a collaborator from your builds, you will need to remove them from github collaborator and then re-sync them on Snap as mentioned above.
 
-# Transfer billing ownership of repository
+## Transfer billing ownership of repository
 
 Below are the steps to transfer billing owner of repository to another user :
 
@@ -38,12 +38,12 @@ Below are the steps to transfer billing owner of repository to another user :
   	           <%= retina_image 'screenshots/github-collaboration/transfer' %>
 
 
-> **Note** : 
+> **Note** :
  Once you transfer the ownership, user will get an email notification to accept/decline the request (which is valid for 48 hours). After accepting the request, the billing ownership will be transferred to that user.
 
-> **You cannot transfer repos which is owned by user.** 
+> **You cannot transfer repos which is owned by user.**
 
-# Snap user roles and permissions :
+## Snap user roles and permissions :
 
 User roles determine what users can see and do in Snap.
 
@@ -80,7 +80,4 @@ There are four types of user who may interact with Snap:
 + Enable/Disable auto-branch tracking
 
 
- **Watchers** - A Watcher can choose to get build notification and will have collaborated projects on their Snap dashboard. 
-
-
-
+ **Watchers** - A Watcher can choose to get build notification and will have collaborated projects on their Snap dashboard.
