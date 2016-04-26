@@ -44,3 +44,19 @@ docker load -i sample-webapp.tar
 This allows you to build the Docker image exactly once and then use the exact same binary artifact in the rest of the pipeline. Not only is this much faster, it is also a great way to avoid the pitfalls of [snowflake servers](http://martinfowler.com/bliki/SnowflakeServer.html).
 
 ## Working with DockerHub
+
+You can publish your Docker images to DockerHub using the push &amp; pull commands. To execute these, you must first login using the docker login command. In order to do so, you will need a [DockerHub account](https://hub.docker.com/). We recommend using secure environment variables in Snap to store your credentials and logging in as shown below.
+
+#### Pushing to DockerHub
+
+~~~shell
+  docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  docker push badrij/sample-webapp
+~~~
+
+#### Pulling from DockerHub
+
+~~~shell
+  docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  docker pull badrij/sample-webapp
+~~~
