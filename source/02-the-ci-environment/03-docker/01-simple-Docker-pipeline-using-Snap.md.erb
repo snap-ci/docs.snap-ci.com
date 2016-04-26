@@ -3,3 +3,101 @@
 title:  "Simple Docker pipeline using Snap CI"
 doc_title: "Simple Docker pipeline using Snap CI"
 ---
+
+## An example of how to build, test and deploy Docker images
+
+In this example we build a simple Docker image for a NodeJS app, run and test it before publishing to a registry.
+
+This example:
+
+* Builds a Docker image for the project based on its Dockerfile
+* Creates a new container based on that image and used Docker run to launch the packaged app
+* Runs a simple test against the packaged application
+* Deploys the freshly built image to DockerHub
+
+### Get setup
+
+You will need to sign up for the following services before proceeding:
+
+* <a href="http://www.github.com/">Github</a> and validate your email address
+
+* <a href="http://www.dockerhub.com/">Dockerhub</a>
+
+* <a href="http://www.snap-ci.com/">Snap CI</a> and authorize Snap CI to access your Github account
+
+## Fork the sample repository
+
+* Login to Github and fork <a href="https://github.com/snap-ci-examples/node-js-docker">snap-ci-examples/node-js-docker</a>
+
+* You should now see the snap-ci-examples/node-js-docker as one of your Github repositories as: github-userid/node-js-docker
+
+### Create a public repository on Dockerhub
+
+* Login in to Dockerhub
+
+* Create a public repository with the name node-js-docker
+
+
+### Add forked repository to Snap CI
+
+* Go to <a href="http://www.snap-ci.com/">Snap CI</a>
+
+* Add the node-js-docker build. The build should start and run the two default stages - FastFeedback and Integration.
+
+### Customise your build - Add the build stage
+
+<%= retina_image 'screenshots/getting-started/docker-simple-build-stage-config' %>
+
+* Select “Customize it here”
+* Edit the fast feedback stage
+* Rename stage to BUILD
+* Add the tasks:
+
+~~~shell
+  docker build -t snapci/node-docker-example .
+  docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  docker push snapci/node-docker-example
+~~~
+
+* Add secure environment variables for DOCKER_EMAIL, DOCKER_USER and DOCKER_PASS. The value for these should be your DockerHub credentials
+* Pin the secure environment variables. This way you won't have to endter them on other stages.
+
+### Customise your build - Add the test stage
+
+<%= retina_image 'screenshots/getting-started/docker-simple-test-stage-config' %>
+
+* Add a new stage
+* Name stage TEST
+* Add the tasks:
+
+~~~shell
+docker pull snapci/node-docker-example
+docker tag -f snapci/node-docker-example 5000:5000
+docker run -d -p 5000:5000 snapci/node-docker-example
+sleep 30
+curl --fail http://localhost:5000docker push snapci/node-docker-example
+~~~
+
+### Customise your build - Add the deploy stage
+
+<%= retina_image 'screenshots/getting-started/docker-simple-stage-config' %>
+
+* Add a new stage
+* Name stage DEPLOY
+* Add the tasks:
+
+~~~shell
+docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+docker push snapci/node-docker-example
+~~~
+
+### Save configuration and run builds
+
+<%= retina_image 'screenshots/getting-started/docker-simple-pipeline-snap' %>
+
+* Save the configuration
+* The build should run green and your new tested image will be deployed to Dockerhub
+* Congrats!
+
+You can see the deployment pipeline for the parent project running on <a href="https://snap-ci.com/snap-ci-examples/node-js-docker/branch/master">Snap CI</a>.
+
