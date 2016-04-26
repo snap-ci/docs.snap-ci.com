@@ -97,9 +97,9 @@ You will need to sign up for the following services before proceeding:
 * Add the tasks:
 
 ~~~shell
-  sudo docker build -t snapci/node-docker-example .
-  sudo docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-  sudo docker push snapci/node-docker-example
+  docker build -t snapci/node-docker-example .
+  docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  docker push snapci/node-docker-example
 ~~~
 
 * Add secure environment variables for DOCKER_EMAIL, DOCKER_USER and DOCKER_PASS. The value for these should be your DockerHub credentials
