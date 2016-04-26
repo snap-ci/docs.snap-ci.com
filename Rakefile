@@ -40,7 +40,7 @@ task :detect_versions do
   }
 
   development_tools = %w(gcc gcc-c++ make)
-  development_libs  = %w(openssl libxml2 libxslt ImageMagick qt5-qtbase)
+  development_libs  = %w(openssl libxml2 libxslt ImageMagick qt5-qtwebkit-devel-5.5.1)
   sql_sdatabases    = %w(mysql-community-server postgresql92 postgresql93 postgresql94 sqlite)
   third_party_tools = %w(s3cmd)
   no_sql_databases  = %w(couchdb-1.6.1 redis mongo-10gen)
