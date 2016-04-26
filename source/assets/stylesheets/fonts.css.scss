@@ -1,39 +1,4 @@
 /*
- * MyFonts Webfont Build ID 711809, 2011-02-25T12:09:21-0500
- *
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are
- * explicitly restricted from using the Licensed Webfonts(s).
- *
- * You may obtain a valid license at the urls below.
- *
- * Webfont: Marydale Regular
- * Url: http://new.myfonts.com/fonts/3ip/marydale/regular/
- * Foundry: Three Islands Press
- * Copyright: &#x00A9;1993, 2002, 2006 by Brian Willson, d.b.a. Three Islands Press (3IP), Rockland ME USA (www.3ip.com). All rights reserved worldwide. Marydale is a trademark of Brian Willson/3IP.
- * License: http://www.myfonts.com/viewlicense?1056
- * Licensed pageviews: 10,000/month
- * CSS font-family: MarydaleRegular
- * CSS font-weight: normal
- *
- * 2011 Bitstream, Inc
-*/
-
-/* safari 3.1: data-css
-   firefox 3.6+: woff
-   firefox 3.5+: data-css
-   chrome 4+: data-css
-   chrome 6+: woff
-   IE 5+: eot
-   IE 9: woff
-   opera 10.1+: data-css
-   mobile safari: svg/data-css
-   android: data-css
-*/
-
-/* We do not include the embedded font using the data-uri for the font-face src as that breaks in modern browsers */
-
-/*
  * Web Fonts from fontspring.com
  *
  * All OpenType features and all extended glyphs have been removed.
@@ -57,16 +22,6 @@
  *
  */
 
-@font-face {
-    font-family: 'MarydaleRegular';
-    src: font-url('MarydaleRegular/style_136578.eot');
-    src: font-url('MarydaleRegular/style_136578.eot?#iefix') format('embedded-opentype'),
-         font-url('MarydaleRegular/style_136578.woff') format('woff'),
-         font-url('MarydaleRegular/style_136578.svg#MarydaleRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
  @font-face {
      font-family: 'OpenSansLight';
      src: font-url('open-sans-fontfacekit/OpenSans-Light-webfont.eot');
@@ -76,7 +31,6 @@
           font-url('open-sans-fontfacekit/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
      font-weight: normal;
      font-style: normal;
-
  }
 
  @font-face {
@@ -378,4 +332,97 @@
     font-weight: normal;
     font-style: normal;
 
+}
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3204386, 2016-04-14T18:17:04-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: URWGeometric-Medium by URW++
+ * URL: http://www.myfonts.com/fonts/urw/geometric/medium/
+ *
+ * Webfont: URWGeometric-Light by URW++
+ * URL: http://www.myfonts.com/fonts/urw/geometric/light/
+ *
+ * Webfont: URWGeometric-Heavy by URW++
+ * URL: http://www.myfonts.com/fonts/urw/geometric/heavy/
+ *
+ * Webfont: URWGeometric-ExtraBold by URW++
+ * URL: http://www.myfonts.com/fonts/urw/geometric/extra-bold/
+ *
+ * Webfont: URWGeometric-Bold by URW++
+ * URL: http://www.myfonts.com/fonts/urw/geometric/bold/
+ *
+ * Webfont: URWGeometric-Black by URW++
+ * URL: http://www.myfonts.com/fonts/urw/geometric/black/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3204386
+ * Licensed pageviews: 20,000
+ * Webfonts copyright: (URW)++,Copyright 2015 by (URW)++ Design &amp; Development
+ *
+ * © 2016 MyFonts Inc
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/30e522");
+@font-face {
+    font-family: 'URWGeometric-Thin';
+    src: font-url('urw-geometric/30F214_0_0.eot');
+    src: font-url('urw-geometric/30F214_0_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30F214_0_0.woff2') format('woff2'),font-url('urw-geometric/30F214_0_0.woff') format('woff'),font-url('urw-geometric/30F214_0_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-ExtraLight';
+    src: font-url('urw-geometric/30F214_1_0.eot');
+    src: font-url('urw-geometric/30F214_1_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30F214_1_0.woff2') format('woff2'),font-url('urw-geometric/30F214_1_0.woff') format('woff'),font-url('urw-geometric/30F214_1_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-Regular';
+    src: font-url('urw-geometric/30F4A3_1_0.eot');
+    src: font-url('urw-geometric/30F4A3_1_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30F4A3_1_0.woff2') format('woff2'),font-url('urw-geometric/30F4A3_1_0.woff') format('woff'),font-url('urw-geometric/30F4A3_1_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-RegularOblique';
+    src: font-url('urw-geometric/30F4A3_0_0.eot');
+    src: font-url('urw-geometric/30F4A3_0_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30F4A3_0_0.woff2') format('woff2'),font-url('urw-geometric/30F4A3_0_0.woff') format('woff'),font-url('urw-geometric/30F4A3_0_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-Medium';
+    src: font-url('urw-geometric/30E522_0_0.eot');
+    src: font-url('urw-geometric/30E522_0_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30E522_0_0.woff2') format('woff2'),font-url('urw-geometric/30E522_0_0.woff') format('woff'),font-url('urw-geometric/30E522_0_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-Light';
+    src: font-url('urw-geometric/30E522_1_0.eot');
+    src: font-url('urw-geometric/30E522_1_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30E522_1_0.woff2') format('woff2'),font-url('urw-geometric/30E522_1_0.woff') format('woff'),font-url('urw-geometric/30E522_1_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-Heavy';
+    src: font-url('urw-geometric/30E522_2_0.eot');
+    src: font-url('urw-geometric/30E522_2_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30E522_2_0.woff2') format('woff2'),font-url('urw-geometric/30E522_2_0.woff') format('woff'),font-url('urw-geometric/30E522_2_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-HeavyOblique';
+    src: font-url('urw-geometric/30F4A3_2_0.eot');
+    src: font-url('urw-geometric/30F4A3_2_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30F4A3_2_0.woff2') format('woff2'),font-url('urw-geometric/30F4A3_2_0.woff') format('woff'),font-url('urw-geometric/30F4A3_2_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-Bold';
+    src: font-url('urw-geometric/30E522_4_0.eot');
+    src: font-url('urw-geometric/30E522_4_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30E522_4_0.woff2') format('woff2'),font-url('urw-geometric/30E522_4_0.woff') format('woff'),font-url('urw-geometric/30E522_4_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-ExtraBold';
+    src: font-url('urw-geometric/30E522_3_0.eot');
+    src: font-url('urw-geometric/30E522_3_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30E522_3_0.woff2') format('woff2'),font-url('urw-geometric/30E522_3_0.woff') format('woff'),font-url('urw-geometric/30E522_3_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'URWGeometric-Black';
+    src: font-url('urw-geometric/30E522_5_0.eot');
+    src: font-url('urw-geometric/30E522_5_0.eot?#iefix') format('embedded-opentype'),font-url('urw-geometric/30E522_5_0.woff2') format('woff2'),font-url('urw-geometric/30E522_5_0.woff') format('woff'),font-url('urw-geometric/30E522_5_0.ttf') format('truetype');
 }
