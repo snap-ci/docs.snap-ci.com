@@ -113,6 +113,48 @@ task :detect_versions do
   File.open('data/packages.yml', 'w') {|f| f.puts packages.to_yaml }
 end
 
+desc 'gather Cybele container package versions'
+task :cybele_package_versions do
+  versions = {
+    'arch'      => %x[uname -m].strip,
+    'ubuntu'    => File.read('/etc/lsb-release').match(/DISTRIB_RELEASE=([\d\.]+)/)[1],
+    'kernel'    => %x[uname -r].strip,
+  }
+
+  exclude_packages = [
+    'gpg-pubkey'
+  ]
+
+  packages_term_output = %x[dpkg-query -W -f='${Binary:Package} ${VERSION}|'].split('|').sort_by{|w| w.downcase}
+
+  filtered_packages = packages_term_output.reject do |package|
+    exclude_packages.any? { |p| package.start_with? p }
+  end
+
+  packages = filtered_packages.each_slice(3).to_a.inject([]) do |r, packs|
+    if packs.size < 3
+      r << packs + Array.new(3 - packs.size)
+    else
+      r << packs
+    end
+  end
+
+  all_rubies = %x[curl -s 'https://s3.amazonaws.com/binaries.snap-ci.com/?delimiter=/&prefix=rubies/ubuntu/14.04/x86_64/' | xmllint --format - | grep -v sha256 | grep '<Key'].lines.collect(&:strip)
+  all_rubies = all_rubies.collect {|r| File.basename(r.gsub('<Key>', '').gsub('</Key>', '').gsub('.tar.gz', ''))}
+
+  versions['ruby'] = all_rubies.find_all {|r| r =~ /^ruby/}.collect{|r| r.gsub(/^ruby-/, '')}
+  versions['jruby'] = all_rubies.find_all {|r| r =~ /^jruby/}.collect{|r| r.gsub(/^jruby-/, '')}
+  versions['nodejs'] = %x[bash -lc "source $NVM_DIR/nvm.sh; nvm ls-remote | grep -v iojs"].lines.collect(&:strip).collect {|v| v.gsub(/^v/, '')}
+  versions['iojs'] = %x[bash -lc "source $NVM_DIR/nvm.sh; nvm ls-remote | grep iojs"].lines.collect(&:strip).collect {|v| v.gsub(/^iojs-v/, '')}
+  versions['python'] = %x[dpkg-query -f='${Version}\n' -W python-[0-9.]\.[0-9]* | sort].strip.split
+  versions['sunjdk'] = Dir['/opt/local/java/*/bin/java'].collect do |java|
+    %x[#{java} -version 2>&1].match(/java version "(.*)"/)[1]
+  end
+
+  File.open('data/cybele_versions.yml', 'w') {|f| f.puts versions.to_yaml }
+  File.open('data/cybele_packages.yml', 'w') {|f| f.puts packages.to_yaml }
+end
+
 desc 'build all documentation'
 task :build => :detect_versions do
   sh('bundle exec middleman build --verbose --clean')
