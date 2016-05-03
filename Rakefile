@@ -184,7 +184,7 @@ end
 
 desc 'fetch cybele package/versions artifacts'
 task :fetch_cybele_artifacts do
-  latest_pipeline_counter = JSON.parse(%x[curl -XGET -H 'Accept: application/vnd.snap-ci.com.v1+json' --silent --netrc --fail https://api.snap-ci.com/project/snap-ci/docs.snap-ci.com/branch/ubuntu/pipelines/latest])["_links"]["redirect"]["href"][-1]
-  %x[curl -XGET -H 'Accept: application/vnd.snap-ci.com.v1+json' --silent --location  --netrc --fail https://api.snap-ci.com/project/snap-ci/docs.snap-ci.com/branch/ubuntu/artifacts/tracking-pipeline/#{latest_pipeline_counter}/pkg_list/1/data --output data.tar.gz]
+  latest_pipeline_counter = JSON.parse(%x[curl -XGET -H 'Accept: application/vnd.snap-ci.com.v1+json' --silent --netrc --fail https://api.snap-ci.com/project/snap-ci/docs.snap-ci.com/branch/ubuntu/pipelines/latest])["_links"]["redirect"]["href"].match('[0-9]+$').to_s
+  %x[curl -XGET -H 'Accept: application/vnd.snap-ci.com.v1+json' --location  --netrc --fail https://api.snap-ci.com/project/snap-ci/docs.snap-ci.com/branch/ubuntu/artifacts/tracking-pipeline/#{latest_pipeline_counter}/pkg_list/1/data --output data.tar.gz]
   %x[tar -xvzf data.tar.gz]
 end
