@@ -116,9 +116,8 @@ end
 desc 'gather Cybele container package versions'
 task :cybele_package_versions do
   versions = {
-    'arch'      => %x[uname -m].strip,
     'ubuntu'    => File.read('/etc/lsb-release').match(/DISTRIB_RELEASE=([\d\.]+)/)[1],
-    'kernel'    => %x[uname -r].strip,
+    'kernel'    => %x[uname -r].strip
   }
 
   exclude_packages = [
@@ -137,18 +136,6 @@ task :cybele_package_versions do
     else
       r << packs
     end
-  end
-
-  all_rubies = %x[curl -s 'https://s3.amazonaws.com/binaries.snap-ci.com/?delimiter=/&prefix=rubies/ubuntu/14.04/x86_64/' | xmllint --format - | grep -v sha256 | grep '<Key'].lines.collect(&:strip)
-  all_rubies = all_rubies.collect {|r| File.basename(r.gsub('<Key>', '').gsub('</Key>', '').gsub('.tar.gz', ''))}
-
-  versions['ruby'] = all_rubies.find_all {|r| r =~ /^ruby/}.collect{|r| r.gsub(/^ruby-/, '')}
-  versions['jruby'] = all_rubies.find_all {|r| r =~ /^jruby/}.collect{|r| r.gsub(/^jruby-/, '')}
-  versions['nodejs'] = %x[bash -lc "source $NVM_DIR/nvm.sh; nvm ls-remote | grep -v iojs"].lines.collect(&:strip).collect {|v| v.gsub(/^v/, '')}
-  versions['iojs'] = %x[bash -lc "source $NVM_DIR/nvm.sh; nvm ls-remote | grep iojs"].lines.collect(&:strip).collect {|v| v.gsub(/^iojs-v/, '')}
-  versions['python'] = %x[dpkg-query -f='${Version}\n' -W python-[0-9.]\.[0-9]* | sort].strip.split
-  versions['sunjdk'] = Dir['/opt/local/java/*/bin/java'].collect do |java|
-    %x[#{java} -version 2>&1].match(/java version "(.*)"/)[1]
   end
 
   File.open('data/cybele_versions.yml', 'w') {|f| f.puts versions.to_yaml }
