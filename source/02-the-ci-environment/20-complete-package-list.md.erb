@@ -5,15 +5,32 @@ doc_title: 'Complete List of Packages on Snap CI'
 
 This is a complete listing of the CI environment that Snap offers.
 
-## Operating System
+## Aurora Operating System
 
-* CentOS `<%= data.versions.centos %>`, 64-bit
-* kernel `<%= data.versions.kernel %>`
+* CentOS `<%= data.aurora_versions.centos %>`, 64-bit
+* kernel `<%= data.aurora_versions.kernel %>`
 
-## All Available Packages
+## All Aurora Available Packages
 
 <table class='all-available-packages'>
-  <% for package in data.packages %>
+  <% for package in data.aurora_packages %>
+  <tr>
+    <td><%= package[0] %></td>
+    <td><%= package[1] %></td>
+    <td><%= package[2] %></td>
+  </tr>
+  <% end %>
+</table>
+
+## Cybele Operating System
+
+* Ubuntu `<%= data.cybele_versions.ubuntu %>`, 64-bit
+* kernel `<%= data.cybele_versions.kernel %>`
+
+## All Cybele Available Packages
+
+<table class='all-available-packages'>
+  <% for package in data.cybele_packages %>
   <tr>
     <td><%= package[0] %></td>
     <td><%= package[1] %></td>

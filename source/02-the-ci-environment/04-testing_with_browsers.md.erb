@@ -9,10 +9,10 @@ Snap runs `xvfb` with a resolution of `1280x1024x16` and makes a `DISPLAY` varia
 
 The following testing tools and browsers are available on the CI environment:
 
-* phantomjs - `<%= data.versions.phantomjs %>`
-* google-chrome - `<%= data.versions['google-chrome-stable'] %>`
-* google-chrome-driver - <%= monospaced_array_to_sentence_string(data.versions['google-chrome-driver']) %>
-* firefox - `<%= data.versions.firefox %>`
+* phantomjs - `<%= data.aurora_versions.phantomjs %>`
+* google-chrome - `<%= data.aurora_versions['google-chrome-stable'] %>`
+* google-chrome-driver - <%= monospaced_array_to_sentence_string(data.aurora_versions['google-chrome-driver']) %>
+* firefox - `<%= data.aurora_versions.firefox %>`
 
 [Contact us](<%= data.links.contact_us %>) if you'd like a different version of any of the browsers and tools.
 
@@ -40,4 +40,4 @@ If you are running protractor with selenium, you need to inform selenium to use 
 
 ## Using PhantomJS
 
-Snap has PhantomJS (version <%= data.versions.phantomjs %>) pre-installed. This is available on the `PATH`.
+Snap has PhantomJS (version <%= data.aurora_versions.phantomjs %>) pre-installed. This is available on the `PATH`.
