@@ -34,11 +34,3 @@ You can optionally setup heroku configuration variables from Snap by navigating 
 <%= retina_image 'screenshots/heroku/heroku-deployment-config-vars' %>
 
 
-### Some Gotchas with heroku run
-
-When using the `heroku run` subcommand, the exit status of the remote command is not returned. Which means that if your command fails in Heroku, the stage will not fail.
-The workaround to capture the exit status is the following:
-
-<code>buffer_file=/tmp/last_heroku_run; heroku run --app 'APP_NAME' 'YOUR_COMMAND; echo $?' | tee $buffer_file; exit &#x60;tail -1 $buffer_file&#96;</code>
-
-You can read more about this issue [here](https://github.com/heroku/heroku/issues/186).
