@@ -15,6 +15,17 @@
 
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "TechArticle",
+      "headline": "<%= current_page.data.title %>",
+      "author": "Snap CI",
+      "publisher": "Snap CI",
+      "description": "<%= current_page.data.doc_title %>"
+    }
+    </script>
+
   </head>
 
   <body class="<%= page_classes %>">
