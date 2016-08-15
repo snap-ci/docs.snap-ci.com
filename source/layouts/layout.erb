@@ -19,10 +19,11 @@
     {
       "@context": "http://schema.org",
       "@type": "TechArticle",
-      "headline": "<%= current_page.data.title %>",
+      "headline": <%= current_page.data.title.to_json %>,
       "author": "Snap CI",
       "publisher": "Snap CI",
-      "description": "<%= current_page.data.doc_title %>"
+      "description": <%= current_page.data.doc_title.to_json %>,
+      "articleBody": <%= yield.to_json %>
     }
     </script>
 
