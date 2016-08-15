@@ -5,6 +5,7 @@ require 'json'
 
 
 def approx_version_string(str)
+  return str if str.eql? "current"
   Gem::Version.new(str).segments.first(3).join('.')
 end
 
