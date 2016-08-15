@@ -71,7 +71,7 @@ task :detect_versions do
   end
 
   rpms.each do |pkg|
-    $stdout.puts %x[rpm -q --queryformat '%{VERSION}' #{pkg}]
+    $stdout.puts "#{pkg} " + %x[rpm -q --queryformat '%{VERSION}' #{pkg}]
     versions[pkg] = approx_version_string(%x[rpm -q --queryformat '%{VERSION}' #{pkg}])
     # raise "Could not detect version of package #{pkg}" unless $?.success?
   end
