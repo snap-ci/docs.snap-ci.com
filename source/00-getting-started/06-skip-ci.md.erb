@@ -1,11 +1,19 @@
 ---
-title: Skip a build
-doc_title: Skip a build
+title: Scheduling and skipping builds
+doc_title: scheduling skipping
 ---
 
-Some little changes, like update the README file, may not require your pipeline to run. For scenarios like this, Snap gives you an option to skip the build.
+## Scheduling builds on a timer
 
-## How can I skip a build?
+<%= retina_image 'screenshots/getting-started/project-schedule' %>
+
+Sometimes, in addition to having your builds trigger every time there is a change to the repository, it might be helpful to have the build trigger on schedule. This could be used to set up things nightly distributions etc.
+
+To do this, just specify a build schedule in cron format by clicking on the schedule link in your project configuration page as highlighted above. There is a tooltip that helps you remember cron syntax that you can use to configure this.
+
+## Skipping builds
+
+Some little changes, like update the README file, may not require your pipeline to run. For scenarios like this, Snap gives you an option to skip the build. To do so:
 
 * Include **[skip ci]** or **[ci skip]** into your commit message and Snap will ignore it
 
