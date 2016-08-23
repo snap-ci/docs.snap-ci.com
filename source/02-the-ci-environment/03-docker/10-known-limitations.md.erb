@@ -11,3 +11,7 @@ Currently, we use the same build worker to run successive automatic stages whene
 ## Parallel and bigger sized workers
 
 Selecting bigger sized workers or parallel workers for your build doesn't have any effect at the moment. The build will run on the single worker size and parallel configurations will run sequentially.
+
+## Docker image caching
+
+We currently do not cache Docker images between pipelines. For now we recommend publishing the images built in one pipeline to a Docker registry so that they can be used in subsequent pipelines.
