@@ -3,7 +3,18 @@ title:  "Heroku Deployments"
 doc_title:  "Heroku Deployments with Snap CI"
 ---
 
-Snap provides two ways to deploy to deployments to Heroku, **Basic** and **Custom**.
+Snap provides two ways to deploy to Heroku, **Basic** and **Custom**. Before configuring any of them, we should first set up the Heroku credentials.
+
+## Setting up Heroku credentials
+
+* This will create an access token on Heroku, allowing Snap to perform deployments to apps of your choice
+* First, edit your build configuration, click on "Add Stage" and then select Heroku basic stage in the left tab.
+
+We need you to provide us access to your apps in order to do the deploy. To do this, simply click on **Heroku credentials missing**.
+
+<%= retina_image 'screenshots/heroku/missing-credentials' %>
+
+You will be redirected to Heroku and after a successfully authentication your credentials will be available on Snap. If you have already setup some credentials, you may reuse those credentials for other deployments.
 
 ## Basic deployment
 
@@ -13,24 +24,17 @@ This is the simplest form of deployment to Heroku, if your heroku deployment is 
 
 If your heroku deployment involves something more than `git push heroku master`, then this is what you want to use.
 
-## Setting up Heroku Deployments
+In this mode you are free to write any sequence of commands required to deploy your application. You don't need to run `heroku login` before running any heroku command since Snap will configure a `~/.netrc` file with your credentials (as describe [here](https://devcenter.heroku.com/articles/authentication#api-token-storage)).
 
-* To perform Heroku Deployments, you must first setup Heroku credentials with Snap. This will allow Snap to perform deployments to apps of your choice.
-* First edit your build configuration and click "Add Stage"
+Here is an example in case you already have an application on Heroku and need to put it under maintenance mode:
 
-We need you to provide us access to your apps in order to do the deploy. To do this, simply click on **Heroku credentials missing**.
-
-<%= retina_image 'screenshots/heroku/missing-credentials' %>
-
-You will be redirected to Heroku and after a successfully authentication your credentials will be available on Snap. If you have already setup some credentials, you may reuse those credentials for other deployments.
+<%= retina_image 'screenshots/heroku/custom-heroku-stage' %>
 
 > **Note:**
-> For custom deployment you don't need to run `heroku login` before running any heroku commands as you have already authorised Snap.
+> Before September 2016, Snap used to store a deploy key as well, so git commands using ssh connection used to work. Heroku recommended a better-supported mechanism, so we are not storing a deploy key anymore. Please, get in [contact with us](https://snap-ci.com/feedbacks/new) if you have any question.
 
 ## Configuration variables
 
 You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
 
 <%= retina_image 'screenshots/heroku/heroku-deployment-config-vars' %>
-
-
