@@ -3,38 +3,36 @@ title:  "Heroku Deployments"
 doc_title:  "Heroku Deployments with Snap CI"
 ---
 
-Snap provides two ways to deploy to Heroku, **Basic** and **Custom**. Before configuring any of them, we should first set up the Heroku credentials.
+Snap provides two ways to deploy to Heroku, **Basic** and **Custom**. Before configuring either of them, you first need to set up Heroku credentials.
 
 ## Setting up Heroku credentials
 
-* This will create an access token on Heroku, allowing Snap to perform deployments to apps of your choice
-* First, edit your build configuration, click on "Add Stage" and then select Heroku basic stage in the left tab.
+* This will create an access token on Heroku, allowing Snap to perform deployments to applications of your choice
+* First, edit your build configuration, click on "Add Stage", select the deploy tab, and then choose a Heroku stage
 
 We need you to provide us access to your apps in order to do the deploy. To do this, simply click on **Heroku credentials missing**.
 
-<%= retina_image 'screenshots/heroku/missing-credentials' %>
+<%= retina_image 'screenshots/heroku/setting-up-credentials' %>
 
-You will be redirected to Heroku and after a successfully authentication your credentials will be available on Snap. If you have already setup some credentials, you may reuse those credentials for other deployments.
+You will be redirected to Heroku and after successful authentication your credentials will be available on Snap. Once credentials have been setup, you may reuse those credentials for other deployments.
 
 ## Basic deployment
 
-This is the simplest form of deployment to Heroku, if your heroku deployment is just a simple `git push heroku master`, then this is the deployment you want to use. If you are running a rails project, Snap will optionally offer to run a `heroku run rake db:migrate` for you.
+This is the simplest form of deployment to Heroku. If your Heroku deployment is just `git push heroku master`, then this is the deployment you want to use. If you are running a rails project, Snap will offer to run `heroku run rake db:migrate` for you as well.
+
+You can optionally setup Heroku config vars in Snap by adding them to your basic deployment.
+
+<%= retina_image 'screenshots/heroku/heroku-deployment-config-vars' %>
 
 ## Custom deployment
 
-If your heroku deployment involves something more than `git push heroku master`, then this is what you want to use.
+If your Heroku deployment involves something more than `git push heroku master`, then this is what you want to use.
 
-In this mode you are free to write any sequence of commands required to deploy your application. You don't need to run `heroku login` before running any heroku command since Snap will configure a `~/.netrc` file with your credentials (as describe [here](https://devcenter.heroku.com/articles/authentication#api-token-storage)).
+In this mode you are free to write any sequence of commands required to deploy your application. You don't need to run `heroku login` before running any heroku command since Snap will configure a `~/.netrc` file with your credentials (as described [here](https://devcenter.heroku.com/articles/authentication#api-token-storage)).
 
-Here is an example in case you already have an application on Heroku and need to put it under maintenance mode:
+Here is an example of a custom deployment for an application already on Heroku that you need to put it under maintenance mode during the deployment:
 
 <%= retina_image 'screenshots/heroku/custom-heroku-stage' %>
 
 > **Note:**
-> Before September 2016, Snap used to store a deploy key as well, so git commands using ssh connection used to work. Heroku recommended a better-supported mechanism, so we are not storing a deploy key anymore. Please, get in [contact with us](https://snap-ci.com/feedbacks/new) if you have any question.
-
-## Configuration variables
-
-You can optionally setup heroku configuration variables from Snap by navigating to the **Heroku Config Variables** tab when editing/creating a heroku deployment.
-
-<%= retina_image 'screenshots/heroku/heroku-deployment-config-vars' %>
+>As of September 2016, Snap will no longer store a deploy key with your credentials. Heroku recommends using a better-supported mechanism of deploying to Heroku that does not require the deploy key. Git commands using ssh connection that rely on the deploy key will no longer work. Please [contact us](https://snap-ci.com/feedbacks/new) if you have any questions.
