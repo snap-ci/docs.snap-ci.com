@@ -30,7 +30,7 @@ If your Heroku deployment involves something more than `git push heroku master`,
 
 In this mode you are free to write any sequence of commands required to deploy your application. You don't need to run `heroku login` before running any heroku command since Snap will configure a `~/.netrc` file with your credentials (as described [here](https://devcenter.heroku.com/articles/authentication#api-token-storage)).
 
-Here is an example of a custom deployment for an application already on Heroku that you need to put it under maintenance mode during the deployment:
+Here is an example in case you already have an application on Heroku and need to put it under maintenance mode:
 
 <%= retina_image 'screenshots/heroku/custom-heroku-stage' %>
 
