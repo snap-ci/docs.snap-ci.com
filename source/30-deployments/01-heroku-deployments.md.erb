@@ -18,7 +18,7 @@ You will be redirected to Heroku and after successful authentication your creden
 
 ## Basic deployment
 
-This is the simplest form of deployment to Heroku. If your Heroku deployment is just `git push heroku master`, then this is the deployment you want to use. If you are running a rails project, Snap will offer to run `heroku run rake db:migrate` for you as well.
+This is the simplest and recommended form of deployment to Heroku. If your Heroku deployment is just `git push heroku master', then this is the deployment you want to use. If you are running a rails project, Snap will offer to run `heroku run rake db:migrate` for you as well.
 
 You can optionally setup Heroku config vars in Snap by adding them to your basic deployment.
 
@@ -35,7 +35,7 @@ Here is an example in case you already have an application on Heroku and need to
 <%= retina_image 'screenshots/heroku/custom-heroku-stage' %>
 
 > **Note:**
->Heroku strongly recommends using their HTTPS URL to authenticate directly with Heroku. You can read more about this authentication method at [Heroku] (https://devcenter.heroku.com/articles/git#http-git-authentication). Snap's basic deployment stage uses this authentication method, and we recommend you use this better-supported mechanism if at all possible. 
+>Heroku strongly recommends using their HTTPS URL to authenticate directly with Heroku. You can read more about this authentication method at [Heroku] (https://devcenter.heroku.com/articles/git#http-git-authentication). Snap's basic deployment stage (described above) uses this authentication method, and we recommend you use this better-supported mechanism if at all possible. 
 
 As of September 2016, Snap will no longer store a deploy key with your credentials. In order to use the custom deployment you will need to create and upload the SSH keys yourself following the [Heroku documentation] (https://devcenter.heroku.com/articles/git#ssh-git-transport). 
 
