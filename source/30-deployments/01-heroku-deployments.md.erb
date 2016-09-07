@@ -26,7 +26,7 @@ You can optionally setup Heroku config vars in Snap by adding them to your basic
 
 ## Custom deployment
 
-If your Heroku deployment involves something more than `git push heroku master`, then this is what you want to use.
+If your Heroku deployment involves something more than `git push heroku master`, then you will need to use this method.
 
 In this mode you are free to write any sequence of commands required to deploy your application. You don't need to run `heroku login` before running any heroku command since Snap will configure a `~/.netrc` file with your credentials (as described [here](https://devcenter.heroku.com/articles/authentication#api-token-storage)).
 
@@ -35,4 +35,8 @@ Here is an example in case you already have an application on Heroku and need to
 <%= retina_image 'screenshots/heroku/custom-heroku-stage' %>
 
 > **Note:**
->As of September 2016, Snap will no longer store a deploy key with your credentials. Heroku recommends using a better-supported mechanism of deploying to Heroku that does not require the deploy key. Git commands using ssh connection that rely on the deploy key will no longer work. Please [contact us](https://snap-ci.com/feedbacks/new) if you have any questions.
+>Heroku strongly recommends using their HTTPS URL to authenticate directly with Heroku. You can read more about this authentication method at [Heroku] (https://devcenter.heroku.com/articles/git#http-git-authentication). Snap's basic deployment stage uses this authentication method, and we recommend you use this better-supported mechanism if at all possible. 
+
+As of September 2016, Snap will no longer store a deploy key with your credentials. In order to use the custom deployment you will need to create and upload the SSH keys yourself following the [Heroku documentation] (https://devcenter.heroku.com/articles/git#ssh-git-transport). 
+
+Please [contact us](https://snap-ci.com/feedbacks/new) if you have any questions.
