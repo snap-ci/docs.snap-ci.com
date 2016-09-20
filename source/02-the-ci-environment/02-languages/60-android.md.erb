@@ -9,7 +9,7 @@ To save space, Snap does not download every Android version, so you'll need to s
 
 ~~~shell
 $ download-android
-$ echo y | android update sdk --no-ui --filter platform-tool
+$ echo y | android update sdk --no-ui --filter platform-tools
 $ echo y | android update sdk --no-ui --filter android-18
 ~~~
 
@@ -28,8 +28,7 @@ if [ ! -e ${INITIALIZATION_FILE} ]; then
   # fetch and initialize $ANDROID_HOME
   download-android
   # Use the latest android sdk tools
-  echo y | android update sdk --no-ui --filter platform-tool > /dev/null
-  echo y | android update sdk --no-ui --filter tool > /dev/null
+  echo y | android update sdk --no-ui --filter tools,platform-tools > /dev/null
 
   # The BuildTools version used by your project
   echo y | android update sdk --no-ui --filter build-tools-20.0.0 --all > /dev/null
