@@ -8,9 +8,6 @@ faster to not have to download them every time from the internet. Snap
 provides a caching feature to reduce time between builds by saving and
 restoring contents of the $HOME directory of your build.
 
-> If you cancel your pipeline Snap will not save the cache for the cancelled
-> pipeline so to avoid saving incomplete dependencies or corrupted files.
-
 Let's say you need some SDK that is not provided out-of-the-box on Snap
 machines and you do not want to download this SDK on every build as it will
 take some time, all you need to do is to define a command to retrieve the SDK
@@ -26,10 +23,6 @@ not then we proceed to download our SDK using a simple script
 you want.  On the next run, since the cached files will be restored and your
 pipeline will skip the download of the SDK.
 
-> You should always check for the presence of your cached files. Snap will
-> try to keep these files as long as possible, but there are still some limited
-> number of cases where the cache contents might not be present. In this case
-> your command should bring the dependency back again.
 
 ## When does the cache get saved?
 
@@ -38,12 +31,17 @@ successfully. This means when you start using Snap, or if you are setting up a n
 build, you will not see the benefits of caching till the first run completes
 successfully.
 
+If you cancel your pipeline Snap will not save the cache for the cancelled pipeline so to avoid saving incomplete dependencies or corrupted files.
+
 ## When does the cache get restored?
 
 Your cached contents are restored to the home directory every time a
 new pipeline starts, provided a cache was saved in a prior pipeline. If no pipeline
 completed successfully resulting in a saved cache, your build will run without
 any cached contents and all dependencies will be fetched from the internet.
+
+You should always check for the presence of your cached files. Snap will 
+try to keep these files as long as possible, but there are still some limited number of cases where the cache contents might not be present. In this case your command should bring the dependency back again.
 
 ## What is the difference between caches and artifacts?
 
@@ -67,3 +65,5 @@ saving the contents of your disk to the storage service and restoring it require
 a network call to fetch the contents back onto disk. The amount of time this takes
 depends on how much there is to be stored or fetched. Typically, this ranges from a few
 seconds to a few minutes.
+
+
