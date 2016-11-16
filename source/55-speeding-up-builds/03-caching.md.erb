@@ -3,11 +3,10 @@ title:  "Caching"
 doc_title:  "Caching for faster builds on Snap CI"
 ---
 
-When your build has dependencies or use other large files to run is better to
-not download or generate them on every build. Snap provides a caching
-feature to reduce time between builds by saving and restoring contents from a
-cache directory. Snap makes available an environment variable called
-`SNAP_CACHE_DIR` which will point to your cache directory.
+If your build has a significant number of dependencies, it may be
+faster to not have to download them every time from the internet. Snap
+provides a caching feature to reduce time between builds by saving and
+restoring contents of the $HOME directory of your build.
 
 > If you cancel your pipeline Snap will not save the cache for the cancelled
 > pipeline so to avoid saving incomplete dependencies or corrupted files.
@@ -15,39 +14,56 @@ cache directory. Snap makes available an environment variable called
 Let's say you need some SDK that is not provided out-of-the-box on Snap
 machines and you do not want to download this SDK on every build as it will
 take some time, all you need to do is to define a command to retrieve the SDK
-and store it on the cache directory, like so:
+and store it in the $HOME directory, like so:
 
 ~~~ shell
-$ [[ -d ${SNAP_CACHE_DIR}/some_sdk ]] || ./download_sdk.sh ${SNAP_CACHE_DIR}/some_sdk
+$ [[ -d ${HOME}/some_sdk ]] || ./download_sdk.sh ${HOME}/some_sdk
 ~~~
 
-In the command above we test if `${SNAP_CACHE_DIR}/some_sdk` directory exists, if
+In the command above we test if `${HOME}/some_sdk` directory exists, if
 not then we proceed to download our SDK using a simple script
 `download_sdk.sh`. The script is just an example you could work with any script
 you want.  On the next run, since the cached files will be restored and your
 pipeline will skip the download of the SDK.
 
-> You should always check for the presence of your cached files. Snap will 
-> keep these files as long as possible but due to the nature of caching they
-> might not always be available. In this case your command should bring the
-> dependency back again.
+> You should always check for the presence of your cached files. Snap will
+> try to keep these files as long as possible, but there are still some limited
+> number of cases where the cache contents might not be present. In this case
+> your command should bring the dependency back again.
 
-# What should and should not be cached?
+# When does the cache get saved?
 
-The cache feature is a way to improve the speed of your pipelines but is not a
-permanent storage. Any large dependencies, or all of them, can be cached as
-long you retrieve them back if the cached files are not available, examples:
+The contents of the $HOME directory get saved every time your build completes
+successfully. This means when you start using Snap, or if you are setting up a new
+build, you will not see the benefits of caching till the first run completes
+successfully.
 
-* Large SDKs, like Android-SDK.
-* Binaries that are not available on Snap machines.
-* Libraries that are not available on Snap machines.
+# When does the cache get restored?
 
-You might not want to cache:
+Your cached contents are restored to the home directory every time a
+new pipeline starts, provided a cache was saved in a prior pipeline. If no pipeline
+completed successfully resulting in a saved cache, your build will run without
+any cached contents and all dependencies will be fetched from the internet.
 
-* Build artifacts, these are handled differently and serve a different purpose.
-* Logs and other byproducts of your build run.
-* Files that are already available on Snap machines.
+# What is the difference between caches and artifacts?
 
-# What is persistent caching?
+Caches and artifacts are fundamentally different things.
 
-Snap's first version of caching deleted caches when Snap was deployed. As we practice Continuous Delivery this meant that build caches were removed very regularly and builds times were not consistent. We have since made changes so that the caching is "persistent" which means that we do not regularly remove caches when deploying and have moved to a more persistant storage mechanism. 
+Artifacts are produced by your build process, propagated through a single pipeline
+and are always guaranteed to be present. You are always guaranteed that the artifact in
+any stage of a pipeline was generated only by some previous stage of that pipeline. In this
+sense, artifacts are deterministic and guaranteed to exist if generated.
+
+Caches are a speed optimization done by Snap, whereby the contents of your $HOME directory
+is saved across pipelines to speed up future builds. Caches may not exist if your
+build never completed successfully. In addition, you may not always get the most recent
+version of a cache, though we make every attempt to give the latest consistent one we have.
+In this sense, caches are non-deterministic.
+
+# How fast is the cache saving/restoring?
+
+Your build cahces are stored on our cloud storage provider. Persisting the cache requires
+saving the contents of your disk to the storage service and restoring it requires
+a network call to fetch the contents back onto disk. The amount of time this takes
+depends on how much there is to be stored or fetched. Typically, this ranges from a few
+seconds to a few minutes.
