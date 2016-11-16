@@ -31,21 +31,21 @@ pipeline will skip the download of the SDK.
 > number of cases where the cache contents might not be present. In this case
 > your command should bring the dependency back again.
 
-# When does the cache get saved?
+## When does the cache get saved?
 
 The contents of the $HOME directory get saved every time your build completes
 successfully. This means when you start using Snap, or if you are setting up a new
 build, you will not see the benefits of caching till the first run completes
 successfully.
 
-# When does the cache get restored?
+## When does the cache get restored?
 
 Your cached contents are restored to the home directory every time a
 new pipeline starts, provided a cache was saved in a prior pipeline. If no pipeline
 completed successfully resulting in a saved cache, your build will run without
 any cached contents and all dependencies will be fetched from the internet.
 
-# What is the difference between caches and artifacts?
+## What is the difference between caches and artifacts?
 
 Caches and artifacts are fundamentally different things.
 
@@ -60,7 +60,7 @@ build never completed successfully. In addition, you may not always get the most
 version of a cache, though we make every attempt to give the latest consistent one we have.
 In this sense, caches are non-deterministic.
 
-# How fast is the cache saving/restoring?
+## How fast is the cache saving/restoring?
 
 Your build cahces are stored on our cloud storage provider. Persisting the cache requires
 saving the contents of your disk to the storage service and restoring it requires
