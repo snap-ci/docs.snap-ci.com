@@ -27,9 +27,9 @@ not then we proceed to download our SDK using a simple script
 you want.  On the next run, since the cached files will be restored and your
 pipeline will skip the download of the SDK.
 
-> You should always check for the presence of your cached files. Snap will
-> try to keep these files as long as possible but the cache is ephemeral and
-> might not be always available. In this case your command should bring the
+> You should always check for the presence of your cached files. Snap will 
+> keep these files as long as possible but due to the nature of caching they
+> might not always be available. In this case your command should bring the
 > dependency back again.
 
 # What should and should not be cached?
@@ -47,9 +47,3 @@ You might not want to cache:
 * Build artifacts, these are handled differently and serve a different purpose.
 * Logs and other byproducts of your build run.
 * Files that are already available on Snap machines.
-
-# How fast is the cache saving/restoring?
-
-Snap cache is file system based, meaning that basically is a copy on disk
-operation. It will be as fast as copying the files from one directory to
-another.
