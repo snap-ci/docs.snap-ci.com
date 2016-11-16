@@ -47,3 +47,7 @@ You might not want to cache:
 * Build artifacts, these are handled differently and serve a different purpose.
 * Logs and other byproducts of your build run.
 * Files that are already available on Snap machines.
+
+# What is persistent caching?
+
+Snap's first version of caching deleted caches when Snap was deployed. As we practice Continuous Delivery this meant that build caches were removed very regularly and builds times were not consistent. We have since made changes so that the caching is "persistent" which means that we do not regularly remove caches when deploying and have used to a more persistant storage mechanism. 
