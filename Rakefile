@@ -42,13 +42,13 @@ task :detect_versions do
 
   development_tools = %w(gcc gcc-c++ make)
   development_libs  = %w(openssl libxml2 libxslt ImageMagick qt5-qtwebkit-devel-5.5.1)
-  sql_sdatabases    = %w(mysql-community-server postgresql92 postgresql93 postgresql94 sqlite)
+  sql_databases    = %w(mysql-community-server postgresql92 postgresql93 postgresql94 postgres95 sqlite)
   third_party_tools = %w(s3cmd)
   no_sql_databases  = %w(couchdb-1.6.1 redis mongo-10gen)
   languages         = %w()
   browser_tools     = %w(phantomjs google-chrome-stable firefox)
 
-  rpms = development_tools + development_libs + sql_sdatabases + no_sql_databases + languages + third_party_tools + browser_tools
+  rpms = development_tools + development_libs + sql_databases + no_sql_databases + languages + third_party_tools + browser_tools
 
   gems = %w(rake bundler)
   python_pips = %w(pip virtualenv)
