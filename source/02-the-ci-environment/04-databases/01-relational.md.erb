@@ -8,6 +8,7 @@ doc_title: "Using Relational Databases on Snap CI"
 * **SQLite(<%= versions_of('sqlite') %>)** - SQLite does not need any credentials to create or connect to the database
 * **MySQL(<%= versions_of('mysql') %>)** - To connect to the database, we provide the environment variables `SNAP_DB_MYSQL_USER`, `SNAP_DB_MYSQL_PASSWORD`, `SNAP_DB_MYSQL_HOST`, `SNAP_DB_MYSQL_PORT`, `SNAP_DB_MYSQL_URL` and `SNAP_DB_MYSQL_JDBC_URL`
 * **PostgreSQL(<%= versions_of('postgres') %>)** - To connect to the database, we provide the environment variables `SNAP_DB_PG_USER`, `SNAP_DB_PG_PASSWORD`, `SNAP_DB_PG_HOST`, `SNAP_DB_PG_PORT`, `SNAP_DB_PG_URL` and `SNAP_DB_PG_JDBC_URL`. We have common postgresql extensions such as `hstore` and `postgis` installed. They must be activated by calling [`CREATE EXTENSION`](http://www.postgresql.org/docs/9.2/static/sql-createextension.html) in your database migration scripts.
+  * Note that if you are using unix domain sockets rather than host:port to communicate with PostgreSQL, the socket location is `/var/run/postgresql`.
 
 In addition to the connection options specified above, Snap provides some more conveniences:
 
