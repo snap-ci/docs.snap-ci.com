@@ -35,9 +35,9 @@ A build times out if it has been running the same stage for more than 2 hours or
 One of the most common reason a build times out is because the command being run is waiting for input from the keyboard. One of the ways to make sure this doesn't happen is to close the stdin of the command in doubt by appending `0<&-` to it. For e.g. `ssh user@ip.add.re.ss some-shell-script` could be written as `ssh user@ip.add.re.ss some-shell-script 0<&-`.
 
 If any build step is known to take more than 15 minutes, and if your build is timing out, we suggest prefixing that build step with `snap-wait TIMEOUT_IN_MINUTES`. For e.g. `./some-long-running-command --with some arguments` could be written as `snap-wait 30 ./some-long-running-command --with some arguments`. This will ensure that your build is not terminated for atleast 30 minutes for not generating any console output. 
-The snap-wait command allows the amount of time specifed, it does not require the command to wait the full amount of time specified. So if, for example, you add `snap-wait 45` to your command but the command only takes 15 seconds to complete, Snap will exit the command after 15 seconds and not wait the entire 45 seconds.
+The snap-wait command *allows* the amount of time specified, it does not *require* the command to wait the full amount of time. So if for example, you add `snap-wait 45` to your command but the command only takes 15 seconds to complete, Snap will exit the command after 15 seconds and not wait the entire 45 seconds.
 
 The snap-wait command applies to the entire script. If multiple snap-wait commands are included in your build, the largest value will be used.
 
 
-If you need any help in debugging this please get in [touch with us](<%= data.links.contact_us %>).
+If you need any help in debugging this please [get in touch with us](<%= data.links.contact_us %>).
