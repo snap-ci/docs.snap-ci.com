@@ -36,4 +36,6 @@ One of the most common reason a build times out is because the command being run
 
 If any build step is known to take more than 15 minutes, and if your build is timing out, we suggest prefixing that build step with `snap-wait TIMEOUT_IN_MINUTES`. For e.g. `./some-long-running-command --with some arguments` could be written as `snap-wait 30 ./some-long-running-command --with some arguments`. This will ensure that your build is not terminated for atleast 30 minutes for not generating any console output.
 
+The snap-wait command applies to the entire script. If multiple snap-wait commands are included in your build, the largest value will be used.
+
 If you need any help in debugging this please get in [touch with us](<%= data.links.contact_us %>).
