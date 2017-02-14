@@ -20,7 +20,7 @@ The following testing tools and browsers are available on the CI environment:
 
 > **Due to the combination of the container technology and OS version we provide, chromedriver needs to be setup with a few environment variables and command line flags. Users are required to use the `chromedriver` wrapper available on the `PATH` at `<%= stdout_and_stderr_of('which chromedriver') %>`.**
 
-Calling the `chromedriver` wrapper will execute version `2.19` of chromedriver. If you'd like to use a different version of chromedriver, please specify an environment variable `CHROMEDRIVER_VERSION` and set its value to one of the supported versions before you use chromedriver. The chromedriver wrapper is supported method in Snap-CI. We do not recommend usage of Chromedriver-helper which duplicates the chromedriver functionality in Snap-CI.
+Calling the `chromedriver` wrapper will execute version `2.19` of chromedriver. If you'd like to use a different version of chromedriver, please specify an environment variable `CHROMEDRIVER_VERSION` and set its value to one of the supported versions before you use chromedriver.
 
 ### Using configuring chromedriver on Snap from various testing tools -
 
