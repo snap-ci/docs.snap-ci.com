@@ -3,9 +3,20 @@ title: “Migration to GoCD”
 doc_title: “Migration to GoCD“
 ---
 
-Note - add intro here 
+For those users interested in using GoCD after Snap CI goes away we can provide an export of your Snap configuration in a format that Go will understand to ease your migration to GoCD. [Get in touch with us](<%= data.links.contact_us %>) and provide the repo name and branch that you’d like the GoCD configuration for and we will gladly provide that for you.
 
-The pipeline configuration that is generated is not meant to be a 100% working copy of a Go pipeline, it is only meant to get you started.
+The following information explains how to use the export we will provide for you. 
+ 
+## Prerequisites to use
+
+* Follow the quick start guide to GoCD to learn key concepts in Go and get setup quickly - https://www.gocd.io/getting-started/part-1/
+** Install GoCD server  - https://docs.gocd.io/current/installation/
+** Install (at least one) GoCD agent - https://docs.gocd.io/current/installation/
+
+
+## Limitations 
+
+The pipeline configuration that is generated is not meant to be a 100% working copy of a GoCD pipeline it is only meant to get you started.
 
 Here’s what is does:
 
@@ -13,23 +24,15 @@ Here’s what is does:
 * Creates a cron timer * Snap pinned variables => Go Pipeline variables * Git material is generated with placeholder for username and password * Stages and jobs (a job just shares the stage name) are created, one job per stage * Snap stage variables => Go stage variables * Snap tasks => Go tasks (a simple ‘bash -c “whatever snap command you had”’ is used) * Snap artifacts => Go artifacts 
 Here’s what it does not do:
 
-* Parallel jobs do not get exported to individual jobs * Does not emit secure environment variable values * Does not emit secure file contents 
-# Prerequisites to use
+* Parallel jobs do not get exported to individual jobs * Does not emit secure environment variable values * Does not emit secure file contents
 
-* 
-* 
-
-# Instructions to use
+## Instructions to use
 
 * On your Go server, edit the config.xml (typically under: /go/admin/config_xml)
 * Place the generated configuration in the pipelines section of the xml * Edit the git URL generated and put in a valid github username and password in place of the USERNAME:PASSWORD placeholder text 
-## Artifacts 
-The exported Go configuration attempts to be as close as possible to the behaviour of pipelines in Snap and so it should be correct in most cases. However we have made some simplifying assumptions in exporting these, so you might want to be aware of these subtleties is things don’t work out exactly as you would expect the first time around. 
-The Go config contains all artifacts you declare in each stage along with instructions to propagate these artifacts. These instructions appear as “fetchartifact”  tasks in the subsequent stages. The assumptions made about the srcfile, srcdir and dest attributes are listed below. 
-Any artifact with a period in the name is assumed to be a file artifact and is fetched using the fetchartifact task with a “srcfile” attribute. If this is incorrect, you may need to change the srcfile to a srcdir attribute. 
-For assumed file artifacts, we also attempt to locate the destination to be the path up to the last fragment in the artifact name. You may need to tweak this if you expect the artifact to be placed elsewhere on your filesystem. 
-Any artifact without a period in the name is assumed to be a directory artifact and is fetched using the fetchartifact task with a “srcfdir” attribute. If this is incorrect, you may need to change the srcdir to a srcfile attribute. 
-* Save your configuration * Edit the values of secure environment variables * Once the configuration is saved. navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/<pipeline-name>/general * For pinned environment variables, select the pipeline name in the sidebar and in the environment variables tab on the right, put in the value for the secure environment variables that you had in Snap. These variables will be available in every stage of your pipeline. * For stage level environment variables, select the stage name under the pipeline in the sidebar and edit the environment variables in the tab on the right. These environment variables will only be available in this stage. * Save the configuration once again * Navigate to the dashboard. * Unpause the pipeline if it is marked as “under construction” and click the “play” button to trigger the first run. * Your build should now run as it did in Snap CI!
+> **Notes on artifacts** 
+The exported Go configuration attempts to be as close as possible to the behaviour of pipelines in Snap and so it should be correct in most cases. However we have made some simplifying assumptions in exporting these, so you might want to be aware of these subtleties is things don’t work out exactly as you would expect the first time around. The Go config contains all artifacts you declare in each stage along with instructions to propagate these artifacts. These instructions appear as “fetchartifact”  tasks in the subsequent stages. The assumptions made about the srcfile, srcdir and dest attributes are listed below. Any artifact with a period in the name is assumed to be a file artifact and is fetched using the fetchartifact task with a “srcfile” attribute. If this is incorrect, you may need to change the srcfile to a srcdir attribute. For assumed file artifacts, we also attempt to locate the destination to be the path up to the last fragment in the artifact name. You may need to tweak this if you expect the artifact to be placed elsewhere on your filesystem. Any artifact without a period in the name is assumed to be a directory artifact and is fetched using the fetchartifact task with a “srcfdir” attribute. If this is incorrect, you may need to change the srcdir to a srcfile attribute. 
+* Save your configuration * Edit the values of secure environment variables * Once the configuration is saved navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/<pipeline-name>/general * For pinned environment variables, select the pipeline name in the sidebar and in the environment variables tab on the right, put in the value for the secure environment variables that you had in Snap CI. These variables will be available in every stage of your pipeline. * For stage level environment variables, select the stage name under the pipeline in the sidebar and edit the environment variables in the tab on the right. These environment variables will only be available in this stage. * Save the configuration once again * Navigate to the dashboard * Unpause the pipeline if it is marked as “under construction” and click the “play” button to trigger the first run * Your build should now run as it did in Snap CI!
 
 
 If you need any help using this please [get in touch with us](<%= data.links.contact_us %>).
