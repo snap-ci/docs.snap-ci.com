@@ -20,7 +20,7 @@ Here’s what is does:
 
 * Creates a pipeline element
 * Creates a cron timer * Converts Snap CI pinned variables into GoCD Pipeline variables
-* Generates Git material with placeholder for username and password * Create stages and jobs (a job just shares the stage name). There is one job per stage. * Converts Snap CI stage variables into GoCD stage variables * Converts Snap CI tasks into GoCD tasks (‘bash -c “whatever snap command you had”’ is used) * Converts Snap CI artifacts into GoCD artifacts 
+* Generates Git material with placeholder for username and password * Creates stages and jobs (a job just shares the stage name). There is one job per stage. * Converts Snap CI stage variables into GoCD stage variables * Converts Snap CI tasks into GoCD tasks (‘bash -c “whatever snap command you had”’ is used) * Converts Snap CI artifacts into GoCD artifacts 
 Here’s what it does not do:
 
 * Does not create individual jobs from parallel Snap CI jobs * Does not export secure environment variable values * Does not export secure file contents
