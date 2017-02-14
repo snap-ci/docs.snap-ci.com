@@ -25,13 +25,19 @@ Here’s what it does not do:
 
 * Does not create individual jobs from parallel Snap CI jobs * Does not export secure environment variable values * Does not export secure file contents
 
-## Instructions to use
+## Notes on artifacts 
+The exported GoCD configuration attempts to be as close as possible to the behavior of pipelines in Snap CI and so it should be correct in most cases. However we have made some simplifying assumptions when exporting these.
+
+* The GoCD config contains all artifacts you declare in each stage along with instructions to propagate these artifacts. These instructions appear as “fetchartifact”  tasks in the subsequent stages.  
+** Any artifact with a period in the name is assumed to be a file artifact and is fetched using the fetchartifact task with a “srcfile” attribute. If this is incorrect, you may need to change the srcfile to a srcdir attribute. 
+** For assumed file artifacts, we also attempt to locate the destination to be the path up to the last fragment in the artifact name. You may need to tweak this if you expect the artifact to be placed elsewhere on your filesystem. 
+** Any artifact without a period in the name is assumed to be a directory artifact and is fetched using the fetchartifact task with a “srcfdir” attribute. If this is incorrect, you may need to change the srcdir to a srcfile attribute.
+
+## Instructions to use 
 
 * On your GoCD server, edit the config.xml (typically under: /go/admin/config_xml)
 * Place the generated configuration in the pipelines section of the xml
-* Edit the git URL generated and put in a valid github username and password in place of the USERNAME:PASSWORD placeholder text 
-> **Notes on artifacts** 
-The exported Go configuration attempts to be as close as possible to the behaviour of pipelines in Snap and so it should be correct in most cases. However we have made some simplifying assumptions in exporting these, so you might want to be aware of these subtleties is things don’t work out exactly as you would expect the first time around. The Go config contains all artifacts you declare in each stage along with instructions to propagate these artifacts. These instructions appear as “fetchartifact”  tasks in the subsequent stages. The assumptions made about the srcfile, srcdir and dest attributes are listed below. Any artifact with a period in the name is assumed to be a file artifact and is fetched using the fetchartifact task with a “srcfile” attribute. If this is incorrect, you may need to change the srcfile to a srcdir attribute. For assumed file artifacts, we also attempt to locate the destination to be the path up to the last fragment in the artifact name. You may need to tweak this if you expect the artifact to be placed elsewhere on your filesystem. Any artifact without a period in the name is assumed to be a directory artifact and is fetched using the fetchartifact task with a “srcfdir” attribute. If this is incorrect, you may need to change the srcdir to a srcfile attribute. 
+* Edit the git URL generated and put in a valid github username and password in place of the USERNAME:PASSWORD placeholder text
 * Save your configuration
 * Edit the values of secure environment variables
 * Once the configuration is saved navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/<pipeline-name>/general
