@@ -23,7 +23,7 @@ What is does:
 * Creates a [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for scheduled builds
 * Converts Snap CI pinned environment variables into GoCD pipeline variables
 * Generates Git [material](https://docs.gocd.io/current/introduction/concepts_in_go.html#materials) with placeholder username and password
-* Creates stages and [jobs] (https://docs.gocd.io/current/introduction/concepts_in_go.html#job)(a job shares the stage name). There is one job per stage.
+* Creates stages and [jobs](https://docs.gocd.io/current/introduction/concepts_in_go.html#job)(a job shares the stage name). There is one job per stage.
 * Converts Snap CI stage variables into GoCD stage variables
 * Converts Snap CI tasks into GoCD tasks (‘bash -c “whatever snap command you had”’ is used)
 * Converts Snap CI artifacts into GoCD artifacts
@@ -44,13 +44,13 @@ The exported GoCD configuration attempts to be as close as possible to the behav
 
 ## Instructions to use 
 
-* On your GoCD server, edit the config.xml (typically under: /go/admin/config_xml) or via the UI at: /go/admin/pipelines/<pipeline-name>/general
+* On your GoCD server, edit the config.xml (typically under: /go/admin/config_xml) or via the UI at: /go/admin/pipelines/PIPELINE_NAME/general
 * Place the generated configuration in the pipelines section of the xml
 * You may want to edit the pipeline name to better reflect your naming conventions
 * Edit the git URL generated and put in a valid Github username and password in place of the USERNAME:PASSWORD placeholder text. (You may also alter this to use SSH authentication)
 * Save your configuration
 * Edit the values of secure variables
-* Once the configuration is saved navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/<pipeline-name>/general
+* Once the configuration is saved navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/PIPELINE_/general
 * For pinned environment variables, select the pipeline name in the sidebar and in the environment variables tab on the right, put in the value for the secure environment variables that you had in Snap CI. These variables will be available in every stage of your pipeline
 * For stage level environment variables, select the stage name under the pipeline in the sidebar and edit the environment variables in the tab on the right. These environment variables will only be available in this stage
 * Save the configuration once again
