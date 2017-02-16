@@ -5,3 +5,32 @@ doc_title: Migration to other CI and CD tools
 
 Because Snap staged pipeline features are unique it is not possible for us to provide seamless migration to other CI/CD tools apart from GoCD. However, we can provide an export of all your Snap CI pipeline configuration data to ease your migrations to other tools. Please [get in touch with us](<%= data.links.contact_us %>) for an export of your configurations in this generic format.
  
+The following information explains how to use the export we will provide for you. 
+
+## Limitations 
+
+The configuration that is generated is not meant to import directly to any other CI or CD tool. It is meant to provide a readable summary of all the pipeline configurations for a single billing owner.
+
+What is does:
+
+* Exports pipeline and stage names
+* Export stacks, language and database information
+* Exports pinned_commands
+* Exports pinned environment variables
+* Exports commands executed at each stage
+* Exports whether a stage was automated or manual
+
+What it does not do:
+
+* Export secure environment variable values
+* Export secure file contents
+* Export information about number or size of workers used in each stage
+
+## Instructions to use 
+
+* You can read or copy this file when creating new pipelines in new tools. 
+* You will need to refer to your own records for the values of secure environment variables and files. 
+* You will need to map Snap CI configuration to your new tool of choice. 
+
+For specific support migrating to GoCD please see <%= topic_link 'Migration to GoCD', 'Migration to GoCD' %>
+

@@ -17,7 +17,7 @@ The following information explains how to use the export we will provide for you
 
 The pipeline configuration that is generated is not meant to be a 100% working copy of a GoCD pipeline it is only meant to get you started.
 
-Here’s what is does:
+What is does:
 
 * Creates a pipeline
 * Creates a [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for scheduled builds
@@ -26,7 +26,7 @@ Here’s what is does:
 * Creates stages and [jobs] (https://docs.gocd.io/current/introduction/concepts_in_go.html#job)(a job shares the stage name). There is one job per stage.
 * Converts Snap CI stage variables into GoCD stage variables
 * Converts Snap CI tasks into GoCD tasks (‘bash -c “whatever snap command you had”’ is used) * Converts Snap CI artifacts into GoCD artifacts 
-Here’s what it does not do:
+What it does not do:
 
 * Does not create individual jobs from parallel Snap CI jobs
 * Does not export secure environment variable values
@@ -57,3 +57,5 @@ The exported GoCD configuration attempts to be as close as possible to the behav
 
 
 If you need any help using this please [get in touch with us](<%= data.links.contact_us %>).
+
+
