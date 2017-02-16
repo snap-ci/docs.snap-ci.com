@@ -3,14 +3,15 @@ title: Migration to GoCD
 doc_title: Migration to GoCD
 ---
 
-For those users interested in using GoCD after Snap CI goes away we can provide an export of your Snap configuration in a format that Go will understand to ease your migration to GoCD. [Get in touch with us](<%= data.links.contact_us %>) and provide the repo name and branch that you’d like the GoCD configuration for and we will gladly provide that for you. The following information explains how to use the export we will provide for you. 
- 
+For those users interested in using GoCD after Snap CI goes away we can provide an export of your Snap configuration in a format that Go will understand to ease your migration to GoCD. [Get in touch with us](<%= data.links.contact_us %>) and provide the repo name and branch that you’d like the GoCD configuration for and we will gladly provide that for you. 
+
+The following information explains how to use the export we will provide for you. 
+
 ## Prerequisites to use
 
 * Follow the [quick start guide to GoCD](https://www.gocd.io/getting-started/part-1/) to learn key concepts in GoCD and get setup quickly
 * [Install GoCD server](https://docs.gocd.io/current/installation/)
 * [Install at least one GoCD agent](https://docs.gocd.io/current/installation/)
-
 
 ## Limitations 
 
@@ -18,28 +19,34 @@ The pipeline configuration that is generated is not meant to be a 100% working c
 
 Here’s what is does:
 
-* Creates a pipeline element
-* Creates a cron timer * Converts Snap CI pinned variables into GoCD Pipeline variables
-* Generates Git material with placeholder for username and password * Creates stages and jobs (a job just shares the stage name). There is one job per stage. * Converts Snap CI stage variables into GoCD stage variables * Converts Snap CI tasks into GoCD tasks (‘bash -c “whatever snap command you had”’ is used) * Converts Snap CI artifacts into GoCD artifacts 
+* Creates a pipeline
+* Creates a [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for scheduled builds
+* Converts Snap CI pinned environment variables into GoCD pipeline variables
+* Generates Git [material](https://docs.gocd.io/current/introduction/concepts_in_go.html#materials) with placeholder username and password
+* Creates stages and [jobs] (https://docs.gocd.io/current/introduction/concepts_in_go.html#job)(a job shares the stage name). There is one job per stage.
+* Converts Snap CI stage variables into GoCD stage variables
+* Converts Snap CI tasks into GoCD tasks (‘bash -c “whatever snap command you had”’ is used) * Converts Snap CI artifacts into GoCD artifacts 
 Here’s what it does not do:
 
-* Does not create individual jobs from parallel Snap CI jobs * Does not export secure environment variable values * Does not export secure file contents
+* Does not create individual jobs from parallel Snap CI jobs
+* Does not export secure environment variable values
+* Does not export secure file contents
 
 ## Notes on artifacts 
-The exported GoCD configuration attempts to be as close as possible to the behavior of pipelines in Snap CI and so it should be correct in most cases. However we have made some simplifying assumptions when exporting these.
+The exported GoCD configuration attempts to be as close as possible to the behavior of pipelines in Snap CI. It should be correct in most cases. However, we have made some simplifying assumptions when exporting pipelines.
 
-* The GoCD config contains all artifacts you declare in each stage along with instructions to propagate these artifacts. These instructions appear as “fetchartifact”  tasks in the subsequent stages.  
-** Any artifact with a period in the name is assumed to be a file artifact and is fetched using the fetchartifact task with a “srcfile” attribute. If this is incorrect, you may need to change the srcfile to a srcdir attribute. 
-** For assumed file artifacts, we also attempt to locate the destination to be the path up to the last fragment in the artifact name. You may need to tweak this if you expect the artifact to be placed elsewhere on your filesystem. 
-** Any artifact without a period in the name is assumed to be a directory artifact and is fetched using the fetchartifact task with a “srcfdir” attribute. If this is incorrect, you may need to change the srcdir to a srcfile attribute.
+* The GoCD config contains all artifacts you declare in each stage along with instructions to propagate these artifacts. These instructions appear as “fetchartifact” tasks in the subsequent stages.  
+* Any artifact with a period in the name is assumed to be a file artifact and is fetched using the fetchartifact task with a “srcfile” attribute. If this is incorrect, you may need to change the srcfile to a srcdir attribute. 
+* For assumed file artifacts, we also attempt to locate the destination to be the path up to the last fragment in the artifact name. You may need to tweak this if you expect the artifact to be placed elsewhere on your filesystem. 
+* Any artifact without a period in the name is assumed to be a directory artifact and is fetched using the fetchartifact task with a “srcfdir” attribute. If this is incorrect, you may need to change the srcdir to a srcfile attribute.
 
 ## Instructions to use 
 
-* On your GoCD server, edit the config.xml (typically under: /go/admin/config_xml)
+* On your GoCD server, edit the config.xml (typically under: /go/admin/config_xml) or via the UI at: /go/admin/pipelines/<pipeline-name>/general
 * Place the generated configuration in the pipelines section of the xml
-* Edit the git URL generated and put in a valid github username and password in place of the USERNAME:PASSWORD placeholder text
+* Edit the git URL generated and put in a valid Github username and password in place of the USERNAME:PASSWORD placeholder text. (You may also alter this to use SSH authentication). 
 * Save your configuration
-* Edit the values of secure environment variables
+* Edit the values of secure variables
 * Once the configuration is saved navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/<pipeline-name>/general
 * For pinned environment variables, select the pipeline name in the sidebar and in the environment variables tab on the right, put in the value for the secure environment variables that you had in Snap CI. These variables will be available in every stage of your pipeline.
 * For stage level environment variables, select the stage name under the pipeline in the sidebar and edit the environment variables in the tab on the right. These environment variables will only be available in this stage.
