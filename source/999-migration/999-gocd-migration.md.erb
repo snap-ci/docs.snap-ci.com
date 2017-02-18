@@ -54,16 +54,14 @@ The exported GoCD configuration attempts to be as close as possible to the behav
 * Save your configuration
 * If the Go server is new without any prior pipelines created then you may get the following error “Invalid content was found starting with element 'pipeline'. One of '{repositories, scms, config-repos, pipelines, templates, environments, agents}' is expected”. To resolve this either create a pipeline group before prior to using the config.xml or add 
 
-~~~shell
+~~~bash
 <pipelines group="defaultGroup">
-
 ~~~ 
 
 to the start of the config and
 
-~~~shell 
+~~~bash 
 </pipelines> 
-
 ~~~
 
 to the end.
