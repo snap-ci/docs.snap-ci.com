@@ -52,19 +52,7 @@ The exported GoCD configuration attempts to be as close as possible to the behav
 * You may want to edit the pipeline name to better reflect your naming conventions
 * Edit the git URL generated and put in a valid Github username and password in place of the USERNAME:PASSWORD placeholder text. (You may also alter this to use SSH authentication)
 * Save your configuration
-* If the Go server is new without any prior pipelines created then you may get the following error “Invalid content was found starting with element 'pipeline'. One of '{repositories, scms, config-repos, pipelines, templates, environments, agents}' is expected”. To resolve this either create a pipeline group before prior to using the config.xml or add 
-
-~~~bash
-<pipelines group="defaultGroup">
-~~~ 
-
-to the start of the config and
-
-~~~bash 
-</pipelines> 
-~~~
-
-to the end.
+* If the Go server is new without any prior pipelines created then you may get the following error `Invalid content was found starting with element 'pipeline'. One of '{repositories, scms, config-repos, pipelines, templates, environments, agents}' is expected`. To resolve this either create a pipeline group before prior to using the config.xml or add `<pipelines group="defaultGroup">` to the start of the config and `</pipelines>` to the end.
 * Edit the values of secure variables
 * Once the configuration is saved navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/PIPELINE_NAME/general
 * For pinned environment variables, select the pipeline name in the sidebar and in the environment variables tab on the right, put in the value for the secure environment variables that you had in Snap CI. These variables will be available in every stage of your pipeline
