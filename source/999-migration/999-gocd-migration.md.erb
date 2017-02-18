@@ -12,6 +12,7 @@ The following information explains how to use the export we will provide for you
 * Follow the [quick start guide to GoCD](https://www.gocd.io/getting-started/part-1/) to learn key concepts in GoCD and get setup quickly
 * [Install GoCD server](https://docs.gocd.io/current/installation/)
 * [Install at least one GoCD agent](https://docs.gocd.io/current/installation/)
+* We recommend creating a simple pipeline following the [quick start guide to GoCD](https://www.gocd.io/getting-started/part-1/)
 
 ## Limitations 
 
@@ -30,9 +31,11 @@ What is does:
 
 What it does not do:
 
+* Does not create a pipeline group 
 * Does not create individual jobs from parallel Snap CI jobs
 * Does not export secure environment variable values
 * Does not export secure file contents
+
 
 ## Notes on artifacts 
 The exported GoCD configuration attempts to be as close as possible to the behavior of pipelines in Snap CI. It should be correct in most cases. However, we have made some simplifying assumptions when exporting pipelines.
@@ -49,10 +52,12 @@ The exported GoCD configuration attempts to be as close as possible to the behav
 * You may want to edit the pipeline name to better reflect your naming conventions
 * Edit the git URL generated and put in a valid Github username and password in place of the USERNAME:PASSWORD placeholder text. (You may also alter this to use SSH authentication)
 * Save your configuration
+* If the Go server is new without any prior pipelines created then you may get the following error “Invalid content was found starting with element 'pipeline'. One of '{repositories, scms, config-repos, pipelines, templates, environments, agents}' is expected”. To resolve this either create a pipeline group in Go server before prior to using the config.xml or add <pipelines group="defaultGroup"> to the start of the config and </pipelines> to the end.
 * Edit the values of secure variables
 * Once the configuration is saved navigate to the pipeline config UI. This is usually at: /go/admin/pipelines/PIPELINE_NAME/general
 * For pinned environment variables, select the pipeline name in the sidebar and in the environment variables tab on the right, put in the value for the secure environment variables that you had in Snap CI. These variables will be available in every stage of your pipeline
 * For stage level environment variables, select the stage name under the pipeline in the sidebar and edit the environment variables in the tab on the right. These environment variables will only be available in this stage
+* You may also need to edit your deployment stages as the snap-deploy tool is not available in Go
 * Save the configuration once again
 * Navigate to the dashboard
 * Unpause the pipeline if it is marked as “under construction” and click the “play” button to trigger the first run
