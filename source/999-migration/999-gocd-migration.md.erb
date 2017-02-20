@@ -17,12 +17,12 @@ The following information explains how to use the export we will provide for you
 ## Limitations 
 
 The pipeline configuration that is generated is not meant to be a 100% working copy of a GoCD pipeline. It is only meant to get you started.
-For users with scheduled builds using cron timers, the syntax is slightly different between Snap CI and GoCD. Specifically, support for specifying both a day-of-week AND a day-of-month parameter is not implemented and will result in an error.
+
 
 What is does:
 
 * Creates a pipeline
-* Creates a [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for scheduled builds
+* Creates a [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for scheduled builds. (Please note that the cron syntax is slightly different between Snap CI and GoCD. Specifically, support for specifying both a day-of-week AND a day-of-month parameter is not implemented and will result in an error)
 * Converts Snap CI pinned environment variables into GoCD pipeline variables
 * Generates Git [material](https://docs.gocd.io/current/introduction/concepts_in_go.html#materials) with placeholder username and password
 * Creates stages and [jobs](https://docs.gocd.io/current/introduction/concepts_in_go.html#job)(a job shares the stage name). There is one job per stage.
