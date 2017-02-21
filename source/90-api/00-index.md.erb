@@ -3,11 +3,9 @@ title:  API
 doc_title:  "Using Snap CI APIs"
 ---
 
-Snap API provides a way to query and perform operations that you would otherwise use the web interface for.
+Snap API provides a way to query and perform operations that you would otherwise use the web interface for. All API access is over HTTPS, and accessed from `api.snap-ci.com` domain. All data is sent and received as JSON.
 
-All API access is over HTTPS, and accessed from `api.snap-ci.com` domain. All data is sent and received as JSON.
-
-# Authentication
+## Authentication
 
 All APIs require you to authenticate yourself using your API key. You may find the API key in the [user settings](https://snap-ci.com/settings/api_key). If authentication fails, Snap will return status `404` or `401`.
 
@@ -20,7 +18,7 @@ Snap uses basic authentication. To authenticate you need to provide your usernam
       url:    'https://api.snap-ci.com/'
 %>
 
-# Current Version
+## Current Version
 
 By default, all requests receive the **v1** version of the API. It is recommended to explicitly request this version via the `Accept` header.
 
@@ -30,7 +28,7 @@ If you specify an unsupported, `Accept` header, Snap will respond with the curre
 
 >**Important**: The default version of the API may change in the future. If you care about the stability of the API, make sure that you are requesting a specific version in the `Accept` header as shown in the example above.
 
-# Pagination
+## Pagination
 
 Requests that return multiple items will be paginated to 25 items by default. The `next` and `previous` page links, if applicable are included in the response body in the `_links` section.
 
@@ -38,3 +36,7 @@ Requests that return multiple items will be paginated to 25 items by default. Th
       method: :get,
       url:    'https://api.snap-ci.com/project/snap-ci/api-docs-sample-repository/branch/master/pipelines?less_than_counter=30'
 %>
+
+## Rate limiting
+
+By default, all API calls are limited to a rate of 1 request/second per IP address on average. This means in any window of n seconds, you can make at most n API calls. Calls made over this rate will fail with a 503 error code.

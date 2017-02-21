@@ -15,13 +15,13 @@ Snap provides two <%= topic_link 'environment variables#current-build-details#ad
 
 You can put together a simple script to setup parallelism automatically -
 
-## To run same task, with different tests on each worker
+## To run same command, with different tests on each worker
 
 ~~~ shell
 ./test-runner $(snap-ci-parallel-partition list/of/files/directories)
 ~~~
 
-## To run different tasks on each worker
+## To run different commands on each worker
 
 ~~~ shell
 #!/usr/bin/env bash
@@ -59,3 +59,11 @@ def partition(tests, total_workers, current_worker_index)
   slices[current_worker_index-1] || []
 end
 ~~~
+
+
+# Parallelism using third-party tools
+
+## Knapsack: optimal test suite split based on time execution
+
+If you want to parallel tests for RSpec, Cucumber or Minitest to get faster feedback from CI then you can try [knapsack gem](https://github.com/ArturT/knapsack). It will split tests across workers and make sure that tests will run comparable time on each worker. [Read more about knapsack setup](https://github.com/ArturT/knapsack#info-for-snap-cicom-users).
+

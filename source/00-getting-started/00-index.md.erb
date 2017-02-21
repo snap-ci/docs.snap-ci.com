@@ -3,11 +3,11 @@ title: Getting Started
 doc_title: Getting Started on Snap CI
 ---
 
-Snap CI is a hosted continuous integration and continuous delivery service. Getting started with Snap is straightforward for most applications. At its simplest, the steps involved are:
+Snap CI is a hosted continuous integration and continuous delivery service. Getting started with Snap CI is straightforward for most applications. At its simplest, the steps involved are:
 
 ## Step 1: Sign in
 
-To sign up with Snap, visit [Snap CI](https://snap-ci.com) and click on the Sign in link at the top.
+To sign up with Snap, visit [Snap CI](https://snap-ci.com) and click on the Login link at the top.
 
 When you sign in, GitHub will ask if you want to give a set of
 permissions to Snap. You may <%= topic_link 'How Snap integrates with GitHub', 'learn more' %> about them.
@@ -32,7 +32,7 @@ As most of the ruby repositories, this one uses a dependency manager tool call [
 
 Because of that, Snap automatically added the default command for each of them: `bundle install --path ${SNAP_CACHE_DIR}/.bundle` and `rake spec` respectively.
 
-Most of the times that would be everything needed to run your tests. However, there may be some tasks that are pre-requisites to it. In this specific build, we need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
+Most of the times that would be everything needed to run your tests. However, there may be some commands that are pre-requisites to it. In this specific build, we need to execute the command `bundle exec foreman start &`. It can be done simply by adding it before `bundle exec rake spec`.
 
 <%= retina_image 'screenshots/getting-started/build-foreman' %>
 

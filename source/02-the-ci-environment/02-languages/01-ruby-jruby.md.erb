@@ -7,14 +7,14 @@ Snap uses [rbenv](https://github.com/sstephenson/rbenv) to install and manage ru
 
 **Ruby**
 
-<%= monospaced_array_to_sentence_string(data.versions.ruby) %>
+<%= monospaced_array_to_sentence_string(data.aurora_versions.ruby) %>
 
 **JRuby**
 
-<%= monospaced_array_to_sentence_string(data.versions.jruby) %>
+<%= monospaced_array_to_sentence_string(data.aurora_versions.jruby) %>
 
 We also pre-install the following gems that users may find useful:
 
-* bundler - `<%= data.versions.bundler %>`
-* rake - `<%= data.versions.rake %>`
+* bundler - `<%= data.aurora_versions.bundler %>`
+* rake - `<%= data.aurora_versions.rake %>`
 

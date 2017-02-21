@@ -3,11 +3,15 @@ title:  Artifacts
 doc_title:  Snap CI Artifacts API
 ---
 
-# Download an artifact
+## Download an artifact
 
 Redirects to a location containing an artifact. The redirect may not be cached and must be consumed within a few seconds.
 
 `GET /project/:owner/:repository/branch/:branch_name/artifacts/{tracking-pipeline,integration-pipeline}/:pipeline_counter/:stage_name/:job_counter/:artifact_name`{:.api-method-url}
+
+For Pull request:
+
+`GET /project/:owner/:repository/pull/:pull_counter/artifacts/defaultPipeline/:pipeline_counter/:stage_name/:job_counter/:artifact_name`{:.api-method-url}
 
 <%= render_api_example 'artifacts/get-an-artifact',
       method: :get,

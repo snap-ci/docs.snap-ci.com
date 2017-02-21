@@ -1,0 +1,48 @@
+---
+title: Example deployment to Heroku
+doc_title: Example deployment to Heroku
+---
+
+A very simple guide to use Snap to deploy a sample application to Heroku. Follow these steps and see your app deployed in a few minutes.
+
+
+## Get setup
+
+Sign up for:
+
+* <a href="http://www.github.com/">Github</a> and validate your email address
+
+* <a href="http://www.heroku.com/">Heroku</a> and choose Ruby as your primary development langauge
+
+* <a href="http://www.snap-ci.com/">Snap CI</a> and authorize Snap CI to access your Github account
+
+## Fork the sample repository
+
+* Login to Github and fork <a href="https://github.com/snap-ci-examples/snapci-ruby-heroku">snapci-ruby-heroku</a>
+
+* You should now see the snapci-ruby-heroku as one of your Github repositories as: github-userid/snapci-ruby-heroku
+
+## Add forked repository to Snap CI
+
+* Go to <a href="http://www.snap-ci.com/">Snap CI</a>
+
+* Add the snapci-ruby-heroku build. The build should start and run the two default stages - FastFeedback and Integration.
+
+## Customise your build
+
+* Select “Customize it here”
+* From the build pipeline screen click on the "Add Stage" button
+* From the commonly used stages click on “Deploy” and select “Ruby”
+* Then select “Basic” under “Heroku”
+* Supply your Heroku credentials
+* Specify an application name. Don't use upper case characters and make it unique (we suggest you include your user ID)
+* Save the configuration
+
+## Your app is deployed to Heroku using Snap CI
+
+* Snap CI will build and deploy your app to Heroku
+* Navigate to your new app (e.g. heroku-app-name.heroku.com).
+* Celebrate!
+
+
+<%= retina_image 'screenshots/getting-started/simple-app-image' %>

@@ -2,7 +2,7 @@
 
 [![Build Status](https://snap-ci.com/snap-ci/docs.snap-ci.com/branch/master/build_image)](https://snap-ci.com/snap-ci/docs.snap-ci.com/branch/master)
 
-Snap CI documentation site - based on [Middleman](https://middlemanapp.com/)
+Snap CI documentation site - based on [Middleman](https://middlemanapp.com/). For questions, comments or issues, [please contact the Snap.ci support team.](https://snap-ci.com/contact-us)
 
 All submissions are welcome. To submit a change, [fork](https://github.com/snap-ci/docs.snap-ci.com/fork) this repo, commit your changes, and send us a pull request.
 

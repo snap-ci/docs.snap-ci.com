@@ -3,14 +3,84 @@ title:  "Managing membership"
 doc_title:  "Managing project access in Snap CI"
 ---
 
-For any project building running on Snap, a user who is a collaborator on the repository on GitHub may get to see the project build on Snap. You may optionally force a sync with GitHub to ensure that project membership in Snap are in line with collaborations on GitHub.
+When a new repository is added in Snap, it will automatically sync all the collaborators from Github.
+You may optionally force a sync with GitHub to ensure that project membership in Snap are in line with collaborations on GitHub.
 
+> **Note** :
+Recently, GitHub introduced some changes to the Organizations which are managed with the effect that the Github organizations owners also need to be admin collaborator on the repository.
+
+To be able to add a new repository on Snap, make sure you are part of a GitHub team that can administer the repository. This is due to recent Github changes in the way they deal with permissions.
 
 # To perform a sync
 
 * Click on **Configuration > Collaborators** link on the build history page to configure your project.
   <%= retina_image 'screenshots/github-collaboration/collaborators-configuration' %>
-* We'll list the existing collaborators. To add members of a team, click on **Add Team**
+* We'll list the existing collaborators. To sync/add members of a team, click on **Sync with GitHub**
   <%= retina_image 'screenshots/github-collaboration/invite-collaborators-dialog' %>
-* Then select each of the teams you want to make collaborators in Snap
- <%= retina_image 'screenshots/github-collaboration/invite-collaborators-dialog-add-team' %>
+
+
+
+## Remove collaborators from Snap
+
+To remove a collaborator from your builds, you will need to remove them from github collaborator and then re-sync them on Snap as mentioned above.
+
+## Transfer billing ownership of repository
+
+Below are the steps to transfer billing owner of repository to another user :
+
+1. Click on your user profile and then select settings - available on the top right corner of Snap dashboard.
+
+2. Under "repositories" tab, Click on the repo which is billed to you and you want to transfer. This will take you that repo page.
+
+3. Once you are on the repo page, you'll see an option to "transfer billing" , click on that and select the user to whom you want to transfer.
+
+  	           <%= retina_image 'screenshots/github-collaboration/transfer' %>
+
+
+
+4. Once you transfer the ownership, user will get an email notification to accept/decline the request (which is valid for 48 hours). After accepting the request, the billing ownership will be transferred to that user.
+
+> **Note** :
+> If you are a paying user, transferring ownership of repositories from a paying account to another user does not transfer your subsciption. The new user will need to purchase a Snap plan and the previous user will need to cancel their existing plan. 
+
+> **Note** :
+> **You cannot transfer repos which are owned by that user.**
+
+## Snap user roles and permissions :
+
+User roles determine what users can see and do in Snap.
+
+There are four types of user who may interact with Snap:
+
+  **Billing owner** - A Billing owner is the owner of repository/organization on GitHub and owns the account on Snap. Billing owner can do:
+
++ Repair connectivity
+
++ Test connection
+
++ Transfer Billing Owner to another Snap Admin user.
+
++ Upgrade/Renew/Cancel plan subscription.
+
++ All Billing Owner are Admins by default, so they have Snap Admin privileges.
+
+**Admins** - A Snap Admin is a user who has admin access to a given repository on GitHub and have below privileges:
+
++ Clone repository
+
++ Sync collaborators
+
++ Delete projects
+
++ They will also have collaborators privileges
+
+ **Collaborators** - Collaborators on Snap can:
+
+ + Edit/Pause pipeline
+
++ Edit pull request settings
+
++ Enable/Disable auto-branch tracking
+
+
+ **Watchers** - A Watcher can choose to get build notification and will have collaborated projects on their Snap dashboard.

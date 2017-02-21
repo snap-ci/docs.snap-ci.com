@@ -5,7 +5,7 @@ doc_title: "Using Groovy/Gradle on Snap CI"
 
 <%= partial 'jvm_languages_and_versions_intro' %>
 
-Snap provides gradle version `<%= data.versions.gradle %>` on the `PATH`.
+Snap provides gradle version `<%= data.aurora_versions.gradle %>` on the `PATH`.
 
 By default if Snap detects the presence of a `build.gradle` at your project root, it will execute
 `gradle test assemble` in order to run your tests.
@@ -16,7 +16,6 @@ For the most part the defaults for Gradle and JVM options should work fine.
 
 If required, you may tweak the arguments to suit your needs.
 
-The complete list of arguments supported by sbt are listed here -
+The complete list of arguments supported by gradle are listed here -
 
 <%= output_of_command 'gradle -h' %>
-

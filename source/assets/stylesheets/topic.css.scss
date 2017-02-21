@@ -2,7 +2,7 @@
 @import "compass/css3/border-radius";
 
 .content {
-  font-family: 'RobotoRegular';
+  font-family: 'URWGeometric-Regular';
   margin: 0 auto;
   @include clearfix;
 
@@ -19,8 +19,10 @@
   .topic-container {
     left: 25%;
     background-color: #FEFEFE;
+
     .toc-anchor {
-      padding-left: 10px;
+      font-size: 0.65em;
+      padding-left: 6px;
       color: #575757;
       font-weight: bold;
     }
@@ -44,23 +46,28 @@
         display: none;
         color: #000;
       }
+
       &:hover .icon {
         display: inline-block;
       }
     }
 
     p {
+      margin-right: 10%;
+
       & ~ p {
         margin-top: 8px;
       }
     }
 
     li {
+      margin-right: 10%;
       .wip {
         border: none;
         padding-left: inherit;
       }
     }
+
     .wip {
       border: 1px solid #eee;
       @include border-radius(5px);
@@ -77,9 +84,9 @@
 
     .doc-title {
       font-size: 36px;
-      font-family: 'RobotoThin';
+      font-family: 'URWGeometric-Thin';
       padding: 5px 60px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       background-image: image-url('bg-rainbow.png');
 
       a {
@@ -120,7 +127,7 @@
       }
 
       th {
-        font-family: 'RobotoBold';
+        font-family: 'URWGeometric-Bold';
         font-size: 15px;
         color: #555;
         text-align: center;
@@ -155,7 +162,7 @@
       list-style: none;
       list-style-position: inside;
       padding: 0;
-      margin: 0 0 10px 45px;
+      margin: 10px 0 10px 18px;
 
       & ul {
         margin-bottom: 0;
@@ -163,7 +170,7 @@
     }
 
     li {
-      line-height: 2.2;
+      line-height: 2;
       @include clearfix;
 
       &:before {
@@ -171,14 +178,14 @@
         float: left;
         clear: right;
         font-size: 15px;
-        font-family: 'RobotoBlack';
+        font-family: 'URWGeometric-Medium';
         color: #333;
         margin-right: 10px;
       };
     }
 
     strong {
-      font-family: 'RobotoBold';
+      font-family: 'URWGeometric-Bold';
       color: #555;
     }
 
@@ -192,6 +199,7 @@
     pre {
       background-color: #444;
       color: white;
+      margin-right: 10%;
 
       code {
         width: 100%;
@@ -219,11 +227,40 @@
         border-bottom: 1px solid #AAA;
         margin: 40px 0 20px;
         color: #333;
+        line-height: 1.4;
       }
 
+      h3 {
+        margin-right: 10%
+      }
+
+      h4 {
+        border-bottom: none;
+        text-decoration: underline;
+      }
+
+      h1 {
+        font-family: 'URWGeometric-Light';
+        font-size: 28px;
+      }
+
+      h2 {
+        font-family: 'URWGeometric-Regular';
+        font-size: 22px;
+      }
+
+      h3 {
+        font-family: 'URWGeometric-Bold';
+        font-size: 16px;
+      }
+
+      h4 {
+        font-family: 'URWGeometric-Bold';
+        font-size: 14px;
+      }
 
       .setup-first-build {
-        font-family: 'RobotoThin';
+        font-family: 'URWGeometric-Thin';
         display: block;
         padding: 4px 10px 4px;
         font-size: 18px;
@@ -254,33 +291,13 @@
       }
     }
 
-    h1 {
-      font-family: 'RobotoThin';
-      font-size: 28px;
-    }
-
-    h2 {
-      font-family: 'RobotoLight';
-      font-size: 18px;
-    }
-
-    h3 {
-      font-family: 'RobotoRegular';
-      font-size: 14px;
-    }
-
-    h4 {
-      font-family: 'RobotoBold';
-      font-size: 12px;
-    }
-
     section {
       padding: 0 8px;
       border: 1px solid #EEE;
       background-color: #FEFEFE;
 
       h1, h2, h3, h4 {
-        font-family: 'RobotoRegular';
+        font-family: 'URWGeometric-Regular';
         font-size: 14px;
         border: none;
         margin: 4px 0 0;
@@ -292,7 +309,7 @@
       padding: 6px 12px;
       margin: 12px 12px;
       border-left: 4px solid #575757;
-      font-family: 'RobotoRegular';
+      font-family: 'URWGeometric-Regular';
       font-size: 14px;
       background-color: darken(#F9F9F9, 5%);
       width: 60%;

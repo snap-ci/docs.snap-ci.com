@@ -1,0 +1,62 @@
+---
+title:  "Building &amp; propagating Docker images"
+doc_title: "Building &amp; propagating Docker images"
+---
+
+Docker and deployment pipelines are a perfectly complementary with each other. Once a docker image is built, it can be propagated through a pipeline. The exact same image can be deployed to multiple different environments. The fact that the image is a completely self-contained instance of the packaged service, complete with the application code, configuration information and everything else required to run your application reduces the potential for the dreaded snowflake server antipattern.
+
+Here is how you can build and propate a Docker image through a pipeline in Snap.
+
+## Building a Docker image
+
+To build a Docker image from your the code in your repository, you will to run the `docker build` command. Your repository will need a Dockerfile in place before you do this. Once this is in place, the following command can be used to build the image and name/tag it.
+
+~~~bash
+docker build -t your-image-name-and-tag -f location-of-your-dockerfile
+~~~
+
+For example, to build a Docker image for the sample Python webapp in the [[https://github.com/docker-training/webapp]] repository, you can clone it and set up a build that looks as follows. In the example, I have omitted the -f argument since the DOcker file is in the default location.
+
+~~~bash
+docker build -t badrij/sample-webapp
+~~~
+
+Once this is done, you can see the image listed when you run `docker images`
+
+## Propagating your image through the pipelines
+
+To propagate a Docker image through your pipeline, we recommend using the Docker save and load commands to externalize the Docker image into an artifact in Snap. To do so,
+
+~~~
+docker save -o sample-webapp.tar badrij/sample-webapp
+~~~
+
+Also in this stage, set an the sample-webapp.tar file to be an artifact. Artifacts in Snap get propagated along the pipeline.By specifying your Docker image as an artifact, it will move transparently down the pipeline.
+
+<%= retina_image 'screenshots/docker/docker-propagate' %>
+
+To work with this Docker image in a later stage in your pipeline, you can just call Docker load as follows. Snap conveniently moves the artifact through the pipeline for you so that you can do this.
+
+~~~
+docker load -i sample-webapp.tar
+~~~
+
+This allows you to build the Docker image exactly once and then use the exact same binary artifact in the rest of the pipeline. Not only is this much faster, it is also a great way to avoid the pitfalls of [snowflake servers](http://martinfowler.com/bliki/SnowflakeServer.html).
+
+## Working with DockerHub
+
+You can publish your Docker images to DockerHub using the push &amp; pull commands. To execute these, you must first login using the docker login command. In order to do so, you will need a [DockerHub account](https://hub.docker.com/). We recommend using secure environment variables in Snap to store your credentials and logging in as shown below.
+
+#### Pushing to DockerHub
+
+~~~shell
+  docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  docker push badrij/sample-webapp
+~~~
+
+#### Pulling from DockerHub
+
+~~~shell
+  docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  docker pull badrij/sample-webapp
+~~~

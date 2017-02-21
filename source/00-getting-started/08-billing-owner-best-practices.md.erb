@@ -1,0 +1,20 @@
+---
+title: "Billing owner best practices"
+doc_title: "Billing owner best practices"
+---
+
+## Who should be the billing owner of our pipelines?
+
+As seen in the <a href="https://docs.snap-ci.com/managing-your-github-connection/managing-membership/">managing membership section</a> of this documentation, the billing owner is the owner of the repository/organization on GitHub and owns <a href="https://snap-ci.com/my_plans/">the paid or trial account</a> on Snap. 
+
+The team member who adds the repo and creates the pipeline in Snap becomes that pipeline's owner, therefore you want the team member with the paid Snap subscription to own all of the team's pipelines.
+
+
+
+Some teams are fine with choosing one team member to be the billing owner, but other teams want all team members to have billing owner abilities such as adding private repos to Snap, repairing Github connectivity, and making changes to the paid subscription. For these teams, we recommend creating a shared user within Github and <a href="https://staging-docs.snap-ci.com/managing-your-github-connection/managing-membership/#to-perform-a-sync%23transfer-billing-ownership-of-repository">transferring all Snap pipelines</a> to said user. 
+
+This will allow you to share the credentials for the shared user within your team, and allow any team member to log into Snap as the billing owner.
+ 
+ 
+ 
+If you need help transferring your pipelines to a single billing owner or have any other questions, please [get in touch with us](<%= data.links.contact_us %>).
