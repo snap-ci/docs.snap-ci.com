@@ -22,10 +22,10 @@ The pipeline configuration that is generated is not meant to be a 100% working c
 What is does:
 
 * Creates a pipeline
-* Creates a [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for scheduled builds. (Please note that the cron syntax is slightly different between Snap CI and GoCD. Specifically, support for specifying both a day-of-week AND a day-of-month parameter is not implemented and will result in an error)
+* Creates a [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for scheduled builds (see limitations below)
 * Converts Snap CI pinned environment variables into GoCD pipeline variables
 * Generates Git [material](https://docs.gocd.io/current/introduction/concepts_in_go.html#materials) with placeholder username and password
-* Creates stages and [jobs](https://docs.gocd.io/current/introduction/concepts_in_go.html#job)(a job shares the stage name). There is one job per stage.
+* Creates stages and [jobs](https://docs.gocd.io/current/introduction/concepts_in_go.html#job)(a job shares the stage name). There is one job per stage
 * Converts Snap CI stage variables into GoCD stage variables
 * Converts Snap CI tasks into GoCD tasks (‘bash -c “whatever snap command you had”’ is used)
 * Converts Snap CI artifacts into GoCD artifacts
@@ -33,6 +33,7 @@ What is does:
 What it does not do:
 
 * Does not create a pipeline group 
+* Does not create [timer trigger](https://docs.gocd.io/current/configuration/admin_timer.html) for all scenarios supported in Snap CI. The cron syntax is slightly different between Snap CI and GoCD. Specifically, support for specifying both a day-of-week AND a day-of-month parameter is not supported in GoCD and will result in an error. Please edit your config accordingly to meet GoCDs requirements)
 * Does not create individual jobs from parallel Snap CI jobs
 * Does not export secure environment variable values
 * Does not export secure file contents
